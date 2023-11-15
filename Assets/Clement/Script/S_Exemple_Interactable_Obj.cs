@@ -6,18 +6,8 @@ using UnityEngine;
 
 public class S_Exemple_Interactable_Obj : S_Interactable
 {
-    private string description = " press <color=red>RIGHT CLICK</color>";
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    [Header("Display Text")]
+    public string description = "Press <color=red>RIGHT CLICK</color>";
 
     public override string GetDescription()
     {

@@ -43,22 +43,15 @@ public class S_Player_Interaction : MonoBehaviour
             interactionText.text = interactable.GetDescription();
             interactionText.gameObject.SetActive(true);
 
-            hitObject = true;
+           
 
         }
         if (interactable == null)
         {
-            hitObject = false;
+            
             interactionText.gameObject.SetActive(false);
 
         }
-
-        /*if (!hitObject) {
-            interactionText.text = ""; 
-            interactionText.enabled = false;
-        }*/
-       
-        //Make the hand icon more bright
         
     }
 
@@ -70,7 +63,7 @@ public class S_Player_Interaction : MonoBehaviour
     public void OnInteraction()
     {
         interactable = null;
-        hitObject = false;
+        
         interactionText.gameObject.SetActive(false);
     }
 
