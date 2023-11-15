@@ -10,12 +10,17 @@ public class S_ButtonOrderSingleB : MonoBehaviour
     bool activated = false;
     Button selfButton;
     S_ButtonOrder buttonManager = null;
-    [Header("Don't Change Value HERE !!!")]
+    [HideInInspector]
     public float maxSize, minSize, timeToPress;
-
+    [HideInInspector]
     public float score;
 
     RectTransform rectTransform;
+
+    [HideInInspector]
+    public bool useGradient = false;
+    [HideInInspector]
+    public Gradient ButtonGradient;
 
     float currentSize;
     // Start is called before the first frame update
@@ -41,6 +46,12 @@ public class S_ButtonOrderSingleB : MonoBehaviour
             {
                 currentSize = Mathf.Clamp(currentSize - (Time.deltaTime * ((maxSize - minSize) / timeToPress)), minSize, maxSize); //Change the size of the button
                 rectTransform.sizeDelta = new Vector2(currentSize, currentSize);
+                if (useGradient)
+                {
+                    ColorBlock tempCB = selfButton.colors;
+                    tempCB.normalColor = ButtonGradient.Evaluate((currentSize - minSize) / (maxSize - minSize));
+                    selfButton.colors = tempCB;
+                }
             }
         }
     }
@@ -91,7 +102,7 @@ public class S_ButtonOrderSingleB : MonoBehaviour
     {
         if (activated)
         {
-            float s = score * (currentSize / maxSize);
+            float s = score * ((currentSize-minSize) / (maxSize-minSize));
             buttonManager.ButtonPressed(s);
         }
         

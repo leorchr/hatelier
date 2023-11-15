@@ -5,11 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class S_ButtonOrder : MonoBehaviour
 {
     public GameObject buttonContainer;
     private S_ButtonOrderSingleB[] buttonListComponent = new S_ButtonOrderSingleB[9];
     public TextMeshProUGUI stateText;
+
+    [HideInInspector]
+    public bool useGradient;
+    [HideInInspector]
+    public Gradient buttonGradient;
 
     [Header("Mini Game Parameters")]
     [SerializeField]
@@ -102,6 +111,8 @@ public class S_ButtonOrder : MonoBehaviour
                     buttonListComponent[index].timeToPress = timeToPress;
                     buttonListComponent[index].setSize(0);
                     buttonListComponent[index].score = scorePerButtonMax;
+                    buttonListComponent[index].useGradient = useGradient;
+                    buttonListComponent[index].ButtonGradient = buttonGradient;
                     index++;
                 }
             }
@@ -156,3 +167,23 @@ public class S_ButtonOrder : MonoBehaviour
 
     
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(S_ButtonOrder))]
+public class RandomScript_Editor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector(); // for other non-HideInInspector fields
+
+        S_ButtonOrder script = (S_ButtonOrder)target;
+
+        // draw checkbox for the bool
+        script.useGradient = EditorGUILayout.Toggle("Use Gradient ?", script.useGradient);
+        if (script.useGradient) // if bool is true, show other fields
+        {
+            script.buttonGradient = EditorGUILayout.GradientField("Button Gradient",script.buttonGradient);
+        }
+    }
+}
+#endif
