@@ -28,7 +28,7 @@ public class S_Interactable_Obj : S_Interactable
         S_Player_Interaction.instance.OnInteraction();
 
         //Add cube to inventory
-        S_Inventory.Instance.AddToInventory(material);
+        S_Inventory.instance.AddToInventory(material);
         Destroy(gameObject);
     }
 
