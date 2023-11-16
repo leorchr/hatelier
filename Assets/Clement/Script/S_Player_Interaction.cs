@@ -6,21 +6,19 @@ using UnityEngine;
 
 public class S_Player_Interaction : MonoBehaviour
 {
-   public static S_Player_Interaction instance;
-    public TMPro.TextMeshProUGUI interactionText;
-    public bool hitObject = false;
+
+    public static S_Player_Interaction instance;
     S_Interactable interactable;
+
+    [Header("Text")]
+    public TMPro.TextMeshProUGUI interactionText;
+
 
     private void Awake()
     {
         if(!instance) instance = this;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    // Update is called once per frame
+   
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -33,7 +31,6 @@ public class S_Player_Interaction : MonoBehaviour
 
     }
 
-    
    public void OnTriggerEnter(Collider collider)
     {
         interactable = (S_Interactable)collider.GetComponent(typeof(S_Interactable));
@@ -42,17 +39,11 @@ public class S_Player_Interaction : MonoBehaviour
         {
             interactionText.text = interactable.GetDescription();
             interactionText.gameObject.SetActive(true);
-
-           
-
         }
         if (interactable == null)
         {
-            
             interactionText.gameObject.SetActive(false);
-
         }
-        
     }
 
     public void OnTriggerExit(Collider other)
@@ -63,7 +54,6 @@ public class S_Player_Interaction : MonoBehaviour
     public void OnInteraction()
     {
         interactable = null;
-        
         interactionText.gameObject.SetActive(false);
     }
 
