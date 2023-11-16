@@ -4,22 +4,35 @@ using UnityEngine;
 
 
 
-public class S_Exemple_Interactable_Obj : S_Interactable
+public class S_Interactable_Obj : S_Interactable
 {
     [Header("Display Text")]
+
+
     public string description = "Press <color=red>RIGHT CLICK</color>";
+
+    public S_Materials material;
 
     public override string GetDescription()
     {
         return description;
     }
 
+    public override string GetMatDescription()
+    {
+        return material.description;
+
+    }
     public override void Interact()
     {
         S_Player_Interaction.instance.OnInteraction();
+
+        //Add cube to inventory
+        //material.Add(material);
+
         Destroy(gameObject);
-        //Add cube to inventori
     }
+
 
 
 }

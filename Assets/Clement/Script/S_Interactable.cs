@@ -12,6 +12,7 @@ public abstract class S_Interactable : MonoBehaviour
 
     public InteractionType interactiontype;
     public abstract string GetDescription();
+    public abstract string GetMatDescription();
     public abstract void Interact();
 
     

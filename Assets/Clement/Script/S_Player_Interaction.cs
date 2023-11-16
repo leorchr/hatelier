@@ -12,6 +12,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     [Header("Text")]
     public TMPro.TextMeshProUGUI interactionText;
+    public TMPro.TextMeshProUGUI materialDescriptionText;
 
 
     private void Awake()
@@ -39,10 +40,14 @@ public class S_Player_Interaction : MonoBehaviour
         {
             interactionText.text = interactable.GetDescription();
             interactionText.gameObject.SetActive(true);
+
+            materialDescriptionText.text = interactable.GetMatDescription();
+            materialDescriptionText.gameObject.SetActive(true);
         }
         if (interactable == null)
         {
             interactionText.gameObject.SetActive(false);
+            materialDescriptionText.gameObject.SetActive(false);
         }
     }
 
@@ -55,6 +60,7 @@ public class S_Player_Interaction : MonoBehaviour
     {
         interactable = null;
         interactionText.gameObject.SetActive(false);
+        materialDescriptionText.gameObject.SetActive(false);
     }
 
 
