@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
-  m_Name: Gold
+  m_Name: Bronze
   m_EditorClassIdentifier: 
-  materialName: 
-  description: ' <color=blue>Type</color> : Gold
+  materialName: Bronze
+  description: ' <color=blue>Type</color> : Bronze
 
     <color=green>Description</color>
-    : Object est tres Rare'
-  icone: {fileID: 21300000, guid: acf91d9afa65fa446b82c02f7579a512, type: 3}
+    : Object commun'
+  icone: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   cookTime: 0
