@@ -61,7 +61,6 @@ public class S_Player_Interaction : MonoBehaviour
         interactable = null;
         interactionText.gameObject.SetActive(false);
         materialDescriptionText.gameObject.SetActive(false);
-       //display inventory ui
     }
 
 
