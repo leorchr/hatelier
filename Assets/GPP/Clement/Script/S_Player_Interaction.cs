@@ -35,20 +35,23 @@ public class S_Player_Interaction : MonoBehaviour
 
    public void OnTriggerEnter(Collider collider)
     {
-        interactable = (S_Interactable)collider.GetComponent(typeof(S_Interactable));
-
-        if (interactable != null)
+        if (collider.tag != "notInteractible")
         {
-            interactionText.text = interactable.GetDescription();
-            interactionText.gameObject.SetActive(true);
+            interactable = (S_Interactable)collider.GetComponent(typeof(S_Interactable));
 
-            materialDescriptionText.text = interactable.GetMatDescription();
-            materialDescriptionText.gameObject.SetActive(true);
-        }
-        if (interactable == null)
-        {
-            interactionText.gameObject.SetActive(false);
-            materialDescriptionText.gameObject.SetActive(false);
+            if (interactable != null)
+            {
+                interactionText.text = interactable.GetDescription();
+                interactionText.gameObject.SetActive(true);
+
+                materialDescriptionText.text = interactable.GetMatDescription();
+                materialDescriptionText.gameObject.SetActive(true);
+            }
+            if (interactable == null)
+            {
+                interactionText.gameObject.SetActive(false);
+                materialDescriptionText.gameObject.SetActive(false);
+            }
         }
     }
 
