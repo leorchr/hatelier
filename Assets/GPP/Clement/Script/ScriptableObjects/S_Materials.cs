@@ -8,6 +8,7 @@ public class S_Materials : ScriptableObject
 {
     public string materialName;
     [TextAreaAttribute] public string description;
+    [TextAreaAttribute] public string FullInventorydescription;
     public Sprite icone;
     [Range(0,20)] public float cookTime;
 }

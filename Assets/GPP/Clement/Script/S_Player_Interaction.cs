@@ -22,7 +22,7 @@ public class S_Player_Interaction : MonoBehaviour
    
     void Update()
     {
-        //condition : si il y a 0 materiau dans la list, sinon display ui qui dit qu'on doit deposer item dans mold
+       
         if (Input.GetMouseButtonDown(1))
         {
             if (interactable)
