@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S_CompasInteractable : MonoBehaviour
+public class S_CompasInteractable : S_Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Display Text")]
+    private string description = "Press <color=red>RIGHT CLICK</color>";
+
+    private GameObject[] BasePlate = new GameObject[2];
+
+    public override string GetDescription()
     {
-        
+        return description;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override string GetMatDescription()
     {
-        
+        return "";
+
     }
+    public override void Interact()
+    {
+        S_Player_Interaction.instance.OnInteraction();
+
+        //Add cube to inventory
+        Destroy(gameObject);
+    }
+
 }
