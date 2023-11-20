@@ -11,14 +11,12 @@ public class S_TourneDisque : MonoBehaviour
     public float speedRotation;
     public float rotationAngle;
     
-    public bool isPressed;
     private Vector3 rotation;
     private Quaternion rot;
 
     // Start is called before the first frame update
     void Start()
     {
-        isPressed = false;
         rotation = new Vector3(0, rotationAngle, 0);
         rot = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
     }
