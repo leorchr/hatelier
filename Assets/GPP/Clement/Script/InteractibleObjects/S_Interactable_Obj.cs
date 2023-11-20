@@ -8,6 +8,7 @@ public class S_Interactable_Obj : S_Interactable
 {
     [Header("Display Text")]
     private string description = "Press <color=red>RIGHT CLICK</color>";
+    private string FullInventoryDescription = "<color=red>INVENTORY IS FULL</color>";
 
     public S_Materials material;
 
@@ -19,7 +20,7 @@ public class S_Interactable_Obj : S_Interactable
         }
         else
         {
-            return material.FullInventorydescription;
+            return FullInventoryDescription;
         }
     }
 
