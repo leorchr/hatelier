@@ -26,18 +26,15 @@ public class S_TourneDisque : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPressed) 
-        { 
-            if(turnToLeft)
-            {
-                rot = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rot, speedRotation * Time.deltaTime);
-            }
-            else
-            {
-                rot = Quaternion.Euler(rotation.x, 0, rotation.z);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rot, speedRotation * Time.deltaTime);
-            }
+        if(turnToLeft)
+        {
+            rot = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, speedRotation * Time.deltaTime);
+        }
+        else
+        {
+            rot = Quaternion.Euler(rotation.x, 0, rotation.z);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, speedRotation * Time.deltaTime);
         }
     }
 
