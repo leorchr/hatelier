@@ -13,21 +13,32 @@ public class S_Interactable_Obj : S_Interactable
 
     public override string GetDescription()
     {
-        return description;
+        if (S_Inventory.instance.GetMaterials() == null)
+        {
+            return description;
+        }
+        else
+        {
+            return material.FullInventorydescription;
+        }
     }
 
     public override string GetMatDescription()
     {
-        return material.description;
-
+        if (S_Inventory.instance.GetMaterials() == null)
+        {
+           return material.description;
+        }
+        else
+        {
+            return material.FullInventorydescription;
+        }
     }
     public override void Interact()
     {
-        S_Player_Interaction.instance.OnInteraction();
-
-        //Add cube to inventory
         if (S_Inventory.instance.GetMaterials() == null)
         {
+            S_Player_Interaction.instance.OnInteraction();
             S_Inventory.instance.AddToInventory(material);
             Destroy(gameObject);
         }
