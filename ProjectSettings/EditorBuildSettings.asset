@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/GPP/Zoe/TestZoe.unity
+    guid: 78f60affdb0e13b4cb1f15a5416b29ae
+  - enabled: 1
+    path: Assets/GPP/Zoe/Main Menu.unity
+    guid: dbd02d90f8ac5ff42b9e54af3601b038
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 0a4aff6653ab10443899994b4c73da72, type: 2}
