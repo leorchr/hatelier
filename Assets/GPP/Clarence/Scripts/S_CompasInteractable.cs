@@ -63,17 +63,23 @@ public class S_CompasInteractable : S_Interactable
     private void swapObject()
     {
         foreach (GameObject obj in BasePlate[0].inTrigger) {
-            ObjPosSaved temp = new ObjPosSaved();
-            temp.obj = obj;
-            temp.rpos = obj.transform.position - BasePlate[0].transform.position;
-            objBase1.Add(temp);
+            if (obj != null)
+            {
+                ObjPosSaved temp = new ObjPosSaved();
+                temp.obj = obj;
+                temp.rpos = obj.transform.position - BasePlate[0].transform.position;
+                objBase1.Add(temp);
+            }
         }
         foreach (GameObject obj in BasePlate[1].inTrigger)
         {
-            ObjPosSaved temp = new ObjPosSaved();
-            temp.obj = obj;
-            temp.rpos = obj.transform.position - BasePlate[1].transform.position;
-            objBase2.Add(temp);
+            if (obj != null)
+            {
+                ObjPosSaved temp = new ObjPosSaved();
+                temp.obj = obj;
+                temp.rpos = obj.transform.position - BasePlate[1].transform.position;
+                objBase2.Add(temp);
+            }
         }
 
         foreach (ObjPosSaved OPS in objBase1)
