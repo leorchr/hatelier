@@ -12,12 +12,12 @@ public class S_Interact_mold : S_Interactable
     public Image reducedInventory;
     public GameObject mainInventoryGroup;
 
-    public S_Materials material;
+    public S_Materials mold;
     private bool isInInventory = false;
 
     private void Update()
     {
-        Debug.Log(isInInventory);
+
     }
 
     public override string GetDescription()
@@ -27,7 +27,7 @@ public class S_Interact_mold : S_Interactable
 
     public override string GetMatDescription()
     {
-            return material.description;
+            return mold.description;
     }
 
     public override void Interact()
@@ -36,6 +36,18 @@ public class S_Interact_mold : S_Interactable
         {
             mainInventoryGroup.gameObject.SetActive(true);
             reducedInventory.gameObject.SetActive(false);
+            if (!S_Mold_Inventory.instance.IsInventoryFull())
+            {
+                S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
+                S_Inventory.instance.ClearInventory();
+                S_UI_Inventory.instance.ClearPlayerInventoryIcon();
+               
+            }
+            else
+            {
+                S_UI_Inventory.instance.DisplayBakeButton();
+            }
+
             isInInventory = true;
         }
         else
@@ -44,7 +56,14 @@ public class S_Interact_mold : S_Interactable
             reducedInventory.gameObject.SetActive(true);
             isInInventory = false;
         }
+
+
        
+      
+        
+
+       
+
     }
     
 }

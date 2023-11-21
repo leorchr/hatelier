@@ -18,12 +18,13 @@ public class S_Inventory : MonoBehaviour
     public void AddToInventory(S_Materials material)
     {
         inventory = material;
-        S_UI_Inventory.instance.DisplayIcon();
+        S_UI_Inventory.instance.DisplayPlayerInventoryIcon();
     }
 
     public void ClearInventory()
     {
         inventory = null;
+        Debug.Log("cleared");
     }
 
     public S_Materials GetMaterials() { return inventory; }

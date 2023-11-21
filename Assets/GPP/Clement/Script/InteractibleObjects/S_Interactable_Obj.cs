@@ -44,4 +44,5 @@ public class S_Interactable_Obj : S_Interactable
             Destroy(gameObject);
         }
     }
+
 }

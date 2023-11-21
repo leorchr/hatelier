@@ -6,8 +6,13 @@ using UnityEngine;
 
 public class S_Recipes : ScriptableObject
 {
-    public S_Materials[] requiredMaterials;
+   
     [Tooltip("Score donné en récompense de la recette")]
     public int score;
     public Sprite icone;
+    [Tooltip("Materiaux requis")]
+    public S_Materials[] requiredMaterials;
+    [Tooltip("Output statue")]
+    public GameObject statue;
+
 }
