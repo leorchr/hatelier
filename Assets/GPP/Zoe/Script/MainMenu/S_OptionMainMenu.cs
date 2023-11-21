@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class S_Option : MonoBehaviour
+public class S_OptionMainMenu : MonoBehaviour
 {
     [Header("Scene")]
     [Space]

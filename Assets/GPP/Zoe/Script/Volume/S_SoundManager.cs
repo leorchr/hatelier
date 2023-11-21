@@ -6,7 +6,7 @@ public class S_SoundManager : MonoBehaviour
 {
     public static S_SoundManager instance;
 
-    public AudioSource audioSource;
+    public AudioSource musicSource, effectSource;
     private void Awake()
     {
         if(instance == null)
@@ -22,7 +22,7 @@ public class S_SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        musicSource.PlayOneShot(clip);
     }
 
     public void ChangeMasterVolume(float volume)
