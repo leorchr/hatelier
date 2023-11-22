@@ -36,13 +36,16 @@ public class S_Interact_mold : S_Interactable
             S_Menu_Manager.Instance.stopPlayer(false);
             mainInventoryGroup.gameObject.SetActive(true);
             reducedInventory.gameObject.SetActive(false);
-            if (!S_Mold_Inventory.instance.IsInventoryFull())
+            if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
             {
+                
                 S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
                 S_Inventory.instance.ClearInventory();
                 S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-               
-               
+                
+                
+
+
             }
           
 
@@ -53,6 +56,8 @@ public class S_Interact_mold : S_Interactable
             S_Menu_Manager.Instance.stopPlayer(true);
             mainInventoryGroup.gameObject.SetActive(false);
             reducedInventory.gameObject.SetActive(true);
+            new WaitForSeconds(3);
+            //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
             isInInventory = false;
 
             

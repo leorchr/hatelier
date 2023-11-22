@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class S_Materials : ScriptableObject
 {
+    public bool canBeBaked = true;
     public string materialName;
     [TextAreaAttribute] public string description;
     [TextAreaAttribute] public string FullInventorydescription;
     public Sprite icone;
     [Range(0,20)] public float cookTime;
-    public GameObject gameObject;
+    public GameObject prefab;
 }

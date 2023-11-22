@@ -36,7 +36,7 @@ public class S_Player_Interaction : MonoBehaviour
 
    public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log(interactableLayer.value);
+        
         if ((1 << collider.gameObject.layer & interactableLayer.value) != 0)
         {
             Debug.Log("COUCOU JE SUIS ANSNAJSNAS");

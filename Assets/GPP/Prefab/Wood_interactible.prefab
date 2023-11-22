@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4558253982646411952}
   - component: {fileID: 7261068290849934765}
   - component: {fileID: 7765439548916592202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wood_interactible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiontype: 0
+  description: Press <color=red>RIGHT CLICK</color>
+  FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: 03f3e00b2c3c6b64088d89fab45a7f8e, type: 2}

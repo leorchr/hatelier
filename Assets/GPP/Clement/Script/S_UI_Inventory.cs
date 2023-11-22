@@ -13,6 +13,7 @@ public class S_UI_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage3;
     [SerializeField] private GameObject playerInventoryImage;
     [SerializeField] private GameObject bakeButton;
+    
 
     private void Awake()
 
@@ -58,10 +59,7 @@ public class S_UI_Inventory : MonoBehaviour
 
     }
 
-    public void DisplayStatueIcon()
-    {
    
-    }
 
     public void DisplayBakeButton()
     {
@@ -83,5 +81,16 @@ public class S_UI_Inventory : MonoBehaviour
     {
         moldSlotImage1.SetActive(false);
         moldSlotImage2.SetActive(false);
+    }
+
+    public void ClearMoldInventoryStatueIcon()
+    {
+        moldSlotImage3.SetActive(false);
+        
+    }
+
+    public void SetStatueIconInMold( Sprite statueIcon)
+    {
+        moldSlotImage3.GetComponent<Image>().sprite = statueIcon;
     }
 }
