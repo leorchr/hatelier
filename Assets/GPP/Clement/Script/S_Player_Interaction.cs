@@ -13,6 +13,7 @@ public class S_Player_Interaction : MonoBehaviour
     [Header("Text")]
     public TMPro.TextMeshProUGUI interactionText;
     public TMPro.TextMeshProUGUI materialDescriptionText;
+    public LayerMask interactableLayer;
 
 
     private void Awake()
@@ -35,8 +36,11 @@ public class S_Player_Interaction : MonoBehaviour
 
    public void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag != "notInteractible")
+        Debug.Log(interactableLayer.value);
+        if ((1 << collider.gameObject.layer & interactableLayer.value) != 0)
         {
+            Debug.Log("COUCOU JE SUIS ANSNAJSNAS");
+
             interactable = (S_Interactable)collider.GetComponent(typeof(S_Interactable));
 
             if (interactable != null)
@@ -54,6 +58,9 @@ public class S_Player_Interaction : MonoBehaviour
             }
         }
     }
+
+
+
 
     public void OnTriggerExit(Collider other)
     {

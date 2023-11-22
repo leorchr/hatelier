@@ -17,7 +17,6 @@ public class S_Interact_mold : S_Interactable
 
     private void Update()
     {
-
     }
 
     public override string GetDescription()
@@ -43,11 +42,9 @@ public class S_Interact_mold : S_Interactable
                 S_Inventory.instance.ClearInventory();
                 S_UI_Inventory.instance.ClearPlayerInventoryIcon();
                
+               
             }
-            else
-            {
-                S_UI_Inventory.instance.DisplayBakeButton();
-            }
+          
 
             isInInventory = true;
         }
@@ -58,7 +55,7 @@ public class S_Interact_mold : S_Interactable
             reducedInventory.gameObject.SetActive(true);
             isInInventory = false;
 
-            //disable character movements
+            
         }
 
     }

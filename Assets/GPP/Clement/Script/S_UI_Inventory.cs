@@ -47,6 +47,12 @@ public class S_UI_Inventory : MonoBehaviour
             S_Materials moldInventorySlot2 = S_Mold_Inventory.instance.GetMaterial2();
             moldSlotImage2.GetComponent<Image>().sprite = moldInventorySlot2.icone;
             moldSlotImage2.SetActive(true);
+            DisplayBakeButton();
+
+        }
+        else
+        {
+            DisableButton();
         }
 
 
@@ -60,6 +66,12 @@ public class S_UI_Inventory : MonoBehaviour
     public void DisplayBakeButton()
     {
         bakeButton.SetActive(true);
+    }
+
+    public void DisableButton()
+    {
+        bakeButton.SetActive(false);
+
     }
 
     public void ClearPlayerInventoryIcon()

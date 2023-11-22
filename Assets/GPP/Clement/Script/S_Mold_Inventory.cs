@@ -12,7 +12,7 @@ public class S_Mold_Inventory : MonoBehaviour
 
     [SerializeField] private S_Recipes[] recipesList;
 
-    private bool isCorresponding = false;
+  
     private void Awake()
     {
         if (!instance) instance = this;
@@ -50,9 +50,9 @@ public class S_Mold_Inventory : MonoBehaviour
         {
             if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
             {
-                if(recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo)
+                if((recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo) && matOne != matTwo)
                 {
-                    isCorresponding = true;
+                    
                     Debug.Log("corresponding");
 
                     //Add ui "Baking ..." + Lunch timer

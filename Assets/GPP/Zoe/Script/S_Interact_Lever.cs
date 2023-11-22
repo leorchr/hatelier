@@ -35,6 +35,7 @@ public class S_Interact_Lever : S_Interactable
     }
     public override void Interact()
     {
+        Debug.Log("interact");
         if (S_Inventory.instance.GetMaterials() == null)
         {
             if (tourneDisque.turnToLeft)
