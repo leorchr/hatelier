@@ -55,15 +55,18 @@ public class S_Interact_mold : S_Interactable
             mainInventoryGroup.gameObject.SetActive(false);
             reducedInventory.gameObject.SetActive(true);
             isInInventory = false;
+
+            //disable character movements
         }
 
+    }
 
-       
-      
-        
-
-       
-
+    public void PressedBakeButton()
+    {
+        //Lunch timer 
+        //add statue to player inventory
+        S_Mold_Inventory.instance.CheckRecipeMaterialWithMoldMaterial();
+        Debug.Log("blala");
     }
     
 }

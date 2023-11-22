@@ -8,7 +8,11 @@ public class S_Mold_Inventory : MonoBehaviour
 
     [SerializeField] private S_Materials matOne;
     [SerializeField] private S_Materials matTwo;
+    [SerializeField] private S_Materials statue;
 
+    [SerializeField] private S_Recipes[] recipesList;
+
+    private bool isCorresponding = false;
     private void Awake()
     {
         if (!instance) instance = this;
@@ -29,9 +33,6 @@ public class S_Mold_Inventory : MonoBehaviour
         S_UI_Inventory.instance.DisplayMoldInventoryIcons();
         
     }
-
-
-
     public void ClearInventory()
     {
         matOne = null;
@@ -42,6 +43,38 @@ public class S_Mold_Inventory : MonoBehaviour
     {
         return matOne != null && matTwo != null;
     }
+
+    public void CheckRecipeMaterialWithMoldMaterial()
+    {
+        for (int i = 0; i < recipesList.Length; i++)
+        {
+            if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
+            {
+                if(recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo)
+                {
+                    isCorresponding = true;
+                    Debug.Log("corresponding");
+
+                    //Add ui "Baking ..." + Lunch timer
+
+                    //add statue ui
+
+                    //clear inventory
+                    ClearInventory();
+                    //clear mold 
+                    S_UI_Inventory.instance.ClearMoldInventoryIcon();
+
+                }
+
+                
+
+                
+            }
+
+        }
+    }
+
+
 
     public S_Materials GetMaterial1() { return matOne; }
     public S_Materials GetMaterial2() { return matTwo; }

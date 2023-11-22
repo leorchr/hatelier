@@ -10,6 +10,7 @@ public class S_UI_Inventory : MonoBehaviour
     public static S_UI_Inventory instance;
     [SerializeField] private GameObject moldSlotImage1;
     [SerializeField] private GameObject moldSlotImage2;
+    [SerializeField] private GameObject moldSlotImage3;
     [SerializeField] private GameObject playerInventoryImage;
     [SerializeField] private GameObject bakeButton;
 
@@ -48,6 +49,12 @@ public class S_UI_Inventory : MonoBehaviour
             moldSlotImage2.SetActive(true);
         }
 
+
+    }
+
+    public void DisplayStatueIcon()
+    {
+   
     }
 
     public void DisplayBakeButton()
