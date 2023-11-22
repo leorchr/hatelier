@@ -34,6 +34,7 @@ public class S_Interact_mold : S_Interactable
     {
         if (isInInventory == false)
         {
+            S_Menu_Manager.Instance.stopPlayer(true);
             mainInventoryGroup.gameObject.SetActive(true);
             reducedInventory.gameObject.SetActive(false);
             if (!S_Mold_Inventory.instance.IsInventoryFull())
@@ -52,6 +53,7 @@ public class S_Interact_mold : S_Interactable
         }
         else
         {
+            S_Menu_Manager.Instance.stopPlayer(false);
             mainInventoryGroup.gameObject.SetActive(false);
             reducedInventory.gameObject.SetActive(true);
             isInInventory = false;
