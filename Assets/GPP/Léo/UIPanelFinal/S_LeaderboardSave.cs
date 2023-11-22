@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
 
 public class S_LeaderboardSave : MonoBehaviour
 {
@@ -18,28 +19,28 @@ public class S_LeaderboardSave : MonoBehaviour
         else instance = this;
     }
 
-    private void Start()
-    {
-        LoadFile();
-    }
+    public void Start() { }
 
     public void SaveToFile()
     {
-        saveData.Save();
-        string json = JsonUtility.ToJson(saveData);
-        Debug.Log(json);
+        if (File.Exists(Application.persistentDataPath + "/data.save"))
+        {
+            saveData.Save();
+            string json = JsonUtility.ToJson(saveData);
+            File.WriteAllText(Application.persistentDataPath + "/data.save", json);
+        }
+
         if (!File.Exists(Application.persistentDataPath + "/data.save"))
         {
-            File.Create(Application.persistentDataPath + "/data.save").Dispose();
+            NewSave();
         }
-        File.WriteAllText(Application.persistentDataPath + "/data.save", json);
     }
 
     public void NewSave()
     {
         saveData = new SaveData();
+        saveData.Save();
         string json = JsonUtility.ToJson(saveData);
-        Debug.Log(json);
         File.Create(Application.persistentDataPath + "/data.save").Dispose();
         File.WriteAllText(Application.persistentDataPath + "/data.save", json);
     }
@@ -51,7 +52,7 @@ public class S_LeaderboardSave : MonoBehaviour
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
             saveData = JsonUtility.FromJson<SaveData>(json);
-            saveData.Load();
+            saveData.UpdateUI();
         }
         else
         {
@@ -63,17 +64,43 @@ public class S_LeaderboardSave : MonoBehaviour
 [Serializable]
 public class SaveData
 {
-    public string playerName = "Titouan";
-    public int score = 0;
+    public List<PlayerStats> stats = new List<PlayerStats>();
 
     public void Save()
     {
-        // récupérer le score du joueur ici
-        // récupérer le nom du joueur ici
+        stats.Add(new PlayerStats(S_Leaderboard.instance.playerNameTemp, S_Leaderboard.instance.playerScoreTemp));
     }
-    public void Load()
+    public void UpdateUI()
     {
-        S_UI_PanelFinal.instance.nameList[0].GetComponent<TextMeshProUGUI>().text = playerName;
-        S_UI_PanelFinal.instance.scoreList[0].GetComponent<TextMeshProUGUI>().text = score.ToString();
+        List<PlayerStats> ranked;
+        ranked = stats.OrderBy(s => s.playerScore).ToList();
+        ranked.Reverse();
+        
+        for (int i = 0; i < S_Leaderboard.instance.numberPlayersDisplay; i++)
+        {
+            if (i >= ranked.Count)
+            {
+                S_Leaderboard.instance.GetNameList()[i].GetComponent<TextMeshProUGUI>().text = "";
+                S_Leaderboard.instance.GetScoreList()[i].GetComponent<TextMeshProUGUI>().text = "";
+            }
+            else
+            {
+                S_Leaderboard.instance.GetNameList()[i].GetComponent<TextMeshProUGUI>().text = ranked[i].playerName;
+                S_Leaderboard.instance.GetScoreList()[i].GetComponent<TextMeshProUGUI>().text = ranked[i].playerScore.ToString();
+            }
+        }
+    }
+}
+
+[Serializable]
+public struct PlayerStats
+{
+    public string playerName;
+    public int playerScore;
+
+    public PlayerStats(string name, int score)
+    {
+        playerName = name;
+        playerScore = score;
     }
 }
