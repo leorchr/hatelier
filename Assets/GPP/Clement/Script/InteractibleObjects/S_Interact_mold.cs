@@ -38,17 +38,15 @@ public class S_Interact_mold : S_Interactable
             reducedInventory.gameObject.SetActive(false);
             if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
             {
-                
+
                 S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
                 S_Inventory.instance.ClearInventory();
                 S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-                
-                
+
+
 
 
             }
-          
-
             isInInventory = true;
         }
         else

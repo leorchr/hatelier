@@ -48,7 +48,8 @@ public class S_UI_Inventory : MonoBehaviour
             S_Materials moldInventorySlot2 = S_Mold_Inventory.instance.GetMaterial2();
             moldSlotImage2.GetComponent<Image>().sprite = moldInventorySlot2.icone;
             moldSlotImage2.SetActive(true);
-            DisplayBakeButton();
+            if(!S_Mold_Inventory.instance.IsSameMaterial()) DisplayBakeButton();
+
 
         }
         else

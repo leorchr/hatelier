@@ -43,6 +43,11 @@ public class S_Mold_Inventory : MonoBehaviour
         return matOne != null && matTwo != null;
     }
 
+    public bool IsSameMaterial()
+    {
+        return matOne == matTwo;
+    }
+
     public void CheckRecipeMaterialWithMoldMaterial()
     {
         for (int i = 0; i < recipesList.Length; i++)
@@ -60,8 +65,7 @@ public class S_Mold_Inventory : MonoBehaviour
                     //add statue 
                     S_Inventory.instance.AddToInventory(recipesList[i].statue);
 
-                    
-
+                
                     //clear inventory
                     ClearInventory();
                     //clear mold 
