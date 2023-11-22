@@ -62,8 +62,6 @@ public class S_Mold_Inventory : MonoBehaviour
 
                     
 
-                    
-
                     //clear inventory
                     ClearInventory();
                     //clear mold 
