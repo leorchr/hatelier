@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Specify the axis options for the joystick
 public enum AxisOptions { Both, Horizontal, Vertical }
 
 public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
+    // Access to the horizontal and vertical components of the joystick input
     public float Horizontal { get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; } }
     public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
@@ -25,6 +27,7 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public bool SnapX { get { return snapX; } set { snapX = value; } }
     public bool SnapY { get { return snapY; } set { snapY = value; } }
 
+    [Header("Joystick options:")]
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
     [SerializeField] private AxisOptions axisOptions = AxisOptions.Both;
