@@ -800,6 +800,16 @@ PrefabInstance:
       propertyPath: _leftStick
       value: 
       objectReference: {fileID: 597854291}
+    - target: {fileID: 4336832393254192628, guid: 4bfa3702fc24c6849ad96f32bdf121de,
+        type: 3}
+      propertyPath: m_leftStick
+      value: 
+      objectReference: {fileID: 597854291}
+    - target: {fileID: 4336832393254192628, guid: 4bfa3702fc24c6849ad96f32bdf121de,
+        type: 3}
+      propertyPath: m_moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4535143326824316428, guid: 4bfa3702fc24c6849ad96f32bdf121de,
         type: 3}
       propertyPath: m_Controller
