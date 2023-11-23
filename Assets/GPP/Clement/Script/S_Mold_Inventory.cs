@@ -8,6 +8,7 @@ public class S_Mold_Inventory : MonoBehaviour
 
     [SerializeField] private S_Materials matOne;
     [SerializeField] private S_Materials matTwo;
+    [SerializeField] private S_Materials matThree;
 
     [SerializeField] private S_Recipes[] recipesList;
 
@@ -19,7 +20,6 @@ public class S_Mold_Inventory : MonoBehaviour
 
     public void AddToInventory(S_Materials material)
     {
-       
         if (matOne != null)
         {
             matTwo = material;
@@ -28,7 +28,6 @@ public class S_Mold_Inventory : MonoBehaviour
         {
             matOne = material;
         }
-        
         S_UI_Inventory.instance.DisplayMoldInventoryIcons();
         
     }
@@ -41,6 +40,11 @@ public class S_Mold_Inventory : MonoBehaviour
     public bool IsInventoryFull()
     {
         return matOne != null && matTwo != null;
+    }
+
+    public bool IsFirstSlotFull()
+    {
+        return matOne != null;
     }
 
     public bool IsSameMaterial()
@@ -63,6 +67,7 @@ public class S_Mold_Inventory : MonoBehaviour
                     //add statue ui in mold
                     S_UI_Inventory.instance.SetStatueIconInMold(recipesList[i].statueIcon);
                     //add statue 
+                    AddToInventory(recipesList[i].statue);
                     S_Inventory.instance.AddToInventory(recipesList[i].statue);
 
                     //clear inventory
@@ -70,17 +75,11 @@ public class S_Mold_Inventory : MonoBehaviour
                     //clear mold 
                     S_UI_Inventory.instance.ClearMoldInventoryIcon();
                     break;
-
-
                 }
                 else
                 {
 
                 }
-
-
-
-
 
             }
 
@@ -91,6 +90,8 @@ public class S_Mold_Inventory : MonoBehaviour
 
     public S_Materials GetMaterial1() { return matOne; }
     public S_Materials GetMaterial2() { return matTwo; }
+
+    public S_Materials GetMaterial3() {  return matThree; }
 
 
 }
