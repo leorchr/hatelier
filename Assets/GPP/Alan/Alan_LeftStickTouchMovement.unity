@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1347164032
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,6 +1216,16 @@ PrefabInstance:
       propertyPath: _leftStick
       value: 
       objectReference: {fileID: 597854291}
+    - target: {fileID: 670282357537648225, guid: eda23d844d4f0ea48afd4dad8523701e,
+        type: 3}
+      propertyPath: m_leftStick
+      value: 
+      objectReference: {fileID: 597854291}
+    - target: {fileID: 670282357537648225, guid: eda23d844d4f0ea48afd4dad8523701e,
+        type: 3}
+      propertyPath: m_moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3891908885272802083, guid: eda23d844d4f0ea48afd4dad8523701e,
         type: 3}
       propertyPath: m_AngularDrag
@@ -1239,7 +1249,7 @@ PrefabInstance:
     - target: {fileID: 5582391092961541173, guid: eda23d844d4f0ea48afd4dad8523701e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7506549405679024651, guid: eda23d844d4f0ea48afd4dad8523701e,
         type: 3}
