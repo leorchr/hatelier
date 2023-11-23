@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
+  canBeBaked: 1
   materialName: Wood
   description: ' <color=blue>Type</color> : Wood
 
@@ -21,3 +22,4 @@ MonoBehaviour:
     pour en attraper d''autre</color>'
   icone: {fileID: 21300000, guid: acf91d9afa65fa446b82c02f7579a512, type: 3}
   cookTime: 0
+  prefab: {fileID: 2276283859414284984, guid: 2350d3636593c734e939fca74c0bd439, type: 3}
