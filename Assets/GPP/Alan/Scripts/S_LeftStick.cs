@@ -4,19 +4,27 @@ using UnityEngine.EventSystems;
 // Specify the axis options for the joystick
 public enum AxisOptions { Both, Horizontal, Vertical }
 
+// Using Unity's UI event handling system interfaces
+// https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/SupportedEvents.html
 public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     // Access to the horizontal and vertical components of the joystick input
-    public float Horizontal { get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; } }
-    public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
+    public float Horizontal { get { return input.x; } }
+    public float Vertical { get { return input.y; } }
+
+    // Combined inputs
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
 
+    // How far the handle can goes from the center of the joystick
+    // If put to 1, the center of the handle will be on the joystick's circumference
     public float HandleRange
     {
         get { return handleRange; }
         set { handleRange = Mathf.Abs(value); }
     }
 
+    // The zone that the movement starts based on the scale of the joystick
+    // If put to zero, the movement starts from the center of the joystick
     public float DeadZone
     {
         get { return deadZone; }
@@ -24,15 +32,11 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     }
 
     public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
-    public bool SnapX { get { return snapX; } set { snapX = value; } }
-    public bool SnapY { get { return snapY; } set { snapY = value; } }
-
+    
     [Header("Joystick options:")]
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
     [SerializeField] private AxisOptions axisOptions = AxisOptions.Both;
-    [SerializeField] private bool snapX = false;
-    [SerializeField] private bool snapY = false;
 
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
@@ -102,6 +106,7 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             input = Vector2.zero;
     }
 
+    // Format the input based on the specified axis options
     private void FormatInput()
     {
         // Format the input based on the specified axis options
@@ -109,40 +114,6 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             input = new Vector2(input.x, 0f);
         else if (axisOptions == AxisOptions.Vertical)
             input = new Vector2(0f, input.y);
-    }
-
-    private float SnapFloat(float value, AxisOptions snapAxis)
-    {
-        if (value == 0)
-            return value;
-
-        if (axisOptions == AxisOptions.Both)
-        {
-            float angle = Vector2.Angle(input, Vector2.up);
-            if (snapAxis == AxisOptions.Horizontal)
-            {
-                if (angle < 22.5f || angle > 157.5f)
-                    return 0;
-                else
-                    return (value > 0) ? 1 : -1;
-            }
-            else if (snapAxis == AxisOptions.Vertical)
-            {
-                if (angle > 67.5f && angle < 112.5f)
-                    return 0;
-                else
-                    return (value > 0) ? 1 : -1;
-            }
-            return value;
-        }
-        else
-        {
-            if (value > 0)
-                return 1;
-            if (value < 0)
-                return -1;
-        }
-        return 0;
     }
 
     public virtual void OnPointerUp(PointerEventData eventData)
@@ -168,7 +139,7 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             // Calculate the anchored position relative to the RectTransform
             return localPoint - (background.anchorMax * baseRect.sizeDelta) + pivotOffset;
         }
-
+        
         // Return Vector2.zero if conversion fails
         return Vector2.zero;
     }

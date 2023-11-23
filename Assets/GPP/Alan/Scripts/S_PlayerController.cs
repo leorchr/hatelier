@@ -1,26 +1,43 @@
 using UnityEngine;
 using System;
 
-[RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
 
 public class S_PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private S_LeftStick _leftStick;
+    Rigidbody m_rigidbody = null;
+    Animator m_animator = null;
+    Vector3 m_playerMoveInput  = Vector3.zero;
 
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private S_LeftStick m_leftStick;
+    [SerializeField] private float m_moveSpeed;
+
+    private void Awake()
+    {
+        m_rigidbody = GetComponent<Rigidbody>();
+        m_animator = GetComponent<Animator>();
+    }
 
     private bool isNotInMenu = true;
 
     private void FixedUpdate()
     {
-        Debug.Log(isNotInMenu);
-        _rigidbody.velocity = new Vector3(_leftStick.Horizontal * _moveSpeed * Convert.ToSingle(isNotInMenu), _rigidbody.velocity.y, _leftStick.Vertical * _moveSpeed * Convert.ToSingle(isNotInMenu));
+        m_rigidbody.velocity = new Vector3(m_leftStick.Horizontal * m_moveSpeed, m_rigidbody.velocity.y, m_leftStick.Vertical * m_moveSpeed);
 
-        if (_leftStick.Horizontal != 0 || _leftStick.Vertical != 0)
+        if (m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0)
         {
-            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
+            transform.rotation = Quaternion.LookRotation(m_rigidbody.velocity);
         }
+
+        m_animator.SetFloat("Horizontal", m_leftStick.Horizontal);
+        m_animator.SetFloat("Vertical", m_leftStick.Vertical);
+    }
+
+    private void MovePlayer()
+    {
+        m_playerMoveInput = new Vector3(m_playerMoveInput.x * m_moveSpeed * m_rigidbody.mass, 
+                                        m_playerMoveInput.y, 
+                                        m_playerMoveInput.z * m_moveSpeed * m_rigidbody.mass);
     }
 
     public void setIsNotInMenu(bool b) {isNotInMenu = b;}
