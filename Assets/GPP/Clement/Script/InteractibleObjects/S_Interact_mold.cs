@@ -8,6 +8,7 @@ public class S_Interact_mold : S_Interactable
 {
     [Header("Display Text")]
     public string description = "Press <color=red>RIGHT CLICK</color>";
+    public string cannotUseMatText = "<color=red>CANNOT PUT 2 SAME MATERIALS</color>";
     [Header("Inventory")]
     public Image reducedInventory;
     public GameObject mainInventoryGroup;
@@ -21,45 +22,65 @@ public class S_Interact_mold : S_Interactable
 
     public override string GetDescription()
     {
+        if(S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
+        {
             return description;
+        }
+        else 
+        { 
+            return cannotUseMatText; 
+        }
+           
     }
 
     public override string GetMatDescription()
     {
+        if(S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
+        {
             return mold.description;
+
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public override void Interact()
     {
-        if (isInInventory == false)
+        if (S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
         {
-            S_Menu_Manager.Instance.stopPlayer(false);
-            mainInventoryGroup.gameObject.SetActive(true);
-            reducedInventory.gameObject.SetActive(false);
-            if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
+
+            if (isInInventory == false)
             {
+                S_Menu_Manager.Instance.stopPlayer(false);
+                mainInventoryGroup.gameObject.SetActive(true);
+                reducedInventory.gameObject.SetActive(false);
+                if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
+                {
 
-                S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
-                S_Inventory.instance.ClearInventory();
-                S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-
-
+                    S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
+                    S_Inventory.instance.ClearInventory();
+                    S_UI_Inventory.instance.ClearPlayerInventoryIcon();
+                }
+                isInInventory = true;
+            }
+            else
+            {
+                S_Menu_Manager.Instance.stopPlayer(true);
+                mainInventoryGroup.gameObject.SetActive(false);
+                reducedInventory.gameObject.SetActive(true);
+                new WaitForSeconds(3);
+                //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
+                isInInventory = false;
 
 
             }
-            isInInventory = true;
         }
-        else
-        {
-            S_Menu_Manager.Instance.stopPlayer(true);
-            mainInventoryGroup.gameObject.SetActive(false);
-            reducedInventory.gameObject.SetActive(true);
-            new WaitForSeconds(3);
-            //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
-            isInInventory = false;
+       
+        
 
-            
-        }
+        
 
     }
 
