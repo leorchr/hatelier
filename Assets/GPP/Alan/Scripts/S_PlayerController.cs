@@ -6,8 +6,8 @@ using System;
 public class S_PlayerController : MonoBehaviour
 {
     Rigidbody m_rigidbody = null;
-    Animator m_animator = null;
-    Vector3 m_playerMoveInput  = Vector3.zero;
+    // Animator m_animator = null;
+    // Vector3 m_playerMoveInput  = Vector3.zero;
 
     [SerializeField] private S_LeftStick m_leftStick;
     [SerializeField] private float m_moveSpeed;
@@ -15,7 +15,7 @@ public class S_PlayerController : MonoBehaviour
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
-        m_animator = GetComponent<Animator>();
+        // m_animator = GetComponent<Animator>();
     }
 
     private bool isNotInMenu = true;
@@ -29,16 +29,16 @@ public class S_PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(m_rigidbody.velocity);
         }
 
-        m_animator.SetFloat("Horizontal", m_leftStick.Horizontal);
-        m_animator.SetFloat("Vertical", m_leftStick.Vertical);
+        // m_animator.SetFloat("Horizontal", m_leftStick.Horizontal);
+        // m_animator.SetFloat("Vertical", m_leftStick.Vertical);
     }
 
-    private void MovePlayer()
-    {
-        m_playerMoveInput = new Vector3(m_playerMoveInput.x * m_moveSpeed * m_rigidbody.mass, 
-                                        m_playerMoveInput.y, 
-                                        m_playerMoveInput.z * m_moveSpeed * m_rigidbody.mass);
-    }
+    // private void MovePlayer()
+    // {
+    //     m_playerMoveInput = new Vector3(m_playerMoveInput.x * m_moveSpeed * m_rigidbody.mass, 
+    //                                     m_playerMoveInput.y, 
+    //                                     m_playerMoveInput.z * m_moveSpeed * m_rigidbody.mass);
+    // }
 
-    public void setIsNotInMenu(bool b) {isNotInMenu = b;}
+    public void setIsNotInMenu(bool b) { isNotInMenu = b; }
 }
