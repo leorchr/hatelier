@@ -5,10 +5,21 @@ using UnityEngine;
 
 public class S_Timer : MonoBehaviour
 {
+    public static S_Timer instance;
     public TextMeshProUGUI timerText;
     public float remainingTime;
-    
-    // Update is called once per frame
+    public float maxTime;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Start()
+    {
+        maxTime = remainingTime;
+    }
     void Update()
     {
         remainingTime -= Time.deltaTime;
