@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-[RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
+[RequireComponent(typeof(Rigidbody))]
 
 public class S_PlayerController : MonoBehaviour
 {
