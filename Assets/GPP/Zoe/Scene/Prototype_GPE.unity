@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76580578}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &88400516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3382112789162925109, guid: eda23d844d4f0ea48afd4dad8523701e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1182955222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3210650f47957584c8521c7d06ddf01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &121971631
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +854,18 @@ Transform:
   - {fileID: 2044423732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &449929125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5919057080261109753, guid: 3499853ad5dbef045a9365f0951d5f60,
+    type: 3}
+  m_PrefabInstance: {fileID: 7270115051112551180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &636429212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9106037371477137543, guid: 8622e91da8d20464d83ba13c1c2506e2,
@@ -1494,6 +1518,11 @@ PrefabInstance:
     - target: {fileID: 670282357537648225, guid: eda23d844d4f0ea48afd4dad8523701e,
         type: 3}
       propertyPath: _leftStick
+      value: 
+      objectReference: {fileID: 1096336163}
+    - target: {fileID: 670282357537648225, guid: eda23d844d4f0ea48afd4dad8523701e,
+        type: 3}
+      propertyPath: m_leftStick
       value: 
       objectReference: {fileID: 1096336163}
     - target: {fileID: 3097378918552790055, guid: eda23d844d4f0ea48afd4dad8523701e,
@@ -2248,12 +2277,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622283563}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1726502367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4009364844910171680, guid: 3499853ad5dbef045a9365f0951d5f60,
-    type: 3}
-  m_PrefabInstance: {fileID: 7270115051112551180}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1735040359 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 97278034887288498, guid: 3499853ad5dbef045a9365f0951d5f60,
@@ -2266,18 +2289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1757202803 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5919057080261109753, guid: 3499853ad5dbef045a9365f0951d5f60,
+--- !u!1 &1896306016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6857323749870727632, guid: 3499853ad5dbef045a9365f0951d5f60,
     type: 3}
   m_PrefabInstance: {fileID: 7270115051112551180}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1902243125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,8 +2662,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactiontype: 0
   description: Press <color=red>RIGHT CLICK</color>
-  reducedInventory: {fileID: 1757202803}
-  mainInventoryGroup: {fileID: 1726502367}
+  cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
+  reducedInventory: {fileID: 449929125}
+  mainInventoryGroup: {fileID: 1896306016}
   mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
 --- !u!65 &2044423729
 BoxCollider:
@@ -2748,7 +2766,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matOne: {fileID: 0}
   matTwo: {fileID: 0}
-  statue: {fileID: 0}
   recipesList:
   - {fileID: 11400000, guid: 5665999ef62bf0d42b2f8d12009ead53, type: 2}
 --- !u!1 &2064410647
@@ -3267,21 +3284,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1938475096594022726, guid: 3499853ad5dbef045a9365f0951d5f60,
+    - target: {fileID: 1828800832128680333, guid: 3499853ad5dbef045a9365f0951d5f60,
         type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938475096594022726, guid: 3499853ad5dbef045a9365f0951d5f60,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938475096594022726, guid: 3499853ad5dbef045a9365f0951d5f60,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2044423728}
     - target: {fileID: 2789721957158503858, guid: 3499853ad5dbef045a9365f0951d5f60,
         type: 3}
       propertyPath: m_Name
@@ -3387,6 +3394,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8333329060404370949, guid: 3499853ad5dbef045a9365f0951d5f60,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 88400516}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
