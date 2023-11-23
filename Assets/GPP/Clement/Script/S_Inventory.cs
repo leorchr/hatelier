@@ -10,9 +10,11 @@ public class S_Inventory : MonoBehaviour
 
     [SerializeField] private S_Materials inventory;
 
+    public Transform dropPoint;
     private void Awake()
     {
         if (!instance) instance = this;
+      
     }
 
     public void AddToInventory(S_Materials material)
@@ -25,6 +27,20 @@ public class S_Inventory : MonoBehaviour
     {
         inventory = null;
         Debug.Log("cleared");
+    }
+
+    public void DropItem()
+    {
+       
+        if (inventory == null) return;
+        if (inventory.prefab == null) { Debug.LogError("Prefab need to be asigned to the scriptable object"); return; }
+    
+        GameObject item = Instantiate(inventory.prefab, dropPoint);
+        item.transform.parent = null;
+        
+        ClearInventory();
+        S_UI_Inventory.instance.ClearPlayerInventoryIcon();
+        
     }
 
     public S_Materials GetMaterials() { return inventory; }

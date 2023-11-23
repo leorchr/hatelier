@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
   m_Name: Bronze
   m_EditorClassIdentifier: 
+  canBeBaked: 1
   materialName: Bronze
   description: ' <color=blue>Type</color> : Bronze
 
@@ -21,3 +22,4 @@ MonoBehaviour:
     pour en attraper d''autre</color>'
   icone: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   cookTime: 0
+  prefab: {fileID: 5623710495034676762, guid: e43e4d60ec528b14ba1da9d65d79fa7e, type: 3}
