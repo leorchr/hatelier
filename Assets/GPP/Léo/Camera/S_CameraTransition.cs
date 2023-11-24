@@ -21,6 +21,7 @@ public class S_CameraTransition : MonoBehaviour
     private Vector3 moveVelocity;
 
     private bool canMove = false;
+    private static bool movementOngoing = false;
 
     [Space]
     [TextArea]
@@ -38,24 +39,27 @@ public class S_CameraTransition : MonoBehaviour
     private void Start()
     {
         canMove = false;
+        movementOngoing = false;
         targetPosition = camPos1.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (movementOngoing) return;
         if (other.gameObject.CompareTag("Player"))
         {
-            if (targetPosition == camPos1.position) {
+            if(Vector3.Distance(other.transform.position, playerPos1.position) < Vector3.Distance(other.transform.position, playerPos2.position))
+            {
                 targetPosition = camPos2.position;
-                canMove = true;
                 other.transform.position = playerPos2.position;
             }
-            else if (targetPosition == camPos2.position)
+            else
             {
                 targetPosition = camPos1.position;
-                canMove = true;
                 other.transform.position = playerPos1.position;
             }
+            canMove = true;
+            movementOngoing = true;
         }
     }
 
@@ -69,7 +73,7 @@ public class S_CameraTransition : MonoBehaviour
         if (canMove)
         {
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
-            if (Vector3.Distance(Camera.main.transform.position, targetPosition) <= smoothDampAccuracy) canMove = false;
+            if (Vector3.Distance(Camera.main.transform.position, targetPosition) <= smoothDampAccuracy) { canMove = false; movementOngoing = false; }
         }
     }
 
