@@ -20,19 +20,6 @@ public class S_Player_Interaction : MonoBehaviour
     {
         if(!instance) instance = this;
     }
-   
-    void Update()
-    {
-       
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (interactable)
-            {
-                HandleInteraction();
-            }
-        }
-
-    }
 
    public void OnTriggerEnter(Collider collider)
     {
@@ -59,9 +46,6 @@ public class S_Player_Interaction : MonoBehaviour
         }
     }
 
-
-
-
     public void OnTriggerExit(Collider other)
     {
         OnInteraction();
@@ -82,6 +66,13 @@ public class S_Player_Interaction : MonoBehaviour
             case S_Interactable.InteractionType.Click:
                 interactable.Interact();
                 break;
+        }
+    }
+    public void InteractionButton()
+    {
+        if (interactable)
+        {
+            HandleInteraction();
         }
     }
 }
