@@ -138,9 +138,4 @@ public class S_UI_Inventory : MonoBehaviour
             DisableButton();
         }
     }
-
-    public void setResultImg(S_Materials mat)
-    {
-        moldSlotImage3.GetComponent<Image>().sprite = mat.icone;
-    }
 }

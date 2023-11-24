@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class S_Mold_Inventory : MonoBehaviour
 {
-    //public static S_Mold_Inventory instance;
-
     [SerializeField] private S_Materials matOne;
     [SerializeField] private S_Materials matTwo;
     [SerializeField] private S_Materials matThree;
 
     [SerializeField] private S_Recipes[] recipesList;
-  
-    private void Awake()
-    {
-        //if (!instance) instance = this;
-    }
-
     public void AddToInventory(S_Materials material)
     {
         if (matOne != null)
@@ -28,7 +20,6 @@ public class S_Mold_Inventory : MonoBehaviour
             matOne = material;
         }
         S_UI_Inventory.instance.DisplayMoldInventoryIcons();
-        
     }
     public void ClearInventory()
     {
@@ -63,35 +54,23 @@ public class S_Mold_Inventory : MonoBehaviour
                     Debug.Log("corresponding");
                     //Add ui "Baking ..." + Lunch timer
 
-                    //add statue ui in mold
-                    S_UI_Inventory.instance.SetStatueIconInMold(recipesList[i].statueIcon);
-                    //add statue 
                     AddToInventory(recipesList[i].statue);
+                    //add statue 
                     S_Inventory.instance.AddToInventory(recipesList[i].statue);
 
                     //clear inventory
                     ClearInventory();
                     //clear mold 
                     S_UI_Inventory.instance.refreshMoldInv();
-                    S_UI_Inventory.instance.setResultImg(recipesList[i].statue);
+                    //add statue ui in mold
+                    S_UI_Inventory.instance.SetStatueIconInMold(recipesList[i].statueIcon);
+
                     break;
                 }
-                else
-                {
-
-                }
-
             }
-
         }
     }
-
-
-
     public S_Materials GetMaterial1() { return matOne; }
     public S_Materials GetMaterial2() { return matTwo; }
-
     public S_Materials GetMaterial3() {  return matThree; }
-
-
 }
