@@ -9,6 +9,7 @@ public class S_TourneDisque : MonoBehaviour
     //si true = gauche // si false = droite
     public bool turnToLeft;
     public float speedRotation;
+    public float startRotationAngle;
     public float rotationAngle;
     
     private Vector3 rotation;
@@ -31,7 +32,7 @@ public class S_TourneDisque : MonoBehaviour
         }
         else
         {
-            rot = Quaternion.Euler(rotation.x, 0, rotation.z);
+            rot = Quaternion.Euler(rotation.x, startRotationAngle, rotation.z);
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, speedRotation * Time.deltaTime);
         }
     }
