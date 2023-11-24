@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class S_Mold_Inventory : MonoBehaviour
 {
-    public static S_Mold_Inventory instance;
+    //public static S_Mold_Inventory instance;
 
     [SerializeField] private S_Materials matOne;
     [SerializeField] private S_Materials matTwo;
     [SerializeField] private S_Materials matThree;
 
     [SerializeField] private S_Recipes[] recipesList;
-
   
     private void Awake()
     {
-        if (!instance) instance = this;
+        //if (!instance) instance = this;
     }
 
     public void AddToInventory(S_Materials material)
@@ -73,7 +72,8 @@ public class S_Mold_Inventory : MonoBehaviour
                     //clear inventory
                     ClearInventory();
                     //clear mold 
-                    S_UI_Inventory.instance.ClearMoldInventoryIcon();
+                    S_UI_Inventory.instance.refreshMoldInv();
+                    S_UI_Inventory.instance.setResultImg(recipesList[i].statue);
                     break;
                 }
                 else

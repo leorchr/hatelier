@@ -16,12 +16,15 @@ public class S_Interact_mold : S_Interactable
 
     private Button BakeButton;
 
+    private S_Mold_Inventory moldInventory;
+
     public S_Materials mold;
     private bool isInInventory = false;
 
     private void Start()
     {
         BakeButton = mainInventoryGroup.transform.Find("Bake").GetComponent<Button>();
+        moldInventory = GetComponent<S_Mold_Inventory>();
     }
 
     private void Update()
@@ -33,7 +36,7 @@ public class S_Interact_mold : S_Interactable
     {
         if (S_Inventory.instance.GetMaterials() != null)
         {
-            if (S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
+            if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
             {
                 return description;
             }
@@ -42,11 +45,11 @@ public class S_Interact_mold : S_Interactable
                 return cannotUseMatText;
             }
         }
-        else if(!S_Mold_Inventory.instance.IsInventoryFull())
+        else if(!moldInventory.IsInventoryFull())
         {
                 return inventoryEmpty;
         }
-        else if (S_Mold_Inventory.instance.IsFirstSlotFull())
+        else if (moldInventory.IsFirstSlotFull())
         {
             return description;
         }
@@ -56,7 +59,7 @@ public class S_Interact_mold : S_Interactable
 
     public override string GetMatDescription()
     {
-        if(S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
+        if(S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
         {
             return mold.description;
 
@@ -70,7 +73,7 @@ public class S_Interact_mold : S_Interactable
     public override void Interact()
     {
         
-        if (S_Inventory.instance.GetMaterials() != S_Mold_Inventory.instance.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
         {
 
             if (isInInventory == false)
@@ -78,12 +81,14 @@ public class S_Interact_mold : S_Interactable
                 S_Menu_Manager.Instance.stopPlayer(false);
                 mainInventoryGroup.gameObject.SetActive(true);
                 reducedInventory.gameObject.SetActive(false);
+                S_UI_Inventory.instance.SetMoldInventory(moldInventory);
+                S_UI_Inventory.instance.refreshMoldInv();
 
                 if(S_Inventory.instance.GetMaterials() != null)
-                if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
+                if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
-                    
-                    S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
+
+                    moldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
                     S_Inventory.instance.ClearInventory();
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();
                     BakeButton.onClick.AddListener(PressedBakeButton);
@@ -114,7 +119,7 @@ public class S_Interact_mold : S_Interactable
     {
         //Lunch timer 
         //add statue to player inventory
-        S_Mold_Inventory.instance.CheckRecipeMaterialWithMoldMaterial();
+        moldInventory.CheckRecipeMaterialWithMoldMaterial();
         
     }
     
