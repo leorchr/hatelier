@@ -14,8 +14,15 @@ public class S_Interact_mold : S_Interactable
     public Image reducedInventory;
     public GameObject mainInventoryGroup;
 
+    private Button BakeButton;
+
     public S_Materials mold;
     private bool isInInventory = false;
+
+    private void Start()
+    {
+        BakeButton = mainInventoryGroup.transform.Find("Bake").GetComponent<Button>();
+    }
 
     private void Update()
     {
@@ -75,10 +82,11 @@ public class S_Interact_mold : S_Interactable
                 if(S_Inventory.instance.GetMaterials() != null)
                 if (!S_Mold_Inventory.instance.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
-
+                    
                     S_Mold_Inventory.instance.AddToInventory(S_Inventory.instance.GetMaterials());
                     S_Inventory.instance.ClearInventory();
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();
+                    BakeButton.onClick.AddListener(PressedBakeButton);
                 }
                
                 isInInventory = true;
@@ -91,7 +99,7 @@ public class S_Interact_mold : S_Interactable
                 new WaitForSeconds(3);
                 //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
                 isInInventory = false;
-
+                BakeButton.onClick.RemoveAllListeners();
 
             }
         }
