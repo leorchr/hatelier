@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerPos2
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -140,6 +140,9 @@ MonoBehaviour:
   movementSmoothTime: 0.2
   notes: " - Tag Player sur le joueur\n - Tag Main Camera sur la cam\xE9ra\n - Le
     collider doit \xEAtre trigger"
+  visualDebugging: 1
+  positionColor: {r: 0.75, g: 0.2, b: 0.2, a: 0.75}
+  wireRadius: 1
 --- !u!1 &5495376077840327634
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +186,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerPos1
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

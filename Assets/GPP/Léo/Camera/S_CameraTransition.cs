@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class S_CameraTransition : MonoBehaviour
 {
@@ -22,6 +25,14 @@ public class S_CameraTransition : MonoBehaviour
     [Space]
     [TextArea]
     public string notes = " - Tag Player sur le joueur\n - Tag Main Camera sur la caméra\n - Le collider doit être trigger";
+
+    [Space]
+    [Header("Debugging \n-------------------------")]
+    [Space]
+
+    [SerializeField] private bool visualDebugging = true;
+    [SerializeField] private Color positionColor = new Color(0.75f, 0.2f, 0.2f, 0.75f);
+    [Range(0f,10f)] [SerializeField] private float wireRadius = 1f;
 
 
     private void Start()
@@ -61,4 +72,19 @@ public class S_CameraTransition : MonoBehaviour
             if (Vector3.Distance(Camera.main.transform.position, targetPosition) <= smoothDampAccuracy) canMove = false;
         }
     }
+
+#if UNITY_EDITOR
+
+    private void OnDrawGizmos()
+    {
+        if (!visualDebugging)
+            return;
+
+        Handles.color = positionColor;
+        Handles.DrawWireDisc(playerPos1.transform.position, playerPos1.transform.up, wireRadius);
+        Handles.DrawWireDisc(playerPos2.transform.position, playerPos2.transform.up, wireRadius);
+    }
+
+#endif
+
 }
