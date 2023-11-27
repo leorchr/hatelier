@@ -53,7 +53,7 @@ public class S_PlayerController : MonoBehaviour
 
         float t = m_rigidbody.velocity.magnitude;
 
-        Debug.Log(m_rigidbody.velocity.sqrMagnitude);
+        //Debug.Log(m_rigidbody.velocity.sqrMagnitude);
         m_animator.SetBool("isMoving", m_rigidbody.velocity.sqrMagnitude > 0.2f);
         // m_animator.SetFloat("Horizontal", m_leftStick.Horizontal);
         // m_animator.SetFloat("Vertical", m_leftStick.Vertical);
