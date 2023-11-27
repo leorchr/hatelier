@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class S_Statue_Inventory : MonoBehaviour
 {
+    public static S_Statue_Inventory instance;
+
     [SerializeField] private S_Materials head;
     [SerializeField] private S_Materials top;
     [SerializeField] private S_Materials bottom;
 
-  public void AddToInventory(S_Materials material)
+    private void Awake()
+    {
+        if (!instance) instance = this;
+    }
+    public void AddToInventory(S_Materials material)
    {
         if(head != null)
         {
@@ -22,7 +28,7 @@ public class S_Statue_Inventory : MonoBehaviour
         {
             bottom = material;
         }
-
+        S_UI_Inventory.instance.DisplayStatueInventory();
    }
 
     public void RemoveFromInventory(S_Materials material)
@@ -33,6 +39,8 @@ public class S_Statue_Inventory : MonoBehaviour
     }
 
 
-
+    public S_Materials GetMaterial1() { return head; }
+    public S_Materials GetMaterial2() { return top; }
+    public S_Materials GetMaterial3() { return bottom; }
 }
 

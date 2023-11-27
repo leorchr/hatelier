@@ -73,7 +73,7 @@ public class S_Interact_mold : S_Interactable
     public override void Interact()
     {
         
-        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1() || isInInventory == true)
         {
 
             if (isInInventory == false)

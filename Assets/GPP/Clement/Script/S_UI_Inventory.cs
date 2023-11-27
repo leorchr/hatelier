@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,9 @@ public class S_UI_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage1;
     [SerializeField] private GameObject moldSlotImage2;
     [SerializeField] private GameObject moldSlotImage3;
+    [SerializeField] private GameObject statueSlotImage1;
+    [SerializeField] private GameObject statueSlotImage2;
+    [SerializeField] private GameObject statueSlotImage3;
     [SerializeField] private GameObject playerInventoryImage;
     [SerializeField] private GameObject bakeButton;
 
@@ -36,6 +40,31 @@ public class S_UI_Inventory : MonoBehaviour
 
     }
 
+    public void DisplayStatueInventory()
+    {
+        if(S_Statue_Inventory.instance.GetMaterial1() != null)
+        {
+            S_Materials statueHead = S_Statue_Inventory.instance.GetMaterial1();
+            statueSlotImage1.GetComponent<Image>().sprite = statueHead.icone;
+            statueSlotImage1.SetActive(true);
+
+        }
+        if (S_Statue_Inventory.instance.GetMaterial2() != null)
+        {
+            S_Materials statueTop = S_Statue_Inventory.instance.GetMaterial2();
+            statueSlotImage2.GetComponent<Image>().sprite = statueTop.icone;
+            statueSlotImage2.SetActive(true);
+
+        }
+        if (S_Statue_Inventory.instance.GetMaterial3() != null)
+        {
+            S_Materials statueBottom = S_Statue_Inventory.instance.GetMaterial3();
+            statueSlotImage3.GetComponent<Image>().sprite = statueBottom.icone;
+            statueSlotImage3.SetActive(true);
+
+        }
+
+    }
     public void DisplayMoldInventoryIcons()
     {
         if(currentMoldInv.GetMaterial1() != null)

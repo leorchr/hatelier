@@ -56,7 +56,8 @@ public class S_Mold_Inventory : MonoBehaviour
 
                     AddToInventory(recipesList[i].statue);
                     //add statue 
-                    S_Inventory.instance.AddToInventory(recipesList[i].statue);
+                    //S_Inventory.instance.AddToInventory(recipesList[i].statue);
+                    S_Statue_Inventory.instance.AddToInventory(recipesList[i].statue);
 
                     //clear inventory
                     ClearInventory();
