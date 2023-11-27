@@ -50,19 +50,18 @@ public class S_Mold_Inventory : MonoBehaviour
             {
                 if((recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo) && matOne != matTwo)
                 {
-                    
-                    Debug.Log("corresponding");
                     //Add ui "Baking ..." + Lunch timer
-
                     AddToInventory(recipesList[i].statue);
-                    //add statue 
-                    //S_Inventory.instance.AddToInventory(recipesList[i].statue);
+
+                    //add statue to statue inventory 
                     S_Statue_Inventory.instance.AddToInventory(recipesList[i].statue);
 
-                    //clear inventory
+                    //clear mold inventory
                     ClearInventory();
-                    //clear mold 
+
+                    //clear mold ui
                     S_UI_Inventory.instance.refreshMoldInv();
+
                     //add statue ui in mold
                     S_UI_Inventory.instance.SetStatueIconInMold(recipesList[i].statueIcon);
 

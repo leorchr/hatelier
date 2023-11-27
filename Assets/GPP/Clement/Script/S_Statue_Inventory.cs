@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class S_Statue_Inventory : MonoBehaviour
@@ -20,14 +21,18 @@ public class S_Statue_Inventory : MonoBehaviour
         {
             top = material;
         }
-        else
+        else if(head == null)
         {
             head = material;
         }
-        if(head != null && top != null)
+        else if(top != null)
         {
             bottom = material;
         }
+        //if( top != null && head != null)
+        //{
+        //    bottom = material;
+        //}
         S_UI_Inventory.instance.DisplayStatueInventory();
    }
 

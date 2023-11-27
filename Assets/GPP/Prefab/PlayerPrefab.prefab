@@ -3601,7 +3601,7 @@ GameObject:
   - component: {fileID: 6765437671787938218}
   - component: {fileID: 1768533165880515753}
   m_Layer: 5
-  m_Name: HeadSlot
+  m_Name: TopSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5812,9 +5812,9 @@ MonoBehaviour:
   moldSlotImage1: {fileID: 6488290235840704965}
   moldSlotImage2: {fileID: 3123213029150271270}
   moldSlotImage3: {fileID: 6552126487794319137}
-  statueSlotImage1: {fileID: 0}
-  statueSlotImage2: {fileID: 0}
-  statueSlotImage3: {fileID: 0}
+  statueSlotImage1: {fileID: 2526285219421729366}
+  statueSlotImage2: {fileID: 3768694277570337315}
+  statueSlotImage3: {fileID: 7409561256152047845}
   playerInventoryImage: {fileID: 2557699952557007164}
   bakeButton: {fileID: 5289294586803766603}
 --- !u!1 &6110304423498339656
@@ -6012,6 +6012,7 @@ GameObject:
   - component: {fileID: 5849071660843441267}
   - component: {fileID: 6402054642627867514}
   - component: {fileID: 1691573835921111273}
+  - component: {fileID: 8226221906745972832}
   m_Layer: 5
   m_Name: Horizontal
   m_TagString: Untagged
@@ -6079,6 +6080,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8226221906745972832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324081019539834171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ac6656e4f861e428a523b9bcbe9dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 0}
+  top: {fileID: 0}
+  bottom: {fileID: 0}
 --- !u!1 &6488290235840704965
 GameObject:
   m_ObjectHideFlags: 0
@@ -6908,7 +6924,7 @@ GameObject:
   - component: {fileID: 7456267310169135135}
   - component: {fileID: 3053442999727771280}
   m_Layer: 5
-  m_Name: HeadSlot (1)
+  m_Name: BottomSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -363,45 +363,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2350d3636593c734e939fca74c0bd439, type: 3}
---- !u!1 &1111727791 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6250387761464858941, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1111727795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111727791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ac6656e4f861e428a523b9bcbe9dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 0}
-  top: {fileID: 0}
-  bottom: {fileID: 0}
---- !u!1 &1361813999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5145717663213526675, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1527375603 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5816325603855033469, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1631298200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5167485338629521522, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1724304550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,50 +371,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3326500917616446512, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: statueSlotImage1
-      value: 
-      objectReference: {fileID: 1527375603}
-    - target: {fileID: 3326500917616446512, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: statueSlotImage2
-      value: 
-      objectReference: {fileID: 1361813999}
-    - target: {fileID: 3326500917616446512, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: statueSlotImage3
-      value: 
-      objectReference: {fileID: 1631298200}
     - target: {fileID: 3455853547736264965, guid: f15c125ff83582e41a90b73b31b2ba34,
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5145717663213526675, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: m_Name
-      value: TopSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5145717663213526675, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167485338629521522, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: m_Name
-      value: BottomSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167485338629521522, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816325603855033469, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256593598171699054, guid: f15c125ff83582e41a90b73b31b2ba34,
         type: 3}
@@ -508,11 +429,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6250387761464858941, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1111727795}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
 --- !u!1 &2016193122
 GameObject:

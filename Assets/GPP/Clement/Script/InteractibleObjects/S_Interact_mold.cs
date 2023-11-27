@@ -13,12 +13,11 @@ public class S_Interact_mold : S_Interactable
     [Header("Inventory")]
     public Image reducedInventory;
     public GameObject mainInventoryGroup;
+    public S_Materials mold;
 
     private Button BakeButton;
-
     private S_Mold_Inventory moldInventory;
 
-    public S_Materials mold;
     private bool isInInventory = false;
 
     private void Start()
@@ -26,6 +25,7 @@ public class S_Interact_mold : S_Interactable
         BakeButton = mainInventoryGroup.transform.Find("Bake").GetComponent<Button>();
         moldInventory = GetComponent<S_Mold_Inventory>();
     }
+
     public override string GetDescription()
     {
         if (S_Inventory.instance.GetMaterials() != null)
@@ -39,21 +39,21 @@ public class S_Interact_mold : S_Interactable
                 return cannotUseMatText;
             }
         }
-        else if(!moldInventory.IsInventoryFull())
+        else if (!moldInventory.IsInventoryFull())
         {
-                return inventoryEmpty;
+            return inventoryEmpty;
         }
         else if (moldInventory.IsFirstSlotFull())
         {
             return description;
         }
         else { return description; }
-           
+
     }
 
     public override string GetMatDescription()
     {
-        if(S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
         {
             return mold.description;
 
@@ -66,7 +66,7 @@ public class S_Interact_mold : S_Interactable
 
     public override void Interact()
     {
-        
+
         if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1() || isInInventory == true)
         {
 
@@ -78,16 +78,16 @@ public class S_Interact_mold : S_Interactable
                 S_UI_Inventory.instance.SetMoldInventory(moldInventory);
                 S_UI_Inventory.instance.refreshMoldInv();
 
-                if(S_Inventory.instance.GetMaterials() != null)
-                if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
-                {
+                if (S_Inventory.instance.GetMaterials() != null)
+                    if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
+                    {
 
-                    moldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
-                    S_Inventory.instance.ClearInventory();
-                    S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-                    BakeButton.onClick.AddListener(PressedBakeButton);
-                }
-               
+                        moldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
+                        S_Inventory.instance.ClearInventory();
+                        S_UI_Inventory.instance.ClearPlayerInventoryIcon();
+                        BakeButton.onClick.AddListener(PressedBakeButton);
+                    }
+
                 isInInventory = true;
             }
             else
@@ -102,10 +102,10 @@ public class S_Interact_mold : S_Interactable
 
             }
         }
-       
-        
 
-        
+
+
+
 
     }
 
@@ -114,7 +114,7 @@ public class S_Interact_mold : S_Interactable
         //Lunch timer 
         //add statue to player inventory
         moldInventory.CheckRecipeMaterialWithMoldMaterial();
-        
+
     }
-    
+
 }
