@@ -47,6 +47,8 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     private Canvas canvas;
     private Camera cam;
 
+    private bool isLocked = false;
+
     private Vector2 input = Vector2.zero;
 
     protected virtual void Start()
@@ -74,24 +76,27 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     public void OnDrag(PointerEventData eventData)
     {
-        cam = null;
-        if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
-            cam = canvas.worldCamera;
+        if (!isLocked)
+        {
+            cam = null;
+            if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
+                cam = canvas.worldCamera;
 
-        // Convert the background's world position to screen coordinates
-        Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position);
+            // Convert the background's world position to screen coordinates
+            Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position);
 
-        // Calculate the radius of the joystick's background
-        Vector2 radius = background.sizeDelta / 2;
+            // Calculate the radius of the joystick's background
+            Vector2 radius = background.sizeDelta / 2;
 
-        // Calculate the normalized input vector based on the pointer's position
-        input = (eventData.position - position) / (radius * canvas.scaleFactor);
+            // Calculate the normalized input vector based on the pointer's position
+            input = (eventData.position - position) / (radius * canvas.scaleFactor);
 
-        FormatInput();
-        HandleInput(input.magnitude, input.normalized, radius, cam);
+            FormatInput();
+            HandleInput(input.magnitude, input.normalized, radius, cam);
 
-        // Update the anchored position of the handle
-        handle.anchoredPosition = input * radius * handleRange;
+            // Update the anchored position of the handle
+            handle.anchoredPosition = input * radius * handleRange;
+        }
     }
 
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
@@ -142,5 +147,11 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         
         // Return Vector2.zero if conversion fails
         return Vector2.zero;
+    }
+
+    public void Lock(bool locked)
+    {
+        isLocked = locked;
+        input = Vector2.zero;
     }
 }

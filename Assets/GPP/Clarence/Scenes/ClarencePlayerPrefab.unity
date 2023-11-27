@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matOne: {fileID: 0}
   matTwo: {fileID: 0}
+  matThree: {fileID: 0}
   recipesList:
   - {fileID: 11400000, guid: 5665999ef62bf0d42b2f8d12009ead53, type: 2}
 --- !u!114 &968961675
@@ -1107,6 +1108,7 @@ MonoBehaviour:
   interactiontype: 0
   description: Press <color=red>RIGHT CLICK</color>
   cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
+  inventoryEmpty: <color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>
   reducedInventory: {fileID: 0}
   mainInventoryGroup: {fileID: 0}
   mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
@@ -1572,6 +1574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnToLeft: 0
   speedRotation: 3.5
+  startRotationAngle: 0
   rotationAngle: 140
 --- !u!136 &1194890725
 CapsuleCollider:
@@ -2084,74 +2087,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 360071978}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1585384911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1585384914}
-  - component: {fileID: 1585384913}
-  - component: {fileID: 1585384912}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1585384912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585384911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1585384913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585384911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1585384914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585384911}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1595190917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,11 +2415,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1122799751996423517, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_MaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122799751996423517, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122799751996423517, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_decelerateRate
+      value: 0.271
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122799751996423517, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_MaxPercentageSpeedwhenStopped
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3455853547736264965, guid: f15c125ff83582e41a90b73b31b2ba34,
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5159351289388135503, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d4fc1e33e1638024382057cf42f2347b,
+        type: 2}
     - target: {fileID: 8256593598171699054, guid: f15c125ff83582e41a90b73b31b2ba34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2554,6 +2515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010779892509614021, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3111,7 +3077,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1097394386}
   - {fileID: 1314917790}
-  - {fileID: 1585384914}
   - {fileID: 401204082}
   - {fileID: 463063871}
   - {fileID: 37577932}
