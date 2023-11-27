@@ -5,6 +5,8 @@ using System;
 
 public class S_PlayerController : MonoBehaviour
 {
+    public static S_PlayerController instance;
+
     Rigidbody m_rigidbody = null;
     // Animator m_animator = null;
     // Vector3 m_playerMoveInput  = Vector3.zero;
@@ -14,6 +16,7 @@ public class S_PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
         // m_animator = GetComponent<Animator>();
     }
