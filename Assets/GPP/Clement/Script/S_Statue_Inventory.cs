@@ -17,22 +17,18 @@ public class S_Statue_Inventory : MonoBehaviour
     }
     public void AddToInventory(S_Materials material)
    {
-        if(head != null)
-        {
-            top = material;
-        }
-        else if(head == null)
+        if(head == null)
         {
             head = material;
         }
-        else if(top != null)
+        else if(top == null)
+        {
+            top = material;
+        }
+        else if(bottom == null)
         {
             bottom = material;
         }
-        //if( top != null && head != null)
-        //{
-        //    bottom = material;
-        //}
         S_UI_Inventory.instance.DisplayStatueInventory();
    }
 
