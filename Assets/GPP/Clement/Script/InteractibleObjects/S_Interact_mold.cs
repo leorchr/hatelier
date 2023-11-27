@@ -26,12 +26,6 @@ public class S_Interact_mold : S_Interactable
         BakeButton = mainInventoryGroup.transform.Find("Bake").GetComponent<Button>();
         moldInventory = GetComponent<S_Mold_Inventory>();
     }
-
-    private void Update()
-    {
-        Debug.Log(isInInventory);
-    }
-
     public override string GetDescription()
     {
         if (S_Inventory.instance.GetMaterials() != null)
