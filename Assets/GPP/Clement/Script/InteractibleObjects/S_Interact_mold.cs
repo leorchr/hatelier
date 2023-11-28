@@ -54,7 +54,7 @@ public class S_Interact_mold : S_Interactable
 
     public override string GetMatDescription()
     {
-        if(S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if(S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
         {
             return mold.description;
 
@@ -88,6 +88,12 @@ public class S_Interact_mold : S_Interactable
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();
                     BakeButton.onClick.AddListener(PressedBakeButton);
                 }
+
+                // Quand le ui sera terminer on fera comme ca au lieu du boutton bake
+                //if (moldInventory.IsInventoryFull())
+                //{
+                //    moldInventory.CheckRecipeMaterialWithMoldMaterial();
+                //}
                
                 isInInventory = true;
             }
