@@ -1,69 +1,127 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 public class S_MovingObject : MonoBehaviour
 {
-    public enum PoulieState
+    public enum MoveType
     {
-        Down,
-        Moving,
-        Up
+        SmoothDamp,
+        Curve
     }
+    [HideInInspector]
+    public MoveType moveType = MoveType.SmoothDamp;
 
-    [SerializeField] private float distanceMovement;
-    public PoulieState positionState = PoulieState.Down;
 
+    [SerializeField] private Transform posBegin;
+    [SerializeField] private Transform posEnd;
 
-    [Header("Smooth Damp")]
-    [SerializeField] private float smoothDampAccuracy = 0.2f;
-    [SerializeField] private float movementSmoothTime = 0.2f;
+    [HideInInspector]
+    public float smoothDampAccuracy = 0.2f;
+    [HideInInspector]
+    public float movementSmoothTime = 0.2f;
+
+    [HideInInspector] public AnimationCurve moveCurve = AnimationCurve.EaseInOut(0,0,1,1);
+
     private Vector3 targetPosition;
     private Vector3 moveVelocity;
-    [HideInInspector] public Vector3 upPos, downPos;
 
 
     private void Start()
     {
-        if(positionState == PoulieState.Down)
-        {
-            Vector3 up = new Vector3(0, distanceMovement, 0);
-            upPos = transform.position + up;
-            downPos = transform.position;
-        }
-        if (positionState == PoulieState.Up)
-        {
-            Vector3 down = new Vector3(0, distanceMovement, 0);
-            downPos = transform.position - down;
-            upPos = transform.position;
-        }
+        
     }
 
     private void Update()
     {
-        if (positionState == PoulieState.Moving)
-        {
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
 
-            float dist = Vector3.Distance(transform.position, targetPosition);
-
-            if (dist <= smoothDampAccuracy && targetPosition == upPos) positionState = PoulieState.Up;
-            if (dist <= smoothDampAccuracy && targetPosition == downPos) positionState = PoulieState.Down;
-        }
+        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
     }
 
     public void Interact()
     {
-        if (positionState == PoulieState.Down)
+        
+    }
+
+    public void CreatePos()
+    {
+        while (transform.childCount != 0)
         {
-            positionState = PoulieState.Moving;
-            targetPosition = upPos;
+            DestroyImmediate(transform.GetChild(0).gameObject);
         }
-        else if (positionState == PoulieState.Up)
-        {
-            positionState = PoulieState.Moving;
-            targetPosition = downPos;
-        }
+
+        GameObject gB = new GameObject();
+        gB.name = "Begin Position";
+        gB.transform.parent = transform;
+        gB.transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+        var iconContent = EditorGUIUtility.IconContent("sv_label_1");
+        EditorGUIUtility.SetIconForObject(gB, (Texture2D)iconContent.image);
+        posBegin = gB.transform;
+        
+        GameObject gE = new GameObject();
+        gE.name = "End Position";
+        gE.transform.parent = transform;
+        gE.transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+        var iconContent2 = EditorGUIUtility.IconContent("sv_label_2");
+        EditorGUIUtility.SetIconForObject(gE, (Texture2D)iconContent2.image);
+        posEnd = gE.transform;
     }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(S_MovingObject))]
+public class Edit_Moving_Object : Editor
+{
+
+    SerializedProperty m_MoveType;
+    SerializedProperty m_SmoothDampAccuracy;
+    SerializedProperty m_MovementSmoothTime;
+    SerializedProperty m_MoveCurve;
+
+    void OnEnable()
+    {
+        // Fetch the objects from the GameObject script to display in the inspector
+        m_MoveType = serializedObject.FindProperty("moveType");
+        m_SmoothDampAccuracy = serializedObject.FindProperty("smoothDampAccuracy");
+        m_MovementSmoothTime = serializedObject.FindProperty("movementSmoothTime");
+
+        m_MoveCurve = serializedObject.FindProperty("moveCurve");
+    }
+    public override void OnInspectorGUI()
+    {
+        var t = target as S_MovingObject;
+
+        DrawDefaultInspector();
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Movement Customisation", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(m_MoveType);
+
+        switch (m_MoveType.enumValueIndex)
+        {
+            case 0:
+                EditorGUILayout.PropertyField(m_SmoothDampAccuracy);
+                EditorGUILayout.PropertyField(m_MovementSmoothTime);
+                break;
+            case 1:
+                EditorGUILayout.PropertyField(m_MoveCurve);
+                break;
+            default:
+
+                break;
+        }
+
+        if (GUILayout.Button("Create Pos"))
+        {
+            t.CreatePos();
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif
