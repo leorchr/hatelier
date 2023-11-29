@@ -3,10 +3,14 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
 using UnityEditorInternal;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#if UNITY_EDITOR
 
 public class GrassPainterWindow : EditorWindow
 {
@@ -70,6 +74,8 @@ public class GrassPainterWindow : EditorWindow
 
     bool showLayers;
 
+#if UNITY_EDITOR
+
     [MenuItem("Tools/Grass Tool")]
     static void Init()
     {
@@ -93,6 +99,7 @@ public class GrassPainterWindow : EditorWindow
         window.toolSettings = m_toolSettings;
         window.Show();
     }
+#endif
 
     private void OnGUI()
     {
@@ -472,6 +479,7 @@ public class GrassPainterWindow : EditorWindow
         grassCompute.SetGrassPaintedDataList = grassData;
     }
 
+#if UNITY_EDITOR
     void OnSceneGUI(SceneView sceneView)
     {
         if (this.hasFocus && paintModeActive)
@@ -479,6 +487,7 @@ public class GrassPainterWindow : EditorWindow
             DrawHandles();
         }
     }
+#endif
 
     RaycastHit[] m_Results = new RaycastHit[1];
     // draw the painter handles
@@ -534,6 +543,7 @@ public class GrassPainterWindow : EditorWindow
 
 
     }
+#endif
 
 #if UNITY_EDITOR
     public void HandleUndo()

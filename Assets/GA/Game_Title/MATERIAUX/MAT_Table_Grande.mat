@@ -73,7 +73,7 @@ Material:
     - _BounceLight_Hue: -5
     - _BounceLight_Intensity: 0.269
     - _BounceLight_Saturation: 3
-    - _BounceLight_Threshold: 3.76
+    - _BounceLight_Threshold: 2.89
     - _Clipping_Noise_Scale: 25
     - _Clipping_Offset: 0
     - _Clipping_Range: 2
@@ -90,14 +90,14 @@ Material:
     - _QueueOffset: 0
     - _RImLight_Enable: 1
     - _RimLight_Intensity: 0.493
-    - _RimLight_Threshold: 7
+    - _RimLight_Threshold: 1.97
     - _Roughness: 0.153
     - _RoughnessMap_Enable: 0
     - _TexNormalMap_Enable: 0
     - _Using_sRGB_Tex: 1
     - _WorldPosMapping_Enable: 0
     m_Colors:
-    - _BaseColor_Tint: {r: 0.15886438, g: 0.17660072, b: 0.2830189, a: 0}
+    - _BaseColor_Tint: {r: 0.48780704, g: 0.49546674, b: 0.5471698, a: 0}
     - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
