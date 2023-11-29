@@ -1308,7 +1308,6 @@ public class GrassPainterWindow : EditorWindow
         grassCompute.ResetFaster();
 
     }
-
-#endif
 }
+#endif
 
