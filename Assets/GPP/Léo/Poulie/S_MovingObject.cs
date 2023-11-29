@@ -6,6 +6,7 @@ using UnityEditor.TerrainTools;
 #endif
 using UnityEngine;
 
+
 public class S_MovingObject : MonoBehaviour
 {
     public enum MoveType
@@ -13,31 +14,27 @@ public class S_MovingObject : MonoBehaviour
         SmoothDamp,
         Curve
     }
-    [HideInInspector]
-    public MoveType moveType = MoveType.SmoothDamp;
 
-
-
-    [SerializeField] private Transform tBegin;
-    [SerializeField] private Transform tEnd;
+    //Position variable
+    public Transform tBegin;
+    public Transform tEnd;
 
     private Vector3 posBegin;
     private Vector3 posEnd;
 
-    [HideInInspector]
-    public float moveAccuracy = 0.2f;
-    [HideInInspector]
-    public float movementSmoothTime = 0.2f;
-
+    //Serializable variable
+    [HideInInspector] public MoveType moveType = MoveType.SmoothDamp;
+    [HideInInspector] public float moveAccuracy = 0.2f, movementSmoothTime = 0.2f;
     [HideInInspector] public AnimationCurve moveCurve = AnimationCurve.EaseInOut(0,0,1,1);
-    [HideInInspector]
-    public float curveTime = 1.0f, debugCurvePrevis = 10;
-
+    [HideInInspector] public float curveTime = 1.0f, debugCurvePrevis = 10;
     [HideInInspector] public Color debugColor = Color.red;
+    [HideInInspector] public bool isAutomatic = false;
+    [HideInInspector] public float timeBetween = 1;
 
     bool goinToTheEnd = false;
     bool isMovingNow;
     float moveTime = 0.0f;
+    
 
     private Vector3 targetPosition;
     private Vector3 moveVelocity = Vector3.zero;
@@ -47,13 +44,14 @@ public class S_MovingObject : MonoBehaviour
         isMovingNow = false;
         posBegin = tBegin.position;
         posEnd = tEnd.position;
+        if (isAutomatic) { Interact(); }
+
     }
 
     private void Update()
     {
         if (isMovingNow)
         {
-
             switch (moveType)
             {
                 case MoveType.SmoothDamp:
@@ -81,6 +79,7 @@ public class S_MovingObject : MonoBehaviour
             {
                 isMovingNow = false;
                 transform.position = targetPosition;
+                if (isAutomatic) { Invoke("ChangeDirection", timeBetween); }
                
             }
         }
@@ -88,6 +87,11 @@ public class S_MovingObject : MonoBehaviour
     }
 
     public void Interact()
+    {
+        ChangeDirection();
+    }
+
+    private void ChangeDirection()
     {
         goinToTheEnd = !goinToTheEnd;
         if (goinToTheEnd)
@@ -149,14 +153,13 @@ public class S_MovingObject : MonoBehaviour
 [CustomEditor(typeof(S_MovingObject))]
 public class Edit_Moving_Object : Editor
 {
-
+    SerializedProperty m_IsAutomatic;
+    SerializedProperty m_TimeBetween;
     SerializedProperty m_CurveTime;
     SerializedProperty m_MoveType;
     SerializedProperty m_MoveAccuracy;
     SerializedProperty m_MovementSmoothTime;
     SerializedProperty m_MoveCurve;
-
-    
 
     //Debug Variables
     SerializedProperty m_DebugColor;
@@ -166,6 +169,9 @@ public class Edit_Moving_Object : Editor
     {
         var t = target as S_MovingObject;
         // Fetch the objects from the GameObject script to display in the inspector
+        m_IsAutomatic = serializedObject.FindProperty("isAutomatic");
+        m_TimeBetween = serializedObject.FindProperty("timeBetween");
+
         m_MoveType = serializedObject.FindProperty("moveType");
         m_MoveAccuracy = serializedObject.FindProperty("moveAccuracy");
         m_MovementSmoothTime = serializedObject.FindProperty("movementSmoothTime");
@@ -188,7 +194,16 @@ public class Edit_Moving_Object : Editor
 
         EditorGUILayout.Space();
 
+        EditorGUILayout.PropertyField(m_IsAutomatic);
+        if (m_IsAutomatic.boolValue)
+        {
+            EditorGUILayout.PropertyField(m_TimeBetween);
+        }
+        
+        EditorGUILayout.Space();
+
         EditorGUILayout.LabelField("Movement Customisation", EditorStyles.boldLabel);
+        
         EditorGUILayout.PropertyField(m_MoveType);
         EditorGUILayout.PropertyField(m_MoveAccuracy);
         switch (m_MoveType.enumValueIndex)
