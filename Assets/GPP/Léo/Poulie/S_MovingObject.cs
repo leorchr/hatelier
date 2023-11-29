@@ -55,11 +55,7 @@ public class S_MovingObject : MonoBehaviour
             switch (moveType)
             {
                 case MoveType.SmoothDamp:
-                    Debug.Log("transform : " + transform.position);
-                    Debug.Log("target : " + targetPosition);
                     transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
-                    Debug.Log("transform : " + transform.position);
-                    Debug.Log("target : " + targetPosition);
                     break;
                 case MoveType.Curve:
                     if (goinToTheEnd)
