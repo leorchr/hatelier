@@ -41,6 +41,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: bb5e39efa7a98df4986c7c32543c8494, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TexNormalMap:
         m_Texture: {fileID: 2800000, guid: 9184101e49ca4dd4fbc07769d51f78cb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -76,6 +84,7 @@ Material:
     - _MainMask_Ambient: 0
     - _MainMask_Contrast: 1
     - _MainMask_Offset: 0
+    - _MetallicMap_Enable: 0
     - _Metalness: 0
     - _NormalMap_Enable: 1
     - _NormalMap_Strength: 1
@@ -85,6 +94,7 @@ Material:
     - _RimLight_Intensity: 0.5
     - _RimLight_Threshold: 4
     - _Roughness: 0.2
+    - _RoughnessMap_Enable: 0
     - _TexNormalMap_Enabe: 0
     - _TexNormalMap_Enable: 0
     - _Using_sRGB_Tex: 1
