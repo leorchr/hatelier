@@ -41,6 +41,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: be5192ee0ca10dc47a8c0241507c0c47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TexNormalMap:
         m_Texture: {fileID: 2800000, guid: 354ad919d28516d45bf74d70a627fe51, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -76,6 +84,7 @@ Material:
     - _MainMask_Ambient: 0
     - _MainMask_Contrast: 1
     - _MainMask_Offset: 0
+    - _MetallicMap_Enable: 0
     - _Metalness: 0
     - _NormalMap_Strength: -1.35
     - _QueueControl: 0
@@ -84,13 +93,14 @@ Material:
     - _RimLight_Intensity: 0.5
     - _RimLight_Threshold: 3.5
     - _Roughness: 0.41
+    - _RoughnessMap_Enable: 0
     - _TexNormalMap_Enable: 1
     - _Using_sRGB_Tex: 1
     - _WorldPosMapping_Enable: 0
     m_Colors:
     - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _Shadows_Color: {r: 0.74996436, g: 0.7735849, b: 0.6896582, a: 0}
+    - _Shadows_Color: {r: 0.892006, g: 0.8632076, b: 1, a: 0}
   m_BuildTextureStacks: []

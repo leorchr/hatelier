@@ -45,6 +45,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TexNormalMap:
         m_Texture: {fileID: 2800000, guid: 9184101e49ca4dd4fbc07769d51f78cb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -71,6 +79,7 @@ Material:
     - _BounceLight_Intensity: 0.238
     - _BounceLight_Saturation: 3
     - _BounceLight_Threshold: 3
+    - _Clipping_Noise_Scale: 25
     - _Clipping_Offset: 0
     - _Clipping_Range: 1
     - _Line_Enable: 1
@@ -79,6 +88,8 @@ Material:
     - _MainMask_Ambient: 0
     - _MainMask_Contrast: 1
     - _MainMask_Offset: 0
+    - _MetallicMap_Enable: 0
+    - _Metalness: 0
     - _NormalMap_Strength: 1
     - _ObjectSpacePosMapping_Enable: 0
     - _QueueControl: 0
@@ -87,6 +98,8 @@ Material:
     - _RimLight_Intensity: 0.5
     - _RimLight_Threshold: 2.45
     - _RimLight_Trim: 0
+    - _Roughness: 0.2
+    - _RoughnessMap_Enable: 0
     - _TexNormalMap_Enabe: 0
     - _TexNormalMap_Enable: 0
     - _Using_sRGB_Tex: 0
@@ -94,8 +107,8 @@ Material:
     m_Colors:
     - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor_Tweak: {r: 0.8830924, g: 1, b: 0.6666667, a: 0}
-    - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _Shadows_Color: {r: 0.63009405, g: 0.45616764, b: 0.6320754, a: 0}
+    - _Shadows_Color: {r: 0.892006, g: 0.8632076, b: 1, a: 0}
   m_BuildTextureStacks: []

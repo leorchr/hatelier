@@ -163,10 +163,10 @@ Material:
     - _BaseColor_Tint: {r: 0.18867922, g: 0.18743455, b: 0.18244925, a: 0}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _Shadows_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Shadows_Color: {r: 0.892006, g: 0.8632076, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &3348770292437451874
