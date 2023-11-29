@@ -4,7 +4,6 @@ using System.Net;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class S_CameraTransition : MonoBehaviour
 {
