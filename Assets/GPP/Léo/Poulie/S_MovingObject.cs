@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.TerrainTools;
@@ -20,8 +18,11 @@ public class S_MovingObject : MonoBehaviour
 
 
 
-    [SerializeField] private Transform posBegin;
-    [SerializeField] private Transform posEnd;
+    [SerializeField] private Transform tBegin;
+    [SerializeField] private Transform tEnd;
+
+    private Vector3 posBegin;
+    private Vector3 posEnd;
 
     [HideInInspector]
     public float moveAccuracy = 0.2f;
@@ -34,23 +35,33 @@ public class S_MovingObject : MonoBehaviour
 
     [HideInInspector] public Color debugColor = Color.red;
 
-    bool goinToTheEnd = true;
-    private bool isMovingNow = false;
+    bool goinToTheEnd = false;
+    bool isMovingNow;
     float moveTime = 0.0f;
 
     private Vector3 targetPosition;
-    private Vector3 moveVelocity;
+    private Vector3 moveVelocity = Vector3.zero;
+
+    private void Start()
+    {
+        isMovingNow = false;
+        posBegin = tBegin.position;
+        posEnd = tEnd.position;
+    }
 
     private void Update()
     {
-        Debug.Log(isMovingNow);
         if (isMovingNow)
         {
-            Debug.Log("Interacted");
+
             switch (moveType)
             {
                 case MoveType.SmoothDamp:
+                    Debug.Log("transform : " + transform.position);
+                    Debug.Log("target : " + targetPosition);
                     transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
+                    Debug.Log("transform : " + transform.position);
+                    Debug.Log("target : " + targetPosition);
                     break;
                 case MoveType.Curve:
                     if (goinToTheEnd)
@@ -62,14 +73,15 @@ public class S_MovingObject : MonoBehaviour
                         moveTime -= (1 / curveTime) * Time.deltaTime;
                     }
 
-                    transform.position = Vector3.Lerp(posBegin.position, posEnd.position, moveCurve.Evaluate(moveTime));
+                    transform.position = Vector3.Lerp(posBegin, posEnd, moveCurve.Evaluate(moveTime));
                     break;
                 default: break;
             }
             if (Vector3.Distance(transform.position, targetPosition) < moveAccuracy)
             {
-                //isMoving = false;
+                isMovingNow = false;
                 transform.position = targetPosition;
+               
             }
         }
         //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
@@ -77,23 +89,19 @@ public class S_MovingObject : MonoBehaviour
 
     public void Interact()
     {
-        //Debug.Log("Interacted");
         goinToTheEnd = !goinToTheEnd;
         if (goinToTheEnd)
         {
-            targetPosition = posEnd.position;
-            moveTime = 0;
+            targetPosition = posEnd;
         }
         else
         {
-            targetPosition = posBegin.position;
-            moveTime = 1;
+            targetPosition = posBegin;
         }
-        transform.position = targetPosition;
         isMovingNow = true;
-        Debug.Log(isMovingNow);
     }
 
+#if UNITY_EDITOR
     public void CreatePos()
     {
         while (transform.childCount != 0)
@@ -107,7 +115,7 @@ public class S_MovingObject : MonoBehaviour
         gB.transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
         var iconContent = EditorGUIUtility.IconContent("sv_label_1");
         EditorGUIUtility.SetIconForObject(gB, (Texture2D)iconContent.image);
-        posBegin = gB.transform;
+        tBegin = gB.transform;
         
         GameObject gE = new GameObject();
         gE.name = "End Position";
@@ -115,22 +123,22 @@ public class S_MovingObject : MonoBehaviour
         gE.transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
         var iconContent2 = EditorGUIUtility.IconContent("sv_label_2");
         EditorGUIUtility.SetIconForObject(gE, (Texture2D)iconContent2.image);
-        posEnd = gE.transform;
+        tEnd = gE.transform;
     }
 
-#if UNITY_EDITOR
+
     void OnDrawGizmos()
     {
         if (posEnd != null && posBegin != null)
         {
             Handles.color = debugColor;
-            Handles.DrawDottedLine(posBegin.position, posEnd.position, 5);
+            Handles.DrawDottedLine(tBegin.position, tEnd.position, 5);
             if (moveType == MoveType.Curve)
             {
                 for (float i = 0; i < 1; i += 1 / debugCurvePrevis)
-                    Handles.DrawWireDisc(Vector3.Lerp(posBegin.position, posEnd.position, moveCurve.Evaluate(i)), (posEnd.position - posBegin.position).normalized, 0.1f);
+                    Handles.DrawWireDisc(Vector3.Lerp(tBegin.position, tEnd.position, moveCurve.Evaluate(i)), (tEnd.position - tBegin.position).normalized, 0.1f);
             }
-            Handles.DrawWireDisc(Vector3.Lerp(posBegin.position, posEnd.position , 1), (posEnd.position - posBegin.position).normalized, 0.1f);
+            Handles.DrawWireDisc(Vector3.Lerp(tBegin.position, tEnd.position , 1), (tEnd.position - tBegin.position).normalized, 0.1f);
         }
     }
 #endif
@@ -148,13 +156,15 @@ public class Edit_Moving_Object : Editor
     SerializedProperty m_MovementSmoothTime;
     SerializedProperty m_MoveCurve;
 
+    
+
     //Debug Variables
     SerializedProperty m_DebugColor;
     SerializedProperty m_DebugCurvePrevis;
 
-
     void OnEnable()
     {
+        var t = target as S_MovingObject;
         // Fetch the objects from the GameObject script to display in the inspector
         m_MoveType = serializedObject.FindProperty("moveType");
         m_MoveAccuracy = serializedObject.FindProperty("moveAccuracy");
@@ -165,6 +175,8 @@ public class Edit_Moving_Object : Editor
 
         m_DebugColor = serializedObject.FindProperty("debugColor");
         m_DebugCurvePrevis = serializedObject.FindProperty("debugCurvePrevis");
+
+
     }
 
 

@@ -17,11 +17,8 @@ public class S_Interactable_Lever : S_Interactable
 
     public override void Interact()
     {
-        if(canInteract)
-        {
-            foreach (S_MovingObject moveObject in moveObjects) {
-                moveObject.Interact();
-            }
+        foreach (S_MovingObject moveObject in moveObjects) {
+            moveObject.Interact();
         }
     }
 
