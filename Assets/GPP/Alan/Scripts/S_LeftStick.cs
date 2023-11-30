@@ -149,6 +149,11 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         return Vector2.zero;
     }
 
+    public void changeAxis(AxisOptions ao)
+    {
+        axisOptions = ao;
+    }
+
     public void Lock(bool locked)
     {
         isLocked = locked;

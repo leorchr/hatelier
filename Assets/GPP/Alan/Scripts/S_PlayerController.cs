@@ -9,6 +9,11 @@ public class S_PlayerController : MonoBehaviour
 
     Rigidbody m_rigidbody = null;
     Animator m_animator = null;
+
+    [HideInInspector]
+    public bool m_isPushing = false;
+    [HideInInspector]
+    public GameObject m_PushedObject = null;
     // Vector3 m_playerMoveInput  = Vector3.zero;
 
     [SerializeField] private S_LeftStick m_leftStick;
@@ -45,7 +50,7 @@ public class S_PlayerController : MonoBehaviour
             Mathf.Clamp(m_rigidbody.velocity.z, -maxSpd.y, maxSpd.y));
 
         //Rotation of the player
-        if (m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0)
+        if ((m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0) && !m_isPushing)
         {
             float yRotation = Quaternion.LookRotation(m_rigidbody.velocity).eulerAngles.y;
             transform.rotation = Quaternion.Euler(transform.rotation.x,yRotation,transform.rotation.z) ;
@@ -67,4 +72,21 @@ public class S_PlayerController : MonoBehaviour
     // }
 
     public void setIsNotInMenu(bool b) { isNotInMenu = b; m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
+
+    public void setDir(dir d) {
+        switch (d)
+        {
+            case dir.Left:
+            case dir.Right:
+                m_leftStick.changeAxis(AxisOptions.Horizontal);
+                break;
+            case dir.Front:
+            case dir.Back:
+                m_leftStick.changeAxis(AxisOptions.Vertical);
+                break;
+            default:
+                m_leftStick.changeAxis(AxisOptions.Both);
+                break;
+        }
+    }
 }
