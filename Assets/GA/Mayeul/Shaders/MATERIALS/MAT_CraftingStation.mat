@@ -43,6 +43,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: be5192ee0ca10dc47a8c0241507c0c47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FoliageTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,6 +74,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.5
     - _AlphaToMask: 1
     - _AutoNormalMap_Enable: 0
     - _AutoNormalMap_Strength: 1
@@ -77,6 +82,7 @@ Material:
     - _BaseColor_TIling: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _Boolean: 0
     - _BounceLight_Hue: -5
     - _BounceLight_Intensity: 0.1
     - _BounceLight_Saturation: 3
@@ -107,6 +113,8 @@ Material:
     - _RimLight_Threshold: 3.5
     - _Roughness: 0.41
     - _RoughnessMap_Enable: 0
+    - _SSS_Enable: 0
+    - _SSS_Threshold: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _TexNormalMap_Enable: 1
@@ -124,8 +132,10 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _Foliage_Tint: {r: 0, g: 0, b: 0, a: 0}
     - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _SSS_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Shadows_Color: {r: 0.892006, g: 0.8632076, b: 1, a: 0}
   m_BuildTextureStacks: []

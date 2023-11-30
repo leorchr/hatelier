@@ -122,7 +122,7 @@ Material:
     - _AlphaToMask: 1
     - _AutoNormalMap_Enable: 1
     - _BaseColor_Rotate: 0
-    - _BaseColor_TIling: 1
+    - _BaseColor_TIling: 1.5
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _Boolean: 0
@@ -145,7 +145,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fluffy_Scale: 0.59
+    - _Fluffy_Scale: 0.54
     - _Foliage_Enable: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -170,6 +170,7 @@ Material:
     - _RimLight_Threshold: 7
     - _Roughness: 0.2
     - _RoughnessMap_Enable: 0
+    - _SSS_Enable: 0
     - _SSS_Threshold: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -192,14 +193,14 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor_Tint: {r: 0.5558953, g: 0.6886792, b: 0.2891153, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Foliage_Tint: {r: 0, g: 0, b: 0, a: 0}
     - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _SSS_Color: {r: 0.6603774, g: 0.6043185, b: 0.43298328, a: 0}
+    - _SSS_Color: {r: 0.1988902, g: 0.5754717, b: 0.08414916, a: 0}
     - _Shadows_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
