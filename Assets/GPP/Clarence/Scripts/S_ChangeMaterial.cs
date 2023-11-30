@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.UIElements;
+#endif
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+#if UNITY_EDITOR
 public class S_ChangeMaterial : EditorWindow
 {
     ColorField shadowColorField;
@@ -85,3 +89,4 @@ public class S_ChangeMaterial : EditorWindow
 
     }
 }
+#endif

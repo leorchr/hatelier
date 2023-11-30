@@ -31,12 +31,14 @@ public class S_CameraTransition : MonoBehaviour
     [TextArea]
     public string notes = " - Tag Player sur le joueur\n - Tag Main Camera sur la caméra\n - Le collider doit être trigger\n - Doit avoir 2 références de camera rails au minimum";
 
+#if UNITY_EDITOR
     [Space]
     [Header("Debugging \n-------------------------")]
     [Space]
     [SerializeField] private bool visualDebugging = true;
     [SerializeField] private Color positionColor = new Color(0.75f, 0.2f, 0.2f, 0.75f);
     [Range(0f,10f)] [SerializeField] private float wireRadius = 1f;
+#endif
 
 
     private void Start()

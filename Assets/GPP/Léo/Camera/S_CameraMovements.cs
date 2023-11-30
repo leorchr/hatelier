@@ -31,6 +31,7 @@ public class S_CameraMovements : MonoBehaviour
     [Min(0)][Range(0.0f,1.0f)][SerializeField] private float targetZoneSize = 0.1f;
     [SerializeField] private DeadZoneStatus deadZoneStatus = DeadZoneStatus.In;
 
+#if UNITY_EDITOR
     [Space]
     [Header("Debugging \n-------------------------")]
     [Space]
@@ -38,6 +39,7 @@ public class S_CameraMovements : MonoBehaviour
     [SerializeField] private bool visualDebugging = true;
     [SerializeField] private Color deadZoneColor= new Color(0.75f, 0.2f, 0.2f, 1f);
     [SerializeField] private Color targetZoneColor= new Color(0f, 1f, 0.2f, 1f);
+#endif
 
     private void Awake()
     {

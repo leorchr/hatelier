@@ -12,6 +12,7 @@ public class S_CameraRail : MonoBehaviour
     [Tooltip("Camera offset. X or Z depending rail axis")]
     public float offset;  // ne marche pas
 
+#if UNITY_EDITOR
     [Space]
     [Header("Debugging \n-------------------------")]
     [Space]
@@ -19,6 +20,7 @@ public class S_CameraRail : MonoBehaviour
     [SerializeField] private bool visualDebugging = true;
     [SerializeField] private Color railColor = new Color(0.0f, 0.0f, 1f, 1f);
     [Min(0)][Range(0.0f, 10.0f)][SerializeField] private float width = 3f;
+#endif
 
 
 #if UNITY_EDITOR
