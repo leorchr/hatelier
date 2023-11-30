@@ -8,12 +8,15 @@ public class S_PlayerController : MonoBehaviour
     public static S_PlayerController instance;
 
     Rigidbody m_rigidbody = null;
+    Rigidbody m_objectRigidbody = null;
     Animator m_animator = null;
     // Vector3 m_playerMoveInput  = Vector3.zero;
 
     [SerializeField] private S_LeftStick m_leftStick;
     [SerializeField] private float m_Acceleration;
     [SerializeField] private float m_MaxSpeed;
+
+    private bool m_IsOnPlatform = false;
 
     [SerializeField] [Range(0.0f,1.0f)] private float m_decelerateRate;
 
@@ -44,6 +47,12 @@ public class S_PlayerController : MonoBehaviour
             m_rigidbody.velocity.y,
             Mathf.Clamp(m_rigidbody.velocity.z, -maxSpd.y, maxSpd.y));
 
+        //Adding force if on platform
+        if (m_IsOnPlatform)
+        {
+            //m_rigidbody.AddForce(m_objectRigidbody.velocity,ForceMode.VelocityChange);
+        }
+
         //Rotation of the player
         if (m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0)
         {
@@ -66,5 +75,40 @@ public class S_PlayerController : MonoBehaviour
     //                                     m_playerMoveInput.z * m_moveSpeed * m_rigidbody.mass);
     // }
 
+    /*void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.GetComponent<S_MovingObject>() != null)
+        {
+            m_objectRigidbody = col.gameObject.GetComponent<Rigidbody>();
+            m_IsOnPlatform = true;
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.GetComponent<S_MovingObject>() != null && col.gameObject.GetComponent<Rigidbody>() == m_objectRigidbody)
+        {
+            m_IsOnPlatform = false;
+            m_objectRigidbody = null;
+        }
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<S_MovingObject>() != null)
+        {
+            transform.parent = other.gameObject.transform;
+            m_IsOnPlatform = true;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.GetComponent<S_MovingObject>() != null && col.gameObject.GetComponent<Rigidbody>() == m_objectRigidbody)
+        {
+            m_IsOnPlatform = false;
+            transform.parent = null;
+        }
+    }
     public void setIsNotInMenu(bool b) { isNotInMenu = b; m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
 }
