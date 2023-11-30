@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class S_Mold_Inventory : MonoBehaviour
 {
+    [Header("INVENTORY SLOT")]
     [SerializeField] private S_Materials matOne;
     [SerializeField] private S_Materials matTwo;
     [SerializeField] private S_Materials matThree;
+
+    [Header("UI IMAGE SLOT")]
+    [SerializeField] private GameObject moldSlotImage1;
+    [SerializeField] private GameObject moldSlotImage2;
+    [SerializeField] private GameObject moldSlotImage3;
 
     [SerializeField] private S_Recipes[] recipesList;
     public void AddToInventory(S_Materials material)
@@ -19,12 +27,17 @@ public class S_Mold_Inventory : MonoBehaviour
         {
             matOne = material;
         }
-        S_UI_Inventory.instance.DisplayMoldInventoryIcons();
+        DisplayMoldInventoryIcons();
     }
     public void ClearInventory()
     {
         matOne = null;
         matTwo = null;
+    }
+
+    public void ClearStatueSlot()
+    {
+        matThree = null;
     }
 
     public bool IsInventoryFull()
@@ -36,7 +49,6 @@ public class S_Mold_Inventory : MonoBehaviour
     {
         return matOne != null;
     }
-
     public bool IsSameMaterial()
     {
         return matOne == matTwo;
@@ -60,16 +72,80 @@ public class S_Mold_Inventory : MonoBehaviour
                     ClearInventory();
 
                     //clear mold ui
-                    S_UI_Inventory.instance.refreshMoldInv();
+                   refreshMoldInv();
 
                     //add statue ui in mold
-                    S_UI_Inventory.instance.SetStatueIconInMold(recipesList[i].statueIcon);
+                    SetStatueIconInMold(recipesList[i].statueIcon);
 
                     break;
                 }
             }
         }
     }
+
+    public void DisplayMoldInventoryIcons()
+    {
+        if (GetMaterial1() != null)
+        {
+            S_Materials moldInventorySlot1 = GetMaterial1();
+            moldSlotImage1.GetComponent<Image>().sprite = moldInventorySlot1.icone;
+            moldSlotImage1.SetActive(true);
+        }
+
+        if (GetMaterial2() != null)
+        {
+            S_Materials moldInventorySlot2 = GetMaterial2();
+            moldSlotImage2.GetComponent<Image>().sprite = moldInventorySlot2.icone;
+            moldSlotImage2.SetActive(true);
+        }
+    }
+
+    public void ClearMoldInventoryStatueIcon()
+    {
+        moldSlotImage3.SetActive(false);
+
+    }
+
+    public void SetStatueIconInMold(Sprite statueIcon)
+    {
+        moldSlotImage3.GetComponent<Image>().sprite = statueIcon;
+    }
+
+    public void refreshMoldInv()
+    {
+        //Refresh first slot
+        if (GetMaterial1() != null)
+        {
+            moldSlotImage1.GetComponent<Image>().sprite = GetMaterial1().icone;
+        }
+        else
+        {
+            moldSlotImage1.GetComponent<Image>().sprite = null;
+        }
+
+        //Refresh second slot
+        if (GetMaterial2() != null)
+        {
+            moldSlotImage2.GetComponent<Image>().sprite = GetMaterial2().icone;
+        }
+        else
+        {
+            moldSlotImage2.GetComponent<Image>().sprite = null;
+        }
+
+        //Refresh third slot
+        if (GetMaterial3() != null)
+        {
+            moldSlotImage3.GetComponent<Image>().sprite = GetMaterial3().icone;
+        }
+        else
+        {
+            moldSlotImage3.GetComponent<Image>().sprite = null;
+        }
+
+
+    }
+
     public S_Materials GetMaterial1() { return matOne; }
     public S_Materials GetMaterial2() { return matTwo; }
     public S_Materials GetMaterial3() {  return matThree; }
