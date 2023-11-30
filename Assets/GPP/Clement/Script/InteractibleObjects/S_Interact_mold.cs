@@ -84,11 +84,7 @@ public class S_Interact_mold : S_Interactable
                 if (moldInventory.IsInventoryFull())
                 {
                     moldInventory.CheckRecipeMaterialWithMoldMaterial();
-
-
-                    moldInventory.ClearMoldInventoryStatueIcon();
-                    moldInventory.ClearStatueSlot();
-
+                    
                  }
                
                 //isInInventory = true;
