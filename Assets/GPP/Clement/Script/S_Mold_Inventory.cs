@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +15,13 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage3;
 
     [SerializeField] private S_Recipes[] recipesList;
+    private int recipeNumber;
+    private bool launchFunction = false;
+
+    private void Start()
+    {
+        launchFunction = false;
+    }
     public void AddToInventory(S_Materials material)
     {
         if (matOne != null)
@@ -28,6 +33,11 @@ public class S_Mold_Inventory : MonoBehaviour
             matOne = material;
         }
         DisplayMoldInventoryIcons();
+    }
+
+    private void AddStatueToMoldInv(S_Materials material)
+    {
+        matThree = material;
     }
     public void ClearInventory()
     {
@@ -56,31 +66,50 @@ public class S_Mold_Inventory : MonoBehaviour
 
     public void CheckRecipeMaterialWithMoldMaterial()
     {
-        for (int i = 0; i < recipesList.Length; i++)
+        if (!launchFunction)
         {
-            if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
+            for (int i = 0; i < recipesList.Length; i++)
             {
-                if((recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo) && matOne != matTwo)
+                if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
                 {
-                    //Add ui "Baking ..." + Lunch timer
-                    AddToInventory(recipesList[i].statue);
-
-                    //add statue to statue inventory 
-                    S_Statue_Inventory.instance.AddToInventory(recipesList[i].statue);
-
-                    //clear mold inventory
-                    ClearInventory();
-
-                    //clear mold ui
-                   refreshMoldInv();
-
-                    //add statue ui in mold
-                    SetStatueIconInMold(recipesList[i].statueIcon);
-
-                    break;
+                    if ((recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo) && matOne != matTwo)
+                    {
+                        recipeNumber = i;
+                        //clear mold inventory
+                        launchFunction = true;
+                        Invoke("AddStatueToMoldInvFunction", 5);
+                    }
                 }
             }
         }
+    }
+
+    private void AddStatueToMoldInvFunction()
+    {
+        //Add ui "Baking ..." + Lunch timer
+        AddStatueToMoldInv(recipesList[recipeNumber].statue);
+
+        //add statue ui in mold
+        //SetStatueIconInMold(recipesList[recipeNumber].statueIcon);
+
+        ClearInventory();
+
+
+        //clear mold ui
+        refreshMoldInv();
+        
+        Invoke("AddStatueToStatueInvFunction", 5);
+    }
+
+    private void AddStatueToStatueInvFunction()
+    {
+
+        ClearMoldInventoryStatueIcon();
+        ClearStatueSlot();
+
+        //add statue to statue inventory 
+        S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
+
     }
 
     public void DisplayMoldInventoryIcons()
