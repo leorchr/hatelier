@@ -7,6 +7,7 @@ using UnityEditor.TerrainTools;
 using UnityEngine;
 
 
+
 public class S_MovingObject : MonoBehaviour
 {
     public enum MoveType
@@ -22,6 +23,8 @@ public class S_MovingObject : MonoBehaviour
     private Vector3 posBegin;
     private Vector3 posEnd;
 
+    private S_Base_Compas_ underNeathDetector;
+
     //Serializable variable
     [HideInInspector] public MoveType moveType = MoveType.SmoothDamp;
     [HideInInspector] public float moveAccuracy = 0.2f, movementSmoothTime = 0.2f;
@@ -36,7 +39,7 @@ public class S_MovingObject : MonoBehaviour
     float moveTime = 0.0f;
     
 
-    private Vector3 targetPosition;
+    private Vector3 targetPosition, lastPosition;
     private Vector3 moveVelocity = Vector3.zero;
 
     private void Start()
@@ -45,13 +48,16 @@ public class S_MovingObject : MonoBehaviour
         posBegin = tBegin.position;
         posEnd = tEnd.position;
         if (isAutomatic) { Interact(); }
+        underNeathDetector = transform.Find("UnderneathDetector").GetComponent<S_Base_Compas_>();
+        
 
     }
 
     private void Update()
     {
-        if (isMovingNow)
+        if (isMovingNow && (underNeathDetector.inTrigger.Count == 0 || lastPosition.y < transform.position.y))
         {
+            lastPosition = transform.position;
             switch (moveType)
             {
                 case MoveType.SmoothDamp:
@@ -79,6 +85,7 @@ public class S_MovingObject : MonoBehaviour
                
             }
         }
+        
         //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
     }
 
