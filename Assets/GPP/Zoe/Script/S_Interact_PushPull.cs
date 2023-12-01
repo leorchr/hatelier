@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,26 +13,32 @@ public enum dir
     none
 }
 
+[Serializable]
+public struct Side
+{
+    public Transform transform;
+    public dir side;
+    public bool active;
+}
+
+
 public class S_Interact_PushPull : S_Interactable
 {
+    
+    
+
     public string description = "Press <color=red>RIGHT CLICK</color>";
 
     Rigidbody rb;
 
     dir currentDir = dir.none;
 
-    [Header("Booleans")]
-    [SerializeField] private bool rightColliderBool;
-    [SerializeField] private bool leftColliderBool;
-    [SerializeField] private bool frontColliderBool;
-    [SerializeField] private bool backColliderBool;
-    [Header("GameObject")]
-    [SerializeField] private Transform rightColliderGO;
-    [SerializeField] private Transform leftColliderGO;
-    [SerializeField] private Transform frontColliderGO;
-    [SerializeField] private Transform backColliderGO;
-    [SerializeField] private float forceMagnitude;
-    [SerializeField] private Rigidbody box;
+    [Space(5)]
+    public Side[] sides;
+
+    private BoxCollider bc;
+
+    
 
     
     public override string GetDescription()
@@ -46,30 +53,26 @@ public class S_Interact_PushPull : S_Interactable
     public override void Interact()
     {
         if (!S_PlayerController.instance.m_isPushing) {
-            if (rightColliderBool || leftColliderBool || frontColliderBool || backColliderBool)
+            if (hasAtLeastOneSideActive() && getSideCloser().active)
             {
-                dir d = getSideCloser();
-                S_PlayerController.instance.setDir(d);
+                Side s = getSideCloser();
+                S_PlayerController.instance.setDir(s.side);
                 S_PlayerController.instance.m_isPushing = true;
                 S_PlayerController.instance.m_PushedObject = gameObject;
-                switch (d)
-                {
-                    case dir.Left:
-                        S_PlayerController.instance.transform.position = leftColliderGO.transform.position;
-                        break;
-                    case dir.Right:
-                        S_PlayerController.instance.transform.position = rightColliderGO.transform.position;
-                        break;
-                    case dir.Front:
-                        S_PlayerController.instance.transform.position = frontColliderGO.transform.position;
-                        break;
-                    case dir.Back:
-                        S_PlayerController.instance.transform.position = backColliderGO.transform.position;
-                        break;
-                    default: break;
+                S_PlayerController.instance.transform.position = s.transform.position;
 
-                }
+                bc.enabled = false;
+
+                Quaternion oldRotation = S_PlayerController.instance.transform.rotation;
+
+                S_PlayerController.instance.createCollider(true, s);
+
+                S_PlayerController.instance.transform.rotation = s.transform.rotation;
+
                 transform.parent = S_PlayerController.instance.transform;
+
+                
+
             }
         }
         else if (S_PlayerController.instance.m_PushedObject == gameObject)
@@ -78,40 +81,53 @@ public class S_Interact_PushPull : S_Interactable
             S_PlayerController.instance.m_PushedObject = null;
             S_PlayerController.instance.m_isPushing = false;
 
+            S_PlayerController.instance.createCollider(false,new Side());
+
+            
+
             transform.parent = null;
+
+            bc.enabled = true;
         }
         
     }
 
-    private dir getSideCloser()
+    private bool hasAtLeastOneSideActive()
+    {
+        bool result = false;
+        foreach(Side s in sides)
+        {
+            if (s.active) { result = true; break; }
+        }
+        return result;
+    }
+
+    private Side getSideCloser()
     {
         Vector3 playerPos = S_PlayerController.instance.transform.position;
         float minDist = Mathf.Infinity;
-        Transform closest = null;
-        foreach( Transform t in transform )
+        Side closest = new Side();
+        foreach( Side s in sides )
         {
+            Transform t = s.transform;
             float dist = Vector3.Distance(t.position, playerPos);
             if ( dist < minDist )
             {
-                closest = t;
+                closest = s;
                 minDist = dist;
             }
         }
-
-        if (closest == rightColliderGO) { return dir.Right; }
-        if (closest == leftColliderGO) { return dir.Left; }
-        if (closest == backColliderGO) { return dir.Back; }
-        if (closest == frontColliderGO) { return dir.Front; }
-        return dir.none;
+        return closest;
     }
 
     private void Start()
     {
-        rightColliderGO.gameObject.SetActive(rightColliderBool);
-        leftColliderGO.gameObject.SetActive(leftColliderBool);
-        backColliderGO.gameObject.SetActive(backColliderBool);
-        frontColliderGO.gameObject.SetActive(frontColliderBool);
+       foreach(Side s in sides)
+        {
+            s.transform.gameObject.SetActive(s.active);
+        }
 
         rb= GetComponent<Rigidbody>();
+        bc = GetComponent<BoxCollider>();
     }
 }

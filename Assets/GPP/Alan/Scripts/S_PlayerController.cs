@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -14,6 +15,8 @@ public class S_PlayerController : MonoBehaviour
     public bool m_isPushing = false;
     [HideInInspector]
     public GameObject m_PushedObject = null;
+    [HideInInspector]
+    public BoxCollider m_PushCollider = null;
     // Vector3 m_playerMoveInput  = Vector3.zero;
 
     [SerializeField] private S_LeftStick m_leftStick;
@@ -88,5 +91,31 @@ public class S_PlayerController : MonoBehaviour
                 m_leftStick.changeAxis(AxisOptions.Both);
                 break;
         }
+    }
+
+    public void createCollider(bool active, Side s) {
+        if (active)
+        {
+            GameObject go = s.transform.parent.gameObject;
+            m_PushCollider = gameObject.AddComponent<BoxCollider>();
+            BoxCollider bc = go.GetComponent<BoxCollider>();
+            Vector3 scale = go.transform.localScale;
+            Vector3 fwd = transform.forward;
+            Debug.Log("Hello");
+           
+            
+            m_PushCollider.size = new Vector3(scale.x * bc.size.x, scale.y * bc.size.y, scale.z * bc.size.z);
+
+            float gap = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(go.transform.position.x, go.transform.position.z)) ;
+            float ygap = go.transform.position.y - transform.position.y;
+
+            m_PushCollider.center = bc.center + new Vector3(0, ygap, gap) ;
+        }
+        else
+        {
+            Destroy(m_PushCollider);
+            m_PushCollider = null;
+        }
+
     }
 }

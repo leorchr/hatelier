@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775994084}
   m_Layer: 0
-  m_Name: LeftCollider
+  m_Name: LeftPos
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910603590}
   m_Layer: 0
-  m_Name: RightCollider
+  m_Name: RightPos
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145516442}
   m_Layer: 0
-  m_Name: FrontCollider
+  m_Name: FrontPos
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -460,6 +460,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactiontype: 0
   description: Press <color=red>RIGHT CLICK</color>
+  sides:
+  - sidePos: {fileID: 775994084}
+    side: 0
+    active: 1
+  - sidePos: {fileID: 910603590}
+    side: 1
+    active: 1
+  - sidePos: {fileID: 1145516442}
+    side: 2
+    active: 1
+  - sidePos: {fileID: 1917447571}
+    side: 3
+    active: 1
   rightColliderBool: 1
   leftColliderBool: 1
   frontColliderBool: 1
