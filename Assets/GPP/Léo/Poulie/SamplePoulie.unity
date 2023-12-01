@@ -621,7 +621,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e8286fa01b7c4d93efbe5daa31711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1302574724}
+  statueSlotImage1: {fileID: 0}
+  statueSlotImage2: {fileID: 0}
+  statueSlotImage3: {fileID: 0}
+  playerInventoryImage: {fileID: 0}
 --- !u!114 &598776811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016079833}
   - component: {fileID: 1016079832}
+  - component: {fileID: 1016079834}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1154,6 +1158,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1016079834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016079831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &1035464784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,15 +1189,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1272068960351885853, guid: 8622e91da8d20464d83ba13c1c2506e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4185075112703036747, guid: 8622e91da8d20464d83ba13c1c2506e2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 91cb5a96d7278b948b841e4c61486e35, type: 2}
+    - target: {fileID: 5185638447610707965, guid: 8622e91da8d20464d83ba13c1c2506e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6613093322607594972, guid: 8622e91da8d20464d83ba13c1c2506e2,
         type: 3}
       propertyPath: m_Name
       value: PRE_GPE_Poulie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654480604378586721, guid: 8622e91da8d20464d83ba13c1c2506e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9106037371477137543, guid: 8622e91da8d20464d83ba13c1c2506e2,
         type: 3}
@@ -1423,12 +1465,6 @@ PrefabInstance:
 --- !u!224 &1302574723 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 444906618451779152, guid: 97a37e647445b7547883d07c8e8f52bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1302574722}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1302574724 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1404277041571385756, guid: 97a37e647445b7547883d07c8e8f52bf,
     type: 3}
   m_PrefabInstance: {fileID: 1302574722}
   m_PrefabAsset: {fileID: 0}
