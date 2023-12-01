@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class S_Timer : MonoBehaviour
 {
     public static S_Timer instance;
+
     public TextMeshProUGUI timerText;
     public float remainingTime;
     public float maxTime;
@@ -19,6 +21,7 @@ public class S_Timer : MonoBehaviour
     private void Start()
     {
         maxTime = remainingTime;
+        this.gameObject.SetActive(false);
     }
     void Update()
     {
