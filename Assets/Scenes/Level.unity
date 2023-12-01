@@ -973,6 +973,10 @@ MonoBehaviour:
   moldSlotImage1: {fileID: 0}
   moldSlotImage2: {fileID: 0}
   moldSlotImage3: {fileID: 0}
+  sliderSupport: {fileID: 0}
+  bakingSlider: {fileID: 0}
+  bakingTimer: 0
+  stopTimer: 0
   recipesList: []
 --- !u!114 &251216087
 MonoBehaviour:
@@ -2903,7 +2907,7 @@ GameObject:
   - component: {fileID: 665028692}
   - component: {fileID: 665028691}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6819,6 +6823,10 @@ MonoBehaviour:
   moldSlotImage1: {fileID: 0}
   moldSlotImage2: {fileID: 0}
   moldSlotImage3: {fileID: 0}
+  sliderSupport: {fileID: 0}
+  bakingSlider: {fileID: 0}
+  bakingTimer: 0
+  stopTimer: 0
   recipesList: []
 --- !u!114 &1523310178
 MonoBehaviour:
