@@ -13,7 +13,7 @@ public enum dir
 }
 
 [Serializable]
-public struct Side
+public class Side
 {
     public Transform transform;
     public dir side;
