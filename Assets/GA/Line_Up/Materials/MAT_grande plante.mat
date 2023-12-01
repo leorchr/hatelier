@@ -164,7 +164,7 @@ Material:
     - _RimLight_Threshold: 7
     - _Roughness: 0.514
     - _RoughnessMap_Enable: 0
-    - _SSS_Enable: 0
+    - _SSS_Enable: 1
     - _SSS_Threshold: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -193,7 +193,7 @@ Material:
     - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _SSS_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _SSS_Color: {r: 0.10850588, g: 0.8773585, b: 0.028969401, a: 0}
     - _Shadows_Color: {r: 0.6819848, g: 0.508989, b: 0.8113208, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
