@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GPP/Zoe/Scene/MainMenuZoe.unity
     guid: dbd02d90f8ac5ff42b9e54af3601b038
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: be1ced9c1221e35408a41938a58b491c
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 051eb0210dd4b7548b882f6a6e851b5b
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 66af5bec2dddad9448574973a362aee1,
       type: 2}
