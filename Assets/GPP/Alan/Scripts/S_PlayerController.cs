@@ -10,6 +10,13 @@ public class S_PlayerController : MonoBehaviour
     Rigidbody m_rigidbody = null;
     Rigidbody m_objectRigidbody = null;
     Animator m_animator = null;
+
+    [HideInInspector]
+    public bool m_isPushing = false;
+    [HideInInspector]
+    public GameObject m_PushedObject = null;
+    [HideInInspector]
+    public BoxCollider m_PushCollider = null;
     // Vector3 m_playerMoveInput  = Vector3.zero;
 
     [SerializeField] private S_LeftStick m_leftStick;
@@ -54,7 +61,7 @@ public class S_PlayerController : MonoBehaviour
         }
 
         //Rotation of the player
-        if (m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0)
+        if ((m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0) && !m_isPushing)
         {
             float yRotation = Quaternion.LookRotation(m_rigidbody.velocity).eulerAngles.y;
             transform.rotation = Quaternion.Euler(transform.rotation.x,yRotation,transform.rotation.z) ;
@@ -111,4 +118,47 @@ public class S_PlayerController : MonoBehaviour
         }
     }
     public void setIsNotInMenu(bool b) { isNotInMenu = b; m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
+
+    public void setDir(dir d) {
+        switch (d)
+        {
+            case dir.Left:
+            case dir.Right:
+                m_leftStick.changeAxis(AxisOptions.Horizontal);
+                break;
+            case dir.Front:
+            case dir.Back:
+                m_leftStick.changeAxis(AxisOptions.Vertical);
+                break;
+            default:
+                m_leftStick.changeAxis(AxisOptions.Both);
+                break;
+        }
+    }
+
+    public void createCollider(bool active, Side s) {
+        if (active)
+        {
+            GameObject go = s.transform.parent.gameObject;
+            m_PushCollider = gameObject.AddComponent<BoxCollider>();
+            BoxCollider bc = go.GetComponent<BoxCollider>();
+            Vector3 scale = go.transform.localScale;
+            Vector3 fwd = transform.forward;
+            Debug.Log("Hello");
+           
+            
+            m_PushCollider.size = new Vector3(scale.x * bc.size.x, scale.y * bc.size.y, scale.z * bc.size.z);
+
+            float gap = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(go.transform.position.x, go.transform.position.z)) ;
+            float ygap = go.transform.position.y - transform.position.y;
+
+            m_PushCollider.center = bc.center + new Vector3(0, ygap, gap) ;
+        }
+        else
+        {
+            Destroy(m_PushCollider);
+            m_PushCollider = null;
+        }
+
+    }
 }
