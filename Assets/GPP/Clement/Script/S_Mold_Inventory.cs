@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,11 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage2;
     [SerializeField] private GameObject moldSlotImage3;
 
+    public GameObject sliderSupport;
+    public Slider bakingSlider;
+    public float bakingTimer;
+    public bool stopTimer = false;
+
     [SerializeField] private S_Recipes[] recipesList;
     private int recipeNumber;
     private bool launchFunction = false;
@@ -21,6 +27,8 @@ public class S_Mold_Inventory : MonoBehaviour
     private void Start()
     {
         launchFunction = false;
+        bakingSlider.maxValue = bakingTimer;
+        bakingSlider.value = bakingTimer;
     }
     public void AddToInventory(S_Materials material)
     {
@@ -33,6 +41,26 @@ public class S_Mold_Inventory : MonoBehaviour
             matOne = material;
         }
         DisplayMoldInventoryIcons();
+    }
+
+    public void StartTimer()
+    {
+        StartCoroutine(StartTimerTicker());
+    }
+
+    IEnumerator StartTimerTicker()
+    {
+        while (stopTimer == false) 
+        {
+            bakingTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+
+            if(bakingTimer <= 0)stopTimer = true; 
+
+            if (stopTimer == false) bakingSlider.value = bakingTimer;
+         
+        }
+        sliderSupport.SetActive(false);
     }
 
     private void AddStatueToMoldInv(S_Materials material)
@@ -74,10 +102,12 @@ public class S_Mold_Inventory : MonoBehaviour
                 {
                     if ((recipesList[i].requiredMaterials[0] == matTwo || recipesList[i].requiredMaterials[1] == matTwo) && matOne != matTwo)
                     {
+                        sliderSupport.SetActive(true);
                         recipeNumber = i;
                         //clear mold inventory
                         launchFunction = true;
-                        Invoke("AddStatueToMoldInvFunction", 5);
+                        Invoke("AddStatueToMoldInvFunction", bakingTimer);
+                        StartTimer();
                     }
                 }
             }
@@ -98,7 +128,7 @@ public class S_Mold_Inventory : MonoBehaviour
         //clear mold ui
         refreshMoldInv();
         
-        Invoke("AddStatueToStatueInvFunction", 5);
+        Invoke("AddStatueToStatueInvFunction", 2);
     }
 
     private void AddStatueToStatueInvFunction()
