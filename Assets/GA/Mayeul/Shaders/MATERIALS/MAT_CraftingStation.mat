@@ -50,7 +50,35 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal_01:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Platre:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PlatreFilasse:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TEX_01:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TEX_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Terre:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -77,7 +105,9 @@ Material:
     - _AlphaToMask: 0
     - _AutoNormalMap_Enable: 0
     - _AutoNormalMap_Strength: 1
+    - _BaseColor_Hue: 0
     - _BaseColor_Rotate: 0
+    - _BaseColor_Saturation: 1
     - _BaseColor_TIling: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -103,7 +133,12 @@ Material:
     - _MainMask_Offset: 0
     - _MetallicMap_Enable: 0
     - _Metalness: 0
+    - _NoiseMask_Contrast: 0.1
+    - _NoiseMask_Offset: 0
+    - _NoiseMask_Scale: 20
+    - _NormalBlend_Enable: 0
     - _NormalMap_Strength: -1.35
+    - _Platre_PlatreFilasse: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RImLight_Enable: 1
@@ -116,6 +151,9 @@ Material:
     - _SSS_Threshold: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _TEXMerge_Enable: 0
+    - _Terre_Platre: 0
+    - _Terre_PlatreFilasse: 0
     - _TexNormalMap_Enable: 1
     - _Using_sRGB_Tex: 1
     - _Wind_Density: 0.5
