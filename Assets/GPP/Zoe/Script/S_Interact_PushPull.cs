@@ -60,6 +60,8 @@ public class S_Interact_PushPull : S_Interactable
                 S_PlayerController.instance.m_PushedObject = gameObject;
                 S_PlayerController.instance.transform.position = s.transform.position;
 
+                S_Player_Interaction.instance.interactionEnabled = false;
+
                 bc.enabled = false;
 
                 Quaternion oldRotation = S_PlayerController.instance.transform.rotation;
@@ -76,6 +78,7 @@ public class S_Interact_PushPull : S_Interactable
         }
         else if (S_PlayerController.instance.m_PushedObject == gameObject)
         {
+            S_Player_Interaction.instance.interactionEnabled = true;
             S_PlayerController.instance.setDir(dir.none);
             S_PlayerController.instance.m_PushedObject = null;
             S_PlayerController.instance.m_isPushing = false;

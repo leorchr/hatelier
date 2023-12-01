@@ -11,6 +11,8 @@ public class S_Player_Interaction : MonoBehaviour
     public static S_Player_Interaction instance;
     S_Interactable interactable;
 
+    public bool interactionEnabled = true;
+
     [Header("Text")]
     public TMPro.TextMeshProUGUI interactionText;
     public TMPro.TextMeshProUGUI materialDescriptionText;
@@ -25,7 +27,7 @@ public class S_Player_Interaction : MonoBehaviour
    public void OnTriggerEnter(Collider collider)
     {
         
-        if ((1 << collider.gameObject.layer & interactableLayer.value) != 0)
+        if (((1 << collider.gameObject.layer & interactableLayer.value) != 0) && interactionEnabled)
         {
             Debug.Log("COUCOU JE SUIS ANSNAJSNAS");
 
