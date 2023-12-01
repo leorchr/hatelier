@@ -17,8 +17,9 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -99,6 +100,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _AlphaClipThreshold: 0.5
     - _AlphaToMask: 0
     - _AutoNormalMap_Enable: 1
     - _BaseColor_Rotate: 0
@@ -110,8 +112,10 @@ Material:
     - _BounceLight_Saturation: 3
     - _BounceLight_Threshold: 3
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _Clipping_Disable: 0
     - _Clipping_Noise_Scale: 25
     - _Clipping_Offset: 0
     - _Clipping_Range: 2
@@ -122,6 +126,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Fluffy_Scale: 1
+    - _Foliage_Enable: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -146,6 +152,7 @@ Material:
     - _RimLight_Threshold: 7
     - _Roughness: 0.2
     - _RoughnessMap_Enable: 0
+    - _SSS_Threshold: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -155,9 +162,17 @@ Material:
     - _TexNormalMap_Enable: 0
     - _UVSec: 0
     - _Using_sRGB_Tex: 1
+    - _Wind_Density: 0.5
+    - _Wind_Direction: 0
+    - _Wind_Enable: 0
+    - _Wind_FixAxis: 1
+    - _Wind_Speed: 1.5
+    - _Wind_Strength: 20
     - _WorkflowMode: 1
     - _WorldPosMapping_Enable: 0
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor_Tint: {r: 0.18867922, g: 0.18743455, b: 0.18244925, a: 0}
@@ -166,6 +181,7 @@ Material:
     - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _SSS_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Shadows_Color: {r: 0.892006, g: 0.8632076, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
