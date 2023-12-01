@@ -15,9 +15,11 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage2;
     [SerializeField] private GameObject moldSlotImage3;
 
+    [Header("Slider")]
     public GameObject sliderSupport;
     public Slider bakingSlider;
     public float bakingTimer;
+    public float addStatueTimer;
     public bool stopTimer = false;
 
     [SerializeField] private S_Recipes[] recipesList;
@@ -128,7 +130,7 @@ public class S_Mold_Inventory : MonoBehaviour
         //clear mold ui
         refreshMoldInv();
         
-        Invoke("AddStatueToStatueInvFunction", 2);
+        Invoke("AddStatueToStatueInvFunction", addStatueTimer);
     }
 
     private void AddStatueToStatueInvFunction()
