@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1224986911619041485}
   - component: {fileID: 8408065614511974021}
   - component: {fileID: 8647012871594814345}
-  - component: {fileID: 7126765644327221971}
+  - component: {fileID: 5492505066493258634}
   m_Layer: 0
   m_Name: PRE_BlockCiment_1
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7126765644327221971
+--- !u!65 &5492505066493258634
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.025190275, y: 0.03131682, z: 0.02491638}
-  m_Center: {x: 0.00008819578, y: 0.015483283, z: 0.0005886457}
+  m_Size: {x: 2.5190275, y: 3.1316822, z: 2.491638}
+  m_Center: {x: 0.008819579, y: 1.5483283, z: 0.05886459}

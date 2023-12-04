@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 1386876262996452946}
   - component: {fileID: 4150114518343547533}
   - component: {fileID: 7043485489189136239}
-  - component: {fileID: 2301165465452713670}
-  - component: {fileID: 844038845022744219}
+  - component: {fileID: 1269740835102614037}
   m_Layer: 0
   m_Name: PRE_Book
   m_TagString: Untagged
@@ -85,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2301165465452713670
+--- !u!65 &1269740835102614037
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,32 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009067059, y: 0.0023970245, z: 0.01194603}
-  m_Center: {x: 0.00023287768, y: 0.0011985123, z: 0.0000016211998}
---- !u!54 &844038845022744219
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5229051940678648422}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Size: {x: 0.9067058, y: 0.23970245, z: 1.1946028}
+  m_Center: {x: 0.023287771, y: 0.119851224, z: 0.00016212462}
