@@ -14,7 +14,6 @@ public class S_Recipes : ScriptableObject
     }
 
     [Tooltip("Score donné en récompense de la recette")]
-    public int score;
     public Sprite icone;
     [Tooltip("Materiaux requis")]
     public S_Materials[] requiredMaterials;
