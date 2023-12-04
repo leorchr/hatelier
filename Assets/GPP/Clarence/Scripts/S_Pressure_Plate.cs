@@ -34,8 +34,12 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate)) && other.isTrigger == false)
+        Debug.Log(other.gameObject.name);
+        Debug.Log(other.gameObject.CompareTag("Player") && playerCanActivate);
+        Debug.Log(other.gameObject.CompareTag("Pushable") && crateCanActivate);
+        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.gameObject.CompareTag("Pushable") && crateCanActivate)))
         {
+            
             switch (type)
             {
                 case PressureType.Toggle:
@@ -53,7 +57,7 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate )) && other.isTrigger == false)
+        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.gameObject.CompareTag("Pushable") && crateCanActivate)))
         {
             switch (type)
             {

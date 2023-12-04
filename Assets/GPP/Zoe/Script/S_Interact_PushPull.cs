@@ -57,20 +57,18 @@ public class S_Interact_PushPull : S_Interactable
                 Side s = getSideCloser();
                 S_PlayerController.instance.setDir(s.side);
                 S_PlayerController.instance.m_isPushing = true;
-                S_PlayerController.instance.m_PushedObject = gameObject;
+                S_PlayerController.instance.m_PushedObject = transform.parent.gameObject;
                 S_PlayerController.instance.transform.position = s.transform.position;
 
                 S_Player_Interaction.instance.interactionEnabled = false;
 
                 bc.enabled = false;
 
-                Quaternion oldRotation = S_PlayerController.instance.transform.rotation;
-
                 S_PlayerController.instance.createCollider(true, s);
 
                 S_PlayerController.instance.transform.rotation = s.transform.rotation;
 
-                transform.parent = S_PlayerController.instance.transform;
+                transform.parent.parent = S_PlayerController.instance.transform;
 
                 
 
@@ -87,7 +85,7 @@ public class S_Interact_PushPull : S_Interactable
 
             
 
-            transform.parent = null;
+            transform.parent.parent = null;
 
             bc.enabled = true;
         }
@@ -129,7 +127,7 @@ public class S_Interact_PushPull : S_Interactable
             s.transform.gameObject.SetActive(s.active);
         }
 
-        rb= GetComponent<Rigidbody>();
-        bc = GetComponent<BoxCollider>();
+        rb= transform.parent.GetComponent<Rigidbody>();
+        bc = transform.parent.GetComponent<BoxCollider>();
     }
 }

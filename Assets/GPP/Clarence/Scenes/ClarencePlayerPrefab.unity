@@ -521,8 +521,13 @@ PrefabInstance:
       objectReference: {fileID: 290529963}
     - target: {fileID: 1796281594978368148, guid: 7d9466fcd4732514c8644fd74d494efb,
         type: 3}
+      propertyPath: curveTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796281594978368148, guid: 7d9466fcd4732514c8644fd74d494efb,
+        type: 3}
       propertyPath: isAutomatic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3983037195044754655, guid: 7d9466fcd4732514c8644fd74d494efb,
         type: 3}
@@ -849,7 +854,7 @@ PrefabInstance:
     - target: {fileID: 4290432901308867870, guid: 46e85cc6bd23c7a4fb20d66c871d30cf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.35
+      value: 0.934
       objectReference: {fileID: 0}
     - target: {fileID: 4290432901308867870, guid: 46e85cc6bd23c7a4fb20d66c871d30cf,
         type: 3}
@@ -2210,7 +2215,7 @@ Transform:
   m_GameObject: {fileID: 1586362768}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 6.01, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3374,7 +3379,7 @@ PrefabInstance:
     - target: {fileID: 1303336074433471704, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
         type: 3}
       propertyPath: type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1303336074433471704, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
         type: 3}
@@ -3444,6 +3449,21 @@ PrefabInstance:
     - target: {fileID: 1516110081743784945, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130447604107471800, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130447604107471800, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130447604107471800, guid: 0c5b906a8c448094ebfc8cbe359fecd3,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
