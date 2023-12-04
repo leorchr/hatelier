@@ -8,7 +8,7 @@ using UnityEngine;
 
 
 
-public class S_MovingObject : MonoBehaviour
+public class S_MovingObject : S_Receiver
 {
     public enum MoveType
     {
@@ -89,7 +89,7 @@ public class S_MovingObject : MonoBehaviour
         //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
     }
 
-    public void Interact()
+    public override void Interact()
     {
         ChangeDirection();
     }

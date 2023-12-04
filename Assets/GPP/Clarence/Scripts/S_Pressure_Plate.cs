@@ -14,9 +14,11 @@ public class S_Pressure_Plate : MonoBehaviour
         Hold
     }
 
+    public bool playerCanActivate = true, crateCanActivate = true;
+
     public PressureType type = PressureType.Hold;
 
-    [SerializeField] private S_MovingObject[] moveObjects;
+    [SerializeField] private S_Receiver[] receivers;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")){
+        if ((other.gameObject.CompareTag("Player") && playerCanActivate )|| (other.GetComponent<S_Interact_PushPull>() !=null && crateCanActivate)){
             switch (type)
             {
                 case PressureType.Toggle:
@@ -50,7 +52,7 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if ((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate))
         {
             switch (type)
             {
@@ -66,13 +68,13 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public void Activate()
     {
-        foreach (S_MovingObject moveObject in moveObjects)
+        foreach (S_Receiver moveObject in receivers)
         {
             moveObject.Interact();
         }
     }
 
-    public S_MovingObject[] getMoveObjects() { return  moveObjects; }
+    public S_Receiver[] getMoveObjects() { return  receivers; }
 }
 
 #if UNITY_EDITOR

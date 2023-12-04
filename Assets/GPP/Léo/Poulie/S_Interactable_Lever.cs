@@ -12,12 +12,12 @@ public class S_Interactable_Lever : S_Interactable
 {
     [Header("Display Text")]
     [SerializeField] private string description = "Press <color=red>RIGHT CLICK</color>";
-    [SerializeField] private S_MovingObject[] moveObjects;
+    [SerializeField] private S_Receiver[] receivers;
     private bool canInteract;
 
     public override void Interact()
     {
-        foreach (S_MovingObject moveObject in moveObjects) {
+        foreach (S_MovingObject moveObject in receivers) {
             moveObject.Interact();
         }
     }
@@ -32,9 +32,9 @@ public class S_Interactable_Lever : S_Interactable
         return "";
     }
 
-    public S_MovingObject[] getMoveObjects()
+    public S_Receiver[] getMoveObjects()
     {
-        return moveObjects;
+        return receivers;
     }
 }
 
