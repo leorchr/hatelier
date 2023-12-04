@@ -5816,6 +5816,7 @@ MonoBehaviour:
   bakingTimer: 0
   addStatueTimer: 0
   stopTimer: 0
+  door: {fileID: 0}
   recipesList: []
 --- !u!114 &251216087
 MonoBehaviour:
@@ -19116,7 +19117,7 @@ PrefabInstance:
     - target: {fileID: 3973223000572277430, guid: 1b31a87c2359d984bb7fa3a5620cec9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3772798
+      value: -5.564649
       objectReference: {fileID: 0}
     - target: {fileID: 3973223000572277430, guid: 1b31a87c2359d984bb7fa3a5620cec9b,
         type: 3}
@@ -23950,7 +23951,7 @@ PrefabInstance:
     - target: {fileID: 3973223000572277430, guid: 1b31a87c2359d984bb7fa3a5620cec9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9163866
+      value: -5.103756
       objectReference: {fileID: 0}
     - target: {fileID: 3973223000572277430, guid: 1b31a87c2359d984bb7fa3a5620cec9b,
         type: 3}
@@ -25074,8 +25075,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124974484}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.0683315, z: -0, w: 0.9976627}
-  m_LocalPosition: {x: -0.933, y: 0, z: 1.344}
+  m_LocalRotation: {x: -0, y: -0.012524603, z: -0, w: 0.9999216}
+  m_LocalPosition: {x: -0.078722894, y: 0, z: 0.042729855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25084,7 +25085,7 @@ Transform:
   - {fileID: 2043180189}
   - {fileID: 2138107228}
   m_Father: {fileID: 936883152}
-  m_LocalEulerAnglesHint: {x: 0, y: -7.836, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -1.435, z: 0}
 --- !u!1 &1126667420
 GameObject:
   m_ObjectHideFlags: 0
@@ -26041,7 +26042,7 @@ PrefabInstance:
     - target: {fileID: 5077812462172223420, guid: 001c6ed8164f32c45843497de4148567,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.86
+      value: -9.817
       objectReference: {fileID: 0}
     - target: {fileID: 5077812462172223420, guid: 001c6ed8164f32c45843497de4148567,
         type: 3}
@@ -26051,7 +26052,7 @@ PrefabInstance:
     - target: {fileID: 5077812462172223420, guid: 001c6ed8164f32c45843497de4148567,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.18
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 5077812462172223420, guid: 001c6ed8164f32c45843497de4148567,
         type: 3}
@@ -34034,6 +34035,7 @@ MonoBehaviour:
   bakingTimer: 0
   addStatueTimer: 0
   stopTimer: 0
+  door: {fileID: 0}
   recipesList: []
 --- !u!114 &1523310178
 MonoBehaviour:
@@ -40652,7 +40654,7 @@ PrefabInstance:
     - target: {fileID: 3574516263969072379, guid: 4d931da80684d3f4087e072fb8863fcc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.7126307
+      value: -5.9
       objectReference: {fileID: 0}
     - target: {fileID: 3574516263969072379, guid: 4d931da80684d3f4087e072fb8863fcc,
         type: 3}
@@ -42360,7 +42362,7 @@ PrefabInstance:
     - target: {fileID: 2936050719013302233, guid: f0f20de1d0b4b684894180667015d267,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.610631
+      value: -4.7980003
       objectReference: {fileID: 0}
     - target: {fileID: 2936050719013302233, guid: f0f20de1d0b4b684894180667015d267,
         type: 3}
