@@ -34,7 +34,8 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.CompareTag("Player") && playerCanActivate )|| (other.GetComponent<S_Interact_PushPull>() !=null && crateCanActivate)){
+        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate)) && other.isTrigger == false)
+        {
             switch (type)
             {
                 case PressureType.Toggle:
@@ -52,7 +53,7 @@ public class S_Pressure_Plate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if ((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate))
+        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.GetComponent<S_Interact_PushPull>() != null && crateCanActivate )) && other.isTrigger == false)
         {
             switch (type)
             {
@@ -94,10 +95,11 @@ public class Edit_Plate : Editor
         Handles.DrawWireDisc(pos, tr.up, 1.0f);
         foreach (S_MovingObject moveObject in t.getMoveObjects())
         {
-            Handles.DrawDottedLine(tr.position, moveObject.transform.position, 5);
+            if (moveObject != null)
+            {
+                Handles.DrawDottedLine(tr.position, moveObject.transform.position, 5);
+            }
         }
-
-        Handles.Slider(tr.position, tr.rotation.eulerAngles);
     }
 }
 #endif
