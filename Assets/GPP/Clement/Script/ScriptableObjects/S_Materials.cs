@@ -11,6 +11,5 @@ public class S_Materials : ScriptableObject
     [TextAreaAttribute] public string description;
     [TextAreaAttribute] public string FullInventorydescription;
     public Sprite icone;
-    [Range(0,20)] public float cookTime;
     public GameObject prefab;
 }

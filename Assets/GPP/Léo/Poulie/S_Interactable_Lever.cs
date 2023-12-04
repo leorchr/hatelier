@@ -55,7 +55,10 @@ public class Edit_Interactable_Lever : Editor
         Handles.DrawWireDisc(pos, tr.up, 1.0f);
         foreach (S_MovingObject moveObject in t.getMoveObjects())
         {
-            Handles.DrawDottedLine(tr.position,moveObject.transform.position,5);
+            if (moveObject != null)
+            {
+                Handles.DrawDottedLine(tr.position, moveObject.transform.position, 5);
+            }
         }
 
         Handles.Slider(tr.position, tr.rotation.eulerAngles);
