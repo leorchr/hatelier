@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public enum dir
@@ -23,8 +24,8 @@ public class Side
 
 public class S_Interact_PushPull : S_Interactable
 {
-    
-    
+
+    public bool isPushed = false;
 
     public string description = "Press <color=red>RIGHT CLICK</color>";
 
@@ -70,7 +71,7 @@ public class S_Interact_PushPull : S_Interactable
 
                 transform.parent.parent = S_PlayerController.instance.transform;
 
-                
+                isPushed = true;
 
             }
         }
@@ -83,7 +84,7 @@ public class S_Interact_PushPull : S_Interactable
 
             S_PlayerController.instance.createCollider(false,new Side());
 
-            
+            isPushed = false;
 
             transform.parent.parent = null;
 
