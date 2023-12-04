@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffac80be903a3d949b66e64de5c5c787, type: 3}
   m_Name: Recipe 1
   m_EditorClassIdentifier: 
-  score: 0
   icone: {fileID: 0}
-  requiredMaterials: []
-  statueIcon: {fileID: 0}
-  statue: {fileID: 0}
+  requiredMaterials:
+  - {fileID: 11400000, guid: 03f3e00b2c3c6b64088d89fab45a7f8e, type: 2}
+  - {fileID: 11400000, guid: 50e9f0996abbc584c8e5265cd7274802, type: 2}
+  statueIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  statue: {fileID: 11400000, guid: 13996b04c3e0ab64caefa378ba87a5b0, type: 2}
