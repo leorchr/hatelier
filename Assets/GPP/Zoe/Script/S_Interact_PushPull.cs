@@ -74,7 +74,7 @@ public class S_Interact_PushPull : S_Interactable
 
             }
         }
-        else if (S_PlayerController.instance.m_PushedObject == gameObject)
+        else if (S_PlayerController.instance.m_PushedObject == transform.parent.gameObject)
         {
             S_Player_Interaction.instance.interactionEnabled = true;
             S_PlayerController.instance.setDir(dir.none);
