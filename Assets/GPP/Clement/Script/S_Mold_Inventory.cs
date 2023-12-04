@@ -22,6 +22,11 @@ public class S_Mold_Inventory : MonoBehaviour
     public float addStatueTimer;
     public bool stopTimer = false;
 
+    [Header("Door")]
+    public GameObject door;
+
+
+
     [SerializeField] private S_Recipes[] recipesList;
     private int recipeNumber;
     private bool launchFunction = false;
@@ -141,6 +146,9 @@ public class S_Mold_Inventory : MonoBehaviour
 
         //add statue to statue inventory 
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
+
+        //ouvrir porte
+        //score
 
     }
 
