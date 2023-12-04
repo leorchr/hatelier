@@ -63,8 +63,12 @@ public class S_PlayerController : MonoBehaviour
         //Rotation of the player
         if ((m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0) && !m_isPushing)
         {
-            float yRotation = Quaternion.LookRotation(m_rigidbody.velocity).eulerAngles.y;
-            transform.rotation = Quaternion.Euler(transform.rotation.x,yRotation,transform.rotation.z) ;
+            if (true) {
+                float yRotation = Quaternion.LookRotation(m_rigidbody.velocity).eulerAngles.y;
+                Debug.Log(yRotation);
+                transform.rotation = Quaternion.LookRotation(m_rigidbody.velocity);
+                transform.rotation = Quaternion.Euler(transform.rotation.x, yRotation, transform.rotation.z);
+            }
         }
 
         float t = m_rigidbody.velocity.magnitude;
