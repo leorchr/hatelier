@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1844360342506639914}
   - component: {fileID: 8289342971404690630}
   - component: {fileID: 2731643313350280651}
-  - component: {fileID: 5189153273022355321}
+  - component: {fileID: 8787584039273788161}
   m_Layer: 0
   m_Name: PRE_Pencil
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5189153273022355321
-CapsuleCollider:
+--- !u!65 &8787584039273788161
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,8 +102,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.057519928
-  m_Height: 0.75445336
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08884429, y: 0.75445336, z: 0.115039855}
   m_Center: {x: 0, y: 0, z: 0}
