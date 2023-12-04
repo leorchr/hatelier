@@ -51,6 +51,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (interactable == null) { return; } 
         if (other.gameObject == interactable.gameObject)
         {
             OnInteraction();

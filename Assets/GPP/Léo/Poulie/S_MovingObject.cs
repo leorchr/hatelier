@@ -131,6 +131,23 @@ public class S_MovingObject : S_Receiver
         var iconContent2 = EditorGUIUtility.IconContent("sv_label_2");
         EditorGUIUtility.SetIconForObject(gE, (Texture2D)iconContent2.image);
         tEnd = gE.transform;
+
+        GameObject gC = new GameObject();
+        gC.name = "UnderneathDetector";
+
+        gC.transform.position = transform.position;
+        gC.transform.localScale = transform.localScale;
+        
+        BoxCollider bc = gC.AddComponent<BoxCollider>();
+        bc.center = GetComponent<BoxCollider>().center;
+        bc.center = new Vector3(bc.center.x, -0.2f, bc.center.y);
+        bc.size = GetComponent<BoxCollider>().size;
+
+        gC.transform.parent = transform;
+
+        gC.AddComponent<S_Base_Compas_>();
+        
+        bc.isTrigger = true;
     }
 
 
