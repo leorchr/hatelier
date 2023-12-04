@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1386876262996452946}
   - component: {fileID: 4150114518343547533}
   - component: {fileID: 7043485489189136239}
-  - component: {fileID: 2301165465452713670}
+  - component: {fileID: 1269740835102614037}
   m_Layer: 0
   m_Name: PRE_Book
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2301165465452713670
+--- !u!65 &1269740835102614037
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009067059, y: 0.0023970245, z: 0.01194603}
-  m_Center: {x: 0.00023287768, y: 0.0011985123, z: 0.0000016211998}
+  m_Size: {x: 0.9067058, y: 0.23970245, z: 1.1946028}
+  m_Center: {x: 0.023287771, y: 0.119851224, z: 0.00016212462}

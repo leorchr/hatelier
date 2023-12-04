@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 613879349004325222}
   - component: {fileID: 7702705752792362698}
   - component: {fileID: 7142721863205528659}
-  - component: {fileID: 1585149750081064736}
+  - component: {fileID: 4815488825682066210}
   m_Layer: 0
   m_Name: PRE_Shelf_5
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1585149750081064736
+--- !u!65 &4815488825682066210
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07158386, y: 0.065758176, z: 0.020045567}
-  m_Center: {x: -0.03424984, y: 0.032879088, z: -0.008778753}
+  m_Size: {x: 7.1583858, y: 6.5758176, z: 2.0045564}
+  m_Center: {x: -3.4249837, y: 3.2879088, z: -0.87787527}

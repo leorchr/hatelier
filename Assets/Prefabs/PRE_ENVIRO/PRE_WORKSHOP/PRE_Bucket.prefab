@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6519308179094162813}
   - component: {fileID: 5333298434936174277}
   - component: {fileID: 8398974499880583687}
-  - component: {fileID: 5345320809301044891}
+  - component: {fileID: 6973560421181703336}
   m_Layer: 0
   m_Name: PRE_Bucket
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5345320809301044891
+--- !u!136 &6973560421181703336
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0058979746
-  m_Height: 0.013232539
+  m_Radius: 0.66393846
+  m_Height: 1.1462492
   m_Direction: 1
-  m_Center: {x: 0.0001491943, y: 0.0057389643, z: -0.00041222794}
+  m_Center: {x: 0.0149195185, y: 0.57158476, z: -0.0007498264}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5077812462172223420}
   - component: {fileID: 3449232703885824270}
   - component: {fileID: 622657192884713365}
-  - component: {fileID: 946260992346950599}
+  - component: {fileID: 320255381182947098}
   m_Layer: 0
   m_Name: PRE_Socle
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &946260992346950599
+--- !u!65 &320255381182947098
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.025717659, y: 0.0328457, z: 0.0271739}
-  m_Center: {x: -0.0026333975, y: 0.01642285, z: 0.0004699682}
+  m_Size: {x: 2.5717657, y: 3.28457, z: 2.7173898}
+  m_Center: {x: -0.26333973, y: 1.6422848, z: 0.04699683}

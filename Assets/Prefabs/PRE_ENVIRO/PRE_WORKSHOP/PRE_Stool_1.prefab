@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5196206145778832942}
   - component: {fileID: 8542888738212978410}
   - component: {fileID: 4134469992571264937}
-  - component: {fileID: 1338994017707348606}
+  - component: {fileID: 398555589079390861}
   m_Layer: 0
   m_Name: PRE_Stool_1
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1338994017707348606
+--- !u!65 &398555589079390861
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.018437043, y: 0.021020655, z: 0.0189077}
-  m_Center: {x: -0.00028531766, y: 0.010510327, z: -0.00011138199}
+  m_Size: {x: 1.8437041, y: 2.1020653, z: 1.8907698}
+  m_Center: {x: -0.028531788, y: 1.0510327, z: -0.0111382}

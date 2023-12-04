@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3973223000572277430}
   - component: {fileID: 5395106671421905263}
   - component: {fileID: 5274337336884538958}
-  - component: {fileID: -6498580315752399341}
+  - component: {fileID: 6814281072146905293}
   m_Layer: 0
   m_Name: PRE_Jar_Brush
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &-6498580315752399341
+--- !u!136 &6814281072146905293
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0030201725
-  m_Height: 0.011681703
+  m_Radius: 0.30201718
+  m_Height: 1.1681701
   m_Direction: 1
-  m_Center: {x: -0.00024309164, y: 0.0058408515, z: 0.000000009546057}
+  m_Center: {x: -0.024309156, y: 0.58408505, z: 0.00000095367426}

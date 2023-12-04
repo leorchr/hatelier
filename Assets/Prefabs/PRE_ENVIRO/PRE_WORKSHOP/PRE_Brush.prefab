@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 679035662502522207}
   - component: {fileID: 8339900388909846806}
   - component: {fileID: 7296373975254943386}
-  - component: {fileID: 7395013778129499826}
+  - component: {fileID: 690778796402034739}
   m_Layer: 0
   m_Name: PRE_Brush
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7395013778129499826
+--- !u!136 &690778796402034739
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0010369205
-  m_Height: 0.010713022
+  m_Radius: 0.10369205
+  m_Height: 1.071302
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
