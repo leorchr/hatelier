@@ -11,6 +11,8 @@ public class S_PlayerController : MonoBehaviour
     Rigidbody m_objectRigidbody = null;
     Animator m_animator = null;
 
+    Vector3 m_baseScale;
+
     [HideInInspector]
     public bool m_isPushing = false;
     [HideInInspector]
@@ -32,6 +34,7 @@ public class S_PlayerController : MonoBehaviour
         if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
+        m_baseScale = transform.localScale;
     }
 
     private bool isNotInMenu = true;
@@ -109,6 +112,8 @@ public class S_PlayerController : MonoBehaviour
         {
             transform.parent = other.gameObject.transform;
             m_IsOnPlatform = true;
+            Vector3 pScale = transform.parent.lossyScale;
+            //transform.localScale = new Vector3(m_baseScale.x/pScale.x,m_baseScale.y/pScale.y,m_baseScale.z/pScale.z);
         }
     }
 
@@ -118,6 +123,8 @@ public class S_PlayerController : MonoBehaviour
         {
             m_IsOnPlatform = false;
             transform.parent = null;
+
+            //transform.localScale = m_baseScale;
         }
     }
     public void setIsNotInMenu(bool b) { isNotInMenu = b; m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
