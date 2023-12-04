@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7425889291430846136}
   - component: {fileID: 8723737237437100712}
   - component: {fileID: 496666200734813756}
-  - component: {fileID: 4696095402366198049}
+  - component: {fileID: 1392686556129311106}
   m_Layer: 0
   m_Name: PFE_Pot_Plant_2
   m_TagString: Untagged
@@ -113,8 +113,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &4696095402366198049
-CapsuleCollider:
+--- !u!65 &1392686556129311106
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,8 +131,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.24819851
-  m_Height: 0.5190711
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.49580765, y: 0.5190711, z: 0.49639702}
   m_Center: {x: -0.00000032782555, y: 0.25953555, z: -0.00000011920929}
