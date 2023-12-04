@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2936050719013302233}
   - component: {fileID: 3806774913474555230}
   - component: {fileID: 500373028197115454}
-  - component: {fileID: 7715662736322989072}
+  - component: {fileID: 2467535690899098909}
   m_Layer: 0
   m_Name: PRE_Jar
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7715662736322989072
-CapsuleCollider:
+--- !u!65 &2467535690899098909
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,8 +102,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.27770707
-  m_Height: 0.68165344
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.55541414, y: 0.68165344, z: 0.5414905}
   m_Center: {x: 0.00000011920928, y: 0.34082678, z: 0.0000008642673}
