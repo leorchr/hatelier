@@ -58,7 +58,7 @@ public class S_Solo_Interact_Mold : S_Interactable
 
     public override string GetMatDescription()
     {
-        if (S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != soloMoldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != soloMoldInventory.GetMaterial1() && CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), soloMoldInventory.GetMaterial1()))
         {
             return mold.description;
 
