@@ -133,14 +133,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.5
+    - _AlphaClipThreshold: 0.29
     - _AlphaToMask: 0
     - _Alpha_Enable: 0
     - _AutoNormalMap_Enable: 0
     - _AutoNormalMap_Strength: 1
     - _BaseColor_Hue: 0
     - _BaseColor_Rotate: 0
-    - _BaseColor_Saturation: 1
+    - _BaseColor_Saturation: 0.73
     - _BaseColor_TIling: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -154,7 +154,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Clipping_Disable: 0
     - _Clipping_Noise_Scale: 25
-    - _Clipping_Offset: 0
+    - _Clipping_Offset: -0.75
     - _Clipping_Range: 2
     - _Cull: 2
     - _Cutoff: 0.5
@@ -167,7 +167,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fluffy_Scale: 1
+    - _Fluffy_Scale: 0
     - _Foliage_Enable: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -176,14 +176,14 @@ Material:
     - _Line_Hue: -5
     - _Line_Saturation: 1.5
     - _MainMask_Ambient: 0
-    - _MainMask_Contrast: 1
-    - _MainMask_Offset: 0
+    - _MainMask_Contrast: 0.34
+    - _MainMask_Offset: 0.2
     - _Metallic: 0
     - _MetallicMap_Enable: 0
     - _Metalness: 0
     - _NoiseMask_Contrast: 0.05
     - _NoiseMask_Offset: 0.1
-    - _NoiseMask_Scale: 20
+    - _NoiseMask_Scale: 10
     - _NormalBlend: 1
     - _NormalBlend_Enable: 0
     - _NormalMap_Enable: 1
@@ -215,7 +215,7 @@ Material:
     - _Wind_Enable: 0
     - _Wind_FixAxis: 1
     - _Wind_Speed: 1.5
-    - _Wind_Strength: 0.5
+    - _Wind_Strength: 0
     - _WorkflowMode: 1
     - _WorldPosMapping_Enable: 0
     - _ZTest: 4
@@ -223,7 +223,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor_Tint: {r: 0.766499, g: 0.51450694, b: 0.7735849, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
