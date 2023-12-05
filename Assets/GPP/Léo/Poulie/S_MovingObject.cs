@@ -35,7 +35,9 @@ public class S_MovingObject : S_Receiver
     [HideInInspector] public float timeBetween = 1;
 
     bool goinToTheEnd = false, hasSyncParent = false;
+    [HideInInspector]
     public bool isMovingNow;
+    [HideInInspector]
     public bool AntiUnsync = false, playerUnder = false;
     float moveTime = 0.0f;
     
@@ -43,7 +45,7 @@ public class S_MovingObject : S_Receiver
     private Vector3 targetPosition, lastPosition;
     private Vector3 moveVelocity = Vector3.zero;
 
-    private void Start()
+    private void Awake()
     {
         isMovingNow = false;
         posBegin = tBegin.position;
@@ -114,6 +116,7 @@ public class S_MovingObject : S_Receiver
 
     private void ChangeDirection()
     {
+
         goinToTheEnd = !goinToTheEnd;
         if (goinToTheEnd)
         {
