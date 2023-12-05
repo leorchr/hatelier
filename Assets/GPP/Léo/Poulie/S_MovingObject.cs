@@ -52,8 +52,12 @@ public class S_MovingObject : S_Receiver
         posEnd = tEnd.position;
         if (isAutomatic) { Interact(); }
         underNeathDetector = transform.Find("UnderneathDetector").GetComponent<S_Base_Compas_>();
-        
-        hasSyncParent = transform.parent.GetComponent<s_Sync_Moving>() != null;
+        if (transform.parent) {
+            if (transform.parent.GetComponent<s_Sync_Moving>() != null)
+            {
+                hasSyncParent = true;
+            }
+        }
     }
 
     private void Update()
