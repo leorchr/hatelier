@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Table_Grande
+  m_Name: wall
   m_Shader: {fileID: -6465566751694194690, guid: f48cdc71343ffcc47a730bb40b5aa726,
     type: 3}
   m_Parent: {fileID: 0}
@@ -149,8 +149,8 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor_Tint: {r: 0.54901963, g: 0.4862745, b: 0.5467328, a: 0}
-    - _Light_Color: {r: 0.8962264, g: 0.71374005, b: 0.33397114, a: 0}
+    - _BaseColor_Tint: {r: 0.54901963, g: 0.50640476, b: 0.4862745, a: 0}
+    - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
     - _RimLight_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _SSS_Color: {r: 1, g: 1, b: 1, a: 0}
