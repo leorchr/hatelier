@@ -17,12 +17,16 @@ public class S_Base_Compas_ : MonoBehaviour
         {
             inTrigger.Add(other.gameObject);
         }
+        else if (other.CompareTag("Pushable"))
+        {
+            inTrigger.Add(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("Object out");
-        if (inTrigger.Contains(other.gameObject))
+        Debug.Log("Object out");
+        while (inTrigger.Contains(other.gameObject))
         {
             inTrigger.Remove(other.gameObject);
         }

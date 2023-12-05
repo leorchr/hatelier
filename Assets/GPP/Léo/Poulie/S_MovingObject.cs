@@ -6,15 +6,15 @@ using UnityEditor.TerrainTools;
 #endif
 using UnityEngine;
 
-
+public enum MoveType
+{
+    SmoothDamp,
+    Curve
+}
 
 public class S_MovingObject : S_Receiver
 {
-    public enum MoveType
-    {
-        SmoothDamp,
-        Curve
-    }
+    
 
     //Position variable
     public Transform tBegin;
@@ -34,8 +34,9 @@ public class S_MovingObject : S_Receiver
     [HideInInspector] public bool isAutomatic = false;
     [HideInInspector] public float timeBetween = 1;
 
-    bool goinToTheEnd = false;
-    bool isMovingNow;
+    bool goinToTheEnd = false, hasSyncParent = false;
+    public bool isMovingNow;
+    public bool AntiUnsync = false, playerUnder = false;
     float moveTime = 0.0f;
     
 
@@ -50,12 +51,20 @@ public class S_MovingObject : S_Receiver
         if (isAutomatic) { Interact(); }
         underNeathDetector = transform.Find("UnderneathDetector").GetComponent<S_Base_Compas_>();
         
-
+        hasSyncParent = transform.parent.GetComponent<s_Sync_Moving>() != null;
     }
 
     private void Update()
     {
-        if (isMovingNow && (underNeathDetector.inTrigger.Count == 0 || lastPosition.y < transform.position.y))
+        if (underNeathDetector.inTrigger.Count != 0 && isMovingNow && !playerUnder && !AntiUnsync)
+        {
+            if (hasSyncParent)
+            {
+                transform.parent.GetComponent<s_Sync_Moving>().stopAll();
+            }
+            playerUnder = true;
+        }
+        if (isMovingNow && !AntiUnsync)
         {
             lastPosition = transform.position;
             switch (moveType)
@@ -82,10 +91,19 @@ public class S_MovingObject : S_Receiver
                 isMovingNow = false;
                 transform.position = targetPosition;
                 if (isAutomatic) { Invoke("ChangeDirection", timeBetween); }
+                if (hasSyncParent) { transform.parent.GetComponent<s_Sync_Moving>().addOneFinished(); }
                
             }
         }
-        
+        if (underNeathDetector.inTrigger.Count == 0 && isMovingNow && playerUnder && AntiUnsync)
+        {
+            
+            if (hasSyncParent)
+            {
+                transform.parent.GetComponent<s_Sync_Moving>().moveAll();
+            }
+            playerUnder = false;
+        }
         //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
     }
 
