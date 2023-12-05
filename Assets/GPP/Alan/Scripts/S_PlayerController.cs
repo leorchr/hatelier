@@ -1,5 +1,5 @@
 using UnityEngine;
-using System;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -29,11 +29,16 @@ public class S_PlayerController : MonoBehaviour
 
     [SerializeField] [Range(0.0f,1.0f)] private float m_decelerateRate;
 
+    [Header("Sound")]
+    [SerializeField] private List<AudioClip> audioClips;
+    [SerializeField] private AudioSource playerSource;
+
     private void Awake()
     {
         if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
+        playerSource = GetComponent<AudioSource>();
         m_baseScale = transform.localScale;
     }
 
@@ -170,5 +175,13 @@ public class S_PlayerController : MonoBehaviour
             m_PushCollider = null;
         }
 
+    }
+
+    public void StepSound()
+    {
+        int currentSound = Random.Range(0, audioClips.Count);
+        playerSource.clip = audioClips[currentSound];
+
+        playerSource.Play();
     }
 }
