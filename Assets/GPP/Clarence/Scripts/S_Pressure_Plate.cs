@@ -19,6 +19,7 @@ public class S_Pressure_Plate : MonoBehaviour
     public PressureType type = PressureType.Hold;
 
     [SerializeField] private S_Receiver[] receivers;
+    [SerializeField] private GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -77,10 +78,11 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public void Activate()
     {
-        foreach (S_Receiver moveObject in receivers)
-        {
-            moveObject.Interact();
-        }
+        door.GetComponent<Animator>().SetBool("GetStatue", true);
+        //foreach (S_Receiver moveObject in receivers)
+        //{
+        //    moveObject.Interact();
+        //}
     }
 
     public S_Receiver[] getMoveObjects() { return  receivers; }
@@ -92,22 +94,22 @@ public class Edit_Plate : Editor
 {
     // Custom in-scene UI for when ExampleScript
     // component is selected.
-    public void OnSceneGUI()
-    {
-        var t = target as S_Pressure_Plate;
-        var tr = t.transform;
-        var pos = tr.position;
-        // display an orange disc where the object is
-        var color = new Color(1, 0.8f, 0.4f, 1);
-        Handles.color = color;
-        Handles.DrawWireDisc(pos, tr.up, 1.0f);
-        foreach (S_MovingObject moveObject in t.getMoveObjects())
-        {
-            if (moveObject != null)
-            {
-                Handles.DrawDottedLine(tr.position, moveObject.transform.position, 5);
-            }
-        }
-    }
+    //public void OnSceneGUI()
+    //{
+    //    var t = target as S_Pressure_Plate;
+    //    var tr = t.transform;
+    //    var pos = tr.position;
+    //    // display an orange disc where the object is
+    //    var color = new Color(1, 0.8f, 0.4f, 1);
+    //    Handles.color = color;
+    //    Handles.DrawWireDisc(pos, tr.up, 1.0f);
+    //    foreach (S_MovingObject moveObject in t.getMoveObjects())
+    //    {
+    //        if (moveObject != null)
+    //        {
+    //            Handles.DrawDottedLine(tr.position, moveObject.transform.position, 5);
+    //        }
+    //    }
+    //}
 }
 #endif
