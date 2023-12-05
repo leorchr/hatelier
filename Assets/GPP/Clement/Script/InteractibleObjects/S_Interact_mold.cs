@@ -33,7 +33,7 @@ public class S_Interact_mold : S_Interactable
             {
                 return cannotUseMatText;
             }
-            else if (!CheckPossibleRecipes(S_Inventory.instance.GetMaterials(),moldInventory.GetMaterial1()))
+            else if (!CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), moldInventory.GetMaterial1()))
             {
                 return incompatibleRecipe;
             }
@@ -42,21 +42,21 @@ public class S_Interact_mold : S_Interactable
                 return description;
             }
         }
-        else if(!moldInventory.IsInventoryFull())
+        else if (!moldInventory.IsInventoryFull())
         {
-                return inventoryEmpty;
+            return inventoryEmpty;
         }
         else if (moldInventory.IsFirstSlotFull())
         {
             return description;
         }
         else { return description; }
-           
+
     }
 
     public override string GetMatDescription()
     {
-        if(S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
         {
             return mold.description;
 
@@ -69,46 +69,46 @@ public class S_Interact_mold : S_Interactable
 
     public override void Interact()
     {
-        
+
         if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1() && CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), moldInventory.GetMaterial1()))
         {
 
-                moldInventory.refreshMoldInv();
+            moldInventory.refreshMoldInv();
 
-                if(S_Inventory.instance.GetMaterials() != null)
+            if (S_Inventory.instance.GetMaterials() != null)
                 if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
 
                     moldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
                     S_Inventory.instance.ClearInventory();
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-                    
+
                 }
 
-                // Quand le ui sera terminer on fera comme ca au lieu du boutton bake
-                if (moldInventory.IsInventoryFull())
-                {
-                    moldInventory.CheckRecipeMaterialWithMoldMaterial();
-                    
-                 }
-               
-                //isInInventory = true;
+            // Quand le ui sera terminer on fera comme ca au lieu du boutton bake
+            if (moldInventory.IsInventoryFull())
+            {
+                moldInventory.CheckRecipeMaterialWithMoldMaterial();
+
+            }
+
+            //isInInventory = true;
             //}
             //else
             //{
-               // S_Menu_Manager.Instance.stopPlayer(true);
-                //mainInventoryGroup.gameObject.SetActive(false);
-                //reducedInventory.gameObject.SetActive(true);
-                //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
-                //isInInventory = false;
-                //BakeButton.onClick.RemoveAllListeners();
+            // S_Menu_Manager.Instance.stopPlayer(true);
+            //mainInventoryGroup.gameObject.SetActive(false);
+            //reducedInventory.gameObject.SetActive(true);
+            //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
+            //isInInventory = false;
+            //BakeButton.onClick.RemoveAllListeners();
 
             //}
         }
-       
-        
 
-        
+
+
+
 
     }
 
