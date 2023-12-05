@@ -948,8 +948,8 @@ GameObject:
   - component: {fileID: 3918492886457886919}
   - component: {fileID: 2077412443170989268}
   - component: {fileID: 8914771960891924476}
-  - component: {fileID: 1253286167795523485}
-  - component: {fileID: 7467860033548317845}
+  - component: {fileID: 4956763933666157161}
+  - component: {fileID: 5500081258787471388}
   m_Layer: 9
   m_Name: Moule (1)
   m_TagString: Mold
@@ -1044,7 +1044,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1253286167795523485
+--- !u!114 &4956763933666157161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1053,41 +1053,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486524776510617201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226344ffe0325ff4793de29d2ebe79b7, type: 3}
+  m_Script: {fileID: 11500000, guid: c4b061edcdbc9514eaa856232dc84272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matOne: {fileID: 0}
+  matThree: {fileID: 0}
+  moldSlotImage1: {fileID: 4377790252003050834}
+  moldSlotImage3: {fileID: 7310763936034972823}
+  sliderSupport: {fileID: 8000986874344989338}
+  bakingSlider: {fileID: 143392581560111774}
+  bakingTimer: 2
+  addStatueTimer: 0
+  stopTimer: 0
+  door: {fileID: 0}
+  recipesList:
+  - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
+--- !u!114 &5500081258787471388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486524776510617201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1293cfa93dfd0409255d511d064369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactiontype: 0
   description: Press <color=red>RIGHT CLICK</color>
   cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
   inventoryEmpty: <color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>
+  incompatibleRecipe: <color=red>INCOMPATIBLE RECIPE</color>
   mainInventoryGroup: {fileID: 0}
   mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
---- !u!114 &7467860033548317845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486524776510617201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da7262ebf9ad0244dadc9dc36b65db15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  matOne: {fileID: 0}
-  matTwo: {fileID: 0}
-  matThree: {fileID: 0}
-  moldSlotImage1: {fileID: 4377790252003050834}
-  moldSlotImage2: {fileID: 4377790252003050834}
-  moldSlotImage3: {fileID: 7310763936034972823}
-  sliderSupport: {fileID: 8000986874344989338}
-  bakingSlider: {fileID: 143392581560111774}
-  bakingTimer: 1
-  addStatueTimer: 2
-  stopTimer: 0
-  door: {fileID: 0}
-  recipesList:
-  - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
 --- !u!1 &1558432072758481081
 GameObject:
   m_ObjectHideFlags: 0

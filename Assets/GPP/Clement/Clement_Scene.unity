@@ -496,6 +496,25 @@ MonoBehaviour:
   door: {fileID: 0}
   recipesList:
   - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
+--- !u!114 &1115115944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115115931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1293cfa93dfd0409255d511d064369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiontype: 0
+  description: Press <color=red>RIGHT CLICK</color>
+  cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
+  inventoryEmpty: <color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>
+  incompatibleRecipe: <color=red>INCOMPATIBLE RECIPE</color>
+  mainInventoryGroup: {fileID: 0}
+  mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
 --- !u!1001 &1186044761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,6 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7467860033548317845, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
+    - {fileID: 1253286167795523485, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -768,6 +788,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1115115938}
+    - targetCorrespondingSourceObject: {fileID: 1486524776510617201, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1115115944}
   m_SourcePrefab: {fileID: 100100000, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
 --- !u!1 &1872157331 stripped
 GameObject:

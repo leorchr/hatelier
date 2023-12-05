@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class S_Interact_mold : S_Interactable
+public class S_Solo_Interact_Mold : S_Interactable
 {
     [Header("Display Text")]
     public string description = "Press <color=red>RIGHT CLICK</color>";
@@ -12,28 +12,30 @@ public class S_Interact_mold : S_Interactable
     public string inventoryEmpty = "<color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>";
     public string incompatibleRecipe = "<color=red>INCOMPATIBLE RECIPE</color>";
     [Header("Inventory")]
-    private Image reducedInventory;
     public GameObject mainInventoryGroup;
 
     private S_Mold_Inventory moldInventory;
+    private S_Solo_Mold_Inventory soloMoldInventory;
+
 
     public S_Materials mold;
 
     private void Start()
     {
-        reducedInventory = S_UI_Inventory.instance.GetComponent<Image>();
         moldInventory = GetComponent<S_Mold_Inventory>();
+        soloMoldInventory = GetComponent<S_Solo_Mold_Inventory>();
+
     }
 
     public override string GetDescription()
     {
         if (S_Inventory.instance.GetMaterials() != null)
         {
-            if (S_Inventory.instance.GetMaterials() == moldInventory.GetMaterial1())
+            if (S_Inventory.instance.GetMaterials() == soloMoldInventory.GetMaterial1())
             {
                 return cannotUseMatText;
             }
-            else if (!CheckPossibleRecipes(S_Inventory.instance.GetMaterials(),moldInventory.GetMaterial1()))
+            else if (!CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), soloMoldInventory.GetMaterial1()))
             {
                 return incompatibleRecipe;
             }
@@ -42,21 +44,21 @@ public class S_Interact_mold : S_Interactable
                 return description;
             }
         }
-        else if(!moldInventory.IsInventoryFull())
+        else if (!soloMoldInventory.IsInventoryFull())
         {
-                return inventoryEmpty;
+            return inventoryEmpty;
         }
-        else if (moldInventory.IsFirstSlotFull())
+        else if (soloMoldInventory.IsFirstSlotFull())
         {
             return description;
         }
         else { return description; }
-           
+
     }
 
     public override string GetMatDescription()
     {
-        if(S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != null && S_Inventory.instance.GetMaterials() != soloMoldInventory.GetMaterial1())
         {
             return mold.description;
 
@@ -69,52 +71,52 @@ public class S_Interact_mold : S_Interactable
 
     public override void Interact()
     {
-        
-        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1() && CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), moldInventory.GetMaterial1()))
+
+        if (S_Inventory.instance.GetMaterials() != soloMoldInventory.GetMaterial1() && CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), soloMoldInventory.GetMaterial1()))
         {
 
-                moldInventory.refreshMoldInv();
+            soloMoldInventory.refreshMoldInv();
 
-                if(S_Inventory.instance.GetMaterials() != null)
-                if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
+            if (S_Inventory.instance.GetMaterials() != null)
+                if (!soloMoldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
 
-                    moldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
+                    soloMoldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
                     S_Inventory.instance.ClearInventory();
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();
-                    
+
                 }
 
-                // Quand le ui sera terminer on fera comme ca au lieu du boutton bake
-                if (moldInventory.IsInventoryFull())
-                {
-                    moldInventory.CheckRecipeMaterialWithMoldMaterial();
-                    
-                 }
-               
-                //isInInventory = true;
+            // Quand le ui sera terminer on fera comme ca au lieu du boutton bake
+            if (soloMoldInventory.IsInventoryFull())
+            {
+                soloMoldInventory.CheckRecipeMaterialWithMoldMaterial();
+
+            }
+
+            //isInInventory = true;
             //}
             //else
             //{
-               // S_Menu_Manager.Instance.stopPlayer(true);
-                //mainInventoryGroup.gameObject.SetActive(false);
-                //reducedInventory.gameObject.SetActive(true);
-                //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
-                //isInInventory = false;
-                //BakeButton.onClick.RemoveAllListeners();
+            // S_Menu_Manager.Instance.stopPlayer(true);
+            //mainInventoryGroup.gameObject.SetActive(false);
+            //reducedInventory.gameObject.SetActive(true);
+            //S_UI_Inventory.instance.ClearMoldInventoryStatueIcon();
+            //isInInventory = false;
+            //BakeButton.onClick.RemoveAllListeners();
 
             //}
         }
-       
-        
 
-        
+
+
+
 
     }
 
     private bool CheckPossibleRecipes(S_Materials m1, S_Materials m2)
     {
-        S_Recipes[] availableRecipe = moldInventory.recipesList;
+        S_Recipes[] availableRecipe = soloMoldInventory.recipesList;
         if (m2 == null)
         {
             foreach (S_Recipes r in availableRecipe)

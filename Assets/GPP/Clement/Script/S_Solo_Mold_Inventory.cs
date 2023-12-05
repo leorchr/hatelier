@@ -24,8 +24,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     public GameObject door;
 
 
-
-    [SerializeField] private S_Recipes[] recipesList;
+    public S_Recipes[] recipesList;
     private int recipeNumber;
     private bool launchFunction = false;
 
