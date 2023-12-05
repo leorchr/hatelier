@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,9 +10,11 @@ public class GameManager : MonoBehaviour
     float m_timeCounter = 0.0f;
     float m_lastFramerate = 0.0f;
     public float m_refreshTime = 0.5f;
+    public TextMeshProUGUI fpsTxt;
 
     void Update()
     {
+        //Debug.Log(Application.targetFrameRate);
         if (m_timeCounter < m_refreshTime)
         {
             m_timeCounter += Time.deltaTime;
@@ -25,15 +28,15 @@ public class GameManager : MonoBehaviour
             m_timeCounter = 0.0f;
         }
 
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log(m_lastFramerate);
-        }
+        //if (Debug.isDebugBuild)
+        //{
+            fpsTxt.text = m_lastFramerate.ToString();
+        //}
     }
 
 
     private void Awake()
     {
-        Application.targetFrameRate = 90;        
+        Application.targetFrameRate = 60;
     }
 }
