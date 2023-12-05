@@ -10,6 +10,7 @@ public class S_Interact_mold : S_Interactable
     public string description = "Press <color=red>RIGHT CLICK</color>";
     public string cannotUseMatText = "<color=red>CANNOT PUT 2 SAME MATERIALS</color>";
     public string inventoryEmpty = "<color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>";
+    public string incompatibleRecipe = "<color=red>INCOMPATIBLE RECIPE</color>";
     [Header("Inventory")]
     private Image reducedInventory;
     public GameObject mainInventoryGroup;
@@ -28,13 +29,17 @@ public class S_Interact_mold : S_Interactable
     {
         if (S_Inventory.instance.GetMaterials() != null)
         {
-            if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+            if (S_Inventory.instance.GetMaterials() == moldInventory.GetMaterial1())
             {
-                return description;
+                return cannotUseMatText;
+            }
+            else if (!CheckPossibleRecipes(S_Inventory.instance.GetMaterials(),moldInventory.GetMaterial1()))
+            {
+                return incompatibleRecipe;
             }
             else
             {
-                return cannotUseMatText;
+                return description;
             }
         }
         else if(!moldInventory.IsInventoryFull())
@@ -65,7 +70,7 @@ public class S_Interact_mold : S_Interactable
     public override void Interact()
     {
         
-        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1())
+        if (S_Inventory.instance.GetMaterials() != moldInventory.GetMaterial1() && CheckPossibleRecipes(S_Inventory.instance.GetMaterials(), moldInventory.GetMaterial1()))
         {
 
                 moldInventory.refreshMoldInv();
@@ -107,5 +112,47 @@ public class S_Interact_mold : S_Interactable
 
     }
 
-    
+    private bool CheckPossibleRecipes(S_Materials m1, S_Materials m2)
+    {
+        S_Recipes[] availableRecipe = moldInventory.recipesList;
+        if (m2 == null)
+        {
+            foreach (S_Recipes r in availableRecipe)
+            {
+                foreach (S_Materials rm in r.requiredMaterials)
+                {
+                    if (rm == m1)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        else
+        {
+            List<S_Recipes> recipeCompatible = new List<S_Recipes>();
+            List<int> materialCompatiblePos = new List<int>();
+            foreach (S_Recipes r in availableRecipe)
+            {
+                for (int i = 0; i < r.requiredMaterials.Length; i++)
+                {
+                    if (r.requiredMaterials[i] == m2)
+                    {
+                        recipeCompatible.Add(r);
+                        materialCompatiblePos.Add(i);
+
+                    }
+                }
+            }
+            for (int i = 0; i < recipeCompatible.Count; i++)
+            {
+                if (recipeCompatible[i].requiredMaterials[1 - materialCompatiblePos[i]] == m1)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
