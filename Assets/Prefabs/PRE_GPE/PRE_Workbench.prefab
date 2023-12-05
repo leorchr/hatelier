@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 69270712442339886}
   - component: {fileID: 5130487558408795844}
   - component: {fileID: 5406743108086485192}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Equal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4844048427772259630}
   - component: {fileID: 5898346751482618665}
   - component: {fileID: 3145449064464742341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PRE_Workbench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,9 @@ MonoBehaviour:
   sliderSupport: {fileID: 3700409146656269372}
   bakingSlider: {fileID: 9048287185833573764}
   bakingTimer: 2
+  addStatueTimer: 0
   stopTimer: 0
+  door: {fileID: 0}
   recipesList:
   - {fileID: 11400000, guid: 5665999ef62bf0d42b2f8d12009ead53, type: 2}
 --- !u!65 &3145449064464742341
@@ -247,7 +249,7 @@ GameObject:
   - component: {fileID: 5312469848507536042}
   - component: {fileID: 5255283604274833375}
   - component: {fileID: 3384593080895683726}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +325,7 @@ GameObject:
   - component: {fileID: 8028796267277399053}
   - component: {fileID: 6609687065116421347}
   - component: {fileID: 4016112466031672996}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +427,7 @@ GameObject:
   - component: {fileID: 6287025177946377895}
   - component: {fileID: 7321233164080379690}
   - component: {fileID: 4163043862529859775}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +510,7 @@ GameObject:
   - component: {fileID: 7474919282505218526}
   - component: {fileID: 7083015456536301066}
   - component: {fileID: 5166533361665345945}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: IconMoldStatue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4095276964451386993}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: SliderSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +621,7 @@ GameObject:
   - component: {fileID: 7247085202298245842}
   - component: {fileID: 269318743011368273}
   - component: {fileID: 4242421401922826949}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StatueSlotBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4782247965801684812}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2812049496701669739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: handles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +765,7 @@ GameObject:
   - component: {fileID: 956773132111855425}
   - component: {fileID: 8082278351269111534}
   - component: {fileID: 282095056109032702}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MainInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +842,7 @@ GameObject:
   - component: {fileID: 2670787407619913390}
   - component: {fileID: 4798732451584464580}
   - component: {fileID: 5598799878051631565}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7633377115812485548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: etabli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +951,7 @@ GameObject:
   - component: {fileID: 6842006075884763271}
   - component: {fileID: 993231944096388634}
   - component: {fileID: 1467466705069033469}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Statue slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1027,7 @@ GameObject:
   - component: {fileID: 6755821272122574635}
   - component: {fileID: 5001209430431162426}
   - component: {fileID: 7657399610357175203}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: IconMold2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5698237903819082783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1134,7 @@ GameObject:
   - component: {fileID: 8373976820890378193}
   - component: {fileID: 5899799431132417018}
   - component: {fileID: 4395408912339552583}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2076958002875010237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999476698084665379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7754184418867159593}
   - component: {fileID: 9048287185833573764}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1361,7 @@ GameObject:
   - component: {fileID: 6626895821493229636}
   - component: {fileID: 2026375254394776764}
   - component: {fileID: 2555115538063636953}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,7 +1434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311754177660283957}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MainInventoryGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1474,7 @@ GameObject:
   - component: {fileID: 6844362182577306189}
   - component: {fileID: 517544282030738309}
   - component: {fileID: 8305104117135017286}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: IconMold1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
