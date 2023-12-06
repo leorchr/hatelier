@@ -314,12 +314,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &276285165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4377790252003050834, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &313940800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -466,55 +460,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43e4d60ec528b14ba1da9d65d79fa7e, type: 3}
---- !u!1 &1115115931 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1486524776510617201, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1115115938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115115931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b061edcdbc9514eaa856232dc84272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  matOne: {fileID: 0}
-  matThree: {fileID: 0}
-  moldSlotImage1: {fileID: 276285165}
-  moldSlotImage3: {fileID: 1400962973}
-  sliderSupport: {fileID: 1872157331}
-  bakingSlider: {fileID: 1449889349}
-  bakingTimer: 2
-  addStatueTimer: 0
-  stopTimer: 0
-  door: {fileID: 0}
-  recipesList:
-  - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
---- !u!114 &1115115944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115115931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1293cfa93dfd0409255d511d064369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactiontype: 0
-  description: Press <color=red>RIGHT CLICK</color>
-  cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
-  inventoryEmpty: <color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>
-  incompatibleRecipe: <color=red>INCOMPATIBLE RECIPE</color>
-  mainInventoryGroup: {fileID: 0}
-  mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
 --- !u!1001 &1186044761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,24 +533,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2350d3636593c734e939fca74c0bd439, type: 3}
---- !u!1 &1400962973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7310763936034972823, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1449889349 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 143392581560111774, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1616590755
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,27 +705,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7467860033548317845, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
-    - {fileID: 1253286167795523485, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1486524776510617201, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1115115938}
-    - targetCorrespondingSourceObject: {fileID: 1486524776510617201, guid: f15c125ff83582e41a90b73b31b2ba34,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1115115944}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15c125ff83582e41a90b73b31b2ba34, type: 3}
---- !u!1 &1872157331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8000986874344989338, guid: f15c125ff83582e41a90b73b31b2ba34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724304550}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2016193122
 GameObject:
   m_ObjectHideFlags: 0

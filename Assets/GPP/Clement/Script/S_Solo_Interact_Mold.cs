@@ -14,7 +14,6 @@ public class S_Solo_Interact_Mold : S_Interactable
     [Header("Inventory")]
     public GameObject mainInventoryGroup;
 
-    private S_Mold_Inventory moldInventory;
     private S_Solo_Mold_Inventory soloMoldInventory;
 
 
@@ -22,9 +21,7 @@ public class S_Solo_Interact_Mold : S_Interactable
 
     private void Start()
     {
-        moldInventory = GetComponent<S_Mold_Inventory>();
         soloMoldInventory = GetComponent<S_Solo_Mold_Inventory>();
-
     }
 
     public override string GetDescription()
