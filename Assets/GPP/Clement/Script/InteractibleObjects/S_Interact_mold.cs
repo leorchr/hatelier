@@ -116,42 +116,65 @@ public class S_Interact_mold : S_Interactable
     private bool CheckPossibleRecipes(S_Materials m1, S_Materials m2)
     {
         S_Recipes[] availableRecipe = moldInventory.recipesList;
-        if (m2 == null)
+        bool isSoloMold = false;
+        if (availableRecipe.Length > 0)
+        {
+            isSoloMold = availableRecipe[0].requiredMaterials.Length == 1;
+        }
+        else
+        {
+            return false;
+        }
+        if (isSoloMold)
         {
             foreach (S_Recipes r in availableRecipe)
             {
-                foreach (S_Materials rm in r.requiredMaterials)
+                if (r.requiredMaterials[0] == m1)
                 {
-                    if (rm == m1)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
         else
         {
-            List<S_Recipes> recipeCompatible = new List<S_Recipes>();
-            List<int> materialCompatiblePos = new List<int>();
-            foreach (S_Recipes r in availableRecipe)
+            if (m2 == null)
             {
-                for (int i = 0; i < r.requiredMaterials.Length; i++)
+                foreach (S_Recipes r in availableRecipe)
                 {
-                    if (r.requiredMaterials[i] == m2)
+                    foreach (S_Materials rm in r.requiredMaterials)
                     {
-                        recipeCompatible.Add(r);
-                        materialCompatiblePos.Add(i);
-
+                        if (rm == m1)
+                        {
+                            return true;
+                        }
                     }
                 }
             }
-            for (int i = 0; i < recipeCompatible.Count; i++)
+            else
             {
-                if (recipeCompatible[i].requiredMaterials[1 - materialCompatiblePos[i]] == m1)
+                List<S_Recipes> recipeCompatible = new List<S_Recipes>();
+                List<int> materialCompatiblePos = new List<int>();
+                foreach (S_Recipes r in availableRecipe)
                 {
-                    return true;
+                    for (int i = 0; i < r.requiredMaterials.Length; i++)
+                    {
+                        if (r.requiredMaterials[i] == m2)
+                        {
+                            recipeCompatible.Add(r);
+                            materialCompatiblePos.Add(i);
+
+                        }
+                    }
+                }
+                for (int i = 0; i < recipeCompatible.Count; i++)
+                {
+                    if (recipeCompatible[i].requiredMaterials[1 - materialCompatiblePos[i]] == m1)
+                    {
+                        return true;
+                    }
                 }
             }
+            return false;
         }
         return false;
     }
