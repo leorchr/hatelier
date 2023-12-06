@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3316598800193552821}
   serializedVersion: 2
   m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: 1.0199223, y: -3.632, z: 3.3177404}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -102,6 +102,7 @@ MonoBehaviour:
   description: Press <color=red>RIGHT CLICK</color>
   FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: 40f41dcbfee227948bc6e8158f81cb63, type: 2}
+  depotRessource: {fileID: 0}
 --- !u!65 &6638365807614231405
 BoxCollider:
   m_ObjectHideFlags: 0

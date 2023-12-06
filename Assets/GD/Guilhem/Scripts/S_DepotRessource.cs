@@ -5,7 +5,10 @@ using UnityEngine;
 public class S_DepotRessource : MonoBehaviour
 {
     public GameObject objectToSpawn;
+    [SerializeField] private S_Interactable_Obj objectToSpawnScript;
     public bool isMaterialPresent;
+    public float respawnTime;
+    public bool isObject;
     [SerializeField] private Transform spawnPosition;
 
     private float timerSpawnCurrent;
@@ -13,22 +16,33 @@ public class S_DepotRessource : MonoBehaviour
 
     public void Start()
     {
+        objectToSpawnScript = objectToSpawn.GetComponent<S_Interactable_Obj>();
         SpawnMaterial();
+
     }
 
     public void Update()
     {
         CheckMaterialPresence();
+
+        if(!isObject)
+        {
+            Invoke("SpawnMaterial", respawnTime);
+            Debug.Log(respawnTime);
+        }
     }
 
     public void SpawnMaterial()
     {
         if(!isMaterialPresent && objectToSpawn != null)
         {
+            Debug.Log("spaaaaaaaaaaawn");
             Instantiate(objectToSpawn, spawnPosition);
             isMaterialPresent = true;
+            isObject = true;
 
-            timerSpawnCurrent = timerSpawnMax;
+            objectToSpawnScript.depotRessource = this;
+            //timerSpawnCurrent = timerSpawnMax;
         }
     }
 
@@ -43,4 +57,6 @@ public class S_DepotRessource : MonoBehaviour
             }
         }
     }
+
+
 }
