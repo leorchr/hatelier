@@ -1446,7 +1446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 6693912433924704347}
   remainingTime: 90
-  maxTime: 0
 --- !u!1 &1749439722657727422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,9 +3108,9 @@ MonoBehaviour:
   m_PushedObject: {fileID: 0}
   m_PushCollider: {fileID: 0}
   m_leftStick: {fileID: 6247216575463369329}
-  m_Acceleration: 10
+  m_Acceleration: 25
   m_MaxSpeed: 5
-  m_decelerateRate: 0.271
+  m_decelerateRate: 0.05
   audioClips: []
   playerSource: {fileID: 0}
 --- !u!114 &1575489901307458186
@@ -3495,6 +3494,7 @@ Transform:
   - {fileID: 4345008511484810566}
   - {fileID: 2576770478173925635}
   - {fileID: 1980460205184657822}
+  - {fileID: 2512900012792559500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3514730988251953367
@@ -6283,6 +6283,75 @@ Transform:
   - {fileID: 6591140200551540180}
   m_Father: {fileID: 8398552348023196898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6644744437444155668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2512900012792559500}
+  - component: {fileID: 9134195329396970693}
+  - component: {fileID: 6363975073614763969}
+  m_Layer: 0
+  m_Name: GameMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2512900012792559500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644744437444155668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8256593598171699054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9134195329396970693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644744437444155668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: badb3b352cacf2e48915b396a8a6a6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!114 &6363975073614763969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644744437444155668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd89aef099d511640bb9d04a9fd31663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPhase: 1
+  settings:
+  - scoreMin: 30
+    scoreMaxAmount: 30
+    timePhase: 90
+  - scoreMin: 30
+    scoreMaxAmount: 30
+    timePhase: 90
+  - scoreMin: 30
+    scoreMaxAmount: 30
+    timePhase: 90
 --- !u!1 &6652942199636689962
 GameObject:
   m_ObjectHideFlags: 0
