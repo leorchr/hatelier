@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
-  m_Name: Platre
+  m_Name: Tow
   m_EditorClassIdentifier: 
   canBeBaked: 1
-  materialName: Platre
-  description: 'platre
-
-'
-  FullInventorydescription: Le platre c'est cool
-  icone: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  prefab: {fileID: 5177155783091969399, guid: 0af88a0ef87c9ec4f85ee3f2f558d97d, type: 3}
+  materialName: Filasse
+  description: Filasse
+  FullInventorydescription: N/A
+  icone: {fileID: 0}
+  prefab: {fileID: 6936840334256627977, guid: 305ead5730afc8d4dab6cdc2c14d55d9, type: 3}

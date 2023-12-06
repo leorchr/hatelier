@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
+  m_Name: Seashell
+  m_EditorClassIdentifier: 
+  canBeBaked: 1
+  materialName: Coquillage
+  description: Coquillage
+  FullInventorydescription: N/A
+  icone: {fileID: 0}
+  prefab: {fileID: 5972387832994977159, guid: d30992c7894a5e4439cc21fd00f49963, type: 3}

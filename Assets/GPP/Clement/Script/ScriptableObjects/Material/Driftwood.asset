@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
-  m_Name: Bronze
+  m_Name: Driftwood
   m_EditorClassIdentifier: 
   canBeBaked: 1
-  materialName: Bronze
-  description: ' <color=blue>Type</color> : Bronze
+  materialName: "Bois flott\xE9"
+  description: ' <color=blue>Type</color> : Wood
 
     <color=green>Description</color>
-    : Object commun'
+    : Object est tres Rare'
   FullInventorydescription: 'Detail : <color=red>Deposer votre item dans le moule
     pour en attraper d''autre</color>'
-  icone: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  cookTime: 0
-  prefab: {fileID: 5623710495034676762, guid: e43e4d60ec528b14ba1da9d65d79fa7e, type: 3}
+  icone: {fileID: 21300000, guid: acf91d9afa65fa446b82c02f7579a512, type: 3}
+  prefab: {fileID: 593888259118908635, guid: d1984af76fd246648848d9e185c2774e, type: 3}
