@@ -11,6 +11,7 @@ public class S_Interactable_Obj : S_Interactable
     public string FullInventoryDescription = "<color=red>INVENTORY IS FULL</color>";
 
     public S_Materials material;
+    public S_DepotRessource depotRessource;
 
     public override string GetDescription()
     {
@@ -41,6 +42,7 @@ public class S_Interactable_Obj : S_Interactable
         {
             S_Player_Interaction.instance.OnInteraction();
             S_Inventory.instance.AddToInventory(material);
+            depotRessource.isObject = false;
             Destroy(gameObject);
         }
     }
