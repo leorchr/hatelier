@@ -33,6 +33,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         launchFunction = false;
         bakingSlider.maxValue = bakingTimer;
         bakingSlider.value = bakingTimer;
+        door.GetComponent<Animator>().SetBool("GetStatue", false);
     }
     public void AddToInventory(S_Materials material)
     {
@@ -132,7 +133,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         //add statue to statue inventory 
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
 
-        //ouvrir porte
+        door.GetComponent<Animator>().SetBool("GetStatue", true);
         //score
 
     }
