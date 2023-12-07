@@ -11,6 +11,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
 
     [Header("UI IMAGE SLOT")]
     [SerializeField] private GameObject moldSlotImage1;
+    [SerializeField] private GameObject moldSlotImageRef;
     [SerializeField] private GameObject moldSlotImage3;
 
     [Header("Slider")]
@@ -171,7 +172,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         }
         else
         {
-            moldSlotImage1.GetComponent<Image>().sprite = null;
+            moldSlotImage1.GetComponent<Image>().sprite = moldSlotImageRef.GetComponent<Image>().sprite;
         }
 
         //Refresh third slot
@@ -181,7 +182,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         }
         else
         {
-            moldSlotImage3.GetComponent<Image>().sprite = null;
+            moldSlotImage3.GetComponent<Image>().sprite = moldSlotImageRef.GetComponent<Image>().sprite; 
         }
 
 
