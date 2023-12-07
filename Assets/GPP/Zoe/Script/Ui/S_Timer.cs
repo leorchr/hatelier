@@ -25,7 +25,7 @@ public class S_Timer : MonoBehaviour
     {
         if(remainingTime <= 0)
         {
-            GameMode.instance.GameOver();
+            GameMode.instance.EndGame();
         }
         else
         {

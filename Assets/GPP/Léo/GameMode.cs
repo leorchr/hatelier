@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameMode : MonoBehaviour
 
     [HideInInspector] public int currentPhase = 1;
     public phaseSettings[] settings = new phaseSettings[3];
+    public string finalPanelScene = "UIPanelFinal";
 
 
     private void Awake()
@@ -38,16 +40,23 @@ public class GameMode : MonoBehaviour
             else if (currentPhase == 3)
             {
                 S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
-                //end game
+                EndGame();
             }
 
             currentPhase++;
         }
     }
 
-    public void GameOver()
+    public void EndGame()
     {
-        // à coder
+        if (finalPanelScene != null)
+        {
+            SceneManager.LoadScene(finalPanelScene);
+        }
+        else
+        {
+            Debug.LogWarning("Cannot load leaderboard, you must add a name in Final Panel Scene");
+        }
     }
 }
 

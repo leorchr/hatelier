@@ -46,7 +46,7 @@ public class S_Leaderboard : MonoBehaviour
     public void SetupLeaderboard()
     {
         playerNameTemp = text.GetComponent<TextMeshProUGUI>().text;
-        playerScoreTemp = Random.Range(0, 100); // récupérer le score du joueur ici
+        playerScoreTemp = S_ScoreSystem.instance.score; // récupérer le score du joueur ici
         S_LeaderboardSave.instance.LoadFile();
         S_LeaderboardSave.instance.SaveToFile();
         S_LeaderboardSave.instance.saveData.UpdateUI();
