@@ -71,7 +71,11 @@ public class S_PlayerController : MonoBehaviour
         //Rotation of the player
         if ((m_leftStick.Horizontal != 0 || m_leftStick.Vertical != 0) && !m_isPushing)
         {
-            if (m_rigidbody.velocity != Vector3.zero) {
+            float dist = 0.6f;
+            Vector3 rayPos = new Vector3(transform.position.x,transform.position.y + 1,transform.position.z);
+            Vector3 rayDir = new Vector3(leftStick.x, 0, leftStick.y);
+            bool rayHit = Physics.Raycast(rayPos, rayDir,dist) ;
+            if (m_rigidbody.velocity != Vector3.zero && !rayHit) {
                 float yRotation = Quaternion.LookRotation(m_rigidbody.velocity).eulerAngles.y;
                 transform.rotation = Quaternion.LookRotation(m_rigidbody.velocity);
                 transform.rotation = Quaternion.Euler(transform.rotation.x, yRotation, transform.rotation.z);
