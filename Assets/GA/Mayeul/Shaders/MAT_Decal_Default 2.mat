@@ -65,12 +65,13 @@ Material:
     m_Floats:
     - _AutoNormalMap_Enable: 1
     - _AutoNormalMap_Strength: 1
+    - _DecalAngleFadeSupported: 1
     - _DecalMeshBiasType: 0
     - _DecalMeshDepthBias: 0
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
     - _NormalBlend: 1
-    - _NormalMap_Enable: 1
+    - _NormalMap_Enable: 0
     - _Opacity: 1
     - _Roughness_Invert: 0
     m_Colors:
