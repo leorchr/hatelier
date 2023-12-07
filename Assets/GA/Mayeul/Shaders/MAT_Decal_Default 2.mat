@@ -38,10 +38,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: 3bc0bce0be59000409b0e3837b2f08e1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 181c96b5303b3734a83ebfca5f3f0c0d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: a3fbb120662ede64baf9eb6466d7cd56, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -68,6 +72,7 @@ Material:
     - _NormalBlend: 1
     - _NormalMap_Enable: 1
     - _Opacity: 1
+    - _Roughness_Invert: 0
     m_Colors:
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
