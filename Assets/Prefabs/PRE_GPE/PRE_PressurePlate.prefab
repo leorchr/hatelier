@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9125786221180487478}
   - component: {fileID: 2814394668977422595}
   - component: {fileID: 1308061525231610307}
+  - component: {fileID: 7903320393152399798}
   m_Layer: 0
   m_Name: bouton
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7903320393152399798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563168609284120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 73.59995, y: 8.200001, z: 73.6}
+  m_Center: {x: -0.0000038146973, y: 14.949387, z: -0.0000076293945}
 --- !u!1 &683765794171788904
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,8 +219,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4556571894713406207}
+  - component: {fileID: 8409889237017189166}
+  - component: {fileID: 5438679058054233898}
   m_Layer: 0
-  m_Name: PRE_Socle
+  m_Name: PRE_PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8159708464600250558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.339, y: 0.00000023841858, z: -5.027}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -221,3 +245,42 @@ Transform:
   - {fileID: 6699215018823375357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8409889237017189166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159708464600250558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5438679058054233898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159708464600250558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2ddc0df8db7894b8a6175a2ad7fe7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCanActivate: 0
+  crateCanActivate: 1
+  type: 1
+  receivers:
+  - {fileID: 0}
+  door: {fileID: 0}
