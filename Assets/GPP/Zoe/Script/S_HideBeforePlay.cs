@@ -35,7 +35,6 @@ public class S_HideBeforePlay : MonoBehaviour
                 Color elementsColor = elements.GetComponent<Image>().color;
                 elementsColor = new Color(elementsColor.r, elementsColor.g, elementsColor.b, colorAlphaLow);
                 elements.GetComponent<Image>().color = elementsColor;
-                Debug.Log("cheh");
             }
 
             leftStick.GetComponent<S_LeftStick>().enabled = false;
