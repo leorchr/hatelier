@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2120726209709012995}
   - component: {fileID: 2376331486290794167}
   - component: {fileID: 1394928673918253748}
-  - component: {fileID: 903460913241265697}
+  - component: {fileID: 5144467376938379337}
   m_Layer: 0
   m_Name: PRE_Bench
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.74300003, y: 0, z: 2.1797247}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 152ce7af83a2d8f4da11cfe30ddff6e3, type: 3}
+  - {fileID: 2100000, guid: 5edad632f0319d7459bb75a7618f4fbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &903460913241265697
+--- !u!65 &5144467376938379337
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 219.67863, y: 121.45862, z: 80.647415}
-  m_Center: {x: 102.034645, y: 59.99153, z: 37.381752}
+  m_Size: {x: 1.953742, y: 1.1425442, z: 0.70018196}
+  m_Center: {x: -0.78601027, y: 0.5674475, z: 0.29379117}

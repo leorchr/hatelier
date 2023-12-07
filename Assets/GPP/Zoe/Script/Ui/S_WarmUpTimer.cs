@@ -46,7 +46,6 @@ public class S_WarmUpTimer : MonoBehaviour
         if(remainingTime <= 0 && !gameBegin)
         {
             warmUpTimer.SetActive(false);
-            Debug.Log("okok");
             beginTextGO.SetActive(true);
             playBegin.text = textBegin;
             Invoke("ShowTimer", timeTextBeforeBegin);
@@ -57,7 +56,6 @@ public class S_WarmUpTimer : MonoBehaviour
     {
         beginTextGO.SetActive(false);
         timer.SetActive(true);
-        Debug.Log("kldskfo");
         gameBegin = true;
     }
 

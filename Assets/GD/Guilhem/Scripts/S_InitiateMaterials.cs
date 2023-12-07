@@ -18,28 +18,48 @@ public class S_InitiateMaterials : MonoBehaviour
 
     void Awake()
     {
-        foreach(GameObject depot in firstStepDepotsObjects)
+        if (firstStepDepotsObjects.Count != 0)
         {
-            int randomMaterial = Random.Range(0, firstStepMaterials.Count);
-            depot.GetComponent<S_DepotRessource>().objectToSpawn = firstStepMaterials[randomMaterial];
+            foreach (GameObject depot in firstStepDepotsObjects)
+            {
+                if (firstStepMaterials.Count != 0)
+                {
+                    int randomMaterial = Random.Range(0, firstStepMaterials.Count);
+                    depot.GetComponent<S_DepotRessource>().objectToSpawn = firstStepMaterials[randomMaterial];
 
-            firstStepMaterials.Remove(firstStepMaterials[randomMaterial]);
+                    firstStepMaterials.Remove(firstStepMaterials[randomMaterial]);
+                }
+            }
         }
 
-        foreach (GameObject depot in secondStepDepots)
+        if (secondStepDepots.Count != 0)
         {
-            int randomMaterial = Random.Range(0, secondStepMaterials.Count);
-            depot.GetComponent<S_DepotRessource>().objectToSpawn = secondStepMaterials[randomMaterial];
+            foreach (GameObject depot in secondStepDepots)
+            {
+                if (secondStepMaterials.Count != 0)
+                {
+                    int randomMaterial = Random.Range(0, secondStepMaterials.Count);
+                    depot.GetComponent<S_DepotRessource>().objectToSpawn = secondStepMaterials[randomMaterial];
 
-            secondStepMaterials.Remove(secondStepMaterials[randomMaterial]);
+                    secondStepMaterials.Remove(secondStepMaterials[randomMaterial]);
+                }
+            }
+
         }
 
-        foreach (GameObject depot in thirdStepDepots)
+        if (thirdStepDepots.Count != 0)
         {
-            int randomMaterial = Random.Range(0, thirdStepMaterials.Count);
-            depot.GetComponent<S_DepotRessource>().objectToSpawn = thirdStepMaterials[randomMaterial];
+            foreach (GameObject depot in thirdStepDepots)
+            {
+                if (thirdStepMaterials.Count != 0)
+                {
+                    int randomMaterial = Random.Range(0, thirdStepMaterials.Count);
+                    depot.GetComponent<S_DepotRessource>().objectToSpawn = thirdStepMaterials[randomMaterial];
 
-            thirdStepMaterials.Remove(thirdStepMaterials[randomMaterial]);
+                    thirdStepMaterials.Remove(thirdStepMaterials[randomMaterial]);
+
+                }
+            }
         }
     }
 }

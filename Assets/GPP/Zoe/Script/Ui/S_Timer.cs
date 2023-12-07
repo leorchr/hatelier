@@ -10,8 +10,6 @@ public class S_Timer : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     public float remainingTime;
-    public float maxTime;
-
 
     private void Awake()
     {
@@ -20,14 +18,27 @@ public class S_Timer : MonoBehaviour
 
     private void Start()
     {
-        maxTime = remainingTime;
+        remainingTime = GameMode.instance.settings[0].timePhase;
         this.gameObject.SetActive(false);
     }
     void Update()
     {
-        remainingTime -= Time.deltaTime;
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if(remainingTime <= 0)
+        {
+            GameMode.instance.GameOver();
+        }
+        else
+        {
+            remainingTime -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(remainingTime / 60);
+            int seconds = Mathf.FloorToInt(remainingTime % 60);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+    }
+
+    public void TimerNextPhase(phaseSettings settings)
+    {
+        remainingTime = settings.timePhase;
     }
 }

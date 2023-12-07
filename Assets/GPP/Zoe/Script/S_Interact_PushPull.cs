@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public enum dir
@@ -29,16 +28,10 @@ public class S_Interact_PushPull : S_Interactable
 
     public string description = "Press <color=red>RIGHT CLICK</color>";
 
-    Rigidbody rb;
-
-    dir currentDir = dir.none;
-
     [Space(5)]
     public Side[] sides;
 
     private BoxCollider bc;
-
-    
 
     
     public override string GetDescription()
@@ -75,6 +68,7 @@ public class S_Interact_PushPull : S_Interactable
 
             }
         }
+
         else if (S_PlayerController.instance.m_PushedObject == transform.parent.gameObject)
         {
             S_Player_Interaction.instance.interactionEnabled = true;
@@ -90,7 +84,6 @@ public class S_Interact_PushPull : S_Interactable
 
             bc.enabled = true;
         }
-        
     }
 
     private bool hasAtLeastOneSideActive()
@@ -124,11 +117,9 @@ public class S_Interact_PushPull : S_Interactable
     private void Start()
     {
        foreach(Side s in sides)
-        {
+       {
             s.transform.gameObject.SetActive(s.active);
-        }
-
-        rb= transform.parent.GetComponent<Rigidbody>();
-        bc = transform.parent.GetComponent<BoxCollider>();
+       }
+       bc = transform.parent.GetComponent<BoxCollider>();
     }
 }

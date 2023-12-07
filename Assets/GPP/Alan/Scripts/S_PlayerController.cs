@@ -159,7 +159,6 @@ public class S_PlayerController : MonoBehaviour
             BoxCollider bc = go.GetComponent<BoxCollider>();
             Vector3 scale = go.transform.localScale;
             Vector3 fwd = transform.forward;
-            Debug.Log("Hello");
            
             
             m_PushCollider.size = new Vector3(scale.x * bc.size.x, scale.y * bc.size.y, scale.z * bc.size.z);

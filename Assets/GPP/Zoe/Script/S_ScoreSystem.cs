@@ -1,23 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class S_ScoreSystem : MonoBehaviour
 {
-    public int score;
-    public int scoreMax;
+    public static S_ScoreSystem instance;
 
-    // Update is called once per frame
-    void Update()
+    public int score;
+
+    private void Awake()
     {
-        
+        if (!instance) instance = this;
     }
 
-    public void ScoreWithTimer()
+    private void Start()
     {
-        Time.timeScale = 0;
-        float endedTime = S_Timer.instance.remainingTime;
-        float earnedPoint = endedTime * 100 / S_Timer.instance.maxTime;
-        score = (int)earnedPoint % scoreMax;
+        score = GameMode.instance.settings[0].scoreMin;
+    }
+
+    public void SetupScoreEndPhase(phaseSettings settings)
+    {
+        if(S_Timer.instance != null)
+        {
+            float endedTime = S_Timer.instance.remainingTime;
+            float earnedPoint = endedTime / settings.timePhase * settings.scoreMaxAmount;
+            score += (int)earnedPoint;
+
+            score += settings.scoreMin;
+        }
     }
 }
