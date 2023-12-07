@@ -16,7 +16,6 @@ public class ClosedDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("plahyer");
             m_Door.GetComponent<Animator>().SetBool("IsPassed", true);
         }
     }

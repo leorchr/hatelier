@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class S_ScoreSystem : MonoBehaviour
@@ -22,13 +21,13 @@ public class S_ScoreSystem : MonoBehaviour
 
     public void SetupScoreEndPhase(phaseSettings settings)
     {
-        float endedTime = S_Timer.instance.remainingTime;
-        float earnedPoint = endedTime / settings.timePhase * settings.scoreMaxAmount;
-        Debug.Log(earnedPoint);
-        score += (int)earnedPoint;
-        Debug.Log(score);
+        if(S_Timer.instance != null)
+        {
+            float endedTime = S_Timer.instance.remainingTime;
+            float earnedPoint = endedTime / settings.timePhase * settings.scoreMaxAmount;
+            score += (int)earnedPoint;
 
-        score += settings.scoreMin;
-        Debug.Log(score);
+            score += settings.scoreMin;
+        }
     }
 }

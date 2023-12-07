@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 0}
+  objectToSpawnScript: {fileID: 0}
   isMaterialPresent: 0
+  respawnTime: 0
+  isObject: 0
   spawnPosition: {fileID: 537058858110180891}
   timerSpawnMax: 2
