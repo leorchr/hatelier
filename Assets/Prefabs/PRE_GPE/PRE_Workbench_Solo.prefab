@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2232783767397876649}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: SliderSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1284105211496823895}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MainInventoryGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 1762670082673429700}
   - component: {fileID: 1882119285417951030}
   - component: {fileID: 178824175159844932}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Statue slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 3429412547864991932}
   - component: {fileID: 3187436049805681644}
   - component: {fileID: 446025757928256786}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: IconMoldStatue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,8 @@ GameObject:
   - component: {fileID: 6226595548115416177}
   - component: {fileID: 1263655588235325241}
   - component: {fileID: 7727088930516226651}
-  m_Layer: 0
+  - component: {fileID: 4416066648356124154}
+  m_Layer: 9
   m_Name: PRE_Workbench_Solo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,6 +387,27 @@ MonoBehaviour:
   incompatibleRecipe: <color=red>INCOMPATIBLE RECIPE</color>
   mainInventoryGroup: {fileID: 0}
   mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
+--- !u!65 &4416066648356124154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572097294944687641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7479466, y: 1.9302205, z: 0.9999998}
+  m_Center: {x: 0.00024197937, y: -0.009535582, z: 0}
 --- !u!1 &2736390024976585779
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +419,7 @@ GameObject:
   - component: {fileID: 5513099165883738104}
   - component: {fileID: 4319508181858231759}
   - component: {fileID: 2261706530624334184}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MainInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +495,7 @@ GameObject:
   - component: {fileID: 873827561817203085}
   - component: {fileID: 2320486625920945297}
   - component: {fileID: 4256934810464986689}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: IconMold2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +571,7 @@ GameObject:
   - component: {fileID: 7852227155694191222}
   - component: {fileID: 8810354629028251003}
   - component: {fileID: 3536609719495293995}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5265965156884376296}
   - component: {fileID: 5479534525848331240}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1888449515598676528}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +798,7 @@ GameObject:
   - component: {fileID: 8893695348827001166}
   - component: {fileID: 5274239650905072684}
   - component: {fileID: 2958294098905458241}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Equal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +934,7 @@ GameObject:
   - component: {fileID: 5641215329948544530}
   - component: {fileID: 8677315958641998720}
   - component: {fileID: 6061752868425132593}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StatueSlotBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +1010,7 @@ GameObject:
   - component: {fileID: 1613160845807422656}
   - component: {fileID: 3577764270857066244}
   - component: {fileID: 585841800006816843}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1085,7 @@ GameObject:
   - component: {fileID: 7544824422687360459}
   - component: {fileID: 3343439968529507328}
   - component: {fileID: 2935550354298463551}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1160,7 @@ GameObject:
   - component: {fileID: 6339718540067100626}
   - component: {fileID: 4495516907452021624}
   - component: {fileID: 1199844875247712143}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
