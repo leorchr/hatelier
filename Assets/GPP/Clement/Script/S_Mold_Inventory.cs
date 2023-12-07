@@ -25,8 +25,6 @@ public class S_Mold_Inventory : MonoBehaviour
     [Header("Door")]
     public GameObject door;
 
-
-
     public S_Recipes[] recipesList;
     private int recipeNumber;
     private bool launchFunction = false;
@@ -141,7 +139,6 @@ public class S_Mold_Inventory : MonoBehaviour
 
     private void AddStatueToStatueInvFunction()
     {
-
         ClearMoldInventoryStatueIcon();
         ClearStatueSlot();
 
@@ -151,7 +148,6 @@ public class S_Mold_Inventory : MonoBehaviour
         GameMode.instance.ChangePhase();
 
         door.GetComponent<Animator>().SetBool("GetStatue", true);
-
     }
 
     public void DisplayMoldInventoryIcons()
@@ -213,8 +209,6 @@ public class S_Mold_Inventory : MonoBehaviour
         {
             moldSlotImage3.GetComponent<Image>().sprite = null;
         }
-
-
     }
 
     public S_Materials GetMaterial1() { return matOne; }

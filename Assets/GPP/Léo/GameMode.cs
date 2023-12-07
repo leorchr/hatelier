@@ -23,22 +23,26 @@ public class GameMode : MonoBehaviour
 
     public void ChangePhase()
     {
-        if(currentPhase == 1)
+        if(S_ScoreSystem.instance != null && S_Timer.instance != null)
         {
-            S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase-1]);
-            S_Timer.instance.TimerNextPhase(settings[currentPhase]);
+            if (currentPhase == 1)
+            {
+                S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
+                S_Timer.instance.TimerNextPhase(settings[currentPhase]);
+            }
+            else if (currentPhase == 2)
+            {
+                S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
+                S_Timer.instance.TimerNextPhase(settings[currentPhase]);
+            }
+            else if (currentPhase == 3)
+            {
+                S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
+                //end game
+            }
+
+            currentPhase++;
         }
-        else if(currentPhase == 2)
-        {
-            S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
-            S_Timer.instance.TimerNextPhase(settings[currentPhase]);
-        }
-        else if (currentPhase == 3)
-        {
-            S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
-            //end game
-        }
-        currentPhase++;
     }
 
     public void GameOver()

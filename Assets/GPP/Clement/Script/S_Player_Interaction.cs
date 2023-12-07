@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-
-
 public class S_Player_Interaction : MonoBehaviour
 {
-
     public static S_Player_Interaction instance;
     S_Interactable interactable;
 
@@ -26,11 +23,8 @@ public class S_Player_Interaction : MonoBehaviour
 
    public void OnTriggerEnter(Collider collider)
     {
-        
         if (((1 << collider.gameObject.layer & interactableLayer.value) != 0) && interactionEnabled)
         {
-            Debug.Log("COUCOU JE SUIS ANSNAJSNAS");
-
             interactable = (S_Interactable)collider.GetComponent(typeof(S_Interactable));
 
             if (interactable != null)
