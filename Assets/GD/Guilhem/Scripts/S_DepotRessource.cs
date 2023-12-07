@@ -16,7 +16,9 @@ public class S_DepotRessource : MonoBehaviour
 
     public void Start()
     {
+        if(objectToSpawn != null)
         objectToSpawnScript = objectToSpawn.GetComponent<S_Interactable_Obj>();
+
         SpawnMaterial();
 
     }
