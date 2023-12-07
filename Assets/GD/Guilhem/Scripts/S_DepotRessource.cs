@@ -30,7 +30,6 @@ public class S_DepotRessource : MonoBehaviour
         if(!isObject)
         {
             Invoke("SpawnMaterial", respawnTime);
-            Debug.Log(respawnTime);
         }
     }
 
@@ -38,7 +37,6 @@ public class S_DepotRessource : MonoBehaviour
     {
         if(!isMaterialPresent && objectToSpawn != null)
         {
-            Debug.Log("spaaaaaaaaaaawn");
             Instantiate(objectToSpawn, spawnPosition);
             isMaterialPresent = true;
             isObject = true;
