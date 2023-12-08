@@ -70,7 +70,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer1_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer1_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -78,7 +86,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer2_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer2_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -171,6 +187,18 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Layer1_01_Normal_Strength: 1
+    - _Layer1_01_Rotate: 0
+    - _Layer1_01_Tiling: 1
+    - _Layer1_02_Normal_Strength: 1
+    - _Layer1_02_Rotate: 0
+    - _Layer1_02_Tiling: 1
+    - _Layer2_01_Normal_Strength: 1
+    - _Layer2_01_Rotate: 0
+    - _Layer2_01_Tiling: 1
+    - _Layer2_02_Normal_Strength_1: 1
+    - _Layer2_02_Rotate: 0
+    - _Layer2_02_Tiling: 1
     - _Line_Enable: 1
     - _Line_Hue: -5
     - _Line_Saturation: 1.5
@@ -209,12 +237,12 @@ Material:
     - _TEXMerge_Enable: 0
     - _TexNormalMap_Enable: 1
     - _Using_sRGB_Tex: 1
-    - _Wind_Density: 0.347
+    - _Wind_Density: 1
     - _Wind_Direction: -0.75
     - _Wind_Enable: 1
     - _Wind_FixAxis: 0
     - _Wind_Speed: 0.43
-    - _Wind_Strength: 1
+    - _Wind_Strength: 0.4
     - _WorkflowMode: 1
     - _WorldPosMapping_Enable: 0
     - _ZTest: 4
