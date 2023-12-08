@@ -17,6 +17,15 @@ public class S_Inventory : MonoBehaviour
       
     }
 
+    private void Update()
+    {
+        if(inventory != null) S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
+        else
+        {
+            S_UI_Inventory.instance.inventoryGroupe.SetActive(false);
+        }
+    }
+
     public void AddToInventory(S_Materials material)
     {
         inventory = material;
