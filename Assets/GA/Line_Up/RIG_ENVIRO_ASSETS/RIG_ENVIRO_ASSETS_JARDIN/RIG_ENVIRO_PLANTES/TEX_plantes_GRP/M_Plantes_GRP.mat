@@ -34,7 +34,7 @@ Material:
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _SSS_Enable
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -224,7 +224,7 @@ Material:
     - _Roughness: 0.2
     - _RoughnessMap_Enable: 1
     - _Roughness_Invert: 0
-    - _SSS_Enable: 0
+    - _SSS_Enable: 1
     - _SSS_Threshold: 1
     - _Scale_X: 1
     - _Scale_Y: 1
