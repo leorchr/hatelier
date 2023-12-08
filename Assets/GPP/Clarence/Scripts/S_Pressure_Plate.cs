@@ -78,6 +78,7 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public void Activate()
     {
+        print("saucisse");
         door.GetComponent<Animator>().SetBool("GetStatue", true);
         //foreach (S_Receiver moveObject in receivers)
         //{
