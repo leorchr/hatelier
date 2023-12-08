@@ -16,18 +16,25 @@ public class S_ScoreSystem : MonoBehaviour
 
     private void Start()
     {
-        score = GameMode.instance.settings[0].scoreMin;
+        AddScoreMin();
     }
 
-    public void SetupScoreEndPhase(phaseSettings settings)
+    public void SetupScoreEndPhase(PhaseSettings settings)
     {
-        if(S_Timer.instance != null)
+        if (S_Timer.instance != null)
         {
             float endedTime = S_Timer.instance.remainingTime;
+            GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = S_Timer.instance.remainingTime; // ajoute le temps aux stats
+
             float earnedPoint = endedTime / settings.timePhase * settings.scoreMaxAmount;
             score += (int)earnedPoint;
-
-            score += settings.scoreMin;
+            GameMode.instance.stats.scorePhases[GameMode.instance.currentPhase - 1] += (int)earnedPoint; // ajoute le score au stats
         }
+    }
+
+    public void AddScoreMin()
+    {
+        score += GameMode.instance.settings[GameMode.instance.currentPhase - 1].scoreMin;
+        GameMode.instance.stats.scorePhases[GameMode.instance.currentPhase - 1] += GameMode.instance.settings[GameMode.instance.currentPhase - 1].scoreMin;
     }
 }

@@ -15,7 +15,10 @@ public class S_Leaderboard : MonoBehaviour
     [SerializeField] private GameObject leaderboard;
     [SerializeField] private GameObject inputField;
     [SerializeField] private GameObject text;
-
+    
+    // Display Stats Player
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI timeText;
 
     private GameObject[] display;
     private GameObject[] nameList;
@@ -41,6 +44,12 @@ public class S_Leaderboard : MonoBehaviour
             nameList[i] = display[i].transform.GetChild(0).gameObject;
             scoreList[i] = display[i].transform.GetChild(1).gameObject;
         }
+
+        scoreText.text = "Score : " + S_ScoreSystem.instance.score.ToString();
+        float time = S_Timer.instance.timeSinceBeggining;
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        timeText.text = "Temps total : " + string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void SetupLeaderboard()

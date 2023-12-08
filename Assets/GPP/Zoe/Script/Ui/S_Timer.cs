@@ -10,6 +10,7 @@ public class S_Timer : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     public float remainingTime;
+    public float timeSinceBeggining;
 
     private void Awake()
     {
@@ -23,7 +24,8 @@ public class S_Timer : MonoBehaviour
     }
     void Update()
     {
-        if(remainingTime <= 0)
+        timeSinceBeggining += Time.deltaTime;
+        if (remainingTime <= 0.1f)
         {
             GameMode.instance.EndGame();
         }
@@ -37,7 +39,7 @@ public class S_Timer : MonoBehaviour
 
     }
 
-    public void TimerNextPhase(phaseSettings settings)
+    public void TimerNextPhase(PhaseSettings settings)
     {
         remainingTime = settings.timePhase;
     }
