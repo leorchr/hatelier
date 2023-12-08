@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffac80be903a3d949b66e64de5c5c787, type: 3}
-  m_Name: Recipe1_3
+  m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
+  m_Name: Armature 4
   m_EditorClassIdentifier: 
+  canBeBaked: 1
+  materials: {fileID: 0}
+  materialName: 
+  description: 
+  FullInventorydescription: 
   icone: {fileID: 0}
-  requiredMaterials:
-  - {fileID: 11400000, guid: a7f4d0ffef3e02948b0ea4ac4bb62c92, type: 2}
-  statueIcon: {fileID: 0}
-  statue: {fileID: 0}
+  prefab: {fileID: 0}
