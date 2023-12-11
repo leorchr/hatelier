@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Brick
   m_EditorClassIdentifier: 
   canBeBaked: 1
+  materials: {fileID: 0}
   materialName: Brique
+  displayName: une Brique
   description: ' <color=blue>Type</color> : Bronze
 
     <color=green>Description</color>
@@ -22,3 +24,4 @@ MonoBehaviour:
     pour en attraper d''autre</color>'
   icone: {fileID: 21300000, guid: 717c40478e7df814b9b56f25483ccab3, type: 3}
   prefab: {fileID: 3316598800193552821, guid: b70df3620c8d67f4c917095b7d19b04c, type: 3}
+  phase: 2

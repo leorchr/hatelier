@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Tow
   m_EditorClassIdentifier: 
   canBeBaked: 1
+  materials: {fileID: 0}
   materialName: Filasse
+  displayName: de la Filasse
   description: Filasse
   FullInventorydescription: N/A
   icone: {fileID: 21300000, guid: 6c92de4cfc2f9454c97d00642a9b4c35, type: 3}
   prefab: {fileID: 6936840334256627977, guid: 305ead5730afc8d4dab6cdc2c14d55d9, type: 3}
+  phase: 1

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Driftwood
   m_EditorClassIdentifier: 
   canBeBaked: 1
+  materials: {fileID: 0}
   materialName: "Bois flott\xE9"
+  displayName: "du Bois Flott\xE9"
   description: ' <color=blue>Type</color> : Wood
 
     <color=green>Description</color>
@@ -22,3 +24,4 @@ MonoBehaviour:
     pour en attraper d''autre</color>'
   icone: {fileID: 21300000, guid: 76d90d30d7fa31c4cb9510262c695806, type: 3}
   prefab: {fileID: 593888259118908635, guid: d1984af76fd246648848d9e185c2774e, type: 3}
+  phase: 2

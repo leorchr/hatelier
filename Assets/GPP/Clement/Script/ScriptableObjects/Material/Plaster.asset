@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Plaster
   m_EditorClassIdentifier: 
   canBeBaked: 1
+  materials: {fileID: 0}
   materialName: "Pl\xE2tre"
+  displayName: "du Pl\xE2tre"
   description: "Pl\xE2tre"
   FullInventorydescription: Le platre c'est cool
   icone: {fileID: 21300000, guid: 615154ce873f8104fa934f9bfee40c2e, type: 3}
   prefab: {fileID: 1534620280776594127, guid: 89dc7b292a3c66e49a2679db1d057fa8, type: 3}
+  phase: 1
