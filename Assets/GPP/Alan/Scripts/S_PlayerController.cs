@@ -177,12 +177,4 @@ public class S_PlayerController : MonoBehaviour
         }
 
     }
-
-    public void StepSound()
-    {
-        int currentSound = Random.Range(0, audioClips.Count);
-        playerSource.clip = audioClips[currentSound];
-
-        playerSource.Play();
-    }
 }
