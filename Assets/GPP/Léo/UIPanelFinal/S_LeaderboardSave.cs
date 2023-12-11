@@ -68,7 +68,7 @@ public class SaveData
 
     public void Save()
     {
-        stats.Add(new PlayerStats(S_Leaderboard.instance.playerNameTemp, S_Leaderboard.instance.playerScoreTemp));
+        stats.Add(new PlayerStats(S_Leaderboard.instance.playerNameTemp, S_Leaderboard.instance.playerScoreTemp, S_Leaderboard.instance.playerTimeTemp));
     }
     public void UpdateUI()
     {
@@ -82,11 +82,16 @@ public class SaveData
             {
                 S_Leaderboard.instance.GetNameList()[i].GetComponent<TextMeshProUGUI>().text = "";
                 S_Leaderboard.instance.GetScoreList()[i].GetComponent<TextMeshProUGUI>().text = "";
+                S_Leaderboard.instance.GetTimeList()[i].GetComponent<TextMeshProUGUI>().text = "";
             }
             else
             {
                 S_Leaderboard.instance.GetNameList()[i].GetComponent<TextMeshProUGUI>().text = ranked[i].playerName;
                 S_Leaderboard.instance.GetScoreList()[i].GetComponent<TextMeshProUGUI>().text = ranked[i].playerScore.ToString();
+                float time = ranked[i].playerTime;
+                int minutes = Mathf.FloorToInt(time / 60);
+                int seconds = Mathf.FloorToInt(time % 60);
+                S_Leaderboard.instance.GetTimeList()[i].GetComponent<TextMeshProUGUI>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
         }
     }
@@ -97,10 +102,12 @@ public struct PlayerStats
 {
     public string playerName;
     public int playerScore;
+    public float playerTime;
 
-    public PlayerStats(string name, int score)
+    public PlayerStats(string name, int score, float time)
     {
         playerName = name;
         playerScore = score;
+        playerTime = time;
     }
 }

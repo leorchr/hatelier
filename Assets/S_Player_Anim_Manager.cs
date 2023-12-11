@@ -8,6 +8,7 @@ public class S_Player_Anim_Manager : MonoBehaviour
     private Animator c_Animator;
 
     public VisualEffect DustVFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,7 @@ public class S_Player_Anim_Manager : MonoBehaviour
         
         DustVFX.SetVector3("Foot_Location", footPos);
         DustVFX.Play();
+
+        S_PlayerSound.instance.StepSound();
     }
 }

@@ -15,6 +15,7 @@ public class S_UI_Inventory : MonoBehaviour
     [SerializeField] private GameObject statueSlotImage2;
     [SerializeField] private GameObject statueSlotImage3;
     [SerializeField] private GameObject playerInventoryImage;
+    public GameObject inventoryGroupe;
 
     private S_Mold_Inventory currentMoldInv = null;
     
@@ -31,7 +32,6 @@ public class S_UI_Inventory : MonoBehaviour
      
 
         playerInventoryImage.GetComponent<Image>().sprite = playerInventory.icone;
-      
 
         playerInventoryImage.SetActive(true);
       

@@ -24,6 +24,8 @@ public class S_PlayerController : MonoBehaviour
     [SerializeField] private S_LeftStick m_leftStick;
     [SerializeField] private float m_Acceleration;
     [SerializeField] private float m_MaxSpeed;
+    private float maxSpeed;
+    [SerializeField] private float m_MaxPushPullSpeed;
 
     private bool m_IsOnPlatform = false;
 
@@ -31,15 +33,14 @@ public class S_PlayerController : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] private List<AudioClip> audioClips;
-    [SerializeField] private AudioSource playerSource;
 
     private void Awake()
     {
         if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
-        playerSource = GetComponent<AudioSource>();
         m_baseScale = transform.localScale;
+        maxSpeed = m_MaxSpeed;
     }
 
     private bool isNotInMenu = true;
@@ -53,8 +54,8 @@ public class S_PlayerController : MonoBehaviour
 
         //Add speed
         Vector2 maxSpd = new Vector2(
-            m_MaxSpeed * Mathf.Max(m_decelerateRate, Mathf.Abs(leftStick.x)),
-            m_MaxSpeed * Mathf.Max(m_decelerateRate, Mathf.Abs(leftStick.y)));
+            maxSpeed * Mathf.Max(m_decelerateRate, Mathf.Abs(leftStick.x)),
+            maxSpeed * Mathf.Max(m_decelerateRate, Mathf.Abs(leftStick.y)));
 
         //Clamp speed
         m_rigidbody.velocity = new Vector3(
@@ -171,20 +172,26 @@ public class S_PlayerController : MonoBehaviour
             float ygap = go.transform.position.y - transform.position.y;
 
             m_PushCollider.center = bc.center + new Vector3(0, ygap, gap) ;
+
+            
         }
         else
         {
             Destroy(m_PushCollider);
             m_PushCollider = null;
         }
-
+        applyMaxPushPullSpeed(active);
     }
 
-    public void StepSound()
+    public void applyMaxPushPullSpeed(bool b)
     {
-        int currentSound = Random.Range(0, audioClips.Count);
-        playerSource.clip = audioClips[currentSound];
-
-        playerSource.Play();
+        if (b)
+        {
+            maxSpeed = m_MaxPushPullSpeed;
+        }
+        else
+        {
+            maxSpeed = m_MaxSpeed;
+        }
     }
 }

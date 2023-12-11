@@ -7,6 +7,7 @@ using UnityEngine;
 public class S_Materials : ScriptableObject
 {
     public bool canBeBaked = true;
+    public Material materials;
     public string materialName;
     [TextAreaAttribute] public string description;
     [TextAreaAttribute] public string FullInventorydescription;
