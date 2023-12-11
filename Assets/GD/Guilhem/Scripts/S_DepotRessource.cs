@@ -29,7 +29,6 @@ public class S_DepotRessource : MonoBehaviour
     public void Update()
     {
         CheckMaterialPresence();
-        Debug.Log(objectToSpawn);
         if(objectOnDepot == null && objectHasDispawn)
         {
             Invoke("SpawnMaterial", respawnTime);

@@ -1308,6 +1308,7 @@ MonoBehaviour:
   timerText: {fileID: 6693912433924704347}
   remainingTime: 300
   timeSinceBeggining: 0
+  slider: {fileID: 4199762874563061722}
 --- !u!1 &1749439722657727422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,6 +2506,7 @@ MonoBehaviour:
   m_leftStick: {fileID: 6247216575463369329}
   m_Acceleration: 25
   m_MaxSpeed: 5
+  m_MaxPushPullSpeed: 0
   m_decelerateRate: 0.05
   audioClips: []
 --- !u!114 &1575489901307458186
