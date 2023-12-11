@@ -31,14 +31,12 @@ public class S_PlayerController : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] private List<AudioClip> audioClips;
-    [SerializeField] private AudioSource playerSource;
 
     private void Awake()
     {
         if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
-        playerSource = GetComponent<AudioSource>();
         m_baseScale = transform.localScale;
     }
 

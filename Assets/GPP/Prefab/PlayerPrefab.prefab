@@ -2386,6 +2386,7 @@ GameObject:
   - component: {fileID: 8033309532137821338}
   - component: {fileID: 1575489901307458186}
   - component: {fileID: 3655381720433066504}
+  - component: {fileID: 3547398005664272524}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2532,6 +2533,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DustVFX: {fileID: 691752962378815872}
+--- !u!114 &3547398005664272524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911619755036334748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fc4b71f9b8c2f4f9452aa62cddc959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSource: {fileID: 0}
+  workshopFootsteps:
+  - {fileID: 8300000, guid: 334561582eeb25e47bd3924f130b9d39, type: 3}
+  - {fileID: 8300000, guid: 7e339d05ea83e314b9f6507e24f2a3f8, type: 3}
+  - {fileID: 8300000, guid: ef0230ed223300d4abb2b005ed892958, type: 3}
+  - {fileID: 8300000, guid: 4e25bd9d7aaf4374ca6a49f6546f2c46, type: 3}
+  - {fileID: 8300000, guid: 434d268555a1425499d67b14aad3a54d, type: 3}
+  - {fileID: 8300000, guid: 5f3c07fdd83f1ab418aa481fc70eae8b, type: 3}
+  - {fileID: 8300000, guid: 8ab0ffa2fe842514094025fa0ba39f61, type: 3}
+  - {fileID: 8300000, guid: 6c1ae6f6c60e93240ad9adfcd2ac77b9, type: 3}
+  - {fileID: 8300000, guid: 3f059866826a5f34eb88583842344198, type: 3}
+  gardenFootsteps:
+  - {fileID: 8300000, guid: 44c6777e0210c614d821eedf2bd985ea, type: 3}
+  - {fileID: 8300000, guid: 647227481e5acd7498f52e51ffbe48ef, type: 3}
+  - {fileID: 8300000, guid: 0d1f39b8a412d6845beccce86b89a7a2, type: 3}
+  - {fileID: 8300000, guid: f33223bdb7dae98408c63bb6de2a1712, type: 3}
 --- !u!1 &2925663230951063651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6652,7 +6681,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.59
+      value: 15.65
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
@@ -6662,7 +6691,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.34
+      value: 4.18
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}

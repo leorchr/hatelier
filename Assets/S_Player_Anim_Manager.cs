@@ -28,6 +28,6 @@ public class S_Player_Anim_Manager : MonoBehaviour
         DustVFX.SetVector3("Foot_Location", footPos);
         DustVFX.Play();
 
-        S_PlayerController.instance.StepSound();
+        S_PlayerSound.instance.StepSound();
     }
 }
