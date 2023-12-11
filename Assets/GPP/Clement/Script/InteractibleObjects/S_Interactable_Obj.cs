@@ -13,6 +13,8 @@ public class S_Interactable_Obj : S_Interactable
     public S_Materials material;
     public S_DepotRessource depotRessource;
 
+    public bool isObj;
+
     public override string GetDescription()
     {
         if (S_Inventory.instance.GetMaterials() == null)
@@ -40,9 +42,10 @@ public class S_Interactable_Obj : S_Interactable
     {
         if (S_Inventory.instance.GetMaterials() == null)
         {
+            isObj = false;
             S_Player_Interaction.instance.OnInteraction();
             S_Inventory.instance.AddToInventory(material);
-            depotRessource.isObject = false;
+            //depotRessource.isObject = false;
             Destroy(gameObject);
         }
     }
