@@ -22,6 +22,7 @@ public class S_Statue_Inventory : MonoBehaviour
         if(head == null)
         {
             head = material;
+           
         }
         else if(top == null)
         {
@@ -32,16 +33,15 @@ public class S_Statue_Inventory : MonoBehaviour
             bottom = material;
         }
         S_UI_Inventory.instance.DisplayStatueInventory();
-        statue = head.prefab;
-       
-   }
+    }
 
     public void InstantiateStatue()
     {
         if(head != null && top != null && bottom != null)
         {
+            statue = head.prefab;
             S_InstantiateStatue.instance.AttributeSpecs(statue);
-            S_InstantiateStatue.instance.InstantiateStatue();
+            S_InstantiateStatue.instance.InstantiateStatue(statue);
 
         }
     }
