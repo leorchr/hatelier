@@ -1308,7 +1308,6 @@ MonoBehaviour:
   timerText: {fileID: 6693912433924704347}
   remainingTime: 300
   timeSinceBeggining: 0
-  slider: {fileID: 4199762874563061722}
 --- !u!1 &1749439722657727422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,6 +2389,7 @@ GameObject:
   - component: {fileID: 3655381720433066504}
   - component: {fileID: 3547398005664272524}
   - component: {fileID: 8977856904302064088}
+  - component: {fileID: 2286228125171593063}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2660,6 +2660,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2286228125171593063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911619755036334748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728621445d0056a439cf77db9f388281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &2925663230951063651
 GameObject:
   m_ObjectHideFlags: 0
