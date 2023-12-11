@@ -144,7 +144,7 @@ public class S_Mold_Inventory : MonoBehaviour
 
         //add statue to statue inventory 
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
-
+        if(S_Objectives.instance != null) S_Objectives.instance.CheckObjective(recipesList[recipeNumber]);
         GameMode.instance.ChangePhase();
 
         door.GetComponent<Animator>().SetBool("GetStatue", true);

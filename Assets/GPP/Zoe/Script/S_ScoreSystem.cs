@@ -37,4 +37,10 @@ public class S_ScoreSystem : MonoBehaviour
         score += GameMode.instance.settings[GameMode.instance.currentPhase - 1].scoreMin;
         GameMode.instance.stats.scorePhases[GameMode.instance.currentPhase - 1] += GameMode.instance.settings[GameMode.instance.currentPhase - 1].scoreMin;
     }
+
+    public void AddScore(int scoreBonus)
+    {
+        score += scoreBonus;
+        GameMode.instance.stats.scorePhases[GameMode.instance.currentPhase - 1] += scoreBonus;
+    }
 }
