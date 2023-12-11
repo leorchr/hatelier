@@ -61,5 +61,7 @@ public class S_InitiateMaterials : MonoBehaviour
                 }
             }
         }
+
+        if (S_Objectives.instance != null) S_Objectives.instance.SetupObjectives();
     }
 }
