@@ -34,7 +34,6 @@ public class S_PlayerSound : MonoBehaviour
         Vector3 rayPos = new Vector3(transform.position.x, transform.position.y+0.2f, transform.position.z) ;
         if (Physics.Raycast(rayPos, Vector3.down, out hit, 0.5f))
         {
-            Debug.Log(hit.collider.gameObject.layer);
             switch (hit.collider.gameObject.layer)
             {
                 case 6:
