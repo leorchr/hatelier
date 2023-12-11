@@ -8238,7 +8238,7 @@ PrefabInstance:
     - target: {fileID: 4017459642401668981, guid: c5823caa39e00b64db2b261594c2bf2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.06
+      value: 63.76
       objectReference: {fileID: 0}
     - target: {fileID: 4017459642401668981, guid: c5823caa39e00b64db2b261594c2bf2f,
         type: 3}
@@ -8248,7 +8248,7 @@ PrefabInstance:
     - target: {fileID: 4017459642401668981, guid: c5823caa39e00b64db2b261594c2bf2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.92
+      value: -5.77
       objectReference: {fileID: 0}
     - target: {fileID: 4017459642401668981, guid: c5823caa39e00b64db2b261594c2bf2f,
         type: 3}
@@ -9583,6 +9583,7 @@ MonoBehaviour:
   m_leftStick: {fileID: 6247216575393377903}
   m_Acceleration: 25
   m_MaxSpeed: 5
+  m_MaxPushPullSpeed: 1
   m_decelerateRate: 0.05
   audioClips: []
 --- !u!1 &8060236207284204153
