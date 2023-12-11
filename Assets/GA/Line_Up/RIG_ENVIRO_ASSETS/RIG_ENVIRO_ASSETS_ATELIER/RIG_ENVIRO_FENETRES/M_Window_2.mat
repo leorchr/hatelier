@@ -56,6 +56,38 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer1_01:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_02_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_01:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_02_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -127,6 +159,7 @@ Material:
     - _BaseColor_Rotate: 0
     - _BaseColor_Saturation: 1
     - _BaseColor_TIling: 1
+    - _BaseColor_Value: 0.35
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BounceLight_Hue: -5
@@ -153,6 +186,18 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Layer1_01_Normal_Strength: 1
+    - _Layer1_01_Rotate: 0
+    - _Layer1_01_Tiling: 1
+    - _Layer1_02_Normal_Strength: 1
+    - _Layer1_02_Rotate: 0
+    - _Layer1_02_Tiling: 1
+    - _Layer2_01_Normal_Strength: 1
+    - _Layer2_01_Rotate: 0
+    - _Layer2_01_Tiling: 1
+    - _Layer2_02_Normal_Strength_1: 1
+    - _Layer2_02_Rotate: 0
+    - _Layer2_02_Tiling: 1
     - _Line_Enable: 1
     - _Line_Hue: -5
     - _Line_Saturation: 1.5
@@ -177,8 +222,11 @@ Material:
     - _RimLight_Threshold: 7
     - _Roughness: 0.2
     - _RoughnessMap_Enable: 0
+    - _Roughness_Invert: 0
     - _SSS_Enable: 0
     - _SSS_Threshold: 1
+    - _Scale_X: 1
+    - _Scale_Y: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -201,7 +249,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor_Tint: {r: 1, g: 0.6745098, b: 0.98785436, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Light_Color: {r: 1, g: 1, b: 1, a: 0}
