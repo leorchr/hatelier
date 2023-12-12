@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
+  m_Name: Statue 1
+  m_EditorClassIdentifier: 
+  canBeBaked: 0
+  materials: {fileID: 0}
+  materialName: 
+  displayName: 
+  baseColor1: {fileID: 0}
+  normal1: {fileID: 0}
+  baseColor2: {fileID: 0}
+  normal2: {fileID: 0}
+  description: Statue
+  FullInventorydescription: 
+  icone: {fileID: 21300000, guid: b2e31a02baa083c4bbea8cfd88f6448f, type: 3}
+  prefab: {fileID: 8171310409453185300, guid: 4e3e6ecc85f30b04184104afa9006a90, type: 3}
+  phase: 0
