@@ -16,12 +16,13 @@ MonoBehaviour:
   materials: {fileID: 0}
   materialName: Brique
   displayName: une Brique
-  description: ' <color=blue>Type</color> : Bronze
-
-    <color=green>Description</color>
-    : Object commun'
-  FullInventorydescription: 'Detail : <color=red>Deposer votre item dans le moule
-    pour en attraper d''autre</color>'
+  baseColor1: {fileID: 0}
+  normal1: {fileID: 0}
+  baseColor2: {fileID: 0}
+  normal2: {fileID: 0}
+  description: Brique
+  FullInventorydescription: "La Brique est un mat\xE9riau constitu\xE9 de terre argileuse
+    crue cuite dans un four.\n"
   icone: {fileID: 21300000, guid: 717c40478e7df814b9b56f25483ccab3, type: 3}
   prefab: {fileID: 3316598800193552821, guid: b70df3620c8d67f4c917095b7d19b04c, type: 3}
   phase: 2

@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
   m_Name: Mold
   m_EditorClassIdentifier: 
+  canBeBaked: 1
+  materials: {fileID: 0}
   materialName: 
-  description: 'le MOUUUUULE
-
-'
+  displayName: 
+  baseColor1: {fileID: 0}
+  normal1: {fileID: 0}
+  baseColor2: {fileID: 0}
+  normal2: {fileID: 0}
+  description: 
   FullInventorydescription: 
   icone: {fileID: 0}
-  cookTime: 0
+  prefab: {fileID: 0}
+  phase: 0

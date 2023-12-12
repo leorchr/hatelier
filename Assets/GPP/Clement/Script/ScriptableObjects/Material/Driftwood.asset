@@ -16,12 +16,13 @@ MonoBehaviour:
   materials: {fileID: 0}
   materialName: "Bois flott\xE9"
   displayName: "du Bois Flott\xE9"
-  description: ' <color=blue>Type</color> : Wood
-
-    <color=green>Description</color>
-    : Object est tres Rare'
-  FullInventorydescription: 'Detail : <color=red>Deposer votre item dans le moule
-    pour en attraper d''autre</color>'
+  baseColor1: {fileID: 0}
+  normal1: {fileID: 0}
+  baseColor2: {fileID: 0}
+  normal2: {fileID: 0}
+  description: "Bois Flott\xE9"
+  FullInventorydescription: "Le bois flott\xE9 est un mat\xE9riau r\xE9colt\xE9 par
+    Germaine Richier. Il est utilis\xE9 pour dessiner des reliefs."
   icone: {fileID: 21300000, guid: 76d90d30d7fa31c4cb9510262c695806, type: 3}
   prefab: {fileID: 593888259118908635, guid: d1984af76fd246648848d9e185c2774e, type: 3}
   phase: 2
