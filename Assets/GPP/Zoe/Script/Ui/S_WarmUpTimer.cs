@@ -13,12 +13,12 @@ public class S_WarmUpTimer : MonoBehaviour
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject warmUpTimer;
     [SerializeField] private GameObject beginTextGO;
+    [SerializeField] private GameObject objectives;
 
     [SerializeField] private float timeTextBeforeBegin;
     [SerializeField] private float remainingTime;
 
     [SerializeField] private string textBegin;
-    private float maxTime;
 
     
 
@@ -33,7 +33,6 @@ public class S_WarmUpTimer : MonoBehaviour
     private void Start()
     {
         gameBegin = false;
-        maxTime = remainingTime;
         beginTextGO.SetActive(false);
         warmUpTimer.SetActive(true);
     }
@@ -45,6 +44,7 @@ public class S_WarmUpTimer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         if(remainingTime <= 0 && !gameBegin)
         {
+            objectives.GetComponent<Animator>().SetBool("OnScreen",true);
             warmUpTimer.SetActive(false);
             beginTextGO.SetActive(true);
             playBegin.text = textBegin;
