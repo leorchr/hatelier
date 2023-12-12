@@ -6,26 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: be1ced9c1221e35408a41938a58b491c
+    path: Assets/Scenes/FinalScenes/Game_Title_Scene.unity
+    guid: d89922c7884392944b70555e2afc7234
   - enabled: 1
     path: Assets/Scenes/FinalScenes/FinalLevel.unity
     guid: 8ceacf0c71c5e8d42890c00c43007684
   - enabled: 1
     path: Assets/Scenes/FinalScenes/UIPanelFinal.unity
     guid: cb450f0dec57a0a4395dab69d5918b51
-  - enabled: 0
-    path: Assets/GD/Bryan/LD_Scene01.unity
-    guid: 615be1bef478b6a46862f29ea1513bd8
-  - enabled: 0
-    path: Assets/GPP/Zoe/Scene/TestZoe.unity
-    guid: 78f60affdb0e13b4cb1f15a5416b29ae
-  - enabled: 0
-    path: Assets/GPP/Zoe/Scene/MainMenuZoe.unity
-    guid: dbd02d90f8ac5ff42b9e54af3601b038
-  - enabled: 0
-    path: Assets/Scenes/Level.unity
-    guid: 051eb0210dd4b7548b882f6a6e851b5b
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 66af5bec2dddad9448574973a362aee1,
       type: 2}
