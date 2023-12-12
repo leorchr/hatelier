@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,13 +22,20 @@ public class S_Player_Interaction : MonoBehaviour
     public Sprite interactableSpriteVis;
     public Sprite interactableSpriteInvis;
 
+    public bool crate;
+
 
     private void Awake()
     {
         if(!instance) instance = this;
     }
 
-   public void OnTriggerEnter(Collider collider)
+    private void Start()
+    {
+        crate = false;
+    }
+
+    public void OnTriggerEnter(Collider collider)
     {
         if (((1 << collider.gameObject.layer & interactableLayer.value) != 0) && interactionEnabled)
         {
@@ -34,6 +43,10 @@ public class S_Player_Interaction : MonoBehaviour
 
             if (interactable != null)
             {
+                if (collider.CompareTag("Pushable"))
+                {
+                    crate = true;
+                }
                 interactableButton.GetComponent<Image>().sprite = interactableSpriteVis;
                 interactionText.text = interactable.GetDescription();
                 interactionText.gameObject.SetActive(true);
@@ -51,6 +64,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        crate = false;
         interactableButton.GetComponent<Image>().sprite = interactableSpriteInvis;
         if (interactable == null) { return; } 
         if (other.gameObject == interactable.gameObject)

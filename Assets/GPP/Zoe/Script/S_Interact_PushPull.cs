@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public enum dir
@@ -38,6 +39,8 @@ public class S_Interact_PushPull : S_Interactable
     public GameObject verticalArrows;
     public GameObject horizontalArrows;
 
+    public GameObject crate;
+
     private void Start()
     {
         foreach (Side s in sides)
@@ -49,8 +52,21 @@ public class S_Interact_PushPull : S_Interactable
         verticalArrows.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (S_Player_Interaction.instance.crate == true)
+        {
+            crate.GetComponent<Animator>().SetBool("Bool_Material", true);
+        }
+        else if (S_Player_Interaction.instance.crate == false)
+        {
+            crate.GetComponent<Animator>().SetBool("Bool_Material", false);
+        }
+    }
+
     public override string GetDescription()
     {
+        S_Player_Interaction.instance.crate = true;
         return description;
     }
 
@@ -60,6 +76,8 @@ public class S_Interact_PushPull : S_Interactable
     }
     public override void Interact()
     {
+        S_Player_Interaction.instance.crate = false;
+
         if (!S_PlayerController.instance.m_isPushing) 
         {
             if (hasAtLeastOneSideActive() && getSideCloser().active)
