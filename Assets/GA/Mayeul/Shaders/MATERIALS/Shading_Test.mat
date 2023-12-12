@@ -111,6 +111,7 @@ Material:
     - _BaseColor_Rotate: 0
     - _BaseColor_Saturation: 1
     - _BaseColor_TIling: 1
+    - _BaseColor_Value: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BounceLight_Hue: -5
@@ -158,7 +159,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimLight_Intensity: 0.5
     - _RimLight_Threshold: 4
-    - _Roughness: 1
+    - _Roughness: 0
     - _RoughnessMap_Enable: 0
     - _Roughness_Invert: 0
     - _SSS_Enable: 0
@@ -183,7 +184,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor_Tint: {r: 0.4892126, g: 0.6132076, b: 0.4078409, a: 0}
+    - _BaseColor_Tint: {r: 0.68494135, g: 0.9811321, b: 0.48593804, a: 0}
     - _BaseColor_Tweak: {r: 1, g: 0.8130302, b: 0.4198113, a: 0}
     - _Light_Color: {r: 1, g: 0.8548366, b: 0.5518868, a: 0}
     - _Line_ColorTweaker: {r: 1, g: 1, b: 1, a: 0}
