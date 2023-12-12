@@ -24,9 +24,12 @@ public class S_SoundManager : MonoBehaviour
     
     public static S_SoundManager instance;
 
+    private S_SoundBank sb;
+
     public AudioSource musicSource, effectSource;
     private void Awake()
     {
+        sb = GetComponent<S_SoundBank>();
         if(instance == null)
         {
             instance = this;
@@ -39,7 +42,11 @@ public class S_SoundManager : MonoBehaviour
 
     public void PlaySound(soundType st)
     {
-        
+        AudioClip ac = sb.getSound(st);
+        if(ac != null)
+        {
+            PlaySFX(ac);
+        }
     }
 
     public void PlayMusic(AudioClip clip)

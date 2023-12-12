@@ -48,18 +48,15 @@ public class S_PlayerSound : MonoBehaviour
            
         }
 
-        int currentSound;
+        
+
         switch (currentGround)
         {
             case groundType.Workshop:
-                currentSound = Random.Range(0, workshopFootsteps.Count);
-                playerSource.clip = workshopFootsteps[currentSound];
-                playerSource.Play();
+                S_SoundManager.instance.PlaySound(soundType.Workshop_Step);
                 break;
             case groundType.Garden:
-                currentSound = Random.Range(0, gardenFootsteps.Count);
-                playerSource.clip = gardenFootsteps[currentSound];
-                playerSource.Play();
+                S_SoundManager.instance.PlaySound(soundType.Grass_Step);
                 break;
             default : break;
         }
