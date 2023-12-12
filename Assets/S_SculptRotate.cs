@@ -19,17 +19,22 @@ public class S_SculptRotate : MonoBehaviour
 
     public bool isZoomed = false;
 
-    public Transform zoomedT, unzoomedT;
     private Vector3 zoomedPos, unzoomedPos;
+    private Quaternion baseRot;
+
+    [Range(0,1)]
+    public float zoomRatio;
 
     private Vector3 v;
     private Quaternion q;
 
+
     private void Start()
     {
-        transform.Rotate(new Vector3(0, 75, 0));
-        zoomedPos = zoomedT.position;
-        unzoomedPos = unzoomedT.position;
+       
+        unzoomedPos = transform.position;
+        zoomedPos = Vector3.Lerp(unzoomedPos,Camera.main.transform.position,zoomRatio);
+        baseRot = transform.rotation;
     }
 
     // Update is called once per frame
