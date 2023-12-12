@@ -22,7 +22,7 @@ public class S_Statue_Inventory : MonoBehaviour
         if(head == null)
         {
             head = material;
-           
+            statue = head.prefab;
         }
         else if(top == null)
         {
@@ -37,7 +37,7 @@ public class S_Statue_Inventory : MonoBehaviour
 
     public void InstantiateAndAssignedStatue()
     {
-        statue = head.prefab;
+
         S_InstantiateStatue.instance.AttributeSpecs(statue);
     }
 
