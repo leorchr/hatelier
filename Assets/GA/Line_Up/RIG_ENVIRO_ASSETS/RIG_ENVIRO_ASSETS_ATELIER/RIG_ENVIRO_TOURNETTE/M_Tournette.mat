@@ -15,7 +15,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
@@ -57,7 +57,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer1_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer1_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -65,7 +73,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer2_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer2_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer2_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -148,6 +164,7 @@ Material:
     - _BaseColor_Rotate: 0
     - _BaseColor_Saturation: 1
     - _BaseColor_TIling: 1
+    - _BaseColor_Value: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BounceLight_Hue: -5
@@ -174,6 +191,18 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Layer1_01_Normal_Strength: 1
+    - _Layer1_01_Rotate: 0
+    - _Layer1_01_Tiling: 1
+    - _Layer1_02_Normal_Strength: 1
+    - _Layer1_02_Rotate: 0
+    - _Layer1_02_Tiling: 1
+    - _Layer2_01_Normal_Strength: 1
+    - _Layer2_01_Rotate: 0
+    - _Layer2_01_Tiling: 1
+    - _Layer2_02_Normal_Strength_1: 1
+    - _Layer2_02_Rotate: 0
+    - _Layer2_02_Tiling: 1
     - _Line_Enable: 1
     - _Line_Hue: -5
     - _Line_Saturation: 1.5
