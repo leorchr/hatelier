@@ -34,7 +34,7 @@ public class S_Mold_Inventory : MonoBehaviour
         launchFunction = false;
         bakingSlider.maxValue = bakingTimer;
         bakingSlider.value = bakingTimer;
-        door.GetComponent<Animator>().SetBool("GetStatue", false);
+        if(door != null) door.GetComponent<Animator>().SetBool("GetStatue", false);
     }
     public void AddToInventory(S_Materials material)
     {
@@ -148,7 +148,7 @@ public class S_Mold_Inventory : MonoBehaviour
         if(S_Objectives.instance != null) S_Objectives.instance.CheckObjective(recipesList[recipeNumber]);
         GameMode.instance.ChangePhase();
 
-        door.GetComponent<Animator>().SetBool("GetStatue", true);
+        if (door != null) door.GetComponent<Animator>().SetBool("GetStatue", true);
     }
 
     public void DisplayMoldInventoryIcons()

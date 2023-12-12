@@ -24,7 +24,6 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     [Header("Door")]
     public GameObject door;
 
-
     public S_Recipes[] recipesList;
     private int recipeNumber;
     private bool launchFunction = false;
@@ -38,8 +37,9 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     }
     public void AddToInventory(S_Materials material)
     {
-            matOne = material;
+        matOne = material;
         DisplayMoldInventoryIcons();
+            
     }
 
     public void StartTimer()
@@ -134,6 +134,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         //add statue to statue inventory 
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
         if(S_Objectives.instance != null) S_Objectives.instance.CheckObjective(recipesList[recipeNumber]);
+        gameObject.layer = 0;
         GameMode.instance.ChangePhase();
 
         door.GetComponent<Animator>().SetBool("GetStatue", true);
