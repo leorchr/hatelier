@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316598800193552821}
   serializedVersion: 2
-  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalRotation: {x: -2.0078997e-17, y: 0.94470745, z: 0.32791466, w: -5.784665e-17}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -38.285, y: -180, z: 0}
 --- !u!33 &4783883096774442500
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316598800193552821}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4731625221394857352, guid: bdcd35c28a0b8ac4fb2c3850e81f1f88, type: 3}
 --- !u!23 &6051513473680029008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd63c6a72e22eba4cb1eab87e03d2457, type: 2}
+  - {fileID: -1134714066672644336, guid: bdcd35c28a0b8ac4fb2c3850e81f1f88, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: be93d1a9888bfd048b71b48a85495bc8, type: 2}
   depotRessource: {fileID: 0}
+  isObj: 0
 --- !u!65 &6638365807614231405
 BoxCollider:
   m_ObjectHideFlags: 0
