@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum dir
@@ -33,7 +34,21 @@ public class S_Interact_PushPull : S_Interactable
 
     private BoxCollider bc;
 
-    
+    [Header("Arrow")]
+    public GameObject verticalArrows;
+    public GameObject horizontalArrows;
+
+    private void Start()
+    {
+        foreach (Side s in sides)
+        {
+            s.transform.gameObject.SetActive(s.active);
+        }
+        bc = transform.parent.GetComponent<BoxCollider>();
+        horizontalArrows.SetActive(false);
+        verticalArrows.SetActive(false);
+    }
+
     public override string GetDescription()
     {
         return description;
@@ -45,10 +60,20 @@ public class S_Interact_PushPull : S_Interactable
     }
     public override void Interact()
     {
-        if (!S_PlayerController.instance.m_isPushing) {
+        if (!S_PlayerController.instance.m_isPushing) 
+        {
             if (hasAtLeastOneSideActive() && getSideCloser().active)
             {
                 Side s = getSideCloser();
+                if(s.side == dir.Left  || s.side == dir.Right)
+                {
+                    horizontalArrows.SetActive(true);
+                }
+                else if(s.side == dir.Front || s.side == dir.Back)
+                {
+                    verticalArrows.SetActive(true);
+                }
+
                 S_PlayerController.instance.setDir(s.side);
                 S_PlayerController.instance.m_isPushing = true;
                 S_PlayerController.instance.m_PushedObject = transform.parent.gameObject;
@@ -71,6 +96,8 @@ public class S_Interact_PushPull : S_Interactable
 
         else if (S_PlayerController.instance.m_PushedObject == transform.parent.gameObject)
         {
+            horizontalArrows.SetActive(false); 
+            verticalArrows.SetActive(false);
             S_Player_Interaction.instance.interactionEnabled = true;
             S_PlayerController.instance.setDir(dir.none);
             S_PlayerController.instance.m_PushedObject = null;
@@ -114,12 +141,5 @@ public class S_Interact_PushPull : S_Interactable
         return closest;
     }
 
-    private void Start()
-    {
-       foreach(Side s in sides)
-       {
-            s.transform.gameObject.SetActive(s.active);
-       }
-       bc = transform.parent.GetComponent<BoxCollider>();
-    }
+   
 }
