@@ -13,7 +13,7 @@ public class S_Leaderboard : MonoBehaviour
     [SerializeField] private GameObject displayPrefab;
     [SerializeField] private GameObject leaderboard;
     [SerializeField] private GameObject inputField;
-    
+
     // Display Stats Player
     [SerializeField] private TextMeshProUGUI nameText;
     [HideInInspector] public int playerScoreTemp = 0;
@@ -24,7 +24,7 @@ public class S_Leaderboard : MonoBehaviour
     private GameObject[] nameList;
     private GameObject[] scoreList;
     private GameObject[] timeList;
-
+    [SerializeField] private Transform statuePos;
 
     private void Awake()
     {
@@ -45,6 +45,8 @@ public class S_Leaderboard : MonoBehaviour
             scoreList[i] = display[i].transform.GetChild(1).gameObject;
             timeList[i] = display[i].transform.GetChild(2).gameObject;
         }
+
+        Instantiate(GameMode.instance.finalStatue, statuePos.transform);
     }
 
     public void SetupLeaderboard()

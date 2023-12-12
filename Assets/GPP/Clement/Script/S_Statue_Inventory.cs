@@ -37,7 +37,6 @@ public class S_Statue_Inventory : MonoBehaviour
 
     public void InstantiateAndAssignedStatue()
     {
-
         S_InstantiateStatue.instance.AttributeSpecs(statue);
     }
 

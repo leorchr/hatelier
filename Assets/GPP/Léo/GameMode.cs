@@ -15,6 +15,7 @@ public class GameMode : MonoBehaviour
     public PhaseSettings[] settings = new PhaseSettings[3];
     public EndStats stats = new EndStats(new int[3], new float[3]);
     public string finalPanelScene = "UIPanelFinal";
+    [HideInInspector] public GameObject finalStatue;
 
 
     private void Awake()
@@ -60,14 +61,14 @@ public class GameMode : MonoBehaviour
         if (!isRunning) return;
 
         GameMode.instance.stats.globalTimeSpend = S_Timer.instance.timeSinceBeggining;
+        S_Statue_Inventory.instance.InstantiateAndAssignedStatue();
       
 #if UNITY_EDITOR
-        DisplayStats();
+        //DisplayStats();
 #endif
         if (finalPanelScene != null)
         {
             SceneManager.LoadScene(finalPanelScene);
-            S_Statue_Inventory.instance.InstantiateAndAssignedStatue();
         }
         else
         {
