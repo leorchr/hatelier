@@ -1308,7 +1308,6 @@ MonoBehaviour:
   timerText: {fileID: 6693912433924704347}
   remainingTime: 300
   timeSinceBeggining: 0
-  slider: {fileID: 0}
 --- !u!1 &1749439722657727422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2406,7 @@ Transform:
   m_GameObject: {fileID: 2911619755036334748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.91, y: 0.75, z: 3.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2507,7 +2506,7 @@ MonoBehaviour:
   m_leftStick: {fileID: 6247216575463369329}
   m_Acceleration: 25
   m_MaxSpeed: 5
-  m_MaxPushPullSpeed: 3
+  m_MaxPushPullSpeed: 0
   m_decelerateRate: 0.05
   audioClips: []
 --- !u!114 &1575489901307458186
