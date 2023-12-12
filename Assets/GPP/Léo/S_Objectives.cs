@@ -27,6 +27,7 @@ public class S_Objectives : MonoBehaviour
     private void Start()
     {
         objetiveText.text = objectives[0];
+        Invoke("SetupObjectives", 1f);
     }
 
     public void SetupObjectives()

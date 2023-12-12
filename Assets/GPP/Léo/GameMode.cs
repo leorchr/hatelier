@@ -36,11 +36,13 @@ public class GameMode : MonoBehaviour
             {
                 S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
                 S_Timer.instance.TimerNextPhase(settings[currentPhase]);
+                S_Objectives.instance.NextObjective();
             }
             else if (currentPhase == 2)
             {
                 S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
                 S_Timer.instance.TimerNextPhase(settings[currentPhase]);
+                S_Objectives.instance.NextObjective();
             }
             else if (currentPhase == 3)
             {
