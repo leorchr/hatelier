@@ -34,6 +34,7 @@ public class S_Interact_Trash : S_Interactable
     public override void Interact()
     {
         S_Inventory.instance.ClearInventory();
+        S_SoundManager.instance.PlaySound(soundType.Bin);
         S_UI_Inventory.instance.ClearPlayerInventoryIcon();
     }
 }

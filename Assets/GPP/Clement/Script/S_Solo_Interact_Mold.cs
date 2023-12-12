@@ -77,7 +77,7 @@ public class S_Solo_Interact_Mold : S_Interactable
             if (S_Inventory.instance.GetMaterials() != null)
                 if (!soloMoldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
-
+                    S_SoundManager.instance.PlaySound(soundType.Crafting_Mat);
                     soloMoldInventory.AddToInventory(S_Inventory.instance.GetMaterials());
                     S_Inventory.instance.ClearInventory();
                     S_UI_Inventory.instance.ClearPlayerInventoryIcon();

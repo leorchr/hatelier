@@ -44,6 +44,7 @@ public class S_Pressure_Plate : MonoBehaviour
             }
             if (canActivate)
             {
+                S_SoundManager.instance.PlaySound(soundType.Interaction_Plate);
                 switch (type)
                 {
                     case PressureType.Toggle:
@@ -80,6 +81,7 @@ public class S_Pressure_Plate : MonoBehaviour
     {
         print("saucisse");
         door.GetComponent<Animator>().SetBool("GetStatue", true);
+        S_SoundManager.instance.PlaySound(soundType.Door_Open);
         //foreach (S_Receiver moveObject in receivers)
         //{
         //    moveObject.Interact();

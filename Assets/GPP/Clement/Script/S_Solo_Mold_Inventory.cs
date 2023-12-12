@@ -94,7 +94,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
             {
                 if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
                 {
-                    
+                    S_SoundManager.instance.PlaySound(soundType.Crafting_Object);
                     
                         sliderSupport.SetActive(true);
                         recipeNumber = i;

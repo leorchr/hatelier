@@ -28,6 +28,7 @@ public class S_Inventory : MonoBehaviour
 
     public void AddToInventory(S_Materials material)
     {
+        S_SoundManager.instance.PlaySound(soundType.Stuff_Object);
         inventory = material;
         S_UI_Inventory.instance.DisplayPlayerInventoryIcon();
     }
@@ -48,6 +49,7 @@ public class S_Inventory : MonoBehaviour
         item.transform.parent = null;
         
         ClearInventory();
+        S_SoundManager.instance.PlaySound(soundType.Drop_object);
         S_UI_Inventory.instance.ClearPlayerInventoryIcon();
         
     }

@@ -75,7 +75,7 @@ public class S_Interact_mold : S_Interactable
         {
 
                 moldInventory.refreshMoldInv();
-
+            S_SoundManager.instance.PlaySound(soundType.Crafting_Mat);
                 if(S_Inventory.instance.GetMaterials() != null)
                 if (!moldInventory.IsInventoryFull() && S_Inventory.instance.GetMaterials().canBeBaked)
                 {
