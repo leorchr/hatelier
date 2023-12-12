@@ -35,15 +35,10 @@ public class S_Statue_Inventory : MonoBehaviour
         S_UI_Inventory.instance.DisplayStatueInventory();
     }
 
-    public void InstantiateStatue()
+    public void InstantiateAndAssignedStatue()
     {
-        if(head != null && top != null && bottom != null)
-        {
-            statue = head.prefab;
-            S_InstantiateStatue.instance.AttributeSpecs(statue);
-            S_InstantiateStatue.instance.InstantiateStatue(statue);
-
-        }
+        statue = head.prefab;
+        S_InstantiateStatue.instance.AttributeSpecs(statue);
     }
 
     public void RemoveFromInventory(S_Materials material)

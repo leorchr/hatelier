@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Chair_1
   m_EditorClassIdentifier: 
   canBeBaked: 1
-  materials: {fileID: 2100000, guid: a9e5275372b1135439b563f582d0b103, type: 2}
+  materials: {fileID: 2100000, guid: 37c17ed306d39e141a485be80b549f03, type: 2}
   materialName: 
+  displayName: 
+  baseColor1: {fileID: 0}
+  normal1: {fileID: 0}
+  baseColor2: {fileID: 0}
+  normal2: {fileID: 0}
   description: 
   FullInventorydescription: 
   icone: {fileID: 21300000, guid: daa7d0ce97c17224aad0ab9d30a0cedd, type: 3}
   prefab: {fileID: 0}
+  phase: 0

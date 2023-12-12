@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316598800193552821}
-  m_Mesh: {fileID: -4633444044135843446, guid: 4cb086c6e4733d240a19126b7300e353, type: 3}
+  m_Mesh: {fileID: -4633444044135843446, guid: d001391b50b237848b577193f3929706, type: 3}
 --- !u!23 &6051513473680029008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f6bcd3e07f26764991084a3830100ac, type: 2}
+  - {fileID: 2100000, guid: 5ec43685cb54f774e8aa9d1752b1865a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: 88e1133c81c0df340a6784c8c6929573, type: 2}
   depotRessource: {fileID: 0}
+  isObj: 0
 --- !u!65 &6638365807614231405
 BoxCollider:
   m_ObjectHideFlags: 0
