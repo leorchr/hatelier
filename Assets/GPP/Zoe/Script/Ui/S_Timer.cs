@@ -23,7 +23,7 @@ public class S_Timer : MonoBehaviour
     private void Start()
     {
         remainingTime = GameMode.instance.settings[0].timePhase;
-        if (slider != null )
+        //if (slider != null )
         slider.maxValue = remainingTime;
         this.gameObject.SetActive(false);
     }
@@ -41,7 +41,7 @@ public class S_Timer : MonoBehaviour
             int seconds = Mathf.FloorToInt(remainingTime % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            if(slider != null )
+            //if(slider != null )
             slider.value = remainingTime;
         }
 
@@ -50,5 +50,6 @@ public class S_Timer : MonoBehaviour
     public void TimerNextPhase(PhaseSettings settings)
     {
         remainingTime = settings.timePhase;
+        slider.maxValue = remainingTime;
     }
 }
