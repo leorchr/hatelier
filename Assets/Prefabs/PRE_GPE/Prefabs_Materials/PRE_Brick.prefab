@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316598800193552821}
   serializedVersion: 2
-  m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalScale: {x: 3.7297626, y: 3.7297626, z: 3.7297626}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!33 &4783883096774442500
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: 40f41dcbfee227948bc6e8158f81cb63, type: 2}
   depotRessource: {fileID: 0}
+  isObj: 1
 --- !u!65 &6638365807614231405
 BoxCollider:
   m_ObjectHideFlags: 0
