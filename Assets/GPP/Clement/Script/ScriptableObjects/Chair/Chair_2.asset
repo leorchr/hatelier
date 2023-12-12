@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e142c2e37162834b8df7afb0550597f, type: 3}
-  m_Name: Statue
+  m_Name: Chair_2
   m_EditorClassIdentifier: 
-  canBeBaked: 0
+  canBeBaked: 1
   materials: {fileID: 0}
   materialName: 
-  displayName: 
-  baseColor1: {fileID: 0}
-  normal1: {fileID: 0}
-  baseColor2: {fileID: 0}
-  normal2: {fileID: 0}
-  description: Statue
+  description: 
   FullInventorydescription: 
-  icone: {fileID: 21300000, guid: b2e31a02baa083c4bbea8cfd88f6448f, type: 3}
-  prefab: {fileID: 8171310409453185300, guid: 4e3e6ecc85f30b04184104afa9006a90, type: 3}
-  phase: 0
+  icone: {fileID: 0}
+  prefab: {fileID: 0}
