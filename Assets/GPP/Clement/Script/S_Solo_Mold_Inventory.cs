@@ -92,7 +92,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         {
             for (int i = 0; i < recipesList.Length; i++)
             {
-                if (recipesList[i].requiredMaterials[0] == matOne || recipesList[i].requiredMaterials[1] == matOne)
+                if (recipesList[i].requiredMaterials[0] == matOne)
                 {
                     S_SoundManager.instance.PlaySound(soundType.Crafting_Object);
                     
