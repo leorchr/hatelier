@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class S_SculptRotate : MonoBehaviour
 {
-    public float rotateSensitivity;
+    public float rotateSensitivity = 5;
 
     [Range(0f, 0.99999f)]
-    public float friction;
+    public float friction = 0.8f;
 
-    public float smoothMoveTime;
+    public float smoothMoveTime = 1;
 
     private Vector3 rotSpeed = Vector3.zero;
 
@@ -18,7 +18,7 @@ public class S_SculptRotate : MonoBehaviour
     private Quaternion baseRot;
 
     [Range(0,1)]
-    public float zoomRatio;
+    public float zoomRatio = 0.4f;
 
     private Vector3 v;
     private Quaternion q;
