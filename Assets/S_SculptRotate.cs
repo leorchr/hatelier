@@ -1,10 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class S_SculptRotate : MonoBehaviour
 {
@@ -88,12 +83,12 @@ public class S_SculptRotate : MonoBehaviour
         else
         {
             transform.position = Vector3.SmoothDamp(transform.position, unzoomedPos, ref v, smoothMoveTime);
-            transform.rotation = SmoothDamp(transform.rotation, Quaternion.LookRotation(-Vector3.forward), ref q, smoothMoveTime);
+            transform.rotation = SmoothDamp(transform.rotation, baseRot, ref q, smoothMoveTime);
         }
     }
 
-    //Magie noir le truc
-    public static Quaternion SmoothDamp(Quaternion rot, Quaternion target, ref Quaternion deriv, float time)
+    //Smooth damp adapted for quaternion
+    private Quaternion SmoothDamp(Quaternion rot, Quaternion target, ref Quaternion deriv, float time)
     {
         if (Time.deltaTime < Mathf.Epsilon) return rot;
         // account for double-cover
