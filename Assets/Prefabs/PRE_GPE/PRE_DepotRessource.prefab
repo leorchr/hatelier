@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7945312122568328044, guid: 0e4b34abc10c1044b9c77f6dad95abcc, type: 3}
+  - {fileID: 2100000, guid: 6d9d896d1ce49ef4e9373866e6c7f40f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,4 +156,5 @@ MonoBehaviour:
   respawnTime: 0
   isObject: 0
   spawnPosition: {fileID: 537058858110180891}
-  timerSpawnMax: 2
+  objectOnDepot: {fileID: 0}
+  objectHasDispawn: 0
