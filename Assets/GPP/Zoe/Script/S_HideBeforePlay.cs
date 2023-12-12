@@ -8,18 +8,15 @@ public class S_HideBeforePlay : MonoBehaviour
 {
     public static S_HideBeforePlay instance;
 
-    [SerializeField] private List<GameObject> uiElements;
-
-    [SerializeField] private float colorAlphaLow;
-    [SerializeField] private float colorAlphaHigh;
-
-    [Header("GameObject with functions")]
+    [Header("GameObject")]
     [SerializeField] private GameObject leftStick;
     [SerializeField] private GameObject interactButton;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject dropButton;
 
-    [TextArea][Tooltip("Ok")] public string noteList;
+    [Header("Sprite")]
+    [SerializeField] private Sprite pauseVisible;
+    [SerializeField] private Sprite pauseInvisible;
 
     private void Awake()
     {
@@ -30,13 +27,9 @@ public class S_HideBeforePlay : MonoBehaviour
     {
         if (!S_WarmUpTimer.instance.gameBegin)
         {
-            foreach (var elements in uiElements)
-            {
-                Color elementsColor = elements.GetComponent<Image>().color;
-                elementsColor = new Color(elementsColor.r, elementsColor.g, elementsColor.b, colorAlphaLow);
-                elements.GetComponent<Image>().color = elementsColor;
-            }
-
+            pauseButton.GetComponent<Image>().sprite = pauseInvisible;
+            
+            //Functions
             leftStick.GetComponent<S_LeftStick>().enabled = false;
             interactButton.GetComponent<Button>().enabled = false;
             pauseButton.GetComponent<Button>().enabled = false;
@@ -44,13 +37,9 @@ public class S_HideBeforePlay : MonoBehaviour
         }
         else
         {
-            foreach (var elements in uiElements)
-            {
-                Color elementsColor = elements.GetComponent<Image>().color;
-                elementsColor = new Color(elementsColor.r, elementsColor.g, elementsColor.b, colorAlphaHigh);
-                elements.GetComponent<Image>().color = elementsColor;
-            }
+            pauseButton.GetComponent<Image>().sprite = pauseVisible;
 
+            //Functions
             leftStick.GetComponent<S_LeftStick>().enabled = true;
             interactButton.GetComponent<Button>().enabled = true;
             pauseButton.GetComponent<Button>().enabled= true;
