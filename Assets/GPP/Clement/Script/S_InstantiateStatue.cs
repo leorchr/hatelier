@@ -20,14 +20,9 @@ public class S_InstantiateStatue : MonoBehaviour
         //statue.GetComponent<MeshRenderer>().material.SetTexture("_Layer2_01", S_Statue_Inventory.instance.bottom.baseColor2);
         //statue.GetComponent<MeshRenderer>().material.SetTexture("_Layer2_02_Normal", S_Statue_Inventory.instance.bottom.normal2);
 
-        
-
-    }
-
-    public void InstantiateStatue(GameObject statue)
-    {
-
         Instantiate(statue);
         //add component, script de clarence bouger la statue
+
     }
+
 }

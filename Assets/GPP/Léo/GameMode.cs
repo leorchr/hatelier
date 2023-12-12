@@ -56,6 +56,8 @@ public class GameMode : MonoBehaviour
     public void EndGame()
     {
         if (!isRunning) return;
+        S_Statue_Inventory.instance.InstantiateAndAssignedStatue();
+
         GameMode.instance.stats.globalTimeSpend = S_Timer.instance.timeSinceBeggining;
 #if UNITY_EDITOR
         DisplayStats();
