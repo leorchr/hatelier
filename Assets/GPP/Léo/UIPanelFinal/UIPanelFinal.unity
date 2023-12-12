@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 990491458}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,9 +1363,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410103746}
-  - component: {fileID: 1410103747}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Statue Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1386,18 +1385,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1410103747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410103745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4e48f56316acf478b79d83b13af221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1421731078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1704,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1263738739220730566, guid: f070b127078117a489f62c8da808f4ee,
+        type: 3}
+      propertyPath: statuePos
+      value: 
+      objectReference: {fileID: 1410103746}
     - target: {fileID: 2366731476730551690, guid: f070b127078117a489f62c8da808f4ee,
         type: 3}
       propertyPath: m_LocalPosition.x
