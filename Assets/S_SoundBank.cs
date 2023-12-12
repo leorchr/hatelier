@@ -1,13 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-[Serializable]
-public class S_Sounds
-{
-    
-}
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class Sounds
@@ -19,5 +12,18 @@ public class Sounds
 public class S_SoundBank : MonoBehaviour
 {
     public Sounds[] soundBank;
+
+    public AudioClip getSound(soundType type)
+    {
+        foreach(var s in soundBank)
+        {
+            if (s.type == type)
+            {
+                int i = Random.Range(0, s.sounds.Length);
+                return s.sounds[i];
+            }
+        }
+        return null;
+    }
 
 }
