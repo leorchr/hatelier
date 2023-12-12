@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_Inventory : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class S_Inventory : MonoBehaviour
     [SerializeField] private S_Materials inventory;
 
     public Transform dropPoint;
+
+    public GameObject dropButton;
+    public Sprite dropSpriteVis;
+    public Sprite dropSpriteInvis;
     private void Awake()
     {
         if (!instance) instance = this;
@@ -19,9 +24,14 @@ public class S_Inventory : MonoBehaviour
 
     private void Update()
     {
-        if(inventory != null) S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
+        if (inventory != null)
+        {
+            dropButton.GetComponent<Image>().sprite = dropSpriteVis;
+            S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
+        }
         else
         {
+            dropButton.GetComponent<Image>().sprite = dropSpriteInvis;
             S_UI_Inventory.instance.inventoryGroupe.SetActive(false);
         }
     }

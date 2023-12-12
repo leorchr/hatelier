@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 // Specify the axis options for the joystick
 public enum AxisOptions { Both, Horizontal, Vertical }
@@ -41,6 +42,7 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
 
+
     // The reference to the joystick background image
     private RectTransform baseRect = null;
 
@@ -50,6 +52,13 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     private bool isLocked = false;
 
     private Vector2 input = Vector2.zero;
+
+    public GameObject leftStick;
+    public GameObject handleGO;
+    public Sprite leftStickSpriteVis;
+    public Sprite handleSpriteVis;
+    public Sprite leftStickSpriteInvis;
+    public Sprite handleSpriteInvis;
 
     protected virtual void Start()
     {
@@ -72,6 +81,8 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+        leftStick.GetComponent<Image>().sprite = leftStickSpriteVis;
+        handleGO.GetComponent<Image>().sprite = handleSpriteVis;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -128,6 +139,10 @@ public class S_LeftStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         // Reset the anchored position of the handle to zero
         handle.anchoredPosition = Vector2.zero;
+
+        leftStick.GetComponent<Image>().sprite = leftStickSpriteInvis;
+        handleGO.GetComponent<Image>().sprite = handleSpriteInvis;
+
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
