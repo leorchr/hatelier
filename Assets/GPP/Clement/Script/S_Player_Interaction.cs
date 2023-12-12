@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_Player_Interaction : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class S_Player_Interaction : MonoBehaviour
     public TMPro.TextMeshProUGUI interactionText;
     public TMPro.TextMeshProUGUI materialDescriptionText;
     public LayerMask interactableLayer;
+
+    public GameObject interactableButton;
+    public Sprite interactableSpriteVis;
+    public Sprite interactableSpriteInvis;
 
 
     private void Awake()
@@ -29,6 +34,7 @@ public class S_Player_Interaction : MonoBehaviour
 
             if (interactable != null)
             {
+                interactableButton.GetComponent<Image>().sprite = interactableSpriteVis;
                 interactionText.text = interactable.GetDescription();
                 interactionText.gameObject.SetActive(true);
 
@@ -45,6 +51,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        interactableButton.GetComponent<Image>().sprite = interactableSpriteInvis;
         if (interactable == null) { return; } 
         if (other.gameObject == interactable.gameObject)
         {
