@@ -14,6 +14,7 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage1;
     [SerializeField] private GameObject moldSlotImage2;
     [SerializeField] private GameObject moldSlotImage3;
+    [SerializeField] private Sprite defqultSlotImage4;
 
     [Header("Slider")]
     public GameObject sliderSupport;
@@ -172,6 +173,7 @@ public class S_Mold_Inventory : MonoBehaviour
             moldSlotImage2.GetComponent<Image>().sprite = moldInventorySlot2.icone;
             moldSlotImage2.SetActive(true);
         }
+       
     }
 
     public void ClearMoldInventoryStatueIcon()
@@ -194,7 +196,7 @@ public class S_Mold_Inventory : MonoBehaviour
         }
         else
         {
-            moldSlotImage1.GetComponent<Image>().sprite = null;
+            moldSlotImage1.GetComponent<Image>().sprite = defqultSlotImage4;
         }
 
         //Refresh second slot
@@ -204,7 +206,7 @@ public class S_Mold_Inventory : MonoBehaviour
         }
         else
         {
-            moldSlotImage2.GetComponent<Image>().sprite = null;
+            moldSlotImage2.GetComponent<Image>().sprite = defqultSlotImage4;
         }
 
         //Refresh third slot
@@ -214,7 +216,7 @@ public class S_Mold_Inventory : MonoBehaviour
         }
         else
         {
-            moldSlotImage3.GetComponent<Image>().sprite = null;
+            moldSlotImage3.GetComponent<Image>().sprite = defqultSlotImage4;
         }
     }
 
