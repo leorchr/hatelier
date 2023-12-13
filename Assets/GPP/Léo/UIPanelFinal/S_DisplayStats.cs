@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class S_DisplayStats : MonoBehaviour
 {
+    public static S_DisplayStats instance;
+
     [SerializeField] private GameObject playerStats;
     [SerializeField] private GameObject spawnPos;
+
+    private void Awake()
+    {
+        if (!instance) instance = this;
+    }
+
     void Start()
     {
         int minutes, seconds;
@@ -25,5 +32,10 @@ public class S_DisplayStats : MonoBehaviour
         minutes = Mathf.FloorToInt(time / 60);
         seconds = Mathf.FloorToInt(time % 60);
         playerStats.transform.GetChild(4).transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = "Temps total : " + string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void DisableStats()
+    {
+        playerStats.SetActive(false);
     }
 }

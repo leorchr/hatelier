@@ -13,6 +13,7 @@ public class S_Leaderboard : MonoBehaviour
     [SerializeField] private GameObject displayPrefab;
     [SerializeField] private GameObject leaderboard;
     [SerializeField] private GameObject inputField;
+    [SerializeField] private GameObject leaderboardText;
 
     // Display Stats Player
     [SerializeField] private TextMeshProUGUI nameText;
@@ -59,8 +60,11 @@ public class S_Leaderboard : MonoBehaviour
         S_LeaderboardSave.instance.SaveToFile();
         S_LeaderboardSave.instance.saveData.UpdateUI();
 
+        S_DisplayStats.instance.DisableStats();
+        leaderboardText.SetActive(true);
         leaderboard.SetActive(true);
         inputField.SetActive(false);
+
     }
 
     public GameObject[] GetNameList() { return nameList; }
