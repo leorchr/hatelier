@@ -3163,8 +3163,6 @@ MonoBehaviour:
   inventory: {fileID: 0}
   dropPoint: {fileID: 6244676253364071141}
   dropButton: {fileID: 6668815493290777523}
-  dropSpriteVis: {fileID: -2061256648, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
-  dropSpriteInvis: {fileID: -2068585590, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
 --- !u!114 &3655381720433066504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7081,7 +7079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2068585590, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
+  m_Sprite: {fileID: -2061256648, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
