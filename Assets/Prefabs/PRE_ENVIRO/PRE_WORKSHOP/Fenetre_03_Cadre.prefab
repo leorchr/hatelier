@@ -83,16 +83,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fcafecbe6a463a445a5f0b8e87a8b755, type: 2}
+    - target: {fileID: -7325195698298302121, guid: 624485306cbc9204cab81a5240b63182,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 624485306cbc9204cab81a5240b63182,
         type: 3}
       propertyPath: m_Name
       value: Fenetre_03_Cadre
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 624485306cbc9204cab81a5240b63182,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1869687567530158151, guid: 624485306cbc9204cab81a5240b63182,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fcafecbe6a463a445a5f0b8e87a8b755, type: 2}
+    - target: {fileID: 7357075310460868623, guid: 624485306cbc9204cab81a5240b63182,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7441078534908570698, guid: 624485306cbc9204cab81a5240b63182,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
