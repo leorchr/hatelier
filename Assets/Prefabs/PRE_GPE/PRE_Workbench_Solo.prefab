@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 601884696374697535}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.119398, y: 0.18370709, z: -4.2904663}
+  m_LocalPosition: {x: 0, y: 0.398, z: 0.452}
   m_LocalScale: {x: 1.2987013, y: 1.2987013, z: 1.2987013}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -479,6 +479,7 @@ MonoBehaviour:
   addStatueTimer: 0
   stopTimer: 0
   door: {fileID: 0}
+  vfx: {fileID: 0}
   recipesList:
   - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
 --- !u!114 &7727088930516226651
