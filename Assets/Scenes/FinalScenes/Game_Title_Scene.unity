@@ -2040,6 +2040,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3080212159590043817, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832613129359645364, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
       propertyPath: m_audioClip
