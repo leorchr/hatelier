@@ -5,11 +5,6 @@ using UnityEngine;
 public class S_PlayerSound : MonoBehaviour
 {
     public static S_PlayerSound instance;
-    [SerializeField] private AudioSource playerSource;
-
-    
-    [SerializeField] private List<AudioClip> workshopFootsteps;
-    [SerializeField] private List<AudioClip> gardenFootsteps;
 
     public enum groundType
     {
@@ -23,8 +18,6 @@ public class S_PlayerSound : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-
-        playerSource = GetComponent<AudioSource>();
     }
     
     public void StepSound()
@@ -61,4 +54,6 @@ public class S_PlayerSound : MonoBehaviour
             default : break;
         }
     }
+
+    
 }

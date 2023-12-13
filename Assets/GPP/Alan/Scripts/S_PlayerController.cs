@@ -9,7 +9,6 @@ public class S_PlayerController : MonoBehaviour
 
     Rigidbody m_rigidbody = null;
     Rigidbody m_objectRigidbody = null;
-    Animator m_animator = null;
 
     Vector3 m_baseScale;
 
@@ -26,6 +25,9 @@ public class S_PlayerController : MonoBehaviour
     [SerializeField] private float m_MaxSpeed;
     private float maxSpeed;
     [SerializeField] private float m_MaxPushPullSpeed;
+    private Side currentSide;
+
+    private S_Player_Anim_Manager m_animManager;
 
     private bool m_IsOnPlatform = false;
 
@@ -38,7 +40,7 @@ public class S_PlayerController : MonoBehaviour
     {
         if (!instance) instance = this;
         m_rigidbody = GetComponent<Rigidbody>();
-        m_animator = GetComponent<Animator>();
+        m_animManager = GetComponent<S_Player_Anim_Manager>();
         m_baseScale = transform.localScale;
         maxSpeed = m_MaxSpeed;
     }
@@ -64,9 +66,10 @@ public class S_PlayerController : MonoBehaviour
             Mathf.Clamp(m_rigidbody.velocity.z, -maxSpd.y, maxSpd.y));
 
         //Adding force if on platform
-        if (m_IsOnPlatform)
+        if (m_isPushing)
         {
-            //m_rigidbody.AddForce(m_objectRigidbody.velocity,ForceMode.VelocityChange);
+            dir d = currentSide.side;
+            m_animManager.setPushingSpeed(d);
         }
 
         //Rotation of the player
@@ -83,10 +86,8 @@ public class S_PlayerController : MonoBehaviour
             }
         }
 
-        float t = m_rigidbody.velocity.magnitude;
-
         //Debug.Log(m_rigidbody.velocity.sqrMagnitude);
-        m_animator.SetBool("isMoving", m_rigidbody.velocity.sqrMagnitude > 0.2f);
+        
         // m_animator.SetFloat("Horizontal", m_leftStick.Horizontal);
         // m_animator.SetFloat("Vertical", m_leftStick.Vertical);
     }
@@ -115,6 +116,11 @@ public class S_PlayerController : MonoBehaviour
             m_objectRigidbody = null;
         }
     }*/
+
+    public float currentMaxSpeed()
+    {
+        return maxSpeed;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -173,7 +179,7 @@ public class S_PlayerController : MonoBehaviour
 
             m_PushCollider.center = bc.center + new Vector3(0, ygap, gap) ;
 
-            
+            currentSide = s;
         }
         else
         {
@@ -181,6 +187,8 @@ public class S_PlayerController : MonoBehaviour
             m_PushCollider = null;
         }
         applyMaxPushPullSpeed(active);
+        m_animManager.setPushing(active);
+        
     }
 
     public void applyMaxPushPullSpeed(bool b)

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2786574625911644523}
   - component: {fileID: 4987055061511555179}
   - component: {fileID: -6709010787398211726}
-  - component: {fileID: 5759467760205334800}
   - component: {fileID: 7622849196116357407}
   m_Layer: 0
   m_Name: PRE_Sculpture_3
@@ -107,23 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.6355157, y: 4.6731815, z: 7.03578}
   m_Center: {x: 0.001065731, y: -1.3077117, z: -1.7345806}
---- !u!114 &5759467760205334800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127728318791608082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adcaee95dc12bd642839eb227c5408e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSensitivity: 5
-  friction: 0.8
-  smoothMoveTime: 1
-  isZoomed: 0
-  zoomRatio: 0.2
 --- !u!114 &7622849196116357407
 MonoBehaviour:
   m_ObjectHideFlags: 0

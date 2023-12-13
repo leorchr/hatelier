@@ -42,6 +42,8 @@ public class S_Inventory : MonoBehaviour
     public void AddToInventory(S_Materials material)
     {
         S_SoundManager.instance.PlaySound(soundType.Stuff_Object);
+        GetComponent<S_Player_Anim_Manager>().setPickUp(true);
+        Debug.Log("Test");
         inventory = material;
         S_UI_Inventory.instance.DisplayPlayerInventoryIcon();
     }
