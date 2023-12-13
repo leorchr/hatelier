@@ -936,8 +936,8 @@ MonoBehaviour:
   interactButton: {fileID: 1922730064852502555}
   pauseButton: {fileID: 5462095232054043987}
   dropButton: {fileID: 6668815493290777523}
-  pauseVisible: {fileID: 0}
-  pauseInvisible: {fileID: 0}
+  pauseVisible: {fileID: -145752108, guid: 647a8c4302a5e3542a55c7e708cfce2b, type: 3}
+  pauseInvisible: {fileID: -1555497492, guid: 647a8c4302a5e3542a55c7e708cfce2b, type: 3}
 --- !u!1 &1018547782109726376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,8 +3163,6 @@ MonoBehaviour:
   inventory: {fileID: 0}
   dropPoint: {fileID: 6244676253364071141}
   dropButton: {fileID: 6668815493290777523}
-  dropSpriteVis: {fileID: -2061256648, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
-  dropSpriteInvis: {fileID: -2068585590, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
 --- !u!114 &3655381720433066504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5683,7 +5681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: daa7d0ce97c17224aad0ab9d30a0cedd, type: 3}
+  m_Sprite: {fileID: -1555497492, guid: 647a8c4302a5e3542a55c7e708cfce2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5716,7 +5714,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6175113, g: 0.39248842, b: 0.7924528, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -7081,7 +7079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2068585590, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
+  m_Sprite: {fileID: -2061256648, guid: 8c933aca2fd6d214ba5f596104a69ea6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
