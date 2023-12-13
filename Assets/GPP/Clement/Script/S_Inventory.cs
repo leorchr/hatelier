@@ -14,24 +14,27 @@ public class S_Inventory : MonoBehaviour
     public Transform dropPoint;
 
     public GameObject dropButton;
-    public Sprite dropSpriteVis;
-    public Sprite dropSpriteInvis;
     private void Awake()
     {
         if (!instance) instance = this;
       
     }
 
+    private void Start()
+    {
+        dropButton.SetActive(false);
+    }
+
     private void Update()
     {
         if (inventory != null)
         {
-            dropButton.GetComponent<Image>().sprite = dropSpriteVis;
+            dropButton?.SetActive(true);
             S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
         }
         else
         {
-            dropButton.GetComponent<Image>().sprite = dropSpriteInvis;
+            dropButton.SetActive(false);
             S_UI_Inventory.instance.inventoryGroupe.SetActive(false);
         }
     }
