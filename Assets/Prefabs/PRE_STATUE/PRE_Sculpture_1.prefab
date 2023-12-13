@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5166436479716806860}
   - component: {fileID: 7189693724256107320}
   - component: {fileID: 2034758682629923288}
+  - component: {fileID: -6242577567850246009}
   m_Layer: 0
   m_Name: PRE_Sculpture_1
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 1cd027d35ee32a641ac5480158bfbed7, type: 3}
+  - {fileID: 2100000, guid: 37c17ed306d39e141a485be80b549f03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58725965, y: 0.75194716, z: 0.5637615}
   m_Center: {x: 0.013278618, y: 0.38247776, z: -0.124893956}
+--- !u!114 &-6242577567850246009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805740261250070552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adcaee95dc12bd642839eb227c5408e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSensitivity: 5
+  friction: 0.8
+  smoothMoveTime: 1
+  isZoomed: 0
+  zoomRatio: 0.4

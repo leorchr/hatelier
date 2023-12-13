@@ -701,6 +701,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10.95
       objectReference: {fileID: 0}
+    - target: {fileID: 2780569929219217382, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: remainingTime
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780569929219217382, guid: f15c125ff83582e41a90b73b31b2ba34,
+        type: 3}
+      propertyPath: timeSinceBeggining
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3455853547736264965, guid: f15c125ff83582e41a90b73b31b2ba34,
         type: 3}
       propertyPath: m_Name
