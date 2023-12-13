@@ -32,10 +32,15 @@ public class S_SculptRotate : MonoBehaviour
         baseRot = transform.rotation;
     }
 
+    public void StatueZoomToggle()
+    {
+        isZoomed = !isZoomed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && Input.GetTouch(0).deltaPosition.magnitude < 0.5)
+       /* if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && Input.GetTouch(0).deltaPosition.magnitude < 0.5)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hitInfo;
@@ -51,7 +56,7 @@ public class S_SculptRotate : MonoBehaviour
                 }
             }
 
-        }
+        }*/
             if (isZoomed)
         {
             if (Input.touchCount > 0)
