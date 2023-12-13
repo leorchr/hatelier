@@ -43180,16 +43180,15 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.16666667
-    functionName: walkDust
-    data: Left
-    objectReferenceParameter: {fileID: 11500000, guid: 5302fa751ab1cc34ea4335c85d70c325,
-      type: 3}
+    functionName: WalkDust
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.46666667
-    functionName: walkDust
-    data: Right
+    functionName: WalkDust
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
