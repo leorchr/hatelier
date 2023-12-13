@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.VFX;
 
 public class S_Mold_Inventory : MonoBehaviour
 {
@@ -24,6 +24,9 @@ public class S_Mold_Inventory : MonoBehaviour
 
     [Header("Door")]
     public GameObject door;
+
+    [Header("VFX")]
+    public VisualEffect vfx;
 
     public S_Recipes[] recipesList;
     private int recipeNumber;
@@ -130,6 +133,9 @@ public class S_Mold_Inventory : MonoBehaviour
         //SetStatueIconInMold(recipesList[recipeNumber].statueIcon);
 
         ClearInventory();
+
+        //VFX
+        vfx.Play();
 
 
         //clear mold ui

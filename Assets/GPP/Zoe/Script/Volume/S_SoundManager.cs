@@ -26,7 +26,14 @@ public class S_SoundManager : MonoBehaviour
 
     private S_SoundBank sb;
 
-    public AudioSource musicSource, effectSource;
+    public AudioSource musicSource, effectSource, gardenSource, workshopSource;
+
+    public float timeToAdjustVolumeAmbiance = 1;
+
+
+    public bool isInGarden = false;
+
+    private float gv = 0, wv = 0;
     private void Awake()
     {
         sb = GetComponent<S_SoundBank>();
@@ -38,6 +45,8 @@ public class S_SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        gardenSource.volume = isInGarden ? 1 : 0;
+        workshopSource.volume = isInGarden ? 0 : 1;
     }
 
     public void PlaySound(soundType st)
@@ -47,6 +56,28 @@ public class S_SoundManager : MonoBehaviour
         {
             PlaySFX(ac);
         }
+    }
+
+    private void Update()
+    {
+        if (isInGarden && (workshopSource.volume != 0 || gardenSource.volume != 1))
+        {
+            Debug.Log("Garden");
+            workshopSource.volume = Mathf.SmoothDamp(workshopSource.volume, 0, ref wv, timeToAdjustVolumeAmbiance);
+            gardenSource.volume = Mathf.SmoothDamp(gardenSource.volume, 1, ref gv, timeToAdjustVolumeAmbiance);
+        }
+        else if (!isInGarden && (workshopSource.volume != 1 || gardenSource.volume != 0))
+        {
+            Debug.Log("not Garden");
+
+            workshopSource.volume = Mathf.SmoothDamp(workshopSource.volume, 1, ref wv, timeToAdjustVolumeAmbiance);
+            gardenSource.volume = Mathf.SmoothDamp(gardenSource.volume, 0, ref gv, timeToAdjustVolumeAmbiance);
+        }
+    }
+
+    public void toggleIsInGarden()
+    {
+        isInGarden = !isInGarden;
     }
 
     public void PlayMusic(AudioClip clip)

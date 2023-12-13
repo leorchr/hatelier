@@ -14,6 +14,8 @@ public class S_Materials : ScriptableObject
     public Texture2D normal1;
     public Texture2D baseColor2;
     public Texture2D normal2;
+    public Texture2D baseColor3;
+    public Texture2D normal3;
     [TextAreaAttribute] public string description;
     [TextAreaAttribute] public string FullInventorydescription;
     public Sprite icone;

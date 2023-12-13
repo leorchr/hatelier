@@ -28,6 +28,11 @@ public class S_CameraTransition : MonoBehaviour
     private static bool movementOngoing = false;
 
     [Space]
+    [Header("In n Out \n-------------------------")]
+    [Space]
+    [SerializeField] private bool switchInOut = false;
+
+    [Space]
     [TextArea]
     public string notes = " - Tag Player sur le joueur\n - Tag Main Camera sur la caméra\n - Le collider doit être trigger\n - Doit avoir 2 références de camera rails au minimum";
 
@@ -111,6 +116,11 @@ public class S_CameraTransition : MonoBehaviour
             }
             canMove = true;
             movementOngoing = true;
+
+            if(switchInOut)
+            {
+                S_SoundManager.instance.toggleIsInGarden();
+            }
         }
     }
 
