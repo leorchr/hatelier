@@ -14,4 +14,9 @@ public class walkDustAdapter : MonoBehaviour
     {
         anim.walkDust();
     }
+
+    public void disablePick()
+    {
+        anim.disablePickUp();
+    }
 }
