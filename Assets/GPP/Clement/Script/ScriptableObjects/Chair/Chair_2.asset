@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Chair_2
   m_EditorClassIdentifier: 
   canBeBaked: 1
-  materials: {fileID: 2100000, guid: 30497fba8ca617646a8eb9e6e6d933b6, type: 2}
+  materials: {fileID: 0}
   materialName: 
   displayName: 
-  baseColor1: {fileID: 0}
-  normal1: {fileID: 0}
+  baseColor1: {fileID: 2800000, guid: 70a1eeebd2ec8ac49a9522143363411a, type: 3}
+  normal1: {fileID: 2800000, guid: f66149a336bc4e94a9f56cb968853424, type: 3}
   baseColor2: {fileID: 0}
   normal2: {fileID: 0}
+  baseColor3: {fileID: 0}
+  normal3: {fileID: 0}
   description: 
   FullInventorydescription: 
   icone: {fileID: 21300000, guid: 7247e41ae92ecac408433b4b68c4be6f, type: 3}

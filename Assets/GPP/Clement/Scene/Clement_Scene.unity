@@ -136,6 +136,12 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1158405998048940973, guid: e43e4d60ec528b14ba1da9d65d79fa7e,
+        type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 11400000, guid: 03f3e00b2c3c6b64088d89fab45a7f8e,
+        type: 2}
     - target: {fileID: 1903988098779406593, guid: e43e4d60ec528b14ba1da9d65d79fa7e,
         type: 3}
       propertyPath: m_UseGravity
@@ -538,7 +544,7 @@ PrefabInstance:
         type: 3}
       propertyPath: material
       value: 
-      objectReference: {fileID: 11400000, guid: da15a47216d61ad4688f09a7c7ad8941,
+      objectReference: {fileID: 11400000, guid: 909af8f63744e7d49a7b7d326d1d599d,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -930,7 +936,7 @@ PrefabInstance:
         type: 3}
       propertyPath: material
       value: 
-      objectReference: {fileID: 11400000, guid: 88e1133c81c0df340a6784c8c6929573,
+      objectReference: {fileID: 11400000, guid: a7f4d0ffef3e02948b0ea4ac4bb62c92,
         type: 2}
     - target: {fileID: 5177155783091969399, guid: 0af88a0ef87c9ec4f85ee3f2f558d97d,
         type: 3}
