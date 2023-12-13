@@ -4956,7 +4956,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -555035645480560591, guid: b04bf89d0f34c4b45ae196c749eeb78a, type: 3}
-  - {fileID: -4612162990109294230, guid: b04bf89d0f34c4b45ae196c749eeb78a, type: 3}
+  - {fileID: 2100000, guid: d06f22c04c6a0574fa8934e53ebc0f3c, type: 2}
   - {fileID: 5167722330652954913, guid: b04bf89d0f34c4b45ae196c749eeb78a, type: 3}
   - {fileID: 2356942962442985593, guid: b04bf89d0f34c4b45ae196c749eeb78a, type: 3}
   m_StaticBatchInfo:
@@ -5356,6 +5356,7 @@ MonoBehaviour:
     type: 3}
   interactableSpriteInvis: {fileID: 1714985515, guid: 037bbfd1d9d4e4542b48a4ba70205b0c,
     type: 3}
+  crate: 0
 --- !u!135 &1428739533100733181
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8971,6 +8972,7 @@ GameObject:
   - component: {fileID: 8800527146197129231}
   - component: {fileID: 8334767168372021646}
   - component: {fileID: 8085252660717841180}
+  - component: {fileID: 6058949764398786037}
   m_Layer: 5
   m_Name: Objectives
   m_TagString: Untagged
@@ -9114,6 +9116,27 @@ MonoBehaviour:
   objetiveText: {fileID: 8334767168372021646}
   scoreBonusObj2: 100
   scoreBonusObj3: 150
+--- !u!95 &6058949764398786037
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769624652413464250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f479963aa60ed8e439852b5c56d99871, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8788513471154994851
 GameObject:
   m_ObjectHideFlags: 0
@@ -9819,7 +9842,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.18
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
