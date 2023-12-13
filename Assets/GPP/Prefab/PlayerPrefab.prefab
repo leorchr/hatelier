@@ -257,7 +257,7 @@ RectTransform:
   m_Father: {fileID: 6251316982696408712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -796,11 +796,11 @@ RectTransform:
   - {fileID: 1088995308600411348}
   - {fileID: 4863436727824828526}
   - {fileID: 6090163881200085722}
-  - {fileID: 6883841184472494743}
   - {fileID: 1813439344438653913}
   - {fileID: 297466164996071152}
   - {fileID: 4654556342341435097}
   - {fileID: 3083518336869010668}
+  - {fileID: 6883841184472494743}
   m_Father: {fileID: 8256593598171699054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2767,7 +2767,7 @@ RectTransform:
   m_Father: {fileID: 2551388315741632768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5066,13 +5066,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4623176612917348267}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29589307, y: -0, z: -0, w: 0.95522106}
-  m_LocalPosition: {x: -1.22, y: 16.36, z: -18.85}
+  m_LocalRotation: {x: 0.43051103, y: 0, z: 0, w: 0.9025853}
+  m_LocalPosition: {x: -1.22, y: 14.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8256593598171699054}
-  m_LocalEulerAnglesHint: {x: 34.422, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 51, y: 0, z: 0}
 --- !u!20 &2665496507746033048
 Camera:
   m_ObjectHideFlags: 0
@@ -5455,7 +5455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6883841184472494743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6836,6 +6836,7 @@ MonoBehaviour:
   top: {fileID: 0}
   bottom: {fileID: 0}
   statue: {fileID: 0}
+  emptyStatue: {fileID: 0}
 --- !u!114 &6543256539516557289
 MonoBehaviour:
   m_ObjectHideFlags: 0

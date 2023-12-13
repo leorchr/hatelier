@@ -14,6 +14,7 @@ public class S_UI_Inventory : MonoBehaviour
     [SerializeField] private GameObject statueSlotImage1;
     [SerializeField] private GameObject statueSlotImage2;
     [SerializeField] private GameObject statueSlotImage3;
+    [SerializeField] private Sprite baseStatueUI;
     [SerializeField] private GameObject playerInventoryImage;
     public GameObject inventoryGroupe;
 
@@ -47,6 +48,10 @@ public class S_UI_Inventory : MonoBehaviour
             statueSlotImage1.SetActive(true);
 
         }
+        else
+        {
+            statueSlotImage1.GetComponent<Image>().sprite = baseStatueUI;
+        }
         if (S_Statue_Inventory.instance.GetMaterial2() != null)
         {
             S_Materials statueTop = S_Statue_Inventory.instance.GetMaterial2();
@@ -54,12 +59,20 @@ public class S_UI_Inventory : MonoBehaviour
             statueSlotImage2.SetActive(true);
 
         }
+        else
+        {
+            statueSlotImage2.GetComponent<Image>().sprite = baseStatueUI;
+        }
         if (S_Statue_Inventory.instance.GetMaterial3() != null)
         {
             S_Materials statueBottom = S_Statue_Inventory.instance.GetMaterial3();
             statueSlotImage3.GetComponent<Image>().sprite = statueBottom.icone;
             statueSlotImage3.SetActive(true);
 
+        }
+        else
+        {
+            statueSlotImage3.GetComponent<Image>().sprite = baseStatueUI;
         }
 
     }
@@ -76,4 +89,6 @@ public class S_UI_Inventory : MonoBehaviour
     }
 
     
+
+
 }
