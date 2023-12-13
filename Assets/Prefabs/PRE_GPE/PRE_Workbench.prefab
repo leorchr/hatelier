@@ -210,7 +210,8 @@ MonoBehaviour:
   moldSlotImage1: {fileID: 9026500198352464530}
   moldSlotImage2: {fileID: 5582001067964489209}
   moldSlotImage3: {fileID: 3676048408679251377}
-  defqultSlotImage4: {fileID: 0}
+  defqultSlotImage4: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb,
+    type: 3}
   sliderSupport: {fileID: 3700409146656269372}
   bakingSlider: {fileID: 9048287185833573764}
   bakingTimer: 2
@@ -979,7 +980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -980366387, guid: d0bb1ee52f6d1a1498b4adf6847be9b1, type: 3}
+  m_Sprite: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1055,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -980366387, guid: d0bb1ee52f6d1a1498b4adf6847be9b1, type: 3}
+  m_Sprite: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1206,7 +1207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -980366387, guid: d0bb1ee52f6d1a1498b4adf6847be9b1, type: 3}
+  m_Sprite: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
