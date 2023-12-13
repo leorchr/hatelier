@@ -27,6 +27,8 @@ public class S_Leaderboard : MonoBehaviour
     private GameObject[] timeList;
     [SerializeField] private Transform statuePos;
 
+    [SerializeField] private TextMeshProUGUI scoreText, timeText;
+
     private void Awake()
     {
         if (!instance) instance = this;
@@ -48,6 +50,12 @@ public class S_Leaderboard : MonoBehaviour
         }
 
         if(GameMode.instance.finalStatue != null) Instantiate(GameMode.instance.finalStatue, statuePos.transform);
+
+        scoreText.text = S_ScoreSystem.instance.score.ToString();
+        float timeTemp = S_Timer.instance.timeSinceBeggining;
+        int minutes = Mathf.FloorToInt(timeTemp / 60);
+        int seconds = Mathf.FloorToInt(timeTemp % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void SetupLeaderboard()

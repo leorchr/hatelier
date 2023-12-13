@@ -29,8 +29,6 @@ public class S_PlayerController : MonoBehaviour
 
     private S_Player_Anim_Manager m_animManager;
 
-    private bool m_IsOnPlatform = false;
-
     [SerializeField] [Range(0.0f,1.0f)] private float m_decelerateRate;
 
     [Header("Sound")]
@@ -44,8 +42,6 @@ public class S_PlayerController : MonoBehaviour
         m_baseScale = transform.localScale;
         maxSpeed = m_MaxSpeed;
     }
-
-    private bool isNotInMenu = true;
 
     private void FixedUpdate()
     {
@@ -127,7 +123,6 @@ public class S_PlayerController : MonoBehaviour
         if (other.gameObject.GetComponent<S_MovingObject>() != null)
         {
             transform.parent = other.gameObject.transform;
-            m_IsOnPlatform = true;
             Vector3 pScale = transform.parent.lossyScale;
             //transform.localScale = new Vector3(m_baseScale.x/pScale.x,m_baseScale.y/pScale.y,m_baseScale.z/pScale.z);
         }
@@ -137,13 +132,12 @@ public class S_PlayerController : MonoBehaviour
     {
         if (col.gameObject.GetComponent<S_MovingObject>() != null && col.gameObject.GetComponent<Rigidbody>() == m_objectRigidbody)
         {
-            m_IsOnPlatform = false;
             transform.parent = null;
 
             //transform.localScale = m_baseScale;
         }
     }
-    public void setIsNotInMenu(bool b) { isNotInMenu = b; m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
+    public void setIsNotInMenu(bool b) { m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
 
     public void setDir(dir d) {
         switch (d)

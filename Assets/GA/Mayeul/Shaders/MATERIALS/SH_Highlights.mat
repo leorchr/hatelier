@@ -40,17 +40,17 @@ Material:
     m_Floats:
     - _DepthOffset: 3.33
     - _LinesDensity: 100
-    - _LinesRotation: 0.75
-    - _LinesSpeed: 2
+    - _LinesRotation: 0.4
+    - _LinesSpeed: 2.42
     - _LinesThickness: 0
-    - _Opacity: 0.5
+    - _Opacity: 1
     - _PanningDirection: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SwitchLinesDirection: 1
     - _SwitchPanningDirection: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 0.9411765, b: 0.79607844, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &352878449508145175
 MonoBehaviour:
