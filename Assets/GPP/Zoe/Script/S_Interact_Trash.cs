@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class S_Interact_Trash : S_Interactable
 {
-    public string description = "Press <color=red>RIGHT CLICK</color>";
+    public string description = "";
     public string trashDescription;
     public string nothingToDestroy;
     public override string GetDescription()

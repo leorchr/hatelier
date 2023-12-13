@@ -14,9 +14,7 @@ public class S_HideBeforePlay : MonoBehaviour
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject dropButton;
 
-    [Header("Sprite")]
-    [SerializeField] private Sprite pauseVisible;
-    [SerializeField] private Sprite pauseInvisible;
+
 
     private void Awake()
     {
@@ -27,7 +25,7 @@ public class S_HideBeforePlay : MonoBehaviour
     {
         if (!S_WarmUpTimer.instance.gameBegin)
         {
-            pauseButton.GetComponent<Image>().sprite = pauseInvisible;
+            
             
             //Functions
             leftStick.GetComponent<S_LeftStick>().enabled = false;
@@ -37,7 +35,7 @@ public class S_HideBeforePlay : MonoBehaviour
         }
         else
         {
-            pauseButton.GetComponent<Image>().sprite = pauseVisible;
+            
 
             //Functions
             leftStick.GetComponent<S_LeftStick>().enabled = true;

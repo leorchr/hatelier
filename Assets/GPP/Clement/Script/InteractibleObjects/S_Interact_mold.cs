@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class S_Interact_mold : S_Interactable
 {
     [Header("Display Text")]
-    public string description = "Press <color=red>RIGHT CLICK</color>";
+    public string description = "";
     public string cannotUseMatText = "<color=red>CANNOT PUT 2 SAME MATERIALS</color>";
     public string inventoryEmpty = "<color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>";
     public string incompatibleRecipe = "<color=red>INCOMPATIBLE RECIPE</color>";

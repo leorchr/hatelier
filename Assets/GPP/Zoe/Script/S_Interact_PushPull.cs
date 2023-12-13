@@ -24,7 +24,7 @@ public class S_Interact_PushPull : S_Interactable
 
     public bool isPushed = false;
 
-    public string description = "Press <color=red>RIGHT CLICK</color>";
+    public string description = "";
 
     [Space(5)]
     public Side[] sides;

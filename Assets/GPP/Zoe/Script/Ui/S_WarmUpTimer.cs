@@ -33,6 +33,7 @@ public class S_WarmUpTimer : MonoBehaviour
 
     private void Start()
     {
+        objectives.SetActive(false);
         gameBegin = false;
         beginTextGO.SetActive(false);
         warmUpTimer.SetActive(true);
@@ -44,7 +45,7 @@ public class S_WarmUpTimer : MonoBehaviour
         timerText.text = ((int)remainingTime).ToString();
         if((int)remainingTime == 0 && !gameBegin)
         {
-            objectives.GetComponent<Animator>().SetBool("OnScreen",true);
+            objectives.SetActive(true);;
             warmUpTimer.SetActive(false);
             beginTextGO.SetActive(true);
             playBegin.text = textBegin;

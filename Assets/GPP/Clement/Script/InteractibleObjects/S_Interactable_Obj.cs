@@ -7,7 +7,7 @@ using UnityEngine;
 public class S_Interactable_Obj : S_Interactable
 {
     [Header("Display Text")]
-    public string description = "Press <color=red>RIGHT CLICK</color>";
+    public string description = "";
     public string FullInventoryDescription = "<color=red>INVENTORY IS FULL</color>";
 
     public S_Materials material;
