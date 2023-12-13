@@ -23,6 +23,6 @@ public class S_InstantiateStatue : MonoBehaviour
         }
 
         GameMode.instance.finalStatue = statue;
-        GameMode.instance.finalStatue.AddComponent<S_SculptRotate>();
+        
     }
 }
