@@ -13,6 +13,10 @@ public class S_Timer : MonoBehaviour
     public float remainingTime;
     public float timeSinceBeggining;
 
+    public Image timerCircle;
+
+    public Gradient grad;
+
     public Slider slider;
 
     private void Awake()
@@ -25,6 +29,7 @@ public class S_Timer : MonoBehaviour
         remainingTime = GameMode.instance.settings[0].timePhase;
         //if (slider != null )
         slider.maxValue = remainingTime;
+        timerCircle.color = grad.Evaluate(0);
         this.gameObject.SetActive(false);
     }
     void Update()
@@ -43,6 +48,7 @@ public class S_Timer : MonoBehaviour
 
             //if(slider != null )
             slider.value = remainingTime;
+            timerCircle.color = grad.Evaluate(remainingTime/slider.maxValue);
         }
 
     }

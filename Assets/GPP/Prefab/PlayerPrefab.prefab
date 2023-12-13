@@ -922,6 +922,37 @@ MonoBehaviour:
   timerText: {fileID: 6693912433924704347}
   remainingTime: 300
   timeSinceBeggining: 0
+  timerCircle: {fileID: 7937298571452124648}
+  grad:
+    serializedVersion: 2
+    key0: {r: 0.4811321, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.6931067, b: 0, a: 1}
+    key2: {r: 0.20714569, g: 1, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32382
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
   slider: {fileID: 4199762874563061722}
 --- !u!1 &1749439722657727422
 GameObject:
@@ -4620,32 +4651,32 @@ PrefabInstance:
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.x
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.y
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.z
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.x
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.y
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4860689631006451452, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
@@ -4655,32 +4686,32 @@ PrefabInstance:
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.x
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.y
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Center.z
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.x
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.y
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3893146544176687443, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
         type: 3}
