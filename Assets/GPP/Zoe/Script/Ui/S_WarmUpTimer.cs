@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class S_WarmUpTimer : MonoBehaviour
@@ -39,10 +40,9 @@ public class S_WarmUpTimer : MonoBehaviour
     void Update()
     {
         remainingTime -= Time.deltaTime;
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        if(remainingTime <= 0 && !gameBegin)
+        timerText.text = ((int)remainingTime).ToString();
+        if((int)remainingTime == 0 && !gameBegin)
         {
             objectives.GetComponent<Animator>().SetBool("OnScreen",true);
             warmUpTimer.SetActive(false);

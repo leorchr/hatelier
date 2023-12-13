@@ -11,6 +11,7 @@ public class S_Statue_Inventory : MonoBehaviour
     public S_Materials top;
     public S_Materials bottom;
     [SerializeField] private GameObject statue;
+    [SerializeField] private GameObject emptyStatue;
 
     private void Awake()
     {
@@ -37,7 +38,13 @@ public class S_Statue_Inventory : MonoBehaviour
 
     public void InstantiateAndAssignedStatue()
     {
-        S_InstantiateStatue.instance.AttributeSpecs(statue);
+        if (statue != null) S_InstantiateStatue.instance.AttributeSpecs(statue);
+        else
+        {
+            emptyStatue = new GameObject();
+            emptyStatue.AddComponent<MeshRenderer>();
+            S_InstantiateStatue.instance.AttributeSpecs(emptyStatue);
+        }
     }
 
     public void RemoveFromInventory(S_Materials material)

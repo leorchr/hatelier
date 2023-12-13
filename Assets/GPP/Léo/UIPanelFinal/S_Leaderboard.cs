@@ -46,7 +46,7 @@ public class S_Leaderboard : MonoBehaviour
             timeList[i] = display[i].transform.GetChild(2).gameObject;
         }
 
-        Instantiate(GameMode.instance.finalStatue, statuePos.transform);
+        if(GameMode.instance.finalStatue != null) Instantiate(GameMode.instance.finalStatue, statuePos.transform);
     }
 
     public void SetupLeaderboard()
