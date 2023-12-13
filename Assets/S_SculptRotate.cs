@@ -18,7 +18,7 @@ public class S_SculptRotate : MonoBehaviour
     private Quaternion baseRot;
 
     [Range(0,1)]
-    public float zoomRatio = 0.4f;
+    public float zoomRatio = 0.2f;
 
     private Vector3 v;
     private Quaternion q;
