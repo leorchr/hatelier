@@ -14455,7 +14455,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13a4af869aef7be46b824685deb8b09a, type: 3}
---- !u!84 &1199727057
+--- !u!84 &1190943566
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15130,7 +15130,7 @@ PrefabInstance:
     - target: {fileID: 2954197159948810505, guid: b45030e79eaa3464ca53bf9e95acc3e3,
         type: 3}
       propertyPath: m_Intensity
-      value: 4.267906
+      value: 4.2151957
       objectReference: {fileID: 0}
     - target: {fileID: 2954197159948810505, guid: b45030e79eaa3464ca53bf9e95acc3e3,
         type: 3}
@@ -16090,7 +16090,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.990566, g: 0.79246265, b: 0.4999555, a: 1}
-  m_Intensity: 4.55547
+  m_Intensity: 4.473054
   m_Range: 1.17
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
@@ -21069,7 +21069,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 1199727057}
+      objectReference: {fileID: 1190943566}
     - target: {fileID: 8772927663375423443, guid: 39d8c055ba62e39429bb81fd63e250d8,
         type: 3}
       propertyPath: m_InstantiatedMaterial
