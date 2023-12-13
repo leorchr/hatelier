@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: bdcd35c28a0b8ac4fb2c3850e81f1f88, type: 3}
+  - {fileID: 2100000, guid: a7299e7681af62244b1b7e5ec579c90c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   FullInventoryDescription: <color=red>INVENTORY IS FULL</color>
   material: {fileID: 11400000, guid: be93d1a9888bfd048b71b48a85495bc8, type: 2}
   depotRessource: {fileID: 0}
-  isObj: 0
+  isObj: 1
 --- !u!65 &6638365807614231405
 BoxCollider:
   m_ObjectHideFlags: 0
