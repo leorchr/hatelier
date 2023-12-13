@@ -2359,6 +2359,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1263738739220730566, guid: f070b127078117a489f62c8da808f4ee,
         type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 1168659660}
+    - target: {fileID: 1263738739220730566, guid: f070b127078117a489f62c8da808f4ee,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 960307914}
+    - target: {fileID: 1263738739220730566, guid: f070b127078117a489f62c8da808f4ee,
+        type: 3}
       propertyPath: statuePos
       value: 
       objectReference: {fileID: 1410103746}
