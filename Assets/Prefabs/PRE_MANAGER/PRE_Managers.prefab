@@ -78,6 +78,7 @@ MonoBehaviour:
     - 0
     globalTimeSpend: 0
   finalPanelScene: UIPanelFinal
+  finalStatue: {fileID: 0}
 --- !u!1 &3787771357331521479
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8444318918685988026}
     m_Modifications:
+    - target: {fileID: 177527853674274112, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_Name
+      value: WorkshopSource
+      objectReference: {fileID: 0}
     - target: {fileID: 873990203494289243, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
       propertyPath: m_Name
@@ -323,6 +329,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843035326312741636, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_Name
+      value: GardenSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616878456169683923, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: isInGarden
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616878456169683923, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: gardenSource
+      value: 
+      objectReference: {fileID: 8790189171276326981}
+    - target: {fileID: 6616878456169683923, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: workshopSource
+      value: 
+      objectReference: {fileID: 1176282623396536920}
     - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -337,6 +363,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3708146326713349766}
   m_SourcePrefab: {fileID: 100100000, guid: f6620a98325be3a4e8ea1dd4399f9eb2, type: 3}
+--- !u!82 &1176282623396536920 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3080212159590043817, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4246299011091788529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1767028307650084151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2479333376461180870, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
@@ -444,3 +476,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 3ffb9186e2eed2041a8ac1a3679b8bc7, type: 3}
     - {fileID: 8300000, guid: a884c063c672c5d4c8e2340e894322ca, type: 3}
     - {fileID: 8300000, guid: a9f5316e066f6ea42856ab267cb5c583, type: 3}
+--- !u!82 &8790189171276326981 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4832613129359645364, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4246299011091788529}
+  m_PrefabAsset: {fileID: 0}
