@@ -186,10 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiontype: 0
-  description: Press <color=red>RIGHT CLICK</color>
-  cannotUseMatText: <color=red>CANNOT PUT 2 SAME MATERIALS</color>
-  inventoryEmpty: <color=red>CANNOT USE THE MOLD IF NO MATERIAL IN YOUR INVENTORY</color>
-  incompatibleRecipe: <color=red>INCOMPATIBLE RECIPE</color>
+  description: 
+  cannotUseMatText: "Tu ne peux pas utiliser deux m\xEAme mat\xE9riaux"
+  inventoryEmpty: "Tu n'as pas de mat\xE9rau \xE0 d\xE9poser"
+  incompatibleRecipe: "Tu ne peux pas mettre ce mat\xE9riau ici"
   mainInventoryGroup: {fileID: 0}
   mold: {fileID: 11400000, guid: ad65bb4e8a3fa01418de4cf7baaa19bf, type: 2}
 --- !u!114 &5898346751482618665
