@@ -4,7 +4,7 @@ using UnityEngine.VFX;
 
 public class S_Player_Anim_Manager : MonoBehaviour
 {
-    private Animator m_Animator;
+    public Animator m_Animator;
     private Rigidbody m_Rigidbody;
 
     public float minSpeedToWalk = 0.2f;
@@ -16,7 +16,7 @@ public class S_Player_Anim_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_Animator = GetComponent<Animator>();
+        //m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
 
         maxSpeed = GetComponent<S_PlayerController>().currentMaxSpeed();

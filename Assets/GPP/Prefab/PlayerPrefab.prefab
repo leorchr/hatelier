@@ -1869,6 +1869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5302fa751ab1cc34ea4335c85d70c325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Animator: {fileID: 8117359169733389991}
   minSpeedToWalk: 0.2
   DustVFX: {fileID: 691752962378815872}
 --- !u!114 &3547398005664272524
@@ -7880,6 +7881,12 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!95 &8117359169733389991 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
+    type: 3}
+  m_PrefabInstance: {fileID: 2435377031252759350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8423688715565033405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3086436065929644917, guid: 1baeb36c27061ef4da7ff41f1bc3b685,
