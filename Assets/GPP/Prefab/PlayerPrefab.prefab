@@ -4306,6 +4306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898346751482618665, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
+      propertyPath: bakingTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898346751482618665, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
       propertyPath: recipesList.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -8151,6 +8156,11 @@ PrefabInstance:
       objectReference: {fileID: 5879610819306843514}
     - target: {fileID: 1263655588235325241, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
+      propertyPath: bakingTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263655588235325241, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
       propertyPath: recipesList.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -8300,6 +8310,11 @@ PrefabInstance:
       objectReference: {fileID: 9009539419095201058}
     - target: {fileID: 1263655588235325241, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
+      propertyPath: bakingTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263655588235325241, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
       propertyPath: recipesList.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -8374,7 +8389,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.69
+      value: 1.293
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
