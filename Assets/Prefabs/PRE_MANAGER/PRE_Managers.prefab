@@ -61,15 +61,15 @@ MonoBehaviour:
   currentPhase: 1
   isRunning: 1
   settings:
-  - scoreMin: 30
-    scoreMaxAmount: 30
-    timePhase: 90
-  - scoreMin: 30
-    scoreMaxAmount: 30
-    timePhase: 90
-  - scoreMin: 30
-    scoreMaxAmount: 30
-    timePhase: 90
+  - scoreMin: 50
+    scoreMaxAmount: 200
+    timePhase: 180
+  - scoreMin: 100
+    scoreMaxAmount: 400
+    timePhase: 200
+  - scoreMin: 150
+    scoreMaxAmount: 600
+    timePhase: 220
   stats:
     scorePhases: 000000000000000000000000
     timePhases:
@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
         type: 3}
       propertyPath: firstStepMaterials.Array.size
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
         type: 3}
@@ -159,6 +159,30 @@ PrefabInstance:
       propertyPath: secondStepMaterials.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
+        type: 3}
+      propertyPath: firstStepMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 3316598800193552821, guid: 94767da350850f648a27043ed2b73a23,
+        type: 3}
+    - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
+        type: 3}
+      propertyPath: firstStepMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 3316598800193552821, guid: b6a46e5f84d169944b345692423efd40,
+        type: 3}
+    - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
+        type: 3}
+      propertyPath: firstStepMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 3316598800193552821, guid: 2443302c6c434084cb3700cd583bdb00,
+        type: 3}
+    - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
+        type: 3}
+      propertyPath: firstStepMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 3316598800193552821, guid: 80a7dc7772cc2694687aac3fa2d27b7f,
+        type: 3}
     - target: {fileID: 4931133464906789385, guid: 2f6224a30934c8248853944c44d1f691,
         type: 3}
       propertyPath: thirdStepMaterials.Array.data[0]
@@ -279,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2147315591284125742, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: Priority
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2479333376461180870, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,8 +380,23 @@ PrefabInstance:
       objectReference: {fileID: 1176282623396536920}
     - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e92e41296e6cf934c99fa19d77f151d0, type: 3}
+    - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
