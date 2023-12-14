@@ -1596,7 +1596,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2901650390650231595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1605,8 +1605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128.3, y: -43.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -425}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3325260581859080653
 CanvasRenderer:
@@ -1638,8 +1638,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13188253138acab4e802603956caae47, type: 2}
+  m_sharedMaterial: {fileID: -6621052848176618694, guid: 13188253138acab4e802603956caae47,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1663,15 +1664,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 108
+  m_fontSizeBase: 108
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4201,9 +4202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives:
-  - Tu dois aller chercher l'armature
-  - Tu dois aller chercher {0}
-  - Tu dois aller chercher {0}
+  - "Trouve un moyen d'ouvrir la porte et r\xE9cup\xE8re une armature. Puis, d\xE9pose-l\xE0
+    dans l'\xE9tabli !"
+  - "R\xE9cup\xE8re et d\xE9pose {0} dans l'\xE9tabli pour fabriquer la chair de
+    la sculpture."
+  - "R\xE9cup\xE8re {0} et un autre mat\xE9riau de ton choix. D\xE9pose-les dans
+    l'\xE9tabli pour finaliser la sculpture."
   objetiveText: {fileID: 8334767168372021646}
   scoreBonusObj2: 100
   scoreBonusObj3: 150
@@ -4284,6 +4288,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844048427772259630, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: inventoryEmpty
+      value: "Tu n'as pas de materiau \xE0 deposer"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844048427772259630, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: cannotUseMatText
+      value: "Tu ne peux pas utiliser deux m\xEAme materiaux"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844048427772259630, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: incompatibleRecipe
+      value: Tu ne peux pas mettre ce materiau ici
       objectReference: {fileID: 0}
     - target: {fileID: 5898346751482618665, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
@@ -8234,6 +8253,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: inventoryEmpty
+      value: "Tu n'as pas de materiau \xE0 deposer"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: cannotUseMatText
+      value: "Tu ne peux pas utiliser deux m\xEAme materiaux"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: incompatibleRecipe
+      value: Tu ne peux pas mettre ce materiau ici
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8411,6 +8445,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: inventoryEmpty
+      value: "Tu n'as pas de materiau \xE0 deposer"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: cannotUseMatText
+      value: "Tu ne peux pas utiliser deux m\xEAme materiaux"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727088930516226651, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: incompatibleRecipe
+      value: Tu ne peux pas mettre ce materiau ici
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
