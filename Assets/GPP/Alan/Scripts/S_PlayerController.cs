@@ -140,7 +140,7 @@ public class S_PlayerController : MonoBehaviour
     public void setIsNotInMenu(bool b) { m_leftStick.Lock(!b); m_rigidbody.velocity = Vector3.zero; }
 
     public void setDir(dir d) {
-        switch (d)
+        /*switch (d)
         {
             case dir.Left:
             case dir.Right:
@@ -153,7 +153,7 @@ public class S_PlayerController : MonoBehaviour
             default:
                 m_leftStick.changeAxis(AxisOptions.Both);
                 break;
-        }
+        }*/
     }
 
     public void createCollider(bool active, Side s) {
