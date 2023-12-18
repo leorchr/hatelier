@@ -83,6 +83,18 @@ public class S_Player_Interaction : MonoBehaviour
             case S_Interactable.InteractionType.Click:
                 interactable.Interact();
                 break;
+            case S_Interactable.InteractionType.Hold:
+                interactable.Interact();
+                break;
+        }
+    }
+    void HandleReleaseInteraction()
+    {
+        switch (interactable.interactiontype)
+        {
+            case S_Interactable.InteractionType.Hold:
+                interactable.Interact();
+                break;
         }
     }
     public void InteractionButton()
@@ -90,6 +102,14 @@ public class S_Player_Interaction : MonoBehaviour
         if (interactable)
         {
             HandleInteraction();
+        }
+    }
+
+    public void ReleaseButton()
+    {
+        if (interactable)
+        {
+            HandleReleaseInteraction();
         }
     }
 }
