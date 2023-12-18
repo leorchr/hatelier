@@ -79,14 +79,18 @@ public class S_Interact_PushPull : S_Interactable
             if (hasAtLeastOneSideActive() && getSideCloser().active)
             {
                 Side s = getSideCloser();
-                if(s.side == dir.Left  || s.side == dir.Right)
+
+                horizontalArrows.SetActive(true);
+                verticalArrows.SetActive(true);
+
+                /*if (s.side == dir.Left  || s.side == dir.Right)
                 {
                     horizontalArrows.SetActive(true);
                 }
                 else if(s.side == dir.Front || s.side == dir.Back)
                 {
                     verticalArrows.SetActive(true);
-                }
+                }*/
 
                 S_PlayerController.instance.setDir(s.side);
                 S_PlayerController.instance.m_isPushing = true;

@@ -28,6 +28,12 @@ public class S_CameraTransition : MonoBehaviour
     private static bool movementOngoing = false;
 
     [Space]
+    [Header("Scene To Load \n-------------------------")]
+    [Space]
+    [SerializeField] private ASyncScene Room1;
+    [SerializeField] private ASyncScene Room2;
+
+    [Space]
     [Header("In n Out \n-------------------------")]
     [Space]
     [SerializeField] private bool switchInOut = false;
@@ -77,6 +83,7 @@ public class S_CameraTransition : MonoBehaviour
 
             if(Vector3.Distance(other.transform.position, playerPos1.position) < Vector3.Distance(other.transform.position, playerPos2.position))   // Destination selection
             {
+                SceneLoader.instance.loadScene(Room2);
                 currentCamRail = camPos2;
                 targetPosition = new Vector3(0, camPos2.start.position.y, camPos2.start.position.z);
                 targetPosition.x = Mathf.Clamp(playerPos2.transform.position.x, camPos2.start.position.x, camPos2.end.position.x);
@@ -97,6 +104,7 @@ public class S_CameraTransition : MonoBehaviour
             }
             else
             {
+                SceneLoader.instance.loadScene(Room1);
                 currentCamRail = camPos1;
                 targetPosition = new Vector3(0, camPos1.start.position.y, camPos1.start.position.z);
                 targetPosition.x = Mathf.Clamp(playerPos1.transform.position.x, camPos1.start.position.x, camPos1.end.position.x);
@@ -138,6 +146,16 @@ public class S_CameraTransition : MonoBehaviour
                 canMove = false;
                 movementOngoing = false;
                 S_CameraMovements.instance.SetupCameraMovements(currentCamRail);
+
+                //Unload scene
+                if (currentCamRail == camPos2)
+                {
+                    SceneLoader.instance.unloadScene(Room1);
+                }
+                else if (currentCamRail == camPos1)
+                {
+                    SceneLoader.instance.unloadScene(Room2);
+                }
             }
         }
     }

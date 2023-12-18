@@ -12,8 +12,8 @@ public class S_Objectives : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI objetiveText;
 
-    private List<S_Materials> matObjective2 = new List<S_Materials>();
-    private List<S_Materials> matObjective3 = new List<S_Materials>();
+    [SerializeField] private S_Materials[] matObjective2 = new S_Materials[3];
+    [SerializeField] private S_Materials[] matObjective3 = new S_Materials[3];
     private S_Materials currentMatObjective2, currentMatObjective3;
 
     [SerializeField] private int scoreBonusObj2, scoreBonusObj3;
@@ -27,33 +27,19 @@ public class S_Objectives : MonoBehaviour
     private void Start()
     {
         objetiveText.text = objectives[0];
-        Invoke("SetupObjectives", 1f);
+        SetupObjectives();
     }
 
     public void SetupObjectives()
     {
-        var tempObj = FindObjectsOfType(typeof(S_Interactable_Obj));
-
-        foreach (S_Interactable_Obj obj in tempObj)
-        {
-            if(obj.material.phase == MaterialPhase.Phase2)
-            {
-                matObjective2.Add(obj.material);
-            }
-            else if (obj.material.phase == MaterialPhase.Phase3)
-            {
-                matObjective3.Add(obj.material);
-            }
-        }
-
         for (int i = 0; i < objectives[1].Length; ++i)
         {
-            currentMatObjective2 = matObjective2[Random.Range(0, matObjective2.Count)];
+            currentMatObjective2 = matObjective2[Random.Range(0, matObjective2.Length)];
             objectives[1] = string.Format(objectives[1], currentMatObjective2.displayName.ToLower());
         }
         for (int i = 0; i < objectives[2].Length; ++i)
         {
-            currentMatObjective3 = matObjective3[Random.Range(0, matObjective3.Count)];
+            currentMatObjective3 = matObjective3[Random.Range(0, matObjective3.Length)];
             objectives[2] = string.Format(objectives[2], currentMatObjective3.displayName.ToLower());
         }
     }
