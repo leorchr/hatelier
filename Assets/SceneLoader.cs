@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public ASyncScene baseRoom;
+
+    public static SceneLoader instance;
     // Start is called before the first frame update
     void Start()
     {
+        if (!instance) instance = this;
+
         for (int i = SceneManager.loadedSceneCount - 1; i > 0; i--)
         {
 
@@ -16,6 +20,16 @@ public class SceneLoader : MonoBehaviour
             
         }
 
-        //SceneManager.LoadScene(baseRoom.sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(baseRoom.sceneName, LoadSceneMode.Additive);
+    }
+
+    public void loadScene(ASyncScene sc)
+    {
+        SceneManager.LoadScene(sc.sceneName, LoadSceneMode.Additive);
+    }
+
+    public void unloadScene(ASyncScene sc) 
+    {
+        SceneManager.UnloadSceneAsync(sc.sceneName);
     }
 }
