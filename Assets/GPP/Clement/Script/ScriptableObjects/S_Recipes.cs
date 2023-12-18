@@ -19,6 +19,7 @@ public class S_Recipes : ScriptableObject
     public S_Materials[] requiredMaterials;
     [Tooltip("Output statue")]
     public Sprite statueIcon;
+    public GameObject armature;
     public S_Materials statue;
 
 }
