@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public enum soundType
 {
@@ -34,6 +36,7 @@ public class S_SoundManager : MonoBehaviour
     public bool isInGarden = false;
 
     private float gv = 0, wv = 0;
+
     private void Awake()
     {
         sb = GetComponent<S_SoundBank>();
@@ -90,10 +93,7 @@ public class S_SoundManager : MonoBehaviour
         effectSource.PlayOneShot(clip);
     }
 
-    public void ChangeMasterVolume(float volume)
-    {
-        AudioListener.volume = volume;
-    }
+    
 
 
 }
