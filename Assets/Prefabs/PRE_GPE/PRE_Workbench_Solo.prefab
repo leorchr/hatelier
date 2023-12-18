@@ -176,8 +176,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5513099165883738104}
-  - {fileID: 8893695348827001166}
-  - {fileID: 5641215329948544530}
   m_Father: {fileID: 7064956957931639964}
   m_LocalEulerAnglesHint: {x: 12.178, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -473,13 +471,14 @@ MonoBehaviour:
   moldSlotImage1: {fileID: 3654513481598088947}
   moldSlotImageRef: {fileID: 8935377155119785916}
   moldSlotImage3: {fileID: 2475338178958583687}
+  uiGroupe: {fileID: 2736390024976585779}
   sliderSupport: {fileID: 102796684037097608}
   bakingSlider: {fileID: 5479534525848331240}
   bakingTimer: 2
   addStatueTimer: 0
   stopTimer: 0
   door: {fileID: 0}
-  vfx: {fileID: 0}
+  vfx: {fileID: 679958900811226544}
   recipesList:
   - {fileID: 11400000, guid: 49ed4faaba6261d4d94c01b20b11c03c, type: 2}
 --- !u!114 &7727088930516226651
@@ -553,6 +552,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6339718540067100626}
+  - {fileID: 8893695348827001166}
+  - {fileID: 5641215329948544530}
   m_Father: {fileID: 1284105211496823895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -926,16 +927,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7621475292158363208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1284105211496823895}
+  m_Father: {fileID: 5513099165883738104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.1, y: -20.2}
+  m_AnchoredPosition: {x: 60.800045, y: 3.799963}
   m_SizeDelta: {x: 20, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5274239650905072684
@@ -1068,11 +1069,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1762670082673429700}
-  m_Father: {fileID: 1284105211496823895}
+  m_Father: {fileID: 5513099165883738104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.3, y: -24.3}
+  m_AnchoredPosition: {x: 121.99999, y: -0.30003548}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8677315958641998720

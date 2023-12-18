@@ -15,6 +15,7 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage2;
     [SerializeField] private GameObject moldSlotImage3;
     [SerializeField] private Sprite defqultSlotImage4;
+    [SerializeField] private GameObject uiGroupe;
 
     [Header("Slider")]
     public GameObject sliderSupport;
@@ -156,6 +157,7 @@ public class S_Mold_Inventory : MonoBehaviour
         GameMode.instance.ChangePhase();
 
         if (door != null) door.GetComponent<Animator>().SetBool("GetStatue", true);
+        uiGroupe.SetActive(false);
     }
 
     public void DisplayMoldInventoryIcons()

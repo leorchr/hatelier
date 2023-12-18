@@ -14,6 +14,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage1;
     [SerializeField] private GameObject moldSlotImageRef;
     [SerializeField] private GameObject moldSlotImage3;
+    [SerializeField] private GameObject uiGroupe;
 
     [Header("Slider")]
     public GameObject sliderSupport;
@@ -141,9 +142,12 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
         if(S_Objectives.instance != null) S_Objectives.instance.CheckObjective(recipesList[recipeNumber]);
         gameObject.layer = 0;
+        uiGroupe.SetActive(false);
         GameMode.instance.ChangePhase();
 
         door.GetComponent<Animator>().SetBool("GetStatue", true);
+
+        
         //score
 
     }
