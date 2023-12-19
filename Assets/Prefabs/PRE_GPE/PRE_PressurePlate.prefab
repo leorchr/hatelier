@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5563168609284120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -90.96703, y: -10.246645, z: 90.951195}
+  m_LocalPosition: {x: -90.96703, y: -10.246645, z: 90.95119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 4556571894713406207}
   - component: {fileID: 8409889237017189166}
   - component: {fileID: 5438679058054233898}
+  - component: {fileID: 4461933432679469524}
   m_Layer: 0
   m_Name: PRE_PressurePlate
   m_TagString: Untagged
@@ -284,3 +285,24 @@ MonoBehaviour:
   receivers:
   - {fileID: 0}
   door: {fileID: 0}
+--- !u!95 &4461933432679469524
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159708464600250558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3060e57ae184f3e429c3966d3790c439, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
