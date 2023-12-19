@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7882490696785205452
+--- !u!114 &-4988692567159121161
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Barrier
+  m_Name: MAT_Baton_Sol_2
   m_Shader: {fileID: -6465566751694194690, guid: f48cdc71343ffcc47a730bb40b5aa726,
     type: 3}
   m_Parent: {fileID: 0}
@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: ee62971f5aead8b4384dbac0dcd2d83e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 758dd32df7a3ec246bd0d4a72ae01603, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -111,7 +111,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
-        m_Texture: {fileID: 2800000, guid: 4fd30a8ac70a57d48ab8d4d75d9f817f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3fa26adbeb2a773439200f18b8f13491, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -119,7 +119,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TexNormalMap:
-        m_Texture: {fileID: 2800000, guid: ce89e70303f906d4eb0f7fa118facfc6, type: 3}
+        m_Texture: {fileID: 2800000, guid: b8f020ceff35ff940afe9d3062d72021, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:

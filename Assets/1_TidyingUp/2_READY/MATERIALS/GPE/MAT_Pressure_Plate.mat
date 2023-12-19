@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4988692567159121161
+--- !u!114 &-2738087358086408984
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Stick_Ground_2
+  m_Name: MAT_Pressure_Plate
   m_Shader: {fileID: -6465566751694194690, guid: f48cdc71343ffcc47a730bb40b5aa726,
     type: 3}
   m_Parent: {fileID: 0}
@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: 758dd32df7a3ec246bd0d4a72ae01603, type: 3}
+        m_Texture: {fileID: 2800000, guid: 55b9129db4ee282458e133c090ca7f70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -70,7 +70,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer1_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer1_02:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Layer1_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -78,15 +86,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Layer2_01_Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Layer2_02:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Layer2_Normal_01:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Layer2_Normal_02:
+    - _Layer2_02_Normal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -111,7 +119,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
-        m_Texture: {fileID: 2800000, guid: 3fa26adbeb2a773439200f18b8f13491, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3b0889995a169924991e6594f46d9b26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -119,7 +127,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TexNormalMap:
-        m_Texture: {fileID: 2800000, guid: b8f020ceff35ff940afe9d3062d72021, type: 3}
+        m_Texture: {fileID: 2800000, guid: 24f08e3df2f0d6945b6a677b83dfe5e7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -145,6 +153,7 @@ Material:
     - _BaseColor_Rotate: 0
     - _BaseColor_Saturation: 1
     - _BaseColor_TIling: 1
+    - _BaseColor_Value: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BounceLight_Hue: -5
@@ -171,6 +180,18 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Layer1_01_Normal_Strength: 1
+    - _Layer1_01_Rotate: 0
+    - _Layer1_01_Tiling: 1
+    - _Layer1_02_Normal_Strength: 1
+    - _Layer1_02_Rotate: 0
+    - _Layer1_02_Tiling: 1
+    - _Layer2_01_Normal_Strength: 1
+    - _Layer2_01_Rotate: 0
+    - _Layer2_01_Tiling: 1
+    - _Layer2_02_Normal_Strength_1: 1
+    - _Layer2_02_Rotate: 0
+    - _Layer2_02_Tiling: 1
     - _Line_Enable: 1
     - _Line_Hue: -5
     - _Line_Saturation: 1.5
