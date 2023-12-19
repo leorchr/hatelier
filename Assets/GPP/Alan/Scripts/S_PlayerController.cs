@@ -10,6 +10,8 @@ public class S_PlayerController : MonoBehaviour
     Rigidbody m_rigidbody = null;
     Rigidbody m_objectRigidbody = null;
 
+    public float stickSpeedMultiplier = 1;
+
     Vector3 m_baseScale;
 
     [HideInInspector]
@@ -45,7 +47,7 @@ public class S_PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 leftStick = new Vector2(m_leftStick.Horizontal, m_leftStick.Vertical );
+        Vector2 leftStick = new Vector2(Mathf.Clamp(m_leftStick.Horizontal * stickSpeedMultiplier,-1,1), Mathf.Clamp(m_leftStick.Vertical * stickSpeedMultiplier, -1, 1));
         m_rigidbody.AddForce(leftStick.x * m_Acceleration , 0, leftStick.y * m_Acceleration , ForceMode.Acceleration) ;
         //Debug.Log(m_MaxSpeed + " | " + leftStick.x);
         //Debug.Log("Clamp X : " + (m_rigidbody.velocity.x) + " | " + (-m_MaxSpeed * Mathf.Abs(leftStick.x)) + " | " + (m_MaxSpeed * Mathf.Abs(leftStick.x)) );
