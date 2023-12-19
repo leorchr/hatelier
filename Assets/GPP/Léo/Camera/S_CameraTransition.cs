@@ -37,6 +37,7 @@ public class S_CameraTransition : MonoBehaviour
     [Header("In n Out \n-------------------------")]
     [Space]
     [SerializeField] private bool switchInOut = false;
+    [SerializeField] private GameObject door;
 
     [Space]
     [TextArea]
@@ -100,6 +101,9 @@ public class S_CameraTransition : MonoBehaviour
                     targetPosition.z = Mathf.Clamp(playerPos2.transform.position.z, camPos2.start.position.z, camPos2.end.position.z);
                 }*/
 
+                if(door != null)
+                door.GetComponent<Animator>().SetTrigger("CloseDoor");
+
                 other.transform.position = playerPos2.position;
             }
             else
@@ -142,6 +146,7 @@ public class S_CameraTransition : MonoBehaviour
         if (canMove)
         {
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, targetPosition, ref moveVelocity, movementSmoothTime);
+
             if (Vector3.Distance(Camera.main.transform.position, targetPosition) <= smoothDampAccuracy) {
                 canMove = false;
                 movementOngoing = false;
