@@ -924,6 +924,11 @@ MonoBehaviour:
   timerText: {fileID: 6693912433924704347}
   remainingTime: 300
   timeSinceBeggining: 0
+  timeSpendPhase: 0
+  timeEndMessageLose: 2
+  textEndGameLoseGO: {fileID: 4897166422831010007}
+  textEndGameLoseUI: {fileID: 8564111974405995154}
+  textEndGameLose: Game Over
   timerCircle: {fileID: 7937298571452124648}
   grad:
     serializedVersion: 2

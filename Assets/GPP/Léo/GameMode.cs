@@ -48,11 +48,12 @@ public class GameMode : MonoBehaviour
             else if (currentPhase == 3)
             {
                 S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
+                GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = (int)S_Timer.instance.timeSpendPhase;
                 EndGame();
             }
 
-            currentPhase++;
-            if(currentPhase < 3) S_ScoreSystem.instance.AddScoreMin();
+            if(currentPhase < 3) currentPhase++;
+            S_ScoreSystem.instance.AddScoreMin();
         }
     }
 
@@ -60,7 +61,10 @@ public class GameMode : MonoBehaviour
     {
         if (!isRunning) return;
 
-        GameMode.instance.stats.globalTimeSpend = S_Timer.instance.timeSinceBeggining;
+        for (int i = 0; i < stats.timePhases.Length; i++)
+        {
+            stats.globalTimeSpend += stats.timePhases[i];
+        }
         S_Statue_Inventory.instance.InstantiateAndAssignedStatue();
       
 #if UNITY_EDITOR

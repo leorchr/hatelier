@@ -52,7 +52,7 @@ public class S_Leaderboard : MonoBehaviour
         if(GameMode.instance.finalStatue != null) Instantiate(GameMode.instance.finalStatue, statuePos.transform);
 
         scoreText.text = S_ScoreSystem.instance.score.ToString();
-        float timeTemp = S_Timer.instance.timeSinceBeggining;
+        float timeTemp = GameMode.instance.stats.globalTimeSpend;
         int minutes = Mathf.FloorToInt(timeTemp / 60);
         int seconds = Mathf.FloorToInt(timeTemp % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -60,9 +60,11 @@ public class S_Leaderboard : MonoBehaviour
 
     public void SetupLeaderboard()
     {
+        string currentName = nameText.GetComponent<TextMeshProUGUI>().text;
+        if (currentName.Length < 4) return;
         playerNameTemp = nameText.GetComponent<TextMeshProUGUI>().text;
         playerScoreTemp = S_ScoreSystem.instance.score;
-        playerTimeTemp = S_Timer.instance.timeSinceBeggining;
+        playerTimeTemp = GameMode.instance.stats.globalTimeSpend;
 
         S_LeaderboardSave.instance.LoadFile();
         S_LeaderboardSave.instance.SaveToFile();

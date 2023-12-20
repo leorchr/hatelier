@@ -19,7 +19,8 @@ public class S_DisplayStats : MonoBehaviour
     {
         int minutes, seconds;
         playerStats = Instantiate(playerStats, spawnPos.transform);
-        for (int i = 0; i < 3; i++)
+        int phaseEndGame = GameMode.instance.currentPhase;
+        for (int i = 0; i < phaseEndGame; i++)
         {
             playerStats.transform.GetChild(i+1).transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = GameMode.instance.stats.scorePhases[i].ToString();
             minutes = Mathf.FloorToInt(GameMode.instance.stats.timePhases[i] / 60);
@@ -28,7 +29,7 @@ public class S_DisplayStats : MonoBehaviour
         }
 
         playerStats.transform.GetChild(4).transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = "Score : " + S_ScoreSystem.instance.score.ToString();
-        float time = S_Timer.instance.timeSinceBeggining;
+        float time = GameMode.instance.stats.globalTimeSpend;
         minutes = Mathf.FloorToInt(time / 60);
         seconds = Mathf.FloorToInt(time % 60);
         playerStats.transform.GetChild(4).transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = "Temps total : " + string.Format("{0:00}:{1:00}", minutes, seconds);

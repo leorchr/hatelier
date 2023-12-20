@@ -24,8 +24,6 @@ public class S_ScoreSystem : MonoBehaviour
         if (S_Timer.instance != null)
         {
             float endedTime = S_Timer.instance.remainingTime;
-            GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = S_Timer.instance.remainingTime; // ajoute le temps aux stats
-
             float earnedPoint = endedTime / settings.timePhase * settings.scoreMaxAmount;
             score += (int)earnedPoint;
             GameMode.instance.stats.scorePhases[GameMode.instance.currentPhase - 1] += (int)earnedPoint; // ajoute le score au stats

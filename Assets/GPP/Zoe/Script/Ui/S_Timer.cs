@@ -1,6 +1,4 @@
-using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +10,8 @@ public class S_Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float remainingTime;
     public float timeSinceBeggining;
+    [HideInInspector] public float timeSpendPhase;
+    private bool onlyOnce = false;
 
     [Header("Texte End Game Lose")]
     public float timeEndMessageLose;
@@ -41,24 +41,30 @@ public class S_Timer : MonoBehaviour
     }
     void Update()
     {
-        timeSinceBeggining += Time.deltaTime;
-        if (remainingTime <= 0.1f)
+        if(!onlyOnce)
         {
-            Time.timeScale = 0;
-            textEndGameLoseGO.SetActive(true);
-            textEndGameLoseUI.text = textEndGameLose;
-            Invoke("EndGame", timeEndMessageLose);
-        }
-        else
-        {
-            remainingTime -= Time.deltaTime;
-            int minutes = Mathf.FloorToInt(remainingTime / 60);
-            int seconds = Mathf.FloorToInt(remainingTime % 60);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timeSinceBeggining += Time.deltaTime;
+            timeSpendPhase += Time.deltaTime;
+            if (remainingTime <= 0.1f)
+            {
+                    GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = (int)timeSpendPhase;
+                    //Time.timeScale = 0;
+                    textEndGameLoseGO.SetActive(true);
+                    textEndGameLoseUI.text = textEndGameLose;
+                    Invoke("EndGame", timeEndMessageLose);
+                    onlyOnce = true;
+            }
+            else
+            {
+                remainingTime -= Time.deltaTime;
+                int minutes = Mathf.FloorToInt(remainingTime / 60);
+                int seconds = Mathf.FloorToInt(remainingTime % 60);
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            //if(slider != null )
-            slider.value = remainingTime;
-            timerCircle.color = grad.Evaluate(remainingTime/slider.maxValue);
+                //if(slider != null )
+                slider.value = remainingTime;
+                timerCircle.color = grad.Evaluate(remainingTime/slider.maxValue);
+            }
         }
 
     }
@@ -71,6 +77,8 @@ public class S_Timer : MonoBehaviour
 
     public void TimerNextPhase(PhaseSettings settings)
     {
+        GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = (int)timeSpendPhase; // ajoute le temps aux stats
+        timeSpendPhase = 0;
         remainingTime = settings.timePhase;
         slider.maxValue = remainingTime;
     }
