@@ -13,6 +13,12 @@ public class S_Timer : MonoBehaviour
     public float remainingTime;
     public float timeSinceBeggining;
 
+    [Header("Texte End Game Lose")]
+    public float timeEndMessageLose;
+    public GameObject textEndGameLoseGO;
+    public TextMeshProUGUI textEndGameLoseUI;
+    public string textEndGameLose;
+
     public Image timerCircle;
 
     public Gradient grad;
@@ -26,6 +32,7 @@ public class S_Timer : MonoBehaviour
 
     private void Start()
     {
+        textEndGameLoseGO.SetActive(false);
         remainingTime = GameMode.instance.settings[0].timePhase;
         //if (slider != null )
         slider.maxValue = remainingTime;
@@ -37,7 +44,10 @@ public class S_Timer : MonoBehaviour
         timeSinceBeggining += Time.deltaTime;
         if (remainingTime <= 0.1f)
         {
-            GameMode.instance.EndGame();
+            Time.timeScale = 0;
+            textEndGameLoseGO.SetActive(true);
+            textEndGameLoseUI.text = textEndGameLose;
+            Invoke("EndGame", timeEndMessageLose);
         }
         else
         {
@@ -52,6 +62,12 @@ public class S_Timer : MonoBehaviour
         }
 
     }
+
+    public void EndGame()
+    {
+        GameMode.instance.EndGame();
+    }
+
 
     public void TimerNextPhase(PhaseSettings settings)
     {
