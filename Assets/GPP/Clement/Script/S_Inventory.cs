@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,7 @@ public class S_Inventory : MonoBehaviour
         if (inventory.prefab == null) { Debug.LogError("Prefab need to be asigned to the scriptable object"); return; }
     
         GameObject item = Instantiate(inventory.prefab, dropPoint);
+        item.GetComponent<Rigidbody>().isKinematic = false;
         item.transform.parent = null;
         
         ClearInventory();
