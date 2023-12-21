@@ -81,7 +81,7 @@ public class S_CameraTransition : MonoBehaviour
             S_CameraMovements.instance.SetupCameraMovements(currentCamRail);
         }*/
 
-        if (other.gameObject.CompareTag("Player") && canUse)
+        if (other.gameObject.CompareTag("Player") && canUse && !other.gameObject.GetComponent<S_PlayerController>().m_isPushing)
         {
             S_CameraMovements.instance.StopCameraMovements();
             if (oneTime) { 
