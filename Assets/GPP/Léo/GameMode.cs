@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,7 +50,7 @@ public class GameMode : MonoBehaviour
             {
                 S_ScoreSystem.instance.SetupScoreEndPhase(settings[currentPhase - 1]);
                 GameMode.instance.stats.timePhases[GameMode.instance.currentPhase - 1] = (int)S_Timer.instance.timeSpendPhase;
-                EndGame();
+                S_Timer.instance.MessageEndWin();
             }
 
             if(currentPhase < 3) currentPhase++;

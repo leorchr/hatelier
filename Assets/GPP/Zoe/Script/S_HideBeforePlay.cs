@@ -9,10 +9,10 @@ public class S_HideBeforePlay : MonoBehaviour
     public static S_HideBeforePlay instance;
 
     [Header("GameObject")]
-    [SerializeField] private GameObject leftStick;
-    [SerializeField] private GameObject interactButton;
-    [SerializeField] private GameObject pauseButton;
-    [SerializeField] private GameObject dropButton;
+    public GameObject leftStick;
+    public GameObject interactButton;
+    public GameObject pauseButton;
+    public GameObject dropButton;
 
 
 
