@@ -925,10 +925,11 @@ MonoBehaviour:
   remainingTime: 300
   timeSinceBeggining: 0
   timeSpendPhase: 0
-  timeEndMessageLose: 2
-  textEndGameLoseGO: {fileID: 4897166422831010007}
-  textEndGameLoseUI: {fileID: 8564111974405995154}
+  timeEndMessage: 2
+  textEndGameGO: {fileID: 4897166422831010007}
+  textEndGameUI: {fileID: 8564111974405995154}
   textEndGameLose: Game Over
+  textEndGameWin: You WIN
   timerCircle: {fileID: 7937298571452124648}
   grad:
     serializedVersion: 2
@@ -1746,7 +1747,7 @@ Transform:
   m_GameObject: {fileID: 2911619755036334748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.75, z: 1.32}
+  m_LocalPosition: {x: 6.57, y: 0.75, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2610,7 +2611,7 @@ Transform:
   m_GameObject: {fileID: 4623176612917348267}
   serializedVersion: 2
   m_LocalRotation: {x: 0.24466431, y: 0, z: 0, w: 0.96960783}
-  m_LocalPosition: {x: -1.22, y: 7.98, z: -11.97}
+  m_LocalPosition: {x: 8.36, y: 7.98, z: -11.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8911,7 +8912,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.546
+      value: 18.918
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
@@ -8921,7 +8922,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.759
+      value: 1.935
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
