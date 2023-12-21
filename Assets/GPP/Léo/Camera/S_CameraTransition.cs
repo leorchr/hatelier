@@ -16,6 +16,8 @@ public class S_CameraTransition : MonoBehaviour
     [SerializeField] private Transform playerPos1;
     [SerializeField] private Transform playerPos2;
 
+    [SerializeField] private bool oneTime;
+
     [Space]
     [Header("Smooth Damp \n-------------------------")]
     [Space]
@@ -52,6 +54,7 @@ public class S_CameraTransition : MonoBehaviour
     [Range(0f,10f)] [SerializeField] private float wireRadius = 1f;
 #endif
 
+    bool canUse = true;
 
     private void Start()
     {
@@ -78,9 +81,13 @@ public class S_CameraTransition : MonoBehaviour
             S_CameraMovements.instance.SetupCameraMovements(currentCamRail);
         }*/
 
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && canUse)
         {
             S_CameraMovements.instance.StopCameraMovements();
+            if (oneTime) { 
+                canUse = false;
+                door.GetComponent<Animator>().SetBool("GetStatue", false);
+            }
 
             if(Vector3.Distance(other.transform.position, playerPos1.position) < Vector3.Distance(other.transform.position, playerPos2.position))   // Destination selection
             {
