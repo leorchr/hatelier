@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2979166821231232331}
   m_Layer: 0
   m_Name: PRE_BobineFer
-  m_TagString: Untagged
+  m_TagString: Outline
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +63,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 0d13891b642b5bb44853152be6f41dc2, type: 2}
   - {fileID: 2100000, guid: a7299e7681af62244b1b7e5ec579c90c, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

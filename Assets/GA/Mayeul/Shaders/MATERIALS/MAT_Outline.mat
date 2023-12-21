@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Outilne
+  m_Name: MAT_Outline
   m_Shader: {fileID: -6465566751694194690, guid: c55e5e85b5371434f89693b8d0f4f4b5,
     type: 3}
   m_Parent: {fileID: 0}
@@ -58,7 +58,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 1
     - _DstBlend: 0
-    - _Outline_Thickness: 0.0115
+    - _Outline_Thickness: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 1

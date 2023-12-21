@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +20,7 @@ public class S_Player_Interaction : MonoBehaviour
     public Sprite interactableSpriteInvis;
 
     public bool crate;
+    public Material outlineMaterial;
 
 
     private void Awake()
@@ -42,6 +45,13 @@ public class S_Player_Interaction : MonoBehaviour
                 {
                     crate = true;
                 }
+                if (collider.CompareTag("Outline"))
+                {
+                    Material[] tempMaterials = new Material[collider.gameObject.GetComponent<MeshRenderer>().materials.Length];
+                    tempMaterials = collider.gameObject.GetComponent<MeshRenderer>().materials;
+                    tempMaterials[2] = outlineMaterial;
+                    collider.gameObject.GetComponent<MeshRenderer>().materials = tempMaterials;
+                }
                 interactableButton.GetComponent<Image>().sprite = interactableSpriteVis;
                 interactionText.text = interactable.GetDescription();
                 interactionText.gameObject.SetActive(true);
@@ -65,6 +75,13 @@ public class S_Player_Interaction : MonoBehaviour
         if (other.gameObject == interactable.gameObject)
         {
             OnInteraction();
+        }
+        if (other.CompareTag("Outline"))
+        {
+            Material[] tempMaterials = new Material[other.gameObject.GetComponent<MeshRenderer>().materials.Length];
+            tempMaterials = other.gameObject.GetComponent<MeshRenderer>().materials;
+            tempMaterials[2] = null;
+            other.gameObject.GetComponent<MeshRenderer>().materials = tempMaterials;
         }
     }
 
