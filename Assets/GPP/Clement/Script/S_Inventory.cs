@@ -42,6 +42,7 @@ public class S_Inventory : MonoBehaviour
 
     public void AddToInventory(S_Materials material)
     {
+        //MissionWaypoint.instance.ShowWaypoint();
         S_SoundManager.instance.PlaySound(soundType.Stuff_Object);
         GetComponent<S_Player_Anim_Manager>().setPickUp(true);
         Debug.Log("Test");
@@ -51,6 +52,7 @@ public class S_Inventory : MonoBehaviour
 
     public void ClearInventory()
     {
+        //MissionWaypoint.instance.HideWaypoint();
         inventory = null;
         Debug.Log("cleared");
     }

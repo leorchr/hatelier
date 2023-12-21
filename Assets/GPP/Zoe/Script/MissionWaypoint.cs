@@ -6,10 +6,16 @@ using UnityEngine.UI;
 
 public class MissionWaypoint : MonoBehaviour
 {
+    public static MissionWaypoint instance;
     public Image img;
     public Transform target;
     public Vector3 offset;
     public List<GameObject> etabli;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +62,15 @@ public class MissionWaypoint : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
         img.transform.position = pos;
+    }
+
+    public void HideWaypoint()
+    {
+        img.gameObject.SetActive(false);
+    }
+
+    public void ShowWaypoint()
+    {
+        img.gameObject.SetActive(true);
     }
 }
