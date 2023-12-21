@@ -16,6 +16,8 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public bool playerCanActivate = true, crateCanActivate = true;
 
+    public List<GameObject> onPlate = new List<GameObject>();
+
     public PressureType type = PressureType.Hold;
 
     [SerializeField] private S_Receiver[] receivers;
@@ -45,11 +47,38 @@ public class S_Pressure_Plate : MonoBehaviour
             if (canActivate)
             {
                 S_SoundManager.instance.PlaySound(soundType.Interaction_Plate);
+                onPlate.Add(other.gameObject);
+                if (onPlate.Count == 1)
+                {
+                    switch (type)
+                    {
+                        case PressureType.Toggle:
+                            Activate();
+                            break;
+                        case PressureType.Hold:
+                            Activate();
+                            break;
+                        default:
+
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.gameObject.CompareTag("Pushable") && crateCanActivate)))
+        {
+            while (onPlate.Contains(other.gameObject))
+            {
+                onPlate.Remove(other.gameObject);
+            }
+            if (onPlate.Count == 0)
+            {
                 switch (type)
                 {
-                    case PressureType.Toggle:
-                        Activate();
-                        break;
                     case PressureType.Hold:
                         Activate();
                         break;
@@ -61,26 +90,10 @@ public class S_Pressure_Plate : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (((other.gameObject.CompareTag("Player") && playerCanActivate) || (other.gameObject.CompareTag("Pushable") && crateCanActivate)))
-        {
-            switch (type)
-            {
-                case PressureType.Hold:
-                    Activate();
-                    break;
-                default:
-
-                    break;
-            }
-        }
-    }
-
     public void Activate()
     {
         print("saucisse");
-        door.GetComponent<Animator>().SetBool("GetStatue", true);
+        door.GetComponent<Animator>().SetBool("GetStatue", onPlate.Count != 0);
         S_SoundManager.instance.PlaySound(soundType.Door_Open);
         //foreach (S_Receiver moveObject in receivers)
         //{
