@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,9 @@ public class MissionWaypoint : MonoBehaviour
     public Vector3 offset;
     public List<GameObject> etabli;
 
+    public float colorAlphaLow = 75f;
+    public float colorAlphaHigh;
+
     private void Awake()
     {
         instance = this;
@@ -19,17 +20,17 @@ public class MissionWaypoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LowOpacity();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GameMode.instance.currentPhase == 1)
+        if (GameMode.instance.currentPhase == 1)
         {
             target = etabli[0].transform;
         }
-        else if(GameMode.instance.currentPhase == 2)
+        else if (GameMode.instance.currentPhase == 2)
         {
             target = etabli[1].transform;
         }
@@ -64,13 +65,17 @@ public class MissionWaypoint : MonoBehaviour
         img.transform.position = pos;
     }
 
-    public void HideWaypoint()
+    public void HighOpacity()
     {
-        img.gameObject.SetActive(false);
+        Color imgColorHighOp = img.color;
+        imgColorHighOp = new Color(imgColorHighOp.r, imgColorHighOp.g, imgColorHighOp.b, colorAlphaHigh);
+        img.color = imgColorHighOp;
     }
 
-    public void ShowWaypoint()
+    public void LowOpacity()
     {
-        img.gameObject.SetActive(true);
+        Color imgColorLowOp = img.color;
+        imgColorLowOp = new Color(imgColorLowOp.r, imgColorLowOp.g, imgColorLowOp.b, colorAlphaLow);
+        img.color = imgColorLowOp;
     }
 }

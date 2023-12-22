@@ -32,17 +32,18 @@ public class S_Inventory : MonoBehaviour
         {
             dropButton?.SetActive(true);
             S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
+            MissionWaypoint.instance.HighOpacity();
         }
         else
         {
             dropButton.SetActive(false);
             S_UI_Inventory.instance.inventoryGroupe.SetActive(false);
+            
         }
     }
 
     public void AddToInventory(S_Materials material)
     {
-        //MissionWaypoint.instance.ShowWaypoint();
         S_SoundManager.instance.PlaySound(soundType.Stuff_Object);
         GetComponent<S_Player_Anim_Manager>().setPickUp(true);
         Debug.Log("Test");
@@ -52,7 +53,7 @@ public class S_Inventory : MonoBehaviour
 
     public void ClearInventory()
     {
-        //MissionWaypoint.instance.HideWaypoint();
+        Invoke("InvokeLowOp", 1.2f);
         inventory = null;
         Debug.Log("cleared");
     }
@@ -71,6 +72,11 @@ public class S_Inventory : MonoBehaviour
         S_SoundManager.instance.PlaySound(soundType.Drop_object);
         S_UI_Inventory.instance.ClearPlayerInventoryIcon();
         
+    }
+
+    public void InvokeLowOp()
+    {
+        MissionWaypoint.instance.LowOpacity();
     }
 
     public S_Materials GetMaterials() { return inventory; }
