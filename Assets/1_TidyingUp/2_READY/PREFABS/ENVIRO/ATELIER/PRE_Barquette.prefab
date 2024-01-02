@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8686343429449169918
+--- !u!1 &2397998653668755569
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6714988179943095867}
-  - component: {fileID: 638039905101421895}
-  - component: {fileID: 1587320295754136123}
-  - component: {fileID: 5023718064316015782}
+  - component: {fileID: 4403314157457447608}
+  - component: {fileID: 8949798127728527082}
+  - component: {fileID: 253807636922735828}
   m_Layer: 0
-  m_Name: PRE_Barquette
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6714988179943095867
+--- !u!4 &4403314157457447608
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8686343429449169918}
+  m_GameObject: {fileID: 2397998653668755569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.007967366, z: 0, w: 0.9999683}
-  m_LocalPosition: {x: -13.47, y: 0, z: 0.69081974}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.04, y: 0, z: -0.056}
+  m_LocalScale: {x: 3.104658, y: 3.0334213, z: 3.0316417}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0.913, z: 0}
---- !u!33 &638039905101421895
+  m_Father: {fileID: 6714988179943095867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &8949798127728527082
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8686343429449169918}
-  m_Mesh: {fileID: 5527170119123640481, guid: 8cbda7f31f9afb84a9380ea6aae4baec, type: 3}
---- !u!23 &1587320295754136123
+  m_GameObject: {fileID: 2397998653668755569}
+  m_Mesh: {fileID: 5527170119123640481, guid: c94fe54f63045084284662e6b67cca59, type: 3}
+--- !u!23 &253807636922735828
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8686343429449169918}
+  m_GameObject: {fileID: 2397998653668755569}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,6 +83,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8686343429449169918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6714988179943095867}
+  - component: {fileID: 5023718064316015782}
+  m_Layer: 0
+  m_Name: PRE_Barquette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6714988179943095867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8686343429449169918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.47, y: 0, z: 0.69081974}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4403314157457447608}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5023718064316015782
 BoxCollider:
   m_ObjectHideFlags: 0
