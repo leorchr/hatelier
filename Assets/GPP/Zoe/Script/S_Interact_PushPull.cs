@@ -72,10 +72,11 @@ public class S_Interact_PushPull : S_Interactable
     }
     public override void Interact()
     {
-        S_Player_Interaction.instance.crate = false;
+        
 
         if (!S_PlayerController.instance.m_isPushing) 
         {
+            S_Player_Interaction.instance.crate = false;
             if (hasAtLeastOneSideActive() && getSideCloser().active)
             {
                 Side s = getSideCloser();
@@ -108,6 +109,7 @@ public class S_Interact_PushPull : S_Interactable
                 transform.parent.parent = S_PlayerController.instance.transform;
 
                 isPushed = true;
+                S_Player_Interaction.instance.lockInteract = true;
 
             }
         }
@@ -122,11 +124,12 @@ public class S_Interact_PushPull : S_Interactable
             S_PlayerController.instance.m_isPushing = false;
 
             S_PlayerController.instance.createCollider(false,new Side());
+            S_Player_Interaction.instance.lockInteract = false;
 
             isPushed = false;
 
             transform.parent.parent = null;
-
+            S_Player_Interaction.instance.checkInteract();
             bc.enabled = true;
         }
     }

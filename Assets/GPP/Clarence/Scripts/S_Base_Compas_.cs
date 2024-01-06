@@ -9,7 +9,7 @@ public class S_Base_Compas_ : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Object In");
-        if (other.gameObject.CompareTag("Player") && other.isTrigger == false) // TO CHANGE TO OTHER.TAG INSTEAD OF OTHER.NAME
+        if (other.gameObject.CompareTag("Player") && other.isTrigger == false) 
         {
             inTrigger.Add(other.gameObject);
         }
@@ -25,7 +25,6 @@ public class S_Base_Compas_ : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Object out");
         while (inTrigger.Contains(other.gameObject))
         {
             inTrigger.Remove(other.gameObject);
