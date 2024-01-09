@@ -66,7 +66,7 @@ public class S_UI_Inventory : MonoBehaviour
         if (S_Statue_Inventory.instance.GetMaterial3() != null)
         {
             S_Materials statueBottom = S_Statue_Inventory.instance.GetMaterial3();
-            statueSlotImage3.GetComponent<Image>().sprite = statueBottom.icone;
+            statueSlotImage3.GetComponent<ShowSculpturePart>().setImage(statueBottom.icone);
             statueSlotImage3.SetActive(true);
 
         }
