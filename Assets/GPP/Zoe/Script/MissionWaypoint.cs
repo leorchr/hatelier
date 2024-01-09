@@ -9,6 +9,7 @@ public class MissionWaypoint : MonoBehaviour
     public Transform target;
     public Vector3 offset;
     public List<GameObject> etabli;
+    public GameObject gardenPoint;
 
     public float colorAlphaLow = 75f;
     public float colorAlphaHigh;
@@ -32,7 +33,14 @@ public class MissionWaypoint : MonoBehaviour
         }
         else if (GameMode.instance.currentPhase == 2)
         {
-            target = etabli[1].transform;
+            if (S_SoundManager.instance.isInGarden)
+            {
+                target = gardenPoint.transform;
+            }
+            else
+            {
+                target = etabli[1].transform;
+            }
         }
         else if (GameMode.instance.currentPhase == 3)
         {
