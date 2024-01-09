@@ -46,21 +46,25 @@ public class MissionWaypoint : MonoBehaviour
 
         Vector2 pos = Camera.main.WorldToScreenPoint(target.position + offset);
 
-        /*if(Vector3.Dot((target.position - transform.position), transform.forward) < 0)
-        {
-            if(pos.x < Screen.width / 2)
-            {
-                pos.x = maxX;
-            }
-            else
-            {
-                pos.x = minX;
-            }
-            
-        }*/
-
+        //if (Vector3.Dot((target.position - transform.position), transform.forward) < 0)
+        
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
+
+        if(Vector3.Dot(Camera.main.transform.forward, target.position - Camera.main.transform.position) < 2)
+        {
+            //if (pos.x < Screen.width / 2)
+            //{
+            //    pos.x = maxX;
+            //}
+            //else
+            //{
+            //    pos.x = minX;
+            //}
+            pos.x = Screen.width - pos.x;
+            pos.y = minY;
+
+        }
 
         img.transform.position = pos;
     }
