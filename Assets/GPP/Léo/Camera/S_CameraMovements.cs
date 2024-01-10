@@ -131,7 +131,6 @@ public class S_CameraMovements : MonoBehaviour
     {
         currentRail = newRail;
         offset = new Vector3(0, transform.position.y - S_PlayerController.instance.transform.position.y, transform.position.z - S_PlayerController.instance.transform.position.z);
-        Debug.Log(offset.x);
 
         /*if (currentRail.switchAxis)
         {

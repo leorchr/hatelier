@@ -24,8 +24,6 @@ public class ShowSculpturePart : MonoBehaviour
         startPos = transform.position;
         startScale = transform.localScale.x;
         UIImage = GetComponent<Image>();
-
-        Debug.Log(transform.localScale);
     }
 
     // Update is called once per frame

@@ -168,16 +168,13 @@ public class S_PlayerController : MonoBehaviour
             Vector3 fwd = s.transform.forward;
 
 
-            Debug.Log(fwd);
             if (Mathf.Abs(fwd.x) < Mathf.Abs(fwd.z))
             {
                 m_PushCollider.size = new Vector3(scale.x * bc.size.x, scale.y * bc.size.y, scale.z * bc.size.z);
-                Debug.Log("x 0");
             }
             else
             {
                 m_PushCollider.size = new Vector3(scale.z * bc.size.z, scale.y * bc.size.y, scale.x * bc.size.x );
-                Debug.Log("z 0");
             }
 
             float gap = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(go.transform.position.x, go.transform.position.z)) ;

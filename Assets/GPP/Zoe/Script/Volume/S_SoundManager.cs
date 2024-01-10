@@ -65,14 +65,11 @@ public class S_SoundManager : MonoBehaviour
     {
         if (isInGarden && (workshopSource.volume != 0 || gardenSource.volume != 1))
         {
-            Debug.Log("Garden");
             workshopSource.volume = Mathf.SmoothDamp(workshopSource.volume, 0, ref wv, timeToAdjustVolumeAmbiance);
             gardenSource.volume = Mathf.SmoothDamp(gardenSource.volume, 1, ref gv, timeToAdjustVolumeAmbiance);
         }
         else if (!isInGarden && (workshopSource.volume != 1 || gardenSource.volume != 0))
         {
-            Debug.Log("not Garden");
-
             workshopSource.volume = Mathf.SmoothDamp(workshopSource.volume, 1, ref wv, timeToAdjustVolumeAmbiance);
             gardenSource.volume = Mathf.SmoothDamp(gardenSource.volume, 0, ref gv, timeToAdjustVolumeAmbiance);
         }

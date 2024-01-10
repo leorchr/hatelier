@@ -172,7 +172,6 @@ public class S_Player_Interaction : MonoBehaviour
 
     void HandleInteraction()
     {
-        Debug.Log(interactable);
         if (interactable == null && interactableList.Count > 0)
         {
             checkInteract() ;

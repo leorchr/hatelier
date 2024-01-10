@@ -46,7 +46,6 @@ public class S_Inventory : MonoBehaviour
     {
         S_SoundManager.instance.PlaySound(soundType.Stuff_Object);
         GetComponent<S_Player_Anim_Manager>().setPickUp(true);
-        Debug.Log("Test");
         inventory = material;
         S_UI_Inventory.instance.DisplayPlayerInventoryIcon();
     }
@@ -55,7 +54,6 @@ public class S_Inventory : MonoBehaviour
     {
         Invoke("InvokeLowOp", 1.2f);
         inventory = null;
-        Debug.Log("cleared");
     }
 
     public void DropItem()
