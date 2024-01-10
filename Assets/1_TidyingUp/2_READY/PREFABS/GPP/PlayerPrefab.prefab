@@ -4915,6 +4915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_Workbench_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1245076935831791616, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 1788972803901595595, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9294,6 +9299,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_Workbench_Solo_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2572097294944687641, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -9583,6 +9593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PRE_Workbench_Solo_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572097294944687641, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
       objectReference: {fileID: 0}
     - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}

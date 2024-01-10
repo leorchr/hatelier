@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class S_Player_Interaction : MonoBehaviour
 {
@@ -73,9 +74,9 @@ public class S_Player_Interaction : MonoBehaviour
                             {
                                 Material[] tempMaterials = new Material[interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
                                 tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
-                                tempMaterials[2] = null;
+                                tempMaterials[tempMaterials.Length - 1] = null;
                                 interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
-                                if (interactable.GetComponent<S_Interactable_Obj>())
+                                if (interactable.GetComponent<S_Interactable_Obj>() != null)
                                 {
                                     interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
                                 }
@@ -87,9 +88,9 @@ public class S_Player_Interaction : MonoBehaviour
                         {
                             Material[] tempMaterials = new Material[interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
                             tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
-                            tempMaterials[2] = outlineMaterial;
+                            tempMaterials[tempMaterials.Length - 1] = outlineMaterial;
                             interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
-                            if (interactable.GetComponent<S_Interactable_Obj>())
+                            if (interactable.GetComponent<S_Interactable_Obj>() != null)
                             {
                                 interactable.GetComponent<S_Interactable_Obj>().isSelected = true;
                             }
@@ -133,9 +134,9 @@ public class S_Player_Interaction : MonoBehaviour
             {
                 Material[] tempMaterials = new Material[interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
                 tempMaterials = interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials;
-                tempMaterials[2] = null;
+                tempMaterials[tempMaterials.Length - 1] = null;
                 interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
-                if (interactable.GetComponent<S_Interactable_Obj>())
+                if (interactable.GetComponent<S_Interactable_Obj>() != null)
                 {
                     interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
                 }
