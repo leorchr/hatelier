@@ -4971,6 +4971,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1114901312, guid: 81ec60e417c51324e8de28778a9fca02,
         type: 3}
+    - target: {fileID: 2761625131362733401, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 3145449064464742341, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
       propertyPath: m_Size.x
@@ -5011,6 +5016,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163043862529859775, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163043862529859775, guid: 8589e8c3d7a70df41bcb9824afe322ee,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4782247965801684812, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
@@ -9249,6 +9264,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 1861678984816601800, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 1888449515598676528, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9273,6 +9293,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PRE_Workbench_Solo_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2935550354298463551, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
@@ -9524,6 +9554,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 1861678984816601800, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 1888449515598676528, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9548,6 +9583,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PRE_Workbench_Solo_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834601080583854981, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2935550354298463551, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
