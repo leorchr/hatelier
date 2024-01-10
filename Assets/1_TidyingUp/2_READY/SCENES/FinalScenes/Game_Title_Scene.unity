@@ -124,6 +124,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &5108520 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4832613129359645364, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1190553552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &60617043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2146,6 +2152,16 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6616878456169683923, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: gardenSource
+      value: 
+      objectReference: {fileID: 5108520}
+    - target: {fileID: 6616878456169683923, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+        type: 3}
+      propertyPath: workshopSource
+      value: 
+      objectReference: {fileID: 1662099893}
     - target: {fileID: 9069520902762425247, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
         type: 3}
       propertyPath: m_audioClip
@@ -3045,6 +3061,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1158559476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1662099893 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3080212159590043817, guid: f6620a98325be3a4e8ea1dd4399f9eb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1190553552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1746368078
 PrefabInstance:
   m_ObjectHideFlags: 0
