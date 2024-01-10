@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5972387832994977159
+--- !u!1 &5957165235633799768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1202220207112825962}
-  - component: {fileID: 7032570594545860587}
-  - component: {fileID: 8656641274577666253}
-  - component: {fileID: -2035136405749341288}
-  - component: {fileID: -8588307510601101756}
-  - component: {fileID: 1543211035745284566}
-  m_Layer: 9
-  m_Name: PRE_Seashell
-  m_TagString: Outline
+  - component: {fileID: 5867896617248410858}
+  - component: {fileID: 4436416020648707917}
+  - component: {fileID: 4209527221196398905}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1202220207112825962
+--- !u!4 &5867896617248410858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972387832994977159}
+  m_GameObject: {fileID: 5957165235633799768}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3645349, y: 3.3645349, z: 3.3645349}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1202220207112825962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7032570594545860587
+--- !u!33 &4436416020648707917
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972387832994977159}
+  m_GameObject: {fileID: 5957165235633799768}
   m_Mesh: {fileID: -4974468161004867859, guid: 97520abe8537d444fba877bf0aef6e15, type: 3}
---- !u!23 &8656641274577666253
+--- !u!23 &4209527221196398905
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972387832994977159}
+  m_GameObject: {fileID: 5957165235633799768}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,6 +85,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5972387832994977159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1202220207112825962}
+  - component: {fileID: -2035136405749341288}
+  - component: {fileID: -8588307510601101756}
+  - component: {fileID: 1543211035745284566}
+  m_Layer: 9
+  m_Name: PRE_Seashell
+  m_TagString: Outline
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1202220207112825962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972387832994977159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.3645349, y: 3.3645349, z: 3.3645349}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 5867896617248410858}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-2035136405749341288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +138,33 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: 72498b506fcfb684ab3f1fe5e80f0835, type: 2}
   depotRessource: {fileID: 0}
   isObj: 1
+  isSelected: 0
+  selectScale: 1.5
+  timeToScale: 1
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &-8588307510601101756
 Rigidbody:
   m_ObjectHideFlags: 0

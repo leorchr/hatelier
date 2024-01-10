@@ -71,20 +71,28 @@ public class S_Player_Interaction : MonoBehaviour
                         {
                             if (interactable.CompareTag("Outline")) //Remove outline
                             {
-                                Material[] tempMaterials = new Material[interactable.gameObject.GetComponent<MeshRenderer>().materials.Length];
-                                tempMaterials = interactable.gameObject.GetComponent<MeshRenderer>().materials;
+                                Material[] tempMaterials = new Material[interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
+                                tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
                                 tempMaterials[2] = null;
-                                interactable.gameObject.GetComponent<MeshRenderer>().materials = tempMaterials;
+                                interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
+                                if (interactable.GetComponent<S_Interactable_Obj>())
+                                {
+                                    interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
+                                }
                             }
                         }
                         //Change to new interactable
                         interactable = go;
                         if (interactable.CompareTag("Outline")) //Set the outline
                         {
-                            Material[] tempMaterials = new Material[interactable.gameObject.GetComponent<MeshRenderer>().materials.Length];
-                            tempMaterials = interactable.gameObject.GetComponent<MeshRenderer>().materials;
+                            Material[] tempMaterials = new Material[interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
+                            tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
                             tempMaterials[2] = outlineMaterial;
-                            interactable.gameObject.GetComponent<MeshRenderer>().materials = tempMaterials;
+                            interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
+                            if (interactable.GetComponent<S_Interactable_Obj>())
+                            {
+                                interactable.GetComponent<S_Interactable_Obj>().isSelected = true;
+                            }
                         }
                         interactableButton.GetComponent<Image>().sprite = interactableSpriteVis;
                         interactionText.text = interactable.GetDescription();
@@ -123,10 +131,14 @@ public class S_Player_Interaction : MonoBehaviour
         {
             if (interactableT.CompareTag("Outline")) //Remove outline
             {
-                Material[] tempMaterials = new Material[interactableT.gameObject.GetComponent<MeshRenderer>().materials.Length];
-                tempMaterials = interactableT.gameObject.GetComponent<MeshRenderer>().materials;
+                Material[] tempMaterials = new Material[interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
+                tempMaterials = interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials;
                 tempMaterials[2] = null;
-                interactableT.gameObject.GetComponent<MeshRenderer>().materials = tempMaterials;
+                interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
+                if (interactable.GetComponent<S_Interactable_Obj>())
+                {
+                    interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
+                }
             }
             while (interactableList.Contains(other.gameObject.GetComponent<S_Interactable>())) //Remove all ref of this object in the list
             {

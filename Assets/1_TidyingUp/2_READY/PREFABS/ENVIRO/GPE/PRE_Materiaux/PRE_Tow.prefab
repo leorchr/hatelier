@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6936840334256627977
+--- !u!1 &6359495664488168169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5663444996329193961}
-  - component: {fileID: 1114187532146586854}
-  - component: {fileID: 5196956780816726347}
-  - component: {fileID: -6647110282316981389}
-  - component: {fileID: -3296678630003741614}
-  - component: {fileID: -826049859974456592}
-  m_Layer: 9
-  m_Name: PRE_Tow
-  m_TagString: Outline
+  - component: {fileID: 8580260518828990695}
+  - component: {fileID: 7183461448397404723}
+  - component: {fileID: 7766015250974225232}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5663444996329193961
+--- !u!4 &8580260518828990695
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6936840334256627977}
+  m_GameObject: {fileID: 6359495664488168169}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.113181, y: 2.113181, z: 2.113181}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5663444996329193961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1114187532146586854
+--- !u!33 &7183461448397404723
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6936840334256627977}
+  m_GameObject: {fileID: 6359495664488168169}
   m_Mesh: {fileID: 3559972692350093144, guid: 63559cafc5d662649ad17283cc07779b, type: 3}
---- !u!23 &5196956780816726347
+--- !u!23 &7766015250974225232
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6936840334256627977}
+  m_GameObject: {fileID: 6359495664488168169}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,6 +85,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6936840334256627977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5663444996329193961}
+  - component: {fileID: -6647110282316981389}
+  - component: {fileID: -3296678630003741614}
+  - component: {fileID: -826049859974456592}
+  m_Layer: 9
+  m_Name: PRE_Tow
+  m_TagString: Outline
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5663444996329193961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936840334256627977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.113181, y: 2.113181, z: 2.113181}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 8580260518828990695}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6647110282316981389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +138,33 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: 909af8f63744e7d49a7b7d326d1d599d, type: 2}
   depotRessource: {fileID: 0}
   isObj: 1
+  isSelected: 0
+  selectScale: 1.5
+  timeToScale: 1
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &-3296678630003741614
 BoxCollider:
   m_ObjectHideFlags: 0
