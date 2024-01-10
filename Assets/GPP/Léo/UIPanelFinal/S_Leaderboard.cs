@@ -29,6 +29,8 @@ public class S_Leaderboard : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreText, timeText;
 
+    [SerializeField] private GameObject rankText;
+
     private void Awake()
     {
         if (!instance) instance = this;
@@ -72,6 +74,7 @@ public class S_Leaderboard : MonoBehaviour
 
         S_DisplayStats.instance.DisableStats();
         leaderboardText.SetActive(true);
+        rankText.SetActive(true);
         leaderboard.SetActive(true);
         inputField.SetActive(false);
 
@@ -80,4 +83,5 @@ public class S_Leaderboard : MonoBehaviour
     public GameObject[] GetNameList() { return nameList; }
     public GameObject[] GetScoreList() { return scoreList; }
     public GameObject[] GetTimeList() { return timeList; }
+    public GameObject GetRankText() { return rankText; }
 }

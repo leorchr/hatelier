@@ -75,7 +75,7 @@ public class SaveData
         List<PlayerStats> ranked;
         ranked = stats.OrderBy(s => s.playerScore).ToList();
         ranked.Reverse();
-        
+
         for (int i = 0; i < S_Leaderboard.instance.numberPlayersDisplay; i++)
         {
             if (i >= ranked.Count)
@@ -92,6 +92,15 @@ public class SaveData
                 int minutes = Mathf.FloorToInt(time / 60);
                 int seconds = Mathf.FloorToInt(time % 60);
                 S_Leaderboard.instance.GetTimeList()[i].GetComponent<TextMeshProUGUI>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            }
+        }
+
+        for (int i = 0; i < ranked.Count; i++)
+        {
+            if (ranked[i].playerScore == S_ScoreSystem.instance.score)
+            {
+                S_Leaderboard.instance.GetRankText().GetComponent<TextMeshProUGUI>().text = "Ta position est : #" + (i+1);
+                break;
             }
         }
     }
