@@ -47,7 +47,6 @@ public class S_Player_Interaction : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(crate);
         if (interactableList.Count > 1)
         {
             checkInteract(); 
@@ -59,6 +58,7 @@ public class S_Player_Interaction : MonoBehaviour
     {
         if (!lockInteract)
         {
+            List<S_Interactable> toRemove = new List<S_Interactable>();
             foreach (S_Interactable go in interactableList)
             {
                 if (go != interactable)
@@ -97,17 +97,17 @@ public class S_Player_Interaction : MonoBehaviour
                     }
                 }
                 else if (go == null){
-
-                    while (interactableList.Contains(go)) //Remove all ref of this object in the list
-                    {
-                        interactableList.Remove(go);
-                    }
-
-                    if (interactableList.Count == 0)
-                    {
-                            OnInteraction();
-                    }
+                   toRemove.Add(go);
                 }
+            }
+            foreach(S_Interactable go in toRemove)
+            {
+                interactableList.Remove(go);
+            }
+            toRemove.Clear();
+            if (interactableList.Count == 0)
+            {
+                OnInteraction();
             }
             
         }
@@ -159,6 +159,11 @@ public class S_Player_Interaction : MonoBehaviour
 
     void HandleInteraction()
     {
+        Debug.Log(interactable);
+        if (interactable == null && interactableList.Count > 0)
+        {
+            checkInteract() ;
+        }
         switch (interactable.interactiontype)
         {
             case S_Interactable.InteractionType.Click:
