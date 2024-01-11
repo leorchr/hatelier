@@ -81,6 +81,18 @@ public class S_Player_Interaction : MonoBehaviour
                                     interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
                                 }
                             }
+                            if (interactable.CompareTag("Pushable")) //Remove outline
+                            {
+                                MeshRenderer tempMesh = interactable.gameObject.transform.parent.GetChild(0).GetComponentInChildren<MeshRenderer>();
+                                Material[] tempMaterials = new Material[tempMesh.materials.Length];
+                                tempMaterials = tempMesh.materials;
+                                tempMaterials[tempMaterials.Length - 1] = null;
+                                tempMesh.materials = tempMaterials;
+                                if (interactable.GetComponent<S_Interactable_Obj>() != null)
+                                {
+                                    interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
+                                }
+                            }
                         }
                         //Change to new interactable
                         interactable = go;
@@ -90,6 +102,18 @@ public class S_Player_Interaction : MonoBehaviour
                             tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
                             tempMaterials[tempMaterials.Length - 1] = outlineMaterial;
                             interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
+                            if (interactable.GetComponent<S_Interactable_Obj>() != null)
+                            {
+                                interactable.GetComponent<S_Interactable_Obj>().isSelected = true;
+                            }
+                        }
+                        if (interactable.CompareTag("Pushable")) //Set the outline
+                        {
+                            MeshRenderer tempMesh = interactable.gameObject.transform.parent.GetChild(0).GetComponentInChildren<MeshRenderer>();
+                            Material[] tempMaterials = new Material[tempMesh.materials.Length];
+                            tempMaterials = tempMesh.materials;
+                            tempMaterials[tempMaterials.Length - 1] = outlineMaterial;
+                            tempMesh.materials = tempMaterials;
                             if (interactable.GetComponent<S_Interactable_Obj>() != null)
                             {
                                 interactable.GetComponent<S_Interactable_Obj>().isSelected = true;
@@ -136,6 +160,18 @@ public class S_Player_Interaction : MonoBehaviour
                 tempMaterials = interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials;
                 tempMaterials[tempMaterials.Length - 1] = null;
                 interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
+                if (interactable.GetComponent<S_Interactable_Obj>() != null)
+                {
+                    interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
+                }
+            }
+            if (interactableT.CompareTag("Pushable")) //Remove outline
+            {
+                MeshRenderer tempMesh = interactableT.gameObject.transform.parent.GetChild(0).GetComponentInChildren<MeshRenderer>();
+                Material[] tempMaterials = new Material[tempMesh.materials.Length];
+                tempMaterials = tempMesh.materials;
+                tempMaterials[tempMaterials.Length - 1] = null;
+                tempMesh.materials = tempMaterials;
                 if (interactable.GetComponent<S_Interactable_Obj>() != null)
                 {
                     interactable.GetComponent<S_Interactable_Obj>().isSelected = false;
