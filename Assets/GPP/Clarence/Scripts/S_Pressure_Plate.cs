@@ -20,13 +20,15 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public PressureType type = PressureType.Hold;
 
+    Animator anim;
+
     [SerializeField] private S_Receiver[] receivers;
     [SerializeField] private GameObject door;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -92,9 +94,10 @@ public class S_Pressure_Plate : MonoBehaviour
 
     public void Activate()
     {
-        print("saucisse");
         door.GetComponent<Animator>().SetBool("GetStatue", onPlate.Count != 0);
         S_SoundManager.instance.PlaySound(soundType.Door_Open);
+        anim.SetBool("isPressed", onPlate.Count != 0);
+
         //foreach (S_Receiver moveObject in receivers)
         //{
         //    moveObject.Interact();
