@@ -32,12 +32,12 @@ Transform:
   m_LocalScale: {x: 1.7601, y: 1.7601, z: 1.7601}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3762102597041808405}
   - {fileID: 2625327463244584907}
   - {fileID: 1740257443262678316}
   - {fileID: 2697341315707047814}
   - {fileID: 7255474165445588064}
   - {fileID: 4564803145550907577}
-  - {fileID: 3762102597041808405}
   - {fileID: 1385123659580223422}
   - {fileID: 8694220183256143551}
   m_Father: {fileID: 0}
@@ -521,6 +521,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e3055aa7fb6465040835e12dc0b6ac55, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
