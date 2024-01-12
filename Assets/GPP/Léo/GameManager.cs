@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(Application.targetFrameRate);
+        Debug.Log(Application.targetFrameRate);
         if (m_timeCounter < m_refreshTime)
         {
             m_timeCounter += Time.deltaTime;
