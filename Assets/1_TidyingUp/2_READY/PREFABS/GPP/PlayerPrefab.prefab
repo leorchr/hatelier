@@ -3103,6 +3103,7 @@ MonoBehaviour:
   crate: 0
   lockInteract: 0
   outlineMaterial: {fileID: 2100000, guid: 12f02b4b1053881419e2c4570964cd86, type: 2}
+  outlineEmpty: {fileID: 2100000, guid: f6a5607238e495749ac231a072fa69ac, type: 2}
   interactableList: []
 --- !u!135 &1428739533100733181
 SphereCollider:
@@ -4916,7 +4917,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: f6a5607238e495749ac231a072fa69ac, type: 2}
     - target: {fileID: 4782247965801684812, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9053,7 +9054,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: f6a5607238e495749ac231a072fa69ac, type: 2}
     - target: {fileID: 2935550354298463551, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Sprite
@@ -9421,7 +9422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: f6a5607238e495749ac231a072fa69ac, type: 2}
     - target: {fileID: 2935550354298463551, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Sprite

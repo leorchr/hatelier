@@ -22,7 +22,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     public bool crate = false;
     public bool lockInteract = false;
-    public Material outlineMaterial;
+    public Material outlineMaterial,outlineEmpty;
 
     public List<S_Interactable> interactableList;
 
@@ -74,7 +74,7 @@ public class S_Player_Interaction : MonoBehaviour
                             {
                                 Material[] tempMaterials = new Material[interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
                                 tempMaterials = interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials;
-                                tempMaterials[tempMaterials.Length - 1] = null;
+                                tempMaterials[tempMaterials.Length - 1] = outlineEmpty;
                                 interactable.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
                                 if (interactable.GetComponent<S_Interactable_Obj>() != null)
                                 {
@@ -86,7 +86,7 @@ public class S_Player_Interaction : MonoBehaviour
                                 MeshRenderer tempMesh = interactable.gameObject.transform.parent.GetChild(0).GetComponentInChildren<MeshRenderer>();
                                 Material[] tempMaterials = new Material[tempMesh.materials.Length];
                                 tempMaterials = tempMesh.materials;
-                                tempMaterials[tempMaterials.Length - 1] = null;
+                                tempMaterials[tempMaterials.Length - 1] = outlineEmpty;
                                 tempMesh.materials = tempMaterials;
                                 if (interactable.GetComponent<S_Interactable_Obj>() != null)
                                 {
@@ -158,7 +158,7 @@ public class S_Player_Interaction : MonoBehaviour
             {
                 Material[] tempMaterials = new Material[interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials.Length];
                 tempMaterials = interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials;
-                tempMaterials[tempMaterials.Length - 1] = null;
+                tempMaterials[tempMaterials.Length - 1] = outlineEmpty;
                 interactableT.gameObject.GetComponentInChildren<MeshRenderer>().materials = tempMaterials;
                 if (interactable.GetComponent<S_Interactable_Obj>() != null)
                 {
@@ -170,7 +170,7 @@ public class S_Player_Interaction : MonoBehaviour
                 MeshRenderer tempMesh = interactableT.gameObject.transform.parent.GetChild(0).GetComponentInChildren<MeshRenderer>();
                 Material[] tempMaterials = new Material[tempMesh.materials.Length];
                 tempMaterials = tempMesh.materials;
-                tempMaterials[tempMaterials.Length - 1] = null;
+                tempMaterials[tempMaterials.Length - 1] = outlineEmpty;
                 tempMesh.materials = tempMaterials;
                 if (interactable.GetComponent<S_Interactable_Obj>() != null)
                 {
