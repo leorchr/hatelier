@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class S_Player_Anim_Manager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class S_Player_Anim_Manager : MonoBehaviour
 
     private float maxSpeed;
 
-    public VisualEffect DustVFX;
+    public ParticleSystem DustVFX;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +37,7 @@ public class S_Player_Anim_Manager : MonoBehaviour
     {
         Vector3 footPos = Vector3.zero;
         
-        DustVFX.SetVector3("Foot_Location", footPos);
+        //DustVFX.SetVector3("Foot_Location", footPos);
         DustVFX.Play();
 
         S_PlayerSound.instance.StepSound();
