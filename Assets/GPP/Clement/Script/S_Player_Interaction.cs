@@ -48,7 +48,7 @@ public class S_Player_Interaction : MonoBehaviour
 
     private void Update()
     {
-        if (interactableList.Count > 1)
+        if (interactableList.Count > 0)
         {
             checkInteract(); 
         }
@@ -199,6 +199,11 @@ public class S_Player_Interaction : MonoBehaviour
 
     public void OnInteraction()
     {
+        while (interactableList.Contains(interactable))
+        {
+            interactableList.Remove(interactable);
+        }
+        
         interactable = null;
         interactionText.gameObject.SetActive(false);
         materialDescriptionText.gameObject.SetActive(false);
