@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6962988384031176374}
   - component: {fileID: -5573668139241585393}
   - component: {fileID: 9094858171288090036}
+  - component: {fileID: 8487478789153477201}
   m_Layer: 9
   m_Name: PRE_Driftwood
   m_TagString: Outline
@@ -120,7 +121,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -128,6 +129,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.262462, y: 2.5474224, z: 2.8548305}
   m_Center: {x: -1.9933639, y: 0.39176196, z: -0.35675165}
+--- !u!135 &8487478789153477201
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593888259118908635}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: -2, y: 0, z: 0}
 --- !u!1 &1599212735173630521
 GameObject:
   m_ObjectHideFlags: 0
