@@ -111,8 +111,8 @@ public class S_CameraTransition : MonoBehaviour
                     targetPosition.z = Mathf.Clamp(playerPos2.transform.position.z, camPos2.start.position.z, camPos2.end.position.z);
                 }*/
 
-                if(door != null)
-                door.GetComponent<Animator>().SetTrigger("CloseDoor");
+                //if(door != null)
+                //door.GetComponent<Animator>().SetTrigger("CloseDoor");
 
                 other.transform.position = playerPos2.position;
             }
