@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
@@ -15,6 +16,8 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImageRef;
     [SerializeField] private GameObject moldSlotImage3;
     [SerializeField] private GameObject uiGroupe;
+
+    [SerializeField] private List<GameObject> lights;
 
     [Header("Slider")]
     public GameObject sliderSupport;
@@ -125,7 +128,15 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
 
         //VFX
         vfx.SetActive(true);
+
+        //Animator
         this.GetComponent<Animator>().SetTrigger("WorkbenchClosed");
+
+        //Desactivate Lights
+        foreach(GameObject light in lights)
+        {
+            light.SetActive(false);
+        }
 
         //clear mold ui
         refreshMoldInv();

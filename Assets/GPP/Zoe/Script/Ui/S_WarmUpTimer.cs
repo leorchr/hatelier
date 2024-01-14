@@ -21,7 +21,7 @@ public class S_WarmUpTimer : MonoBehaviour
 
     [SerializeField] private string textBegin;
 
-    
+    [SerializeField] AudioClip gameStart;
 
     [HideInInspector]
     public bool gameBegin;
