@@ -32,21 +32,38 @@ public class S_Objectives : MonoBehaviour
 
     public void SetupObjectives()
     {
-        for (int i = 0; i < objectives[1].Length; ++i)
-        {
-            currentMatObjective2 = matObjective2[Random.Range(0, matObjective2.Length)];
-            objectives[1] = string.Format(objectives[1], currentMatObjective2.displayName.ToLower());
-        }
-        for (int i = 0; i < objectives[2].Length; ++i)
-        {
-            currentMatObjective3 = matObjective3[Random.Range(0, matObjective3.Length)];
-            objectives[2] = string.Format(objectives[2], currentMatObjective3.displayName.ToLower());
-        }
+        currentMatObjective2 = matObjective2[Random.Range(0, matObjective2.Length)];
+        objectives[1] = string.Format(objectives[1], currentMatObjective2.displayName.ToLower());
+
+        currentMatObjective3 = matObjective3[Random.Range(0, matObjective3.Length)];
+        objectives[2] = string.Format(objectives[2], currentMatObjective3.displayName.ToLower());
     }
 
     public void NextObjective()
     {
         objetiveText.text = objectives[GameMode.instance.currentPhase];
+    }
+
+    public bool checkCurrentMaterial(S_Materials mat)
+    {
+        switch(GameMode.instance.currentPhase)
+        {
+            case 1:
+                return true;
+            case 2:
+                return mat == currentMatObjective2;
+            case 3:
+                S_Mold_Inventory smi = MissionWaypoint.instance.getCurrentWorkbench().GetComponent<S_Mold_Inventory>();
+                if (smi.GetMaterial1() != null)
+                {
+                    return (smi.GetMaterial1() == currentMatObjective3 || mat == currentMatObjective3 );
+                }
+                else
+                {
+                    return true;
+                }
+            default: return false;
+        }
     }
 
     public void CheckObjective(S_Recipes recipe)

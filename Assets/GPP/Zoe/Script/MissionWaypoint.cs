@@ -90,4 +90,9 @@ public class MissionWaypoint : MonoBehaviour
         imgColorLowOp = new Color(imgColorLowOp.r, imgColorLowOp.g, imgColorLowOp.b, colorAlphaLow);
         img.color = imgColorLowOp;
     }
+
+    public GameObject getCurrentWorkbench()
+    {
+        return target.gameObject;
+    }
 }
