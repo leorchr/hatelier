@@ -21,7 +21,7 @@ public class MissionWaypoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LowOpacity();
+        //LowOpacity();
     }
 
     // Update is called once per frame
@@ -77,7 +77,7 @@ public class MissionWaypoint : MonoBehaviour
         img.transform.position = pos;
     }
 
-    public void HighOpacity()
+    /*public void HighOpacity()
     {
         Color imgColorHighOp = img.color;
         imgColorHighOp = new Color(imgColorHighOp.r, imgColorHighOp.g, imgColorHighOp.b, colorAlphaHigh);
@@ -89,7 +89,7 @@ public class MissionWaypoint : MonoBehaviour
         Color imgColorLowOp = img.color;
         imgColorLowOp = new Color(imgColorLowOp.r, imgColorLowOp.g, imgColorLowOp.b, colorAlphaLow);
         img.color = imgColorLowOp;
-    }
+    }*/
 
     public GameObject getCurrentWorkbench()
     {

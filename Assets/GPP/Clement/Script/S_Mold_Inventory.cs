@@ -17,6 +17,10 @@ public class S_Mold_Inventory : MonoBehaviour
     [SerializeField] private Sprite defqultSlotImage4;
     [SerializeField] private GameObject uiGroupe;
 
+    [Header("Lights")]
+    public GameObject light1;
+    [SerializeField] public GameObject light2;
+
     [Header("Slider")]
     public GameObject sliderSupport;
     public Slider bakingSlider;
@@ -139,6 +143,8 @@ public class S_Mold_Inventory : MonoBehaviour
         //VFX
         vfx.SetActive(true);
         this.GetComponent<Animator>().SetTrigger("WorkbenchClosed");
+
+        light2.SetActive(false);
         //clear mold ui
         refreshMoldInv();
         
@@ -152,6 +158,8 @@ public class S_Mold_Inventory : MonoBehaviour
 
         //add statue to statue inventory 
         S_Statue_Inventory.instance.AddToInventory(recipesList[recipeNumber].statue);
+        light1.SetActive(false);
+
         if(S_Objectives.instance != null) S_Objectives.instance.CheckObjective(recipesList[recipeNumber]);
         GameMode.instance.ChangePhase();
 

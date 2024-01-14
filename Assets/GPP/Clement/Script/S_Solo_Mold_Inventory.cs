@@ -17,7 +17,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
     [SerializeField] private GameObject moldSlotImage3;
     [SerializeField] private GameObject uiGroupe;
 
-    [SerializeField] private List<GameObject> lights;
+    [SerializeField] private GameObject lights;
 
     [Header("Slider")]
     public GameObject sliderSupport;
@@ -133,10 +133,7 @@ public class S_Solo_Mold_Inventory : MonoBehaviour
         this.GetComponent<Animator>().SetTrigger("WorkbenchClosed");
 
         //Desactivate Lights
-        foreach(GameObject light in lights)
-        {
-            light.SetActive(false);
-        }
+        lights.SetActive(false);
 
         //clear mold ui
         refreshMoldInv();

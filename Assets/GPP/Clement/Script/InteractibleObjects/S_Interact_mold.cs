@@ -44,7 +44,7 @@ public class S_Interact_mold : S_Interactable
         }
         else if(!moldInventory.IsInventoryFull())
         {
-                return inventoryEmpty;
+            return inventoryEmpty;
         }
         else if (moldInventory.IsFirstSlotFull())
         {

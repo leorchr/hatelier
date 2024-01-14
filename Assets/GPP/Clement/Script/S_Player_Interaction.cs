@@ -62,7 +62,11 @@ public class S_Player_Interaction : MonoBehaviour
             List<S_Interactable> toRemove = new List<S_Interactable>();
             foreach (S_Interactable go in interactableList)
             {
-                if (go != interactable)
+                if (go == null)
+                {
+                   toRemove.Add(go);
+                }
+                else if (go != interactable)
                 {
                     //Check if other interactable are closer than the current one
                     if ( interactable == null || (Vector3.Distance(transform.position, interactable.transform.position) > Vector3.Distance(transform.position, go.transform.position)))
@@ -128,9 +132,6 @@ public class S_Player_Interaction : MonoBehaviour
 
                         
                     }
-                }
-                else if (go == null){
-                   toRemove.Add(go);
                 }
             }
             foreach(S_Interactable go in toRemove)

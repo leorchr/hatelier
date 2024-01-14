@@ -32,14 +32,15 @@ public class S_Inventory : MonoBehaviour
         {
             dropButton?.SetActive(true);
             S_UI_Inventory.instance.inventoryGroupe.SetActive(true);
-            if (S_Objectives.instance.checkCurrentMaterial(inventory))
+
+            /*if (S_Objectives.instance.checkCurrentMaterial(inventory))
             {
                 MissionWaypoint.instance.HighOpacity();
             }
             else
             {
                 MissionWaypoint.instance.LowOpacity();
-            }
+            }*/
         }
         else
         {
@@ -79,10 +80,10 @@ public class S_Inventory : MonoBehaviour
         
     }
 
-    public void InvokeLowOp()
+    /*public void InvokeLowOp()
     {
         MissionWaypoint.instance.LowOpacity();
-    }
+    }*/
 
     public S_Materials GetMaterials() { return inventory; }
 }
