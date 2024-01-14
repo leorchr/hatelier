@@ -28,7 +28,7 @@ public class S_Mold_Inventory : MonoBehaviour
     public GameObject door;
 
     [Header("VFX")]
-    public VisualEffect vfx;
+    public GameObject vfx;
 
     public S_Recipes[] recipesList;
     private int recipeNumber;
@@ -137,7 +137,7 @@ public class S_Mold_Inventory : MonoBehaviour
         ClearInventory();
 
         //VFX
-        vfx.Play();
+        vfx.SetActive(true);
 
 
         //clear mold ui
