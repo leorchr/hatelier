@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb, type: 3}
+  m_Sprite: {fileID: 418511145, guid: 3eaa86a3ae5bf8f4eb32da8bdd874b8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1060,12 +1060,12 @@ MonoBehaviour:
   handle: {fileID: 2147198662891335332}
   leftStick: {fileID: 1749439722657727422}
   handleGO: {fileID: 8219817202064280009}
-  leftStickSpriteVis: {fileID: -1672605011, guid: 55b3d7c829b376543bc1baf692e225d2,
+  leftStickSpriteVis: {fileID: 288442954, guid: 3eaa86a3ae5bf8f4eb32da8bdd874b8f,
     type: 3}
-  handleSpriteVis: {fileID: -1114901312, guid: 81ec60e417c51324e8de28778a9fca02, type: 3}
-  leftStickSpriteInvis: {fileID: 1746983655, guid: c5ff0b39280a7674e8ddd8521ee487cb,
+  handleSpriteVis: {fileID: 1580108111, guid: 109cfaceb7616de49a8e433dd97c91b2, type: 3}
+  leftStickSpriteInvis: {fileID: 418511145, guid: 3eaa86a3ae5bf8f4eb32da8bdd874b8f,
     type: 3}
-  handleSpriteInvis: {fileID: -980366387, guid: d0bb1ee52f6d1a1498b4adf6847be9b1,
+  handleSpriteInvis: {fileID: -277856155, guid: 109cfaceb7616de49a8e433dd97c91b2,
     type: 3}
 --- !u!1 &1922730064852502555
 GameObject:
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 122348696, guid: 84d85898cc07d4f4cafbe81191d8f108, type: 3}
+  m_Sprite: {fileID: 1582718501, guid: 47f7f7b561259924cb29b4cab1d81a2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1173,7 +1173,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 210927591, guid: 84d85898cc07d4f4cafbe81191d8f108, type: 3}
+    m_PressedSprite: {fileID: 1447760794, guid: 47f7f7b561259924cb29b4cab1d81a2c,
+      type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -3096,9 +3097,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   interactableButton: {fileID: 1922730064852502555}
-  interactableSpriteVis: {fileID: -1914672914, guid: 84d85898cc07d4f4cafbe81191d8f108,
+  interactableSpriteVis: {fileID: -1284203887, guid: 47f7f7b561259924cb29b4cab1d81a2c,
     type: 3}
-  interactableSpriteInvis: {fileID: 122348696, guid: 84d85898cc07d4f4cafbe81191d8f108,
+  interactableSpriteInvis: {fileID: 1582718501, guid: 47f7f7b561259924cb29b4cab1d81a2c,
     type: 3}
   crate: 0
   lockInteract: 0
@@ -4512,7 +4513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -980366387, guid: d0bb1ee52f6d1a1498b4adf6847be9b1, type: 3}
+  m_Sprite: {fileID: -277856155, guid: 109cfaceb7616de49a8e433dd97c91b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4977,7 +4978,7 @@ PrefabInstance:
         type: 3}
       propertyPath: vfx
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4828588121954958413}
     - target: {fileID: 5898346751482618665, guid: 8589e8c3d7a70df41bcb9824afe322ee,
         type: 3}
       propertyPath: bakingTimer
@@ -8385,6 +8386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[New] Smoke+Sparkle (1)'
       objectReference: {fileID: 0}
+    - target: {fileID: 1570597194427174206, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8393,6 +8399,12 @@ PrefabInstance:
 --- !u!4 &3330001000238222897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1135744538880622708, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2446707904610618949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3764888565280555899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570597194427174206, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
     type: 3}
   m_PrefabInstance: {fileID: 2446707904610618949}
   m_PrefabAsset: {fileID: 0}
@@ -8407,7 +8419,7 @@ PrefabInstance:
     - target: {fileID: 672340137854779771, guid: f877937779cbabb41a3c5707b8ab42cb,
         type: 3}
       propertyPath: m_Value
-      value: -40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 672340137854779771, guid: f877937779cbabb41a3c5707b8ab42cb,
         type: 3}
@@ -8608,7 +8620,7 @@ PrefabInstance:
     - target: {fileID: 672340137854779771, guid: f877937779cbabb41a3c5707b8ab42cb,
         type: 3}
       propertyPath: m_Value
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 672340137854779771, guid: f877937779cbabb41a3c5707b8ab42cb,
         type: 3}
@@ -8842,11 +8854,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[New] Smoke+Sparkle (2)'
       objectReference: {fileID: 0}
+    - target: {fileID: 1570597194427174206, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 191cb5aff7f26ac4f94dd330fcfcade8, type: 3}
+--- !u!1 &4828588121954958413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570597194427174206, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6253659866565783923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6416379495801221383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1135744538880622708, guid: 191cb5aff7f26ac4f94dd330fcfcade8,
@@ -8961,6 +8984,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2471514601107357657, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 2572097294944687641, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Name
@@ -8989,23 +9017,28 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4416066648356124154, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
+      propertyPath: m_Size.x
+      value: 2.6013656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416066648356124154, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
       propertyPath: m_Size.y
       value: 1.9302202
       objectReference: {fileID: 0}
     - target: {fileID: 4416066648356124154, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.81597775
+      value: 1.6758121
       objectReference: {fileID: 0}
     - target: {fileID: 4416066648356124154, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.00024197939
+      value: -0.0069526886
       objectReference: {fileID: 0}
     - target: {fileID: 4416066648356124154, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.09200897
+      value: 0.33790886
       objectReference: {fileID: 0}
     - target: {fileID: 5037318970354627334, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
@@ -9075,7 +9108,7 @@ PrefabInstance:
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4
+      value: 1.863
       objectReference: {fileID: 0}
     - target: {fileID: 6226595548115416177, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
@@ -9112,6 +9145,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6411612735929044127, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Outline
+      objectReference: {fileID: 0}
     - target: {fileID: 7544824422687360459, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9137,6 +9175,16 @@ PrefabInstance:
       propertyPath: incompatibleRecipe
       value: Tu ne peux pas mettre ce materiau ici
       objectReference: {fileID: 0}
+    - target: {fileID: 8565946086926443371, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565946086926443371, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f6a5607238e495749ac231a072fa69ac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 601884696374697535, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5, type: 3}
@@ -9351,7 +9399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: vfx
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3764888565280555899}
     - target: {fileID: 1263655588235325241, guid: ffc0cc97c6ca5bc4b9bb17c81c289da5,
         type: 3}
       propertyPath: bakingTimer

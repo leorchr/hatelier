@@ -138,8 +138,7 @@ public class S_Mold_Inventory : MonoBehaviour
 
         //VFX
         vfx.SetActive(true);
-
-
+        this.GetComponent<Animator>().SetTrigger("WorkbenchClosed");
         //clear mold ui
         refreshMoldInv();
         
