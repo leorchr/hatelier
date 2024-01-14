@@ -8,6 +8,8 @@ public class ShowSculpturePart : MonoBehaviour
     Vector3 startPos;
     float startScale;
 
+    public bool wasDone = false;
+
     public Transform itemCenter;
 
     [SerializeField] private float timeToComplete;
@@ -40,7 +42,12 @@ public class ShowSculpturePart : MonoBehaviour
 
     public void setImage(Sprite sprite)
     {
-        UIImage.sprite = sprite;
-        t = 0;
+        if (!wasDone)
+        {
+            UIImage.sprite = sprite;
+            t = 0;
+            wasDone = true;
+        }
+        
     }
 }
