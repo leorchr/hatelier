@@ -13,6 +13,8 @@ public class S_DepotRessource : MonoBehaviour
     public GameObject objectOnDepot;
     public bool objectHasDispawn;
 
+    bool canSpawn = false;
+
     //private float timerSpawnCurrent;
     //[SerializeField] private float timerSpawnMax;
 
@@ -22,19 +24,41 @@ public class S_DepotRessource : MonoBehaviour
         if(objectToSpawn != null)
         objectToSpawnScript = objectToSpawn.GetComponent<S_Interactable_Obj>();
 
-        SpawnMaterial();
-        
+        //SpawnMaterial();
     }
+
+
 
     public void Update()
     {
         CheckMaterialPresence();
-        if(objectOnDepot == null && objectHasDispawn)
+        if(canSpawn && objectOnDepot == null && objectHasDispawn)
         {
             Invoke("SpawnMaterial", respawnTime);
             objectHasDispawn = false;
         }
     }
+
+    public void setCanSpawn(bool b)
+    {
+        if (b)
+        {
+            SpawnMaterial();
+            canSpawn = true;
+        }
+        else
+        {
+            Despawn();
+            canSpawn = false;
+        }
+    }
+
+    void Despawn()
+    {
+        Destroy(objectOnDepot);
+    }
+
+
 
     public void SpawnMaterial()
     {
@@ -44,6 +68,12 @@ public class S_DepotRessource : MonoBehaviour
             isMaterialPresent = true;
             objectToSpawn.GetComponent<S_Interactable_Obj>().isObj = true;
             objectHasDispawn = true;
+            if (objectToSpawnScript == null) {
+                if (objectToSpawn != null)
+                {
+                    objectToSpawnScript = objectToSpawn.GetComponent<S_Interactable_Obj>();
+                }
+            }
             objectToSpawnScript.depotRessource = this;
             //timerSpawnCurrent = timerSpawnMax;
         }

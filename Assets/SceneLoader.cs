@@ -21,13 +21,15 @@ public class SceneLoader : MonoBehaviour
         }
         if (baseRoom != null)
         {
-            SceneManager.LoadScene(baseRoom.sceneName, LoadSceneMode.Additive);
+            loadScene(baseRoom);
         }
     }
 
     public void loadScene(ASyncScene sc)
     {
         SceneManager.LoadScene(sc.sceneName, LoadSceneMode.Additive);
+        GPELoader.Instance.Load(sc.id);
+
     }
 
     public void unloadScene(ASyncScene sc) 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class S_InitiateMaterials : MonoBehaviour
 {
+    public static S_InitiateMaterials instance;
+
     [Header("First Step")]
     [SerializeField] private List<GameObject> firstStepDepotsObjects;
     [SerializeField] private List<GameObject> firstStepMaterials;
@@ -16,8 +18,42 @@ public class S_InitiateMaterials : MonoBehaviour
     [SerializeField] private List<GameObject> thirdStepDepots;
     [SerializeField] private List<GameObject> thirdStepMaterials;
 
+    public void setPhase(int i)
+    {
+        switch(i)
+        {
+            case 1:
+                setCanSpawnDepot(firstStepDepotsObjects, true);
+                setCanSpawnDepot(secondStepDepots, false);
+                setCanSpawnDepot(thirdStepDepots, false);
+                break;
+            case 2:
+                setCanSpawnDepot(firstStepDepotsObjects, false);
+                setCanSpawnDepot(secondStepDepots, true);
+                setCanSpawnDepot(thirdStepDepots, false);
+                break;
+            case 3:
+                setCanSpawnDepot(firstStepDepotsObjects, false);
+                setCanSpawnDepot(secondStepDepots, false);
+                setCanSpawnDepot(thirdStepDepots, true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void setCanSpawnDepot(List<GameObject> l, bool b)
+    {
+        foreach(GameObject go in l)
+        {
+            go.GetComponent<S_DepotRessource>().setCanSpawn(b);
+        }
+    }
+
     void Awake()
     {
+        if (!instance) instance = this;
+
         if (firstStepDepotsObjects.Count != 0)
         {
             foreach (GameObject depot in firstStepDepotsObjects)

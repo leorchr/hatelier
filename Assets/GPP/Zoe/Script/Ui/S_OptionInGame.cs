@@ -57,6 +57,7 @@ public class S_OptionInGame : MonoBehaviour
     public void LoadMainMenu()
     {
         Resume();
+        Destroy(GameObject.FindWithTag("Manager"));
         SceneManager.LoadScene("Game_Title_Scene");
     }
     

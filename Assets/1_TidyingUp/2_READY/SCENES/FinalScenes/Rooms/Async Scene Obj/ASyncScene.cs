@@ -6,4 +6,5 @@ using UnityEngine;
 public class ASyncScene : ScriptableObject
 {
     public string sceneName;
+    public int id;
 }

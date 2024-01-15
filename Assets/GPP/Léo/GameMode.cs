@@ -26,9 +26,16 @@ public class GameMode : MonoBehaviour
 
     private void Start()
     {
+        startGame();
+    }
+
+    public void startGame()
+    {
         currentPhase = 1;
         isRunning = true;
+        S_InitiateMaterials.instance.setPhase(currentPhase);
     }
+    
 
     public void ChangePhase()
     {
@@ -53,7 +60,11 @@ public class GameMode : MonoBehaviour
                 S_Timer.instance.MessageEndWin();
             }
 
+
             if(currentPhase < 3) currentPhase++;
+
+            S_InitiateMaterials.instance.setPhase(currentPhase);
+
             S_ScoreSystem.instance.AddScoreMin();
         }
     }
