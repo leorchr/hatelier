@@ -145,7 +145,10 @@ public class S_Player_Interaction : MonoBehaviour
             }
             
         }
-        crate = interactable.CompareTag("Pushable");
+        if (interactable != null)
+        {
+            crate = interactable.CompareTag("Pushable");
+        }
     }
 
     public void OnTriggerExit(Collider other)

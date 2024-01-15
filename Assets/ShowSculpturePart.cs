@@ -47,6 +47,7 @@ public class ShowSculpturePart : MonoBehaviour
             UIImage.sprite = sprite;
             t = 0;
             wasDone = true;
+            UIImage.color = new Color(255, 255, 255, 255);
         }
         
     }
