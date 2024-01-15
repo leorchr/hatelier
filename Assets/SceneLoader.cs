@@ -19,8 +19,10 @@ public class SceneLoader : MonoBehaviour
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i).name);
             
         }
-
-        SceneManager.LoadScene(baseRoom.sceneName, LoadSceneMode.Additive);
+        if (baseRoom != null)
+        {
+            SceneManager.LoadScene(baseRoom.sceneName, LoadSceneMode.Additive);
+        }
     }
 
     public void loadScene(ASyncScene sc)
