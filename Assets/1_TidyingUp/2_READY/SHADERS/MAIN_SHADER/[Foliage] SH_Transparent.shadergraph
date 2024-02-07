@@ -82,15 +82,6 @@
             "m_Id": "0ad8461fe09b421995c738028d0c6665"
         },
         {
-            "m_Id": "81f8ad04d903424aa901cccd2777b6d3"
-        },
-        {
-            "m_Id": "7ac2460a7293470ca8741133af0fa807"
-        },
-        {
-            "m_Id": "57d52213776e44d6a1b5c8954376c710"
-        },
-        {
             "m_Id": "c6e6902d939d4c72b33041b3fc53d1a5"
         },
         {
@@ -116,9 +107,6 @@
         },
         {
             "m_Id": "d934ceaf5fb440e29f25ba3bf9829581"
-        },
-        {
-            "m_Id": "0dc51d847617475ea720a418a778ffa0"
         },
         {
             "m_Id": "d59d90cba3c1416aa013b0038498afeb"
@@ -174,9 +162,6 @@
         },
         {
             "m_Id": "b9e94fd4590f42eabc23389252889934"
-        },
-        {
-            "m_Id": "f3b2b605630b476db8522bba8664b00a"
         },
         {
             "m_Id": "4a2dd1d0cdb84ff29019fd4a29979318"
@@ -3584,29 +3569,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
-    "m_ObjectId": "0dc51d847617475ea720a418a778ffa0",
-    "m_Guid": {
-        "m_GuidSerialized": "8dab128a-b681-4ce7-ac2b-27c85e31f9c5"
-    },
-    "m_Name": "Clipping_Disable",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Clipping_Disable",
-    "m_DefaultReferenceName": "_Clipping_Disable",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": false
 }
 
 {
@@ -8655,34 +8617,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "57d52213776e44d6a1b5c8954376c710",
-    "m_Guid": {
-        "m_GuidSerialized": "7b405689-7637-4a29-8f26-903e9e3e1711"
-    },
-    "m_Name": "Clipping_Noise_Scale",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Clipping_Noise_Scale",
-    "m_DefaultReferenceName": "_Clipping_Noise_Scale",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 25.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BranchNode",
     "m_ObjectId": "589c8d00a25f40259a7b17893eb8671e",
@@ -10963,34 +10897,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "7ac2460a7293470ca8741133af0fa807",
-    "m_Guid": {
-        "m_GuidSerialized": "6897fd76-2624-4340-970b-b2b6ba6cf3b6"
-    },
-    "m_Name": "Clipping_Range",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Clipping_Range",
-    "m_DefaultReferenceName": "_Clipping_Range",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 2.0,
-    "m_FloatType": 1,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 3.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "7ad7d938fd1245fdaeadda3e7f15df29",
@@ -11519,34 +11425,6 @@
     },
     "m_Labels": [],
     "m_Space": 0
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "81f8ad04d903424aa901cccd2777b6d3",
-    "m_Guid": {
-        "m_GuidSerialized": "6313dec6-18db-4846-b6fc-50c32621880c"
-    },
-    "m_Name": "Clipping_Offset",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Clipping_Offset",
-    "m_DefaultReferenceName": "_Clipping_Offset",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 1,
-    "m_RangeValues": {
-        "x": -1.0,
-        "y": 1.0
-    }
 }
 
 {
@@ -18522,27 +18400,6 @@
         "e32": 0.0,
         "e33": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
-    "m_ObjectId": "f3b2b605630b476db8522bba8664b00a",
-    "m_Name": "NearClipping",
-    "m_ChildObjectList": [
-        {
-            "m_Id": "0dc51d847617475ea720a418a778ffa0"
-        },
-        {
-            "m_Id": "81f8ad04d903424aa901cccd2777b6d3"
-        },
-        {
-            "m_Id": "7ac2460a7293470ca8741133af0fa807"
-        },
-        {
-            "m_Id": "57d52213776e44d6a1b5c8954376c710"
-        }
-    ]
 }
 
 {
